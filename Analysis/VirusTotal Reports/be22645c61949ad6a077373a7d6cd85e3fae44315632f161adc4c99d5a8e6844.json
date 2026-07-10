@@ -1,0 +1,1397 @@
+{
+    "data": {
+        "id": "be22645c61949ad6a077373a7d6cd85e3fae44315632f161adc4c99d5a8e6844",
+        "type": "file",
+        "links": {
+            "self": "https://www.virustotal.com/api/v3/files/be22645c61949ad6a077373a7d6cd85e3fae44315632f161adc4c99d5a8e6844"
+        },
+        "attributes": {
+            "magika": "PEBIN",
+            "sigma_analysis_results": [
+                {
+                    "rule_level": "critical",
+                    "rule_id": "b8a9a3d755cac11238eb37aa06d27255714356075872c2e2e140acfb3e8ab8b0",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "WannaCry Ransomware Activity",
+                    "rule_description": "Detects WannaCry ransomware activity",
+                    "rule_author": "Florian Roth (Nextron Systems), Tom U. @c_APT_ure (collection), oscd.community, Jonhnathan Ribeiro",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Users\\Bruno\\Desktop\\",
+                                "OriginalFileName": "Cmd.Exe",
+                                "Hashes": "MD5=D0FCE3AFA6AA1D58CE9FA336CC2B675B,SHA256=4D89FC34D5F0F9BABD022271C585A9477BF41E834E46B991DEAA0530FDB25E22,IMPHASH=392B4D61B1D1DADC1F06444DF258188A",
+                                "Description": "Windows Command Processor",
+                                "EventID": "1",
+                                "ParentCommandLine": "!WannaDecryptor!.exe  v",
+                                "CommandLine": "cmd.exe /c vssadmin delete shadows /all /quiet & wmic shadowcopy delete & bcdedit /set {default} bootstatuspolicy ignoreallfailures & bcdedit /set {default} recoveryenabled no & wbadmin delete catalog -quiet",
+                                "FileVersion": "10.0.19041.746 (WinBuild.160101.0800)",
+                                "ParentImage": "C:\\Users\\Bruno\\Desktop\\!WannaDecryptor!.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "critical",
+                    "rule_id": "be6d29855558a0e8c404486d8f1838ce35594866f126f9c1c62a9792e9c76be2",
+                    "rule_source": "Joe Security Rule Set (GitHub)",
+                    "rule_title": "Delete shadow copy via WMIC",
+                    "rule_description": "Delete shadow copy via WMIC",
+                    "rule_author": "Joe Security",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Users\\Bruno\\Desktop\\",
+                                "OriginalFileName": "Cmd.Exe",
+                                "Hashes": "MD5=D0FCE3AFA6AA1D58CE9FA336CC2B675B,SHA256=4D89FC34D5F0F9BABD022271C585A9477BF41E834E46B991DEAA0530FDB25E22,IMPHASH=392B4D61B1D1DADC1F06444DF258188A",
+                                "Description": "Windows Command Processor",
+                                "FileVersion": "10.0.19041.746 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "!WannaDecryptor!.exe  v",
+                                "CommandLine": "cmd.exe /c vssadmin delete shadows /all /quiet & wmic shadowcopy delete & bcdedit /set {default} bootstatuspolicy ignoreallfailures & bcdedit /set {default} recoveryenabled no & wbadmin delete catalog -quiet",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Users\\Bruno\\Desktop\\!WannaDecryptor!.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Users\\Bruno\\Desktop\\",
+                                "OriginalFileName": "wmic.exe",
+                                "Hashes": "MD5=82BB8430531876FBF5266E53460A393E,SHA256=9578C31E1B58FA75A2B612456EBCE324296E53A007E5697995CEC5785956AFE4,IMPHASH=09405355AF00B2202306292C39E63FB3",
+                                "Description": "WMI Commandline Utility",
+                                "EventID": "1",
+                                "ParentCommandLine": "cmd.exe /c vssadmin delete shadows /all /quiet & wmic shadowcopy delete & bcdedit /set {default} bootstatuspolicy ignoreallfailures & bcdedit /set {default} recoveryenabled no & wbadmin delete catalog -quiet",
+                                "CommandLine": "wmic  shadowcopy delete ",
+                                "FileVersion": "10.0.19041.1 (WinBuild.160101.0800)",
+                                "ParentImage": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\wbem\\WMIC.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "high",
+                    "rule_id": "ad5e4d4b939797a70a9aa742d979a4742c2cfedddd663fb1a43b2795c1e6054b",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Shadow Copies Deletion Using Operating Systems Utilities",
+                    "rule_description": "Shadow Copies deletion using operating systems utilities",
+                    "rule_author": "Florian Roth (Nextron Systems), Michael Haag, Teymur Kheirkhabarov, Daniil Yugoslavskiy, oscd.community, Andreas Hunkeler (@Karneades)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Users\\Bruno\\Desktop\\",
+                                "OriginalFileName": "wmic.exe",
+                                "Hashes": "MD5=82BB8430531876FBF5266E53460A393E,SHA256=9578C31E1B58FA75A2B612456EBCE324296E53A007E5697995CEC5785956AFE4,IMPHASH=09405355AF00B2202306292C39E63FB3",
+                                "Description": "WMI Commandline Utility",
+                                "EventID": "1",
+                                "ParentCommandLine": "cmd.exe /c vssadmin delete shadows /all /quiet & wmic shadowcopy delete & bcdedit /set {default} bootstatuspolicy ignoreallfailures & bcdedit /set {default} recoveryenabled no & wbadmin delete catalog -quiet",
+                                "CommandLine": "wmic  shadowcopy delete ",
+                                "FileVersion": "10.0.19041.1 (WinBuild.160101.0800)",
+                                "ParentImage": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\wbem\\WMIC.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "high",
+                    "rule_id": "f441bf0f20310d2f8fb4c38b047725cf9bafb59c2a7634f73d2d38745157b248",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Uncommon File Created In Office Startup Folder",
+                    "rule_description": "Detects the creation of a file with an uncommon extension in an Office application startup folder",
+                    "rule_author": "frack113, Nasreddine Bencherchali (Nextron Systems)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "RuleName": "T1165",
+                                "Image": "C:\\Users\\Bruno\\Desktop\\executable.exe",
+                                "EventID": "11",
+                                "TargetFilename": "C:\\Users\\Bruno\\AppData\\Roaming\\Microsoft\\Word\\STARTUP\\~SD674D.tmp"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "18842e32896dd83b8aca4d5e1ac78c1f66b1d252479c0023cdd02f108c42c8cd",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Wow6432Node CurrentVersion Autorun Keys Modification",
+                    "rule_description": "Detects modification of autostart extensibility point (ASEP) in registry.",
+                    "rule_author": "Victor Sergeev, Daniil Yugoslavskiy, Gleb Sukhodolskiy, Timur Zinniatullin, oscd.community, Tim Shelton, frack113 (split)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "RuleName": "T1060,RunKey",
+                                "EventID": "13",
+                                "Details": "\"C:\\Users\\Bruno\\Desktop\\executable.exe\" /r",
+                                "Image": "C:\\Users\\Bruno\\Desktop\\executable.exe",
+                                "EventType": "SetValue",
+                                "TargetObject": "HKLM\\SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Run\\Microsoft Update Task Scheduler"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "5572c8188426269a10ccb41fc8e9c8445391ac38a0917621b0a1ee05ec99aac9",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Change PowerShell Policies to an Insecure Level - PowerShell",
+                    "rule_description": "Detects use of Set-ExecutionPolicy to set insecure policies",
+                    "rule_author": "frack113",
+                    "match_context": [
+                        {
+                            "values": {
+                                "EventID": "4104",
+                                "ScriptBlockText": "f9c50298c31c4f832377cbc3805f78dcf568835d7138c21088e56a2c5768f935",
+                                "ScriptBlockId": "8fad3d05-36ba-4c53-a67f-90d18d2c3106",
+                                "MessageNumber": "1",
+                                "MessageTotal": "1",
+                                "Path": ""
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "56b8c79acb8e444c2b00be5c9d3cb8e33e863ccb3506d635f907a49cd053c84f",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Startup Folder File Write",
+                    "rule_description": "A General detection for files being created in the Windows startup directory. This could be an indicator of persistence.",
+                    "rule_author": "Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "RuleName": "T1023",
+                                "Image": "C:\\Users\\Bruno\\Desktop\\executable.exe",
+                                "EventID": "11",
+                                "TargetFilename": "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp\\~SD159.tmp"
+                            }
+                        },
+                        {
+                            "values": {
+                                "RuleName": "T1023",
+                                "Image": "C:\\Users\\Bruno\\Desktop\\executable.exe",
+                                "EventID": "11",
+                                "TargetFilename": "C:\\Users\\Bruno\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\~SD6726.tmp"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "low",
+                    "rule_id": "1f7f8b1e9005dd4d64cb9d30ed53ee94f68fb96262fbd72f7a0266881149c79f",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Suspicious Get-WmiObject",
+                    "rule_description": "The infrastructure for management data and operations that enables local and remote management of Windows personal computers and servers",
+                    "rule_author": "frack113",
+                    "match_context": [
+                        {
+                            "values": {
+                                "EventID": "4104",
+                                "ScriptBlockText": "10050407a4d401ef56d5a9ece4ccb6f08bba5c1ff6dfd318e419c04a972ba748",
+                                "ScriptBlockId": "8fe3efbd-853a-44c8-a79e-7fae9a574596",
+                                "MessageNumber": "1",
+                                "Path": "",
+                                "MessageTotal": "1"
+                            }
+                        },
+                        {
+                            "values": {
+                                "EventID": "4104",
+                                "ScriptBlockText": "10050407a4d401ef56d5a9ece4ccb6f08bba5c1ff6dfd318e419c04a972ba748",
+                                "ScriptBlockId": "667efede-0083-4509-b112-8287a2f25803",
+                                "MessageNumber": "1",
+                                "MessageTotal": "1",
+                                "Path": ""
+                            }
+                        },
+                        {
+                            "values": {
+                                "EventID": "4104",
+                                "ScriptBlockText": "10050407a4d401ef56d5a9ece4ccb6f08bba5c1ff6dfd318e419c04a972ba748",
+                                "ScriptBlockId": "4a0b66fa-b2f1-4fb5-9a0e-a402ec92b474",
+                                "MessageNumber": "1",
+                                "Path": "",
+                                "MessageTotal": "1"
+                            }
+                        },
+                        {
+                            "values": {
+                                "EventID": "4104",
+                                "ScriptBlockId": "14fd127e-f3a9-4ac0-9228-0963d661a09e",
+                                "ScriptBlockText": "10050407a4d401ef56d5a9ece4ccb6f08bba5c1ff6dfd318e419c04a972ba748",
+                                "MessageNumber": "1",
+                                "MessageTotal": "1",
+                                "Path": ""
+                            }
+                        },
+                        {
+                            "values": {
+                                "EventID": "4104",
+                                "ScriptBlockText": "10050407a4d401ef56d5a9ece4ccb6f08bba5c1ff6dfd318e419c04a972ba748",
+                                "ScriptBlockId": "0425096d-a6cd-4556-90f8-946ad7751f3d",
+                                "MessageNumber": "1",
+                                "MessageTotal": "1",
+                                "Path": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "total_votes": {
+                "harmless": 0,
+                "malicious": 25
+            },
+            "type_tag": "peexe",
+            "filecondis": {
+                "raw_md5": "bb291cdcac2a7a0b193ebbce272ee65f",
+                "dhash": "0000181c1c150000"
+            },
+            "tags": [
+                "checks-user-input",
+                "peexe",
+                "runtime-modules",
+                "detect-debug-environment",
+                "direct-cpu-clock-access",
+                "persistence",
+                "calls-wmi",
+                "long-sleeps",
+                "checks-cpu-name"
+            ],
+            "popular_threat_classification": {
+                "suggested_threat_label": "trojan.wannacryptor/wannacry",
+                "popular_threat_name": [
+                    {
+                        "count": 12,
+                        "value": "wannacryptor"
+                    },
+                    {
+                        "count": 11,
+                        "value": "wannacry"
+                    },
+                    {
+                        "count": 8,
+                        "value": "wanna"
+                    }
+                ],
+                "popular_threat_category": [
+                    {
+                        "count": 29,
+                        "value": "trojan"
+                    },
+                    {
+                        "count": 28,
+                        "value": "ransomware"
+                    }
+                ]
+            },
+            "bytehero_info": "Trojan.Win32.Heur.Gen",
+            "first_seen_itw_date": 1494709066,
+            "names": [
+                "Raw_Malware_WannaCry.exe",
+                "dvdplay",
+                "WannaCry.exe.crdownload",
+                "wannacry.exe",
+                "WannaCry.exe",
+                "Ransomware.WannaCrypt0r.v1.exe",
+                "WannaCry.exec",
+                "Vynxzy spoofer.exe",
+                "WannaCry (1).exe",
+                "WannaCry.zip",
+                "Surprise.exe",
+                "dvdplay.exe",
+                "WannaCry.exe.bin",
+                "groupe5.exe",
+                "WannaCry (4).exe",
+                "tu a nicker le pc de ta maman.exe",
+                "WannaCry.5rayza3n.exe.part",
+                "be22645c61949ad6a077373a7d6cd85e3fae44315632f161adc4c99d5a8e6844.exe",
+                "Trojan.Ransom.WannaCry",
+                "WANNACRY.EXE",
+                "%SAMPLEPATH%\ufffd",
+                "program.exe",
+                "executable.exe",
+                "TorVpn.exe",
+                "SenexOPF2.exe",
+                "UltraKill pirata.exe",
+                ".exe",
+                "Nursultan_Injector_v4.1.exe",
+                "AMR2.apk",
+                "AMR2.exe",
+                "Mega Man X8 Demake Android Por CarlosGaming151.exe",
+                "google-earth.exe",
+                "downloaded-file(10).exe",
+                "WannaCry.Sply3lji.exe.part",
+                "Pago_22042025_Vexi.pdf                .exe",
+                "Despacho_Abagados.exe",
+                "SophosScanAndClean_x64.exe",
+                "qrgelg0yovmxflch.exe",
+                "dropbox.exe",
+                "num 1.exe",
+                "Excel.exe",
+                "Google.exe",
+                "WannaCry%20%286%29.exe",
+                "17.exe",
+                "WannaCry(1).exe",
+                "5c7fb0927db37372da25f270708103a2.vir",
+                "true.exe",
+                "dropbox.exe.bin",
+                "WannaCry (8).exe",
+                "WannaCry (5).exe",
+                "Asmodeus Launcher.exe",
+                "wanacry_We1a3XY.exe",
+                "Unconfirmed 344076.crdownload",
+                "Surprise.exe.bin",
+                "481953.exe"
+            ],
+            "type_description": "Win32 EXE",
+            "first_submission_date": 1493376727,
+            "vhash": "025046656d157058z2727lz15z37z",
+            "last_analysis_stats": {
+                "malicious": 65,
+                "suspicious": 0,
+                "undetected": 6,
+                "harmless": 0,
+                "timeout": 0,
+                "confirmed-timeout": 0,
+                "failure": 0,
+                "type-unsupported": 4
+            },
+            "size": 229376,
+            "times_submitted": 934,
+            "unique_sources": 642,
+            "trid": [
+                {
+                    "file_type": "Win32 Executable MS Visual C++ (generic)",
+                    "probability": 37.8
+                },
+                {
+                    "file_type": "Microsoft Visual C++ compiled executable (generic)",
+                    "probability": 20.0
+                },
+                {
+                    "file_type": "Win64 Executable (generic)",
+                    "probability": 12.7
+                },
+                {
+                    "file_type": "Win32 Dynamic Link Library (generic)",
+                    "probability": 7.9
+                },
+                {
+                    "file_type": "Win16 NE executable (generic)",
+                    "probability": 6.1
+                }
+            ],
+            "sandbox_verdicts": {
+                "Zenbox": {
+                    "category": "malicious",
+                    "malware_classification": [
+                        "MALWARE",
+                        "RANSOM"
+                    ],
+                    "sandbox_name": "Zenbox",
+                    "malware_names": [
+                        "AESCRYPT Ransomware"
+                    ],
+                    "confidence": 72
+                },
+                "VMRay": {
+                    "category": "malicious",
+                    "sandbox_name": "VMRay",
+                    "malware_classification": [
+                        "RANSOM"
+                    ],
+                    "malware_names": [
+                        "Mal/Generic-S",
+                        "Petya",
+                        "WannaCry"
+                    ]
+                },
+                "Yomi Hunter": {
+                    "category": "malicious",
+                    "sandbox_name": "Yomi Hunter",
+                    "malware_classification": [
+                        "MALWARE"
+                    ]
+                },
+                "Lastline": {
+                    "category": "malicious",
+                    "sandbox_name": "Lastline",
+                    "malware_classification": [
+                        "MALWARE",
+                        "RANSOM"
+                    ]
+                }
+            },
+            "reputation": -326,
+            "last_analysis_results": {
+                "Bkav": {
+                    "method": "blacklist",
+                    "engine_name": "Bkav",
+                    "engine_version": "2.0.0.1",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "W32.AIDetectMalware"
+                },
+                "Lionic": {
+                    "method": "blacklist",
+                    "engine_name": "Lionic",
+                    "engine_version": "8.16",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Wanna.toRr"
+                },
+                "tehtris": {
+                    "method": "blacklist",
+                    "engine_name": "tehtris",
+                    "engine_version": "v0.1.4",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Generic.Malware"
+                },
+                "MicroWorld-eScan": {
+                    "method": "blacklist",
+                    "engine_name": "MicroWorld-eScan",
+                    "engine_version": "14.0.409.0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.WannaCryptor.D"
+                },
+                "CTX": {
+                    "method": "blacklist",
+                    "engine_name": "CTX",
+                    "engine_version": "2024.8.29.1",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "exe.trojan.wannacry"
+                },
+                "CAT-QuickHeal": {
+                    "method": "blacklist",
+                    "engine_name": "CAT-QuickHeal",
+                    "engine_version": "22.00",
+                    "engine_update": "20260114",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Skyhigh": {
+                    "method": "blacklist",
+                    "engine_name": "Skyhigh",
+                    "engine_version": "v2021.2.0+4045",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "BehavesLike.Win32.Dropper.dc"
+                },
+                "ALYac": {
+                    "method": "blacklist",
+                    "engine_name": "ALYac",
+                    "engine_version": "2.0.0.10",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.WannaCryptor"
+                },
+                "Cylance": {
+                    "method": "blacklist",
+                    "engine_name": "Cylance",
+                    "engine_version": "3.0.0.0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Unsafe"
+                },
+                "VIPRE": {
+                    "method": "blacklist",
+                    "engine_name": "VIPRE",
+                    "engine_version": "6.0.0.35",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.WannaCryptor.D"
+                },
+                "Sangfor": {
+                    "method": "blacklist",
+                    "engine_name": "Sangfor",
+                    "engine_version": "2.22.3.0",
+                    "engine_update": "20260112",
+                    "category": "malicious",
+                    "result": "Ransom.Win32.Wannacryptor_2.se2"
+                },
+                "K7AntiVirus": {
+                    "method": "blacklist",
+                    "engine_name": "K7AntiVirus",
+                    "engine_version": "14.29.58302",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan ( 0050ac621 )"
+                },
+                "BitDefender": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefender",
+                    "engine_version": "7.2",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.WannaCryptor.D"
+                },
+                "K7GW": {
+                    "method": "blacklist",
+                    "engine_name": "K7GW",
+                    "engine_version": "14.29.58298",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan ( 0050ac621 )"
+                },
+                "CrowdStrike": {
+                    "method": "blacklist",
+                    "engine_name": "CrowdStrike",
+                    "engine_version": "1.0",
+                    "engine_update": "20231026",
+                    "category": "malicious",
+                    "result": "win/malicious_confidence_100% (W)"
+                },
+                "Arcabit": {
+                    "method": "blacklist",
+                    "engine_name": "Arcabit",
+                    "engine_version": "2025.0.0.23",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.WannaCryptor.D"
+                },
+                "Baidu": {
+                    "method": "blacklist",
+                    "engine_name": "Baidu",
+                    "engine_version": "1.0.0.2",
+                    "engine_update": "20190318",
+                    "category": "undetected",
+                    "result": null
+                },
+                "VirIT": {
+                    "method": "blacklist",
+                    "engine_name": "VirIT",
+                    "engine_version": "9.5.1124",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Encoder.PWG"
+                },
+                "Symantec": {
+                    "method": "blacklist",
+                    "engine_name": "Symantec",
+                    "engine_version": "1.22.0.0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Ransom.Wannacry"
+                },
+                "Elastic": {
+                    "method": "blacklist",
+                    "engine_name": "Elastic",
+                    "engine_version": "4.0.244",
+                    "engine_update": "20260114",
+                    "category": "malicious",
+                    "result": "malicious (high confidence)"
+                },
+                "ESET-NOD32": {
+                    "method": "blacklist",
+                    "engine_name": "ESET-NOD32",
+                    "engine_version": "18.2.18.0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Win32/Filecoder.WannaCryptor.D trojan"
+                },
+                "APEX": {
+                    "method": "blacklist",
+                    "engine_name": "APEX",
+                    "engine_version": "6.736",
+                    "engine_update": "20260113",
+                    "category": "malicious",
+                    "result": "Malicious"
+                },
+                "TrendMicro-HouseCall": {
+                    "method": "blacklist",
+                    "engine_name": "TrendMicro-HouseCall",
+                    "engine_version": "24.550.0.1002",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Ransom_WCRY.H"
+                },
+                "Paloalto": {
+                    "method": "blacklist",
+                    "engine_name": "Paloalto",
+                    "engine_version": "0.9.0.1003",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "generic.ml"
+                },
+                "ClamAV": {
+                    "method": "blacklist",
+                    "engine_name": "ClamAV",
+                    "engine_version": "1.5.1.0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Win.Ransomware.Wannacryptor-6993233-1"
+                },
+                "Kaspersky": {
+                    "method": "blacklist",
+                    "engine_name": "Kaspersky",
+                    "engine_version": "22.0.1.28",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan-Ransom.Win32.Wanna.ah"
+                },
+                "Alibaba": {
+                    "method": "blacklist",
+                    "engine_name": "Alibaba",
+                    "engine_version": "0.3.0.5",
+                    "engine_update": "20190527",
+                    "category": "malicious",
+                    "result": "Ransom:Win32/Wanna.f9fe677e"
+                },
+                "ViRobot": {
+                    "method": "blacklist",
+                    "engine_name": "ViRobot",
+                    "engine_version": "2014.3.20.0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.S.WannaCry.229376"
+                },
+                "Rising": {
+                    "method": "blacklist",
+                    "engine_name": "Rising",
+                    "engine_version": "25.0.0.28",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Ransom.WanaCrypt!1.AAEB (CLASSIC)"
+                },
+                "Sophos": {
+                    "method": "blacklist",
+                    "engine_name": "Sophos",
+                    "engine_version": "3.3.1.0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Mal/Wanna-A"
+                },
+                "Google": {
+                    "method": "blacklist",
+                    "engine_name": "Google",
+                    "engine_version": "1768487497",
+                    "engine_update": "20260115",
+                    "category": "undetected",
+                    "result": null
+                },
+                "F-Secure": {
+                    "method": "blacklist",
+                    "engine_name": "F-Secure",
+                    "engine_version": "18.10.1547.307",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.TR/AD.WannaCry.vgssx"
+                },
+                "DrWeb": {
+                    "method": "blacklist",
+                    "engine_name": "DrWeb",
+                    "engine_version": "7.0.72.9030",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.Encoder.10718"
+                },
+                "Zillya": {
+                    "method": "blacklist",
+                    "engine_name": "Zillya",
+                    "engine_version": "2.0.0.5524",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.Wanna.Win32.58"
+                },
+                "TrendMicro": {
+                    "method": "blacklist",
+                    "engine_name": "TrendMicro",
+                    "engine_version": "24.550.0.1002",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Ransom_WCRY.H"
+                },
+                "McAfeeD": {
+                    "method": "blacklist",
+                    "engine_name": "McAfeeD",
+                    "engine_version": "1.2.0.10275",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "ti!BE22645C6194"
+                },
+                "SentinelOne": {
+                    "method": "blacklist",
+                    "engine_name": "SentinelOne",
+                    "engine_version": "7.5.3.1",
+                    "engine_update": "20251224",
+                    "category": "malicious",
+                    "result": "Static AI - Suspicious PE"
+                },
+                "Trapmine": {
+                    "method": "blacklist",
+                    "engine_name": "Trapmine",
+                    "engine_version": "4.0.8.0",
+                    "engine_update": "20260103",
+                    "category": "malicious",
+                    "result": "malicious.high.ml.score"
+                },
+                "CMC": {
+                    "method": "blacklist",
+                    "engine_name": "CMC",
+                    "engine_version": "2.4.2022.1",
+                    "engine_update": "20260115",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Emsisoft": {
+                    "method": "blacklist",
+                    "engine_name": "Emsisoft",
+                    "engine_version": "2024.8.0.61147",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.WannaCryptor.D (B)"
+                },
+                "Ikarus": {
+                    "method": "blacklist",
+                    "engine_name": "Ikarus",
+                    "engine_version": "6.4.16.0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan-Ransom.WannaCry"
+                },
+                "Jiangmin": {
+                    "method": "blacklist",
+                    "engine_name": "Jiangmin",
+                    "engine_version": "16.0.100",
+                    "engine_update": "20260114",
+                    "category": "malicious",
+                    "result": "Backdoor.Farfli.bde"
+                },
+                "Webroot": {
+                    "method": "blacklist",
+                    "engine_name": "Webroot",
+                    "engine_version": "1.9.0.8",
+                    "engine_update": "20250227",
+                    "category": "malicious",
+                    "result": "W32.Ransom.Wannacry"
+                },
+                "Varist": {
+                    "method": "blacklist",
+                    "engine_name": "Varist",
+                    "engine_version": "6.6.1.3",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "W32/Trojan.XMRO-3175"
+                },
+                "Avira": {
+                    "method": "blacklist",
+                    "engine_name": "Avira",
+                    "engine_version": "8.3.3.24",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "TR/AD.WannaCry.vgssx"
+                },
+                "Antiy-AVL": {
+                    "method": "blacklist",
+                    "engine_name": "Antiy-AVL",
+                    "engine_version": "3.0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan[Ransom]/Win32.Wanna"
+                },
+                "Kingsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Kingsoft",
+                    "engine_version": "None",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "malware.kb.a.1000"
+                },
+                "Gridinsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Gridinsoft",
+                    "engine_version": "1.0.233.174",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Ransom.Win32.WannaCrypt.sd!s1"
+                },
+                "Xcitium": {
+                    "method": "blacklist",
+                    "engine_name": "Xcitium",
+                    "engine_version": "38338",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "TrojWare.Win32.Ransom.WannaCrypt.A@716ev4"
+                },
+                "Microsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Microsoft",
+                    "engine_version": "1.1.25110.1",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Ransom:Win32/WannaCrypt"
+                },
+                "SUPERAntiSpyware": {
+                    "method": "blacklist",
+                    "engine_name": "SUPERAntiSpyware",
+                    "engine_version": "5.6.0.1032",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Ransom.HydraCrypt/Variant"
+                },
+                "ZoneAlarm": {
+                    "method": "blacklist",
+                    "engine_name": "ZoneAlarm",
+                    "engine_version": "6.22-112233212",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Mal/Wanna-A"
+                },
+                "GData": {
+                    "method": "blacklist",
+                    "engine_name": "GData",
+                    "engine_version": "GD:27.43185AVA:64.30507",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.WannaCryptor.D"
+                },
+                "Cynet": {
+                    "method": "blacklist",
+                    "engine_name": "Cynet",
+                    "engine_version": "4.0.3.4",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Malicious (score: 100)"
+                },
+                "AhnLab-V3": {
+                    "method": "blacklist",
+                    "engine_name": "AhnLab-V3",
+                    "engine_version": "3.29.1.10604",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan/Win32.WannaCryptor.R199610"
+                },
+                "Acronis": {
+                    "method": "blacklist",
+                    "engine_name": "Acronis",
+                    "engine_version": "1.2.0.121",
+                    "engine_update": "20240328",
+                    "category": "undetected",
+                    "result": null
+                },
+                "VBA32": {
+                    "method": "blacklist",
+                    "engine_name": "VBA32",
+                    "engine_version": "5.5.0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "TrojanRansom.Wanna"
+                },
+                "TACHYON": {
+                    "method": "blacklist",
+                    "engine_name": "TACHYON",
+                    "engine_version": "2026-01-15.02",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Ransom/W32.WannaCry.229376"
+                },
+                "DeepInstinct": {
+                    "method": "blacklist",
+                    "engine_name": "DeepInstinct",
+                    "engine_version": "5.0.0.8",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "MALICIOUS"
+                },
+                "Malwarebytes": {
+                    "method": "blacklist",
+                    "engine_name": "Malwarebytes",
+                    "engine_version": "3.1.0.197",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Generic.Malware.Gen.DDS"
+                },
+                "Panda": {
+                    "method": "blacklist",
+                    "engine_name": "Panda",
+                    "engine_version": "4.6.4.2",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trj/CI.A"
+                },
+                "Zoner": {
+                    "method": "blacklist",
+                    "engine_name": "Zoner",
+                    "engine_version": "2.2.2.0",
+                    "engine_update": "20260115",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Tencent": {
+                    "method": "blacklist",
+                    "engine_name": "Tencent",
+                    "engine_version": "1.0.0.1",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan-Ransom.Win32.WannaCry.l"
+                },
+                "Yandex": {
+                    "method": "blacklist",
+                    "engine_name": "Yandex",
+                    "engine_version": "5.5.2.24",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.GenAsa!IVh0/efwJEA"
+                },
+                "TrellixENS": {
+                    "method": "blacklist",
+                    "engine_name": "TrellixENS",
+                    "engine_version": "6.0.6.653",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Ransom-WannaCry!5C7FB0927DB3"
+                },
+                "huorong": {
+                    "method": "blacklist",
+                    "engine_name": "huorong",
+                    "engine_version": "17169d9:17169d9:f0173d0:f0173d0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Ransom/Wannacry.g"
+                },
+                "MaxSecure": {
+                    "method": "blacklist",
+                    "engine_name": "MaxSecure",
+                    "engine_version": "1.0.0.1",
+                    "engine_update": "20260114",
+                    "category": "malicious",
+                    "result": "Trojan.Malware.300983.susgen"
+                },
+                "Fortinet": {
+                    "method": "blacklist",
+                    "engine_name": "Fortinet",
+                    "engine_version": "7.0.30.0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "W32/WannaCryptor!tr.ransom"
+                },
+                "AVG": {
+                    "method": "blacklist",
+                    "engine_name": "AVG",
+                    "engine_version": "23.9.8494.0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Win32:Trojan-gen"
+                },
+                "Avast": {
+                    "method": "blacklist",
+                    "engine_name": "Avast",
+                    "engine_version": "23.9.8494.0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Win32:Trojan-gen"
+                },
+                "alibabacloud": {
+                    "method": "blacklist",
+                    "engine_name": "alibabacloud",
+                    "engine_version": "2.2.0",
+                    "engine_update": "20250321",
+                    "category": "malicious",
+                    "result": "RansomWare"
+                },
+                "Avast-Mobile": {
+                    "method": "blacklist",
+                    "engine_name": "Avast-Mobile",
+                    "engine_version": "260115-00",
+                    "engine_update": "20260115",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "SymantecMobileInsight": {
+                    "method": "blacklist",
+                    "engine_name": "SymantecMobileInsight",
+                    "engine_version": "2.0",
+                    "engine_update": "20250124",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "BitDefenderFalx": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefenderFalx",
+                    "engine_version": "2.0.936",
+                    "engine_update": "20251216",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "Trustlook": {
+                    "method": "blacklist",
+                    "engine_name": "Trustlook",
+                    "engine_version": "1.0",
+                    "engine_update": "20260115",
+                    "category": "type-unsupported",
+                    "result": null
+                }
+            },
+            "meaningful_name": "dvdplay",
+            "magic": "PE32 executable (GUI) Intel 80386, for MS Windows",
+            "packers": {
+                "PEiD": "Microsoft Visual C++"
+            },
+            "last_submission_date": 1768490286,
+            "tlsh": "T1A024015A7A61877FD0B20532746194FB4EFE0DD3F5A89A4FE74D0A501F048884BE3A9B",
+            "type_tags": [
+                "executable",
+                "windows",
+                "win32",
+                "pe",
+                "peexe"
+            ],
+            "sha1": "120ed9279d85cbfa56e5b7779ffa7162074f7a29",
+            "zemana_behaviour": [
+                "dll-injection"
+            ],
+            "crowdsourced_yara_results": [
+                {
+                    "ruleset_id": "0056142681",
+                    "rule_name": "Win32_Ransomware_WannaCry",
+                    "ruleset_name": "Win32.Ransomware.WannaCry",
+                    "description": "Yara rule that detects WannaCry ransomware.",
+                    "author": "ReversingLabs",
+                    "match_date": 1768490342,
+                    "ruleset_version": "0056142681|073879b10edf4bf4c9d95198b10a4728e2397b51",
+                    "source": "https://github.com/reversinglabs/reversinglabs-yara-rules"
+                },
+                {
+                    "description": "Detects win.wannacryptor.",
+                    "author": "Felix Bilstein - yara-signator at cocacoding dot com",
+                    "ruleset_name": "win.wannacryptor_auto",
+                    "rule_name": "win_wannacryptor_auto",
+                    "ruleset_id": "008020dd66",
+                    "match_in_subfile": true,
+                    "source": "https://malpedia.caad.fkie.fraunhofer.de/"
+                },
+                {
+                    "description": "Yara rule that detects WannaCry ransomware.",
+                    "author": "ReversingLabs",
+                    "ruleset_name": "Win32.Ransomware.WannaCry",
+                    "rule_name": "Win32_Ransomware_WannaCry",
+                    "ruleset_id": "0056142681",
+                    "match_in_subfile": true,
+                    "source": "https://github.com/reversinglabs/reversinglabs-yara-rules"
+                },
+                {
+                    "description": "Detects WannaCry Ransomware",
+                    "author": "Florian Roth (Nextron Systems) (with the help of binar.ly)",
+                    "ruleset_name": "crime_wannacry",
+                    "rule_name": "WannaCry_Ransomware",
+                    "ruleset_id": "000fd39f0d",
+                    "match_in_subfile": true,
+                    "source": "https://github.com/Neo23x0/signature-base"
+                },
+                {
+                    "ruleset_id": "000fd39f0d",
+                    "rule_name": "WannaCry_Ransomware",
+                    "ruleset_name": "crime_wannacry",
+                    "description": "Detects WannaCry Ransomware",
+                    "author": "Florian Roth (Nextron Systems) (with the help of binar.ly)",
+                    "match_date": 1768490342,
+                    "ruleset_version": "000fd39f0d|1d926845269a3ac8de0431da133950390b5cced3",
+                    "source": "https://github.com/Neo23x0/signature-base"
+                },
+                {
+                    "description": "detects command variations typically used by ransomware",
+                    "author": "ditekSHen",
+                    "ruleset_name": "indicator_suspicious",
+                    "rule_name": "INDICATOR_SUSPICIOUS_GENRansomware",
+                    "ruleset_id": "00c3b8eb5d",
+                    "match_in_subfile": true,
+                    "source": "https://github.com/ditekshen/detection"
+                }
+            ],
+            "sha256": "be22645c61949ad6a077373a7d6cd85e3fae44315632f161adc4c99d5a8e6844",
+            "pe_info": {
+                "timestamp": 1247529798,
+                "imphash": "e858a14f217810d78466806d95d7fceb",
+                "machine_type": 332,
+                "entry_point": 28570,
+                "resource_details": [
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 342.09,
+                        "filetype": "ZIP",
+                        "entropy": 7.998473167419434,
+                        "sha256": "ba3e1d91654bdd3dc10334db8f2685c03251e1fae1538e39acf6ae520175d983",
+                        "type": "SMD"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 68503.61,
+                        "filetype": "unknown",
+                        "entropy": 3.5573134422302246,
+                        "sha256": "bda92290c7d5d1c39361ccfafabf9ac7a880b2e6fa063f18dbe840ffa556aa9d",
+                        "type": "RT_VERSION"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 17066.64,
+                        "filetype": "unknown",
+                        "entropy": 5.039190292358398,
+                        "sha256": "590b5bae6a9c329da6d5b836e3ec9baeb9607b8ea88e7015a01e021fc416707f",
+                        "type": "RT_MANIFEST"
+                    }
+                ],
+                "resource_langs": {
+                    "ENGLISH US": 3
+                },
+                "resource_types": {
+                    "RT_MANIFEST": 1,
+                    "SMD": 1,
+                    "RT_VERSION": 1
+                },
+                "sections": [
+                    {
+                        "name": ".text",
+                        "chi2": 356194.06,
+                        "virtual_address": 4096,
+                        "flags": "rx",
+                        "raw_size": 28672,
+                        "entropy": 6.11,
+                        "virtual_size": 24976,
+                        "md5": "5749be2bfc44f4cea4f7cf08dc20d22c"
+                    },
+                    {
+                        "name": ".rdata",
+                        "chi2": 487418.97,
+                        "virtual_address": 32768,
+                        "flags": "r",
+                        "raw_size": 24576,
+                        "entropy": 6.55,
+                        "virtual_size": 23814,
+                        "md5": "a087c6d15ab24d4bcc5a3f2c23f8a208"
+                    },
+                    {
+                        "name": ".data",
+                        "chi2": 615181.25,
+                        "virtual_address": 57344,
+                        "flags": "rw",
+                        "raw_size": 8192,
+                        "entropy": 4.1,
+                        "virtual_size": 5804,
+                        "md5": "4e1a0ce058b8fea9ad5a207d2e2c4e69"
+                    },
+                    {
+                        "name": ".rsrc",
+                        "chi2": 1871.33,
+                        "virtual_address": 65536,
+                        "flags": "r",
+                        "raw_size": 163840,
+                        "entropy": 7.99,
+                        "virtual_size": 162708,
+                        "md5": "13007e2cdd602d31a99a08bad0f2b03b"
+                    }
+                ],
+                "compiler_product_versions": [
+                    "[IMP] Windows Server 2003 SP1 DDK build 4035 count=19",
+                    "[---] Unmarked objects count=176",
+                    "[C++] VS98 (6.0) SP6 build 8804 count=7",
+                    "[RES] VS98 (6.0) SP6 cvtres build 1736 count=1",
+                    "id: 0xc, version: 7291 count=2",
+                    "id: 0xb, version: 8047 count=1",
+                    "id: 0xe, version: 7299 count=4",
+                    "id: 0xa, version: 8047 count=11",
+                    "id: 0x4, version: 8047 count=4"
+                ],
+                "rich_pe_header_hash": "cbf5f3d2ba2423b2dfb5a475e1cc61c0",
+                "import_list": [
+                    {
+                        "library_name": "KERNEL32.dll",
+                        "imported_functions": [
+                            "CloseHandle",
+                            "CreateDirectoryA",
+                            "CreateFileA",
+                            "DeleteCriticalSection",
+                            "EnterCriticalSection",
+                            "FindResourceA",
+                            "FreeLibrary",
+                            "GetCurrentDirectoryA",
+                            "GetFileAttributesA",
+                            "GetFileSize",
+                            "GetFileSizeEx",
+                            "GetModuleFileNameA",
+                            "GetModuleHandleA",
+                            "GetProcAddress",
+                            "GetProcessHeap",
+                            "GetStartupInfoA",
+                            "GlobalAlloc",
+                            "GlobalFree",
+                            "HeapAlloc",
+                            "HeapFree",
+                            "InitializeCriticalSection",
+                            "IsBadReadPtr",
+                            "LeaveCriticalSection",
+                            "LoadLibraryA",
+                            "LoadResource",
+                            "LocalFileTimeToFileTime",
+                            "LockResource",
+                            "ReadFile",
+                            "SetCurrentDirectoryA",
+                            "SetErrorMode",
+                            "SetFilePointer",
+                            "SetFileTime",
+                            "SetLastError",
+                            "SizeofResource",
+                            "SystemTimeToFileTime",
+                            "VirtualAlloc",
+                            "VirtualFree",
+                            "VirtualProtect",
+                            "WriteFile"
+                        ]
+                    },
+                    {
+                        "library_name": "USER32.dll",
+                        "imported_functions": [
+                            "wsprintfA"
+                        ]
+                    },
+                    {
+                        "library_name": "ADVAPI32.dll",
+                        "imported_functions": [
+                            "CryptAcquireContextA",
+                            "CryptDecrypt",
+                            "CryptDestroyKey",
+                            "CryptImportKey",
+                            "CryptReleaseContext"
+                        ]
+                    },
+                    {
+                        "library_name": "WS2_32.dll",
+                        "imported_functions": [
+                            "inet_addr",
+                            "WSACleanup",
+                            "WSAStartup"
+                        ]
+                    },
+                    {
+                        "library_name": "MSVCRT.dll",
+                        "imported_functions": [
+                            "??0exception@@QAE@ABQBD@Z",
+                            "??0exception@@QAE@ABV0@@Z",
+                            "??1exception@@UAE@XZ",
+                            "??1type_info@@UAE@XZ",
+                            "??2@YAPAXI@Z",
+                            "??3@YAXPAX@Z",
+                            "__CxxFrameHandler",
+                            "__getmainargs",
+                            "__p___argc",
+                            "__p___argv",
+                            "__p__commode",
+                            "__p__fmode",
+                            "__set_app_type",
+                            "__setusermatherr",
+                            "_acmdln",
+                            "_adjust_fdiv",
+                            "_controlfp",
+                            "_CxxThrowException",
+                            "_except_handler3",
+                            "_exit",
+                            "_initterm",
+                            "_local_unwind2",
+                            "_mbsstr",
+                            "_stricmp",
+                            "_XcptFilter",
+                            "calloc",
+                            "exit",
+                            "free",
+                            "malloc",
+                            "memcmp",
+                            "memcpy",
+                            "memset",
+                            "realloc",
+                            "sscanf",
+                            "strcat",
+                            "strcmp",
+                            "strcpy",
+                            "strlen",
+                            "strrchr"
+                        ]
+                    }
+                ]
+            },
+            "signature_info": {
+                "file version": "6.1.7600.16385 (win7_rtm.090713-1255)",
+                "description": "dvdplay placeholder Application",
+                "original name": "dvdplay",
+                "product": "Microsoft\u00ae Windows\u00ae Operating System",
+                "copyright": "\u00a9 Microsoft Corporation. All rights reserved.",
+                "internal name": "dvdplay"
+            },
+            "type_extension": "exe",
+            "sigma_analysis_summary": {
+                "Sigma Integrated Rule Set (GitHub)": {
+                    "critical": 0,
+                    "high": 2,
+                    "medium": 3,
+                    "low": 1
+                },
+                "Joe Security Rule Set (GitHub)": {
+                    "critical": 1,
+                    "high": 0,
+                    "medium": 0,
+                    "low": 0
+                }
+            },
+            "last_modification_date": 1768497534,
+            "md5": "5c7fb0927db37372da25f270708103a2",
+            "authentihash": "7e9f8747fa2d7a35e87ddc8fa62d4d4b8da3b0cf3f3a62f1df0a59b50e913bb7",
+            "detectiteasy": {
+                "filetype": "PE32",
+                "values": [
+                    {
+                        "info": "EXE32",
+                        "version": "6.0 (1720-9782)",
+                        "type": "Compiler",
+                        "name": "EP:Microsoft Visual C/C++"
+                    },
+                    {
+                        "info": "C++",
+                        "version": "12.00.9782",
+                        "type": "Compiler",
+                        "name": "Microsoft Visual C/C++"
+                    },
+                    {
+                        "version": "6.00.8047",
+                        "type": "Linker",
+                        "name": "Microsoft Linker"
+                    },
+                    {
+                        "version": "6.0",
+                        "type": "Tool",
+                        "name": "Visual Studio"
+                    },
+                    {
+                        "info": "encrypted,44.8%,5 files",
+                        "version": "2.0",
+                        "type": "Archive",
+                        "name": "Zip"
+                    }
+                ]
+            },
+            "sigma_analysis_stats": {
+                "critical": 2,
+                "high": 2,
+                "medium": 3,
+                "low": 1
+            },
+            "last_analysis_date": 1768490286,
+            "ssdeep": "3072:Y059femWRwTs/dbelj0X8/j84pcRXPlU3Upt3or4H84lK8PtpLzLsR/EfcZ:+5RwTs/dSXj84mRXPemxdBlPvLzLeZ",
+            "creation_date": 1247529798
+        }
+    }
+}

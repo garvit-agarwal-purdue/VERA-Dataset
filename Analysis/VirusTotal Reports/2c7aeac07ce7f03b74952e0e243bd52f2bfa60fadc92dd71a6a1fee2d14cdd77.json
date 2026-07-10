@@ -1,0 +1,1413 @@
+{
+    "data": {
+        "id": "2c7aeac07ce7f03b74952e0e243bd52f2bfa60fadc92dd71a6a1fee2d14cdd77",
+        "type": "file",
+        "links": {
+            "self": "https://www.virustotal.com/api/v3/files/2c7aeac07ce7f03b74952e0e243bd52f2bfa60fadc92dd71a6a1fee2d14cdd77"
+        },
+        "attributes": {
+            "sigma_analysis_results": [
+                {
+                    "rule_level": "high",
+                    "rule_id": "3fad126ae93b8bb078502d36cb4e234c89c2539784bb1f8e446e615d3f54c186",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Deletion of Volume Shadow Copies via WMI with PowerShell - PS Script",
+                    "rule_description": "Detects deletion of Windows Volume Shadow Copies with PowerShell code and Get-WMIObject. This technique is used by numerous ransomware families such as Sodinokibi/REvil",
+                    "rule_author": "Tim Rauch",
+                    "match_context": [
+                        {
+                            "values": {
+                                "ScriptBlockText": "Get-WmiObject Win32_Shadowcopy | Remove-WmiObject",
+                                "MessageTotal": "1",
+                                "ScriptBlockId": "a9370651-2705-4801-ad7a-4acd2b8cdfcb",
+                                "Path": "",
+                                "EventID": "4104",
+                                "MessageNumber": "1"
+                            }
+                        },
+                        {
+                            "values": {
+                                "ScriptBlockText": "Get-WmiObject Win32_Shadowcopy | Remove-WmiObject",
+                                "MessageTotal": "1",
+                                "ScriptBlockId": "7216732b-f5c7-4522-a4f2-d9a32952d47b",
+                                "Path": "",
+                                "MessageNumber": "1",
+                                "EventID": "4104"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "high",
+                    "rule_id": "c7ad5ab5203e14414fcbfb23542125d64b7aca04b7afe48d594ecb9b7c117ec3",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Deletion of Volume Shadow Copies via WMI with PowerShell",
+                    "rule_description": "Detects deletion of Windows Volume Shadow Copies with PowerShell code and Get-WMIObject. This technique is used by numerous ransomware families such as Sodinokibi/REvil",
+                    "rule_author": "Tim Rauch, Elastic (idea)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Windows\\system32\\",
+                                "OriginalFileName": "PowerShell.EXE",
+                                "Hashes": "SHA1=1B3B40FBC889FD4C645CC12C85D0805AC36BA254,MD5=95000560239032BC68B4C2FDFCDEF913,SHA256=D3F8FADE829D2B7BD596C4504A6DAE5C034E789B6A3DEFBE013BDA7D14466677,IMPHASH=741776AACCFC5B71FF59832DCDCACE0F",
+                                "Description": "Windows PowerShell",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "C:\\Windows\\system32\\wbem\\wmiprvse.exe",
+                                "CommandLine": "powershell.exe -Command \"Get-WmiObject Win32_Shadowcopy | Remove-WmiObject\"",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Windows\\System32\\wbem\\WmiPrvSE.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "CommandLine": "powershell.exe -Command \"Get-WmiObject Win32_Shadowcopy | Remove-WmiObject\"",
+                                "Image": "powershell.exe",
+                                "EventID": "1"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "high",
+                    "rule_id": "f441bf0f20310d2f8fb4c38b047725cf9bafb59c2a7634f73d2d38745157b248",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Uncommon File Created In Office Startup Folder",
+                    "rule_description": "Detects the creation of a file with an uncommon extension in an Office application startup folder",
+                    "rule_author": "frack113, Nasreddine Bencherchali (Nextron Systems)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Image": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "TargetFilename": "C:\\Users\\george\\AppData\\Roaming\\Microsoft\\Excel\\XLSTART\\akira_readme.txt",
+                                "EventID": "11"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Image": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "TargetFilename": "C:\\Users\\george\\AppData\\Roaming\\Microsoft\\Word\\STARTUP\\akira_readme.txt",
+                                "EventID": "11"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "1429a6819ff25aad68fb09601fb0b63c4be24919adfd25c4ad925ef8d47d8f22",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "WmiPrvSE Spawned A Process",
+                    "rule_description": "Detects WmiPrvSE spawning a process",
+                    "rule_author": "Roberto Rodriguez @Cyb3rWard0g",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Windows\\system32\\",
+                                "OriginalFileName": "PowerShell.EXE",
+                                "Hashes": "SHA1=1B3B40FBC889FD4C645CC12C85D0805AC36BA254,MD5=95000560239032BC68B4C2FDFCDEF913,SHA256=D3F8FADE829D2B7BD596C4504A6DAE5C034E789B6A3DEFBE013BDA7D14466677,IMPHASH=741776AACCFC5B71FF59832DCDCACE0F",
+                                "Description": "Windows PowerShell",
+                                "EventID": "1",
+                                "ParentCommandLine": "C:\\Windows\\system32\\wbem\\wmiprvse.exe",
+                                "CommandLine": "powershell.exe -Command \"Get-WmiObject Win32_Shadowcopy | Remove-WmiObject\"",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentImage": "C:\\Windows\\System32\\wbem\\WmiPrvSE.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "1ca8739651295d88708cb5ddfb7a115ae0d202152a80ee4c7871e62f3509c938",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Potential WMI Lateral Movement WmiPrvSE Spawned PowerShell",
+                    "rule_description": "Detects Powershell as a child of the WmiPrvSE process. Which could be a sign of lateral movement via WMI.",
+                    "rule_author": "Markus Neis @Karneades",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Windows\\system32\\",
+                                "OriginalFileName": "PowerShell.EXE",
+                                "Hashes": "SHA1=1B3B40FBC889FD4C645CC12C85D0805AC36BA254,MD5=95000560239032BC68B4C2FDFCDEF913,SHA256=D3F8FADE829D2B7BD596C4504A6DAE5C034E789B6A3DEFBE013BDA7D14466677,IMPHASH=741776AACCFC5B71FF59832DCDCACE0F",
+                                "Description": "Windows PowerShell",
+                                "EventID": "1",
+                                "ParentCommandLine": "C:\\Windows\\system32\\wbem\\wmiprvse.exe",
+                                "CommandLine": "powershell.exe -Command \"Get-WmiObject Win32_Shadowcopy | Remove-WmiObject\"",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentImage": "C:\\Windows\\System32\\wbem\\WmiPrvSE.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "2104d1ee1ce64e7aa3dbd368652a54ce160e6a5751019af14601fc8fd1df8086",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Execution of Suspicious File Type Extension",
+                    "rule_description": "Detects whether the image specified in a process creation event doesn't refer to an \".exe\" (or other known executable extension) file. This can be caused by process ghosting or other unorthodox methods to start a process.\nThis rule might require some initial baselining to align with some third party tooling in the user environment.\n",
+                    "rule_author": "Max Altgelt (Nextron Systems)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Product": "?",
+                                "CurrentDirectory": "C:\\Users\\tjIHobLyPLVx\\AppData\\Local\\Temp\\",
+                                "OriginalFileName": "?",
+                                "Hashes": "MD5=2A7A76CDE7E970C06316E3AE4FEADBE3,SHA256=2C7AEAC07CE7F03B74952E0E243BD52F2BFA60FADC92DD71A6A1FEE2D14CDD77,IMPHASH=6FD46D89DAADA6463CF89E7DD1E015D2",
+                                "Description": "?",
+                                "EventID": "1",
+                                "ParentCommandLine": "bin\\VVKZmHnGs.exe --app C:\\Users\\RA491~1.VUL\\AppData\\Local\\Temp\\cfbc604907b4131ff95bce80b6bf953c.ex_ --only-start --curdir C:\\Users\\RA491~1.VUL\\AppData\\Local\\Temp",
+                                "CommandLine": "\"C:\\Users\\tjIHobLyPLVx\\AppData\\Local\\Temp\\cfbc604907b4131ff95bce80b6bf953c.ex_\" ",
+                                "FileVersion": "?",
+                                "ParentImage": "C:\\tmpactcw1\\bin\\VVKZmHnGs.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Users\\RA491~1.VUL\\AppData\\Local\\Temp\\cfbc604907b4131ff95bce80b6bf953c.ex_",
+                                "Company": "?"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "56b8c79acb8e444c2b00be5c9d3cb8e33e863ccb3506d635f907a49cd053c84f",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Startup Folder File Write",
+                    "rule_description": "A General detection for files being created in the Windows startup directory. This could be an indicator of persistence.",
+                    "rule_author": "Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Image": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "TargetFilename": "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp\\akira_readme.txt",
+                                "EventID": "11"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Image": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "EventID": "11",
+                                "TargetFilename": "C:\\Users\\george\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\akira_readme.txt"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "b8c95f5909e68be942c69ab250a3b47557e33b2d1d582cd72e665210efeadb8f",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "PowerShell Module File Created By Non-PowerShell Process",
+                    "rule_description": "Detects the creation of a new PowerShell module \".psm1\", \".psd1\", \".dll\", \".ps1\", etc. by a non-PowerShell process",
+                    "rule_author": "Nasreddine Bencherchali (Nextron Systems)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Image": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "TargetFilename": "C:\\Program Files\\WindowsPowerShell\\Modules\\akira_readme.txt",
+                                "EventID": "11"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Image": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "EventID": "11",
+                                "TargetFilename": "C:\\Program Files\\WindowsPowerShell\\Modules\\Microsoft.PowerShell.Operation.Validation\\akira_readme.txt"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Image": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "EventID": "11",
+                                "TargetFilename": "C:\\Program Files\\WindowsPowerShell\\Modules\\Microsoft.PowerShell.Operation.Validation\\1.0.1\\akira_readme.txt"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Image": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "TargetFilename": "C:\\Program Files\\WindowsPowerShell\\Modules\\Microsoft.PowerShell.Operation.Validation\\1.0.1\\Diagnostics\\akira_readme.txt",
+                                "EventID": "11"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Image": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "EventID": "11",
+                                "TargetFilename": "C:\\Program Files\\WindowsPowerShell\\Modules\\Microsoft.PowerShell.Operation.Validation\\1.0.1\\Diagnostics\\Comprehensive\\akira_readme.txt"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "low",
+                    "rule_id": "1c2e4db94ca79f939e94e29c04fb3b71467fc6f5b9c31db34fcce5a2fb3b856f",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Non Interactive PowerShell Process Spawned",
+                    "rule_description": "Detects non-interactive PowerShell activity by looking at the \"powershell\" process with a non-user GUI process such as \"explorer.exe\" as a parent.",
+                    "rule_author": "Roberto Rodriguez @Cyb3rWard0g (rule), oscd.community (improvements)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Windows\\system32\\",
+                                "OriginalFileName": "PowerShell.EXE",
+                                "Hashes": "SHA1=1B3B40FBC889FD4C645CC12C85D0805AC36BA254,MD5=95000560239032BC68B4C2FDFCDEF913,SHA256=D3F8FADE829D2B7BD596C4504A6DAE5C034E789B6A3DEFBE013BDA7D14466677,IMPHASH=741776AACCFC5B71FF59832DCDCACE0F",
+                                "Description": "Windows PowerShell",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "C:\\Windows\\system32\\wbem\\wmiprvse.exe",
+                                "CommandLine": "powershell.exe -Command \"Get-WmiObject Win32_Shadowcopy | Remove-WmiObject\"",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Windows\\System32\\wbem\\WmiPrvSE.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "size": 900096,
+            "trid": [
+                {
+                    "file_type": "Win64 Executable (generic)",
+                    "probability": 40.3
+                },
+                {
+                    "file_type": "Win16 NE executable (generic)",
+                    "probability": 19.3
+                },
+                {
+                    "file_type": "Win32 Executable (generic)",
+                    "probability": 17.2
+                },
+                {
+                    "file_type": "OS/2 Executable (generic)",
+                    "probability": 7.7
+                },
+                {
+                    "file_type": "Generic Win/DOS Executable",
+                    "probability": 7.6
+                }
+            ],
+            "first_submission_date": 1724795012,
+            "first_seen_itw_date": 1724838310,
+            "sha256": "2c7aeac07ce7f03b74952e0e243bd52f2bfa60fadc92dd71a6a1fee2d14cdd77",
+            "type_extension": "exe",
+            "tags": [
+                "long-sleeps",
+                "checks-cpu-name",
+                "calls-wmi",
+                "peexe",
+                "checks-user-input",
+                "detect-debug-environment"
+            ],
+            "pe_info": {
+                "timestamp": 1712731848,
+                "imphash": "6fd46d89daada6463cf89e7dd1e015d2",
+                "machine_type": 332,
+                "entry_point": 412554,
+                "resource_details": [
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 4031.47,
+                        "filetype": "XML",
+                        "entropy": 4.911615371704102,
+                        "sha256": "4bb79dcea0a901f7d9eac5aa05728ae92acb42e0cb22e5dd14134f4421a3d8df",
+                        "type": "RT_MANIFEST"
+                    }
+                ],
+                "resource_langs": {
+                    "ENGLISH US": 1
+                },
+                "resource_types": {
+                    "RT_MANIFEST": 1
+                },
+                "sections": [
+                    {
+                        "name": ".text",
+                        "chi2": 3489286.75,
+                        "virtual_address": 4096,
+                        "flags": "rx",
+                        "raw_size": 676864,
+                        "entropy": 6.64,
+                        "virtual_size": 676502,
+                        "md5": "b23834295895be4e75b0da96af240869"
+                    },
+                    {
+                        "name": ".rdata",
+                        "chi2": 7013449.5,
+                        "virtual_address": 684032,
+                        "flags": "r",
+                        "raw_size": 151040,
+                        "entropy": 5.18,
+                        "virtual_size": 150726,
+                        "md5": "2e0487981385da4e8d3bb4610f5d6342"
+                    },
+                    {
+                        "name": ".data",
+                        "chi2": 843091.0,
+                        "virtual_address": 835584,
+                        "flags": "rw",
+                        "raw_size": 35328,
+                        "entropy": 5.25,
+                        "virtual_size": 40408,
+                        "md5": "9a14e6fbb6bedde6fc4faa8956e86c05"
+                    },
+                    {
+                        "name": ".rsrc",
+                        "chi2": 9303.0,
+                        "virtual_address": 876544,
+                        "flags": "r",
+                        "raw_size": 512,
+                        "entropy": 4.7,
+                        "virtual_size": 480,
+                        "md5": "72906d154d3476bfa9c1d93cb6da71ee"
+                    },
+                    {
+                        "name": ".reloc",
+                        "chi2": 141155.64,
+                        "virtual_address": 880640,
+                        "flags": "r",
+                        "raw_size": 35328,
+                        "entropy": 6.57,
+                        "virtual_size": 35108,
+                        "md5": "3fed00e862d69dc5a42c870d14391ebf"
+                    }
+                ],
+                "compiler_product_versions": [
+                    "[ C ] VS2008 SP1 build 30729 count=1",
+                    "[IMP] VS2008 SP1 build 30729 count=15",
+                    "[---] Unmarked objects count=188",
+                    "id: 0xf1, version: 40116 count=19",
+                    "id: 0xf3, version: 40116 count=163",
+                    "id: 0xf2, version: 40116 count=30",
+                    "id: 0x103, version: 26706 count=25",
+                    "id: 0x105, version: 26706 count=129",
+                    "id: 0x104, version: 26706 count=36",
+                    "id: 0x105, version: 24247 count=3",
+                    "id: 0x104, version: 24247 count=23",
+                    "id: 0x109, version: 27051 count=8",
+                    "id: 0xff, version: 27051 count=1",
+                    "id: 0x102, version: 27051 count=1"
+                ],
+                "rich_pe_header_hash": "6122aecf8ac37b9306b71c4e43f5f623",
+                "import_list": [
+                    {
+                        "library_name": "KERNEL32.dll",
+                        "imported_functions": [
+                            "AreFileApisANSI",
+                            "ChangeTimerQueueTimer",
+                            "CloseHandle",
+                            "CompareStringW",
+                            "CreateDirectoryW",
+                            "CreateEventW",
+                            "CreateFileA",
+                            "CreateFileW",
+                            "CreateThread",
+                            "CreateTimerQueue",
+                            "CreateTimerQueueTimer",
+                            "DecodePointer",
+                            "DeleteCriticalSection",
+                            "DeleteFileW",
+                            "DeleteTimerQueueTimer",
+                            "DuplicateHandle",
+                            "EncodePointer",
+                            "EnterCriticalSection",
+                            "EnumSystemLocalesW",
+                            "ExitProcess",
+                            "ExitThread",
+                            "FindClose",
+                            "FindFirstFileExA",
+                            "FindFirstFileExW",
+                            "FindNextFileA",
+                            "FindNextFileW",
+                            "FlushFileBuffers",
+                            "FormatMessageA",
+                            "FormatMessageW",
+                            "FreeEnvironmentStringsW",
+                            "FreeLibrary",
+                            "FreeLibraryAndExitThread",
+                            "GetACP",
+                            "GetCommandLineA",
+                            "GetCommandLineW",
+                            "GetConsoleCP",
+                            "GetConsoleMode",
+                            "GetConsoleScreenBufferInfo",
+                            "GetCPInfo",
+                            "GetCurrentProcess",
+                            "GetCurrentProcessId",
+                            "GetCurrentThread",
+                            "GetCurrentThreadId",
+                            "GetDateFormatW",
+                            "GetDriveTypeW",
+                            "GetEnvironmentStringsW",
+                            "GetExitCodeThread",
+                            "GetFileAttributesA",
+                            "GetFileAttributesExW",
+                            "GetFileInformationByHandle",
+                            "GetFileSizeEx",
+                            "GetFileType",
+                            "GetLastError",
+                            "GetLocaleInfoW",
+                            "GetLogicalDriveStringsA",
+                            "GetLogicalProcessorInformation",
+                            "GetModuleFileNameA",
+                            "GetModuleFileNameW",
+                            "GetModuleHandleA",
+                            "GetModuleHandleExW",
+                            "GetModuleHandleW",
+                            "GetNumaHighestNodeNumber",
+                            "GetOEMCP",
+                            "GetProcAddress",
+                            "GetProcessAffinityMask",
+                            "GetProcessHeap",
+                            "GetStartupInfoW",
+                            "GetStdHandle",
+                            "GetStringTypeW",
+                            "GetSystemInfo",
+                            "GetSystemTimeAsFileTime",
+                            "GetThreadPriority",
+                            "GetThreadTimes",
+                            "GetTickCount",
+                            "GetTimeFormatW",
+                            "GetTimeZoneInformation",
+                            "GetUserDefaultLCID",
+                            "GetVersionExW",
+                            "HeapAlloc",
+                            "HeapFree",
+                            "HeapReAlloc",
+                            "HeapSize",
+                            "InitializeCriticalSectionAndSpinCount",
+                            "InitializeSListHead",
+                            "InterlockedDecrement",
+                            "InterlockedExchange",
+                            "InterlockedExchangeAdd",
+                            "InterlockedFlushSList",
+                            "InterlockedIncrement",
+                            "InterlockedPopEntrySList",
+                            "InterlockedPushEntrySList",
+                            "IsDebuggerPresent",
+                            "IsProcessorFeaturePresent",
+                            "IsValidCodePage",
+                            "IsValidLocale",
+                            "LCMapStringW",
+                            "LeaveCriticalSection",
+                            "LoadLibraryExW",
+                            "LoadLibraryW",
+                            "LocalFree",
+                            "MoveFileExW",
+                            "MultiByteToWideChar",
+                            "OpenProcess",
+                            "QueryDepthSList",
+                            "QueryPerformanceCounter",
+                            "QueryPerformanceFrequency",
+                            "QueueUserAPC",
+                            "RaiseException",
+                            "ReadConsoleW",
+                            "ReadFile",
+                            "RegisterWaitForSingleObject",
+                            "ReleaseSemaphore",
+                            "ResetEvent",
+                            "RtlUnwind",
+                            "SetConsoleTextAttribute",
+                            "SetEndOfFile",
+                            "SetEnvironmentVariableA",
+                            "SetEvent",
+                            "SetFilePointerEx",
+                            "SetLastError",
+                            "SetStdHandle",
+                            "SetThreadAffinityMask",
+                            "SetThreadPriority",
+                            "SetUnhandledExceptionFilter",
+                            "SignalObjectAndWait",
+                            "Sleep",
+                            "SleepEx",
+                            "SwitchToThread",
+                            "TerminateProcess",
+                            "TerminateThread",
+                            "TlsAlloc",
+                            "TlsFree",
+                            "TlsGetValue",
+                            "TlsSetValue",
+                            "TryEnterCriticalSection",
+                            "UnhandledExceptionFilter",
+                            "UnregisterWait",
+                            "UnregisterWaitEx",
+                            "VirtualAlloc",
+                            "VirtualFree",
+                            "VirtualProtect",
+                            "WaitForMultipleObjects",
+                            "WaitForSingleObject",
+                            "WaitForSingleObjectEx",
+                            "WideCharToMultiByte",
+                            "WriteConsoleA",
+                            "WriteConsoleW",
+                            "WriteFile"
+                        ]
+                    },
+                    {
+                        "library_name": "SHELL32.dll",
+                        "imported_functions": [
+                            "CommandLineToArgvW"
+                        ]
+                    },
+                    {
+                        "library_name": "ole32.dll",
+                        "imported_functions": [
+                            "CoCreateInstance",
+                            "CoInitializeEx",
+                            "CoSetProxyBlanket",
+                            "CoUninitialize"
+                        ]
+                    },
+                    {
+                        "library_name": "OLEAUT32.dll",
+                        "imported_functions": [
+                            "SysAllocString",
+                            "SysFreeString",
+                            "VariantClear",
+                            "VariantInit"
+                        ]
+                    },
+                    {
+                        "library_name": "WS2_32.dll",
+                        "imported_functions": [
+                            "WSACleanup",
+                            "WSAStartup"
+                        ]
+                    },
+                    {
+                        "library_name": "SHLWAPI.dll",
+                        "imported_functions": [
+                            "PathIsNetworkPathW"
+                        ]
+                    },
+                    {
+                        "library_name": "MPR.dll",
+                        "imported_functions": [
+                            "WNetGetConnectionW"
+                        ]
+                    }
+                ]
+            },
+            "detectiteasy": {
+                "filetype": "PE32",
+                "values": [
+                    {
+                        "info": "EXE32",
+                        "version": "2017 v.15.5-6",
+                        "type": "Compiler",
+                        "name": "EP:Microsoft Visual C/C++"
+                    },
+                    {
+                        "info": "LTCG/C++",
+                        "version": "19.16.27051",
+                        "type": "Compiler",
+                        "name": "Microsoft Visual C/C++"
+                    },
+                    {
+                        "version": "14.16.27051",
+                        "type": "Linker",
+                        "name": "Microsoft Linker"
+                    },
+                    {
+                        "version": "2017 version 15.9",
+                        "type": "Tool",
+                        "name": "Visual Studio"
+                    }
+                ]
+            },
+            "tlsh": "T128158D127981D037D5A201719A6CEF7A807EB9350B315ADFB7D44F3E6A700D22E32A67",
+            "type_tags": [
+                "executable",
+                "windows",
+                "win32",
+                "pe",
+                "peexe"
+            ],
+            "crowdsourced_yara_results": [
+                {
+                    "ruleset_id": "00cc803bdc",
+                    "ruleset_name": "malware",
+                    "rule_name": "MALWARE_Win_Akira",
+                    "match_date": 1766822630,
+                    "description": "Detects Akira Ransomware Windows",
+                    "author": "ditekSHen",
+                    "ruleset_version": "00cc803bdc|e76c93dcdedff04076380ffc60ea54e45b313635",
+                    "source": "https://github.com/ditekshen/detection"
+                },
+                {
+                    "ruleset_id": "015173d14a",
+                    "ruleset_name": "Windows_Ransomware_Akira",
+                    "rule_name": "Windows_Ransomware_Akira_c8c298ba",
+                    "match_date": 1766822630,
+                    "author": "Elastic Security",
+                    "ruleset_version": "015173d14a|195c9611ddb90db599d7ffc1a9b0e8c45688007d",
+                    "source": "https://github.com/elastic/protections-artifacts"
+                },
+                {
+                    "ruleset_id": "0158ae5d3d",
+                    "ruleset_name": "Multi_Ransomware_Akira",
+                    "rule_name": "Multi_Ransomware_Akira_21842eb3",
+                    "match_date": 1766822630,
+                    "author": "Elastic Security",
+                    "ruleset_version": "0158ae5d3d|195c9611ddb90db599d7ffc1a9b0e8c45688007d",
+                    "source": "https://github.com/elastic/protections-artifacts"
+                }
+            ],
+            "vhash": "095056655d55556az947z4045z1019z27z",
+            "sigma_analysis_summary": {
+                "Sigma Integrated Rule Set (GitHub)": {
+                    "critical": 0,
+                    "high": 3,
+                    "medium": 5,
+                    "low": 1
+                }
+            },
+            "last_modification_date": 1766829826,
+            "last_analysis_stats": {
+                "malicious": 60,
+                "suspicious": 0,
+                "undetected": 12,
+                "harmless": 0,
+                "timeout": 0,
+                "confirmed-timeout": 0,
+                "failure": 0,
+                "type-unsupported": 4
+            },
+            "authentihash": "8f4922671fc6ae90a6db7f0c407036c21e26555d97242f0f28fb9f97d92350a8",
+            "last_submission_date": 1761387412,
+            "popular_threat_classification": {
+                "popular_threat_category": [
+                    {
+                        "value": "ransomware",
+                        "count": 24
+                    },
+                    {
+                        "value": "trojan",
+                        "count": 19
+                    }
+                ],
+                "suggested_threat_label": "ransomware.akira/mflks",
+                "popular_threat_name": [
+                    {
+                        "value": "akira",
+                        "count": 26
+                    },
+                    {
+                        "value": "mflks",
+                        "count": 2
+                    },
+                    {
+                        "value": "misc",
+                        "count": 2
+                    }
+                ]
+            },
+            "names": [
+                "2c7aeac07ce7f03b74952e0e243bd52f2bfa60fadc92dd71a6a1fee2d14cdd77.exe",
+                "muestra1.exe",
+                "win32_locker.ex_",
+                "Payment Confirmation Invoice #12345.exe",
+                "win32_locker.ex_.exe"
+            ],
+            "type_description": "Win32 EXE",
+            "times_submitted": 8,
+            "type_tag": "peexe",
+            "total_votes": {
+                "harmless": 0,
+                "malicious": 7
+            },
+            "meaningful_name": "2c7aeac07ce7f03b74952e0e243bd52f2bfa60fadc92dd71a6a1fee2d14cdd77.exe",
+            "magika": "PEBIN",
+            "reputation": -17,
+            "filecondis": {
+                "raw_md5": "5a2a68fb8e6cc454452af9baf8c1e26c",
+                "dhash": "603c3e1c1e1e5104"
+            },
+            "magic": "PE32 executable (GUI) Intel 80386, for MS Windows",
+            "sandbox_verdicts": {
+                "CAPE Sandbox": {
+                    "category": "malicious",
+                    "malware_classification": [
+                        "MALWARE"
+                    ],
+                    "sandbox_name": "CAPE Sandbox",
+                    "malware_names": [
+                        "Akira",
+                        "Avaddon"
+                    ]
+                },
+                "Zenbox": {
+                    "category": "malicious",
+                    "malware_classification": [
+                        "MALWARE",
+                        "STEALER",
+                        "RANSOM",
+                        "TROJAN",
+                        "EVADER"
+                    ],
+                    "sandbox_name": "Zenbox",
+                    "malware_names": [
+                        "Akira"
+                    ],
+                    "confidence": 88
+                },
+                "Yomi Hunter": {
+                    "category": "malicious",
+                    "malware_classification": [
+                        "MALWARE"
+                    ],
+                    "sandbox_name": "Yomi Hunter"
+                },
+                "C2AE": {
+                    "category": "undetected",
+                    "malware_classification": [
+                        "UNKNOWN_VERDICT"
+                    ],
+                    "sandbox_name": "C2AE"
+                },
+                "VMRay": {
+                    "category": "malicious",
+                    "malware_classification": [
+                        "MALWARE",
+                        "RANSOM"
+                    ],
+                    "sandbox_name": "VMRay",
+                    "malware_names": [
+                        "Mal/Generic-S"
+                    ]
+                }
+            },
+            "last_analysis_results": {
+                "Bkav": {
+                    "method": "blacklist",
+                    "engine_name": "Bkav",
+                    "engine_version": "2.0.0.1",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "W32.AIDetectMalware"
+                },
+                "Lionic": {
+                    "method": "blacklist",
+                    "engine_name": "Lionic",
+                    "engine_version": "8.16",
+                    "engine_update": "20251226",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Akira.j!c"
+                },
+                "tehtris": {
+                    "method": "blacklist",
+                    "engine_name": "tehtris",
+                    "engine_version": "v0.1.4",
+                    "engine_update": "20251227",
+                    "category": "undetected",
+                    "result": null
+                },
+                "MicroWorld-eScan": {
+                    "method": "blacklist",
+                    "engine_name": "MicroWorld-eScan",
+                    "engine_version": "14.0.409.0",
+                    "engine_update": "20251226",
+                    "category": "malicious",
+                    "result": "Gen:Variant.Ransom.Akira.12"
+                },
+                "CTX": {
+                    "method": "blacklist",
+                    "engine_name": "CTX",
+                    "engine_version": "2024.8.29.1",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "exe.ransomware.akira"
+                },
+                "CAT-QuickHeal": {
+                    "method": "blacklist",
+                    "engine_name": "CAT-QuickHeal",
+                    "engine_version": "22.00",
+                    "engine_update": "20251226",
+                    "category": "malicious",
+                    "result": "Trojan.Ghanarava.1729774800eadbe3"
+                },
+                "Skyhigh": {
+                    "method": "blacklist",
+                    "engine_name": "Skyhigh",
+                    "engine_version": "v2021.2.0+4045",
+                    "engine_update": "20251226",
+                    "category": "malicious",
+                    "result": "BehavesLike.Win32.Generic.ch"
+                },
+                "ALYac": {
+                    "method": "blacklist",
+                    "engine_name": "ALYac",
+                    "engine_version": "2.0.0.10",
+                    "engine_update": "20251226",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.Filecoder"
+                },
+                "Cylance": {
+                    "method": "blacklist",
+                    "engine_name": "Cylance",
+                    "engine_version": "3.0.0.0",
+                    "engine_update": "20251205",
+                    "category": "malicious",
+                    "result": "Unsafe"
+                },
+                "VIPRE": {
+                    "method": "blacklist",
+                    "engine_name": "VIPRE",
+                    "engine_version": "6.0.0.35",
+                    "engine_update": "20251226",
+                    "category": "malicious",
+                    "result": "Gen:Variant.Ransom.Akira.12"
+                },
+                "Sangfor": {
+                    "method": "blacklist",
+                    "engine_name": "Sangfor",
+                    "engine_version": "2.22.3.0",
+                    "engine_update": "20251226",
+                    "category": "malicious",
+                    "result": "Ransom.Win32.Akira.Vh2l"
+                },
+                "K7AntiVirus": {
+                    "method": "blacklist",
+                    "engine_name": "K7AntiVirus",
+                    "engine_version": "14.25.58115",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "Trojan ( 0058fc5a1 )"
+                },
+                "BitDefender": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefender",
+                    "engine_version": "7.2",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "Gen:Variant.Ransom.Akira.12"
+                },
+                "K7GW": {
+                    "method": "blacklist",
+                    "engine_name": "K7GW",
+                    "engine_version": "14.25.58115",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "Trojan ( 0058fc5a1 )"
+                },
+                "CrowdStrike": {
+                    "method": "blacklist",
+                    "engine_name": "CrowdStrike",
+                    "engine_version": "1.0",
+                    "engine_update": "20231026",
+                    "category": "malicious",
+                    "result": "win/malicious_confidence_100% (W)"
+                },
+                "Baidu": {
+                    "method": "blacklist",
+                    "engine_name": "Baidu",
+                    "engine_version": "1.0.0.2",
+                    "engine_update": "20190318",
+                    "category": "undetected",
+                    "result": null
+                },
+                "VirIT": {
+                    "method": "blacklist",
+                    "engine_name": "VirIT",
+                    "engine_version": "9.5.1112",
+                    "engine_update": "20251224",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Genus.WJY"
+                },
+                "Symantec": {
+                    "method": "blacklist",
+                    "engine_name": "Symantec",
+                    "engine_version": "1.22.0.0",
+                    "engine_update": "20251226",
+                    "category": "malicious",
+                    "result": "Trojan Horse"
+                },
+                "Elastic": {
+                    "method": "blacklist",
+                    "engine_name": "Elastic",
+                    "engine_version": "4.0.242",
+                    "engine_update": "20251219",
+                    "category": "malicious",
+                    "result": "Multi.Ransomware.Akira"
+                },
+                "ESET-NOD32": {
+                    "method": "blacklist",
+                    "engine_name": "ESET-NOD32",
+                    "engine_version": "18.2.18.0",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "Win32/Filecoder.Akira.A trojan"
+                },
+                "APEX": {
+                    "method": "blacklist",
+                    "engine_name": "APEX",
+                    "engine_version": "6.729",
+                    "engine_update": "20251225",
+                    "category": "malicious",
+                    "result": "Malicious"
+                },
+                "TrendMicro-HouseCall": {
+                    "method": "blacklist",
+                    "engine_name": "TrendMicro-HouseCall",
+                    "engine_version": "24.550.0.1002",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "Ransom.Win32.AKIRA.YXEH2Z"
+                },
+                "Avast": {
+                    "method": "blacklist",
+                    "engine_name": "Avast",
+                    "engine_version": "23.9.8494.0",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "Win32:MalwareX-gen [Misc]"
+                },
+                "ClamAV": {
+                    "method": "blacklist",
+                    "engine_name": "ClamAV",
+                    "engine_version": "1.5.1.0",
+                    "engine_update": "20251226",
+                    "category": "malicious",
+                    "result": "Multios.Ransomware.Megazord-10021030-1"
+                },
+                "Kaspersky": {
+                    "method": "blacklist",
+                    "engine_name": "Kaspersky",
+                    "engine_version": "22.0.1.28",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "HEUR:Trojan-Ransom.Win64.Akira.b"
+                },
+                "Alibaba": {
+                    "method": "blacklist",
+                    "engine_name": "Alibaba",
+                    "engine_version": "0.3.0.5",
+                    "engine_update": "20190527",
+                    "category": "malicious",
+                    "result": "Ransom:Win32/Akira.b9562b88"
+                },
+                "NANO-Antivirus": {
+                    "method": "blacklist",
+                    "engine_name": "NANO-Antivirus",
+                    "engine_version": "1.0.170.26895",
+                    "engine_update": "20251219",
+                    "category": "undetected",
+                    "result": null
+                },
+                "ViRobot": {
+                    "method": "blacklist",
+                    "engine_name": "ViRobot",
+                    "engine_version": "2014.3.20.0",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "Trojan.Win.Z.Akira.900096"
+                },
+                "Tencent": {
+                    "method": "blacklist",
+                    "engine_name": "Tencent",
+                    "engine_version": "1.0.0.1",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "Malware.Win32.Gencirc.10c038e5"
+                },
+                "Emsisoft": {
+                    "method": "blacklist",
+                    "engine_name": "Emsisoft",
+                    "engine_version": "2024.8.0.61147",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "Gen:Variant.Ransom.Akira.12 (B)"
+                },
+                "F-Secure": {
+                    "method": "blacklist",
+                    "engine_name": "F-Secure",
+                    "engine_version": "18.10.1547.307",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "Trojan.TR/AD.Nekark.mflks"
+                },
+                "DrWeb": {
+                    "method": "blacklist",
+                    "engine_name": "DrWeb",
+                    "engine_version": "7.0.72.9030",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "Trojan.Encoder.40933"
+                },
+                "Zillya": {
+                    "method": "blacklist",
+                    "engine_name": "Zillya",
+                    "engine_version": "2.0.0.5513",
+                    "engine_update": "20251226",
+                    "category": "malicious",
+                    "result": "Trojan.Filecoder.Win32.36375"
+                },
+                "TrendMicro": {
+                    "method": "blacklist",
+                    "engine_name": "TrendMicro",
+                    "engine_version": "24.550.0.1002",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "Ransom.Win32.AKIRA.YXEH2Z"
+                },
+                "McAfeeD": {
+                    "method": "blacklist",
+                    "engine_name": "McAfeeD",
+                    "engine_version": "1.2.0.10275",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "Real Protect-LS!2A7A76CDE7E9"
+                },
+                "SentinelOne": {
+                    "method": "blacklist",
+                    "engine_name": "SentinelOne",
+                    "engine_version": "7.5.3.1",
+                    "engine_update": "20251224",
+                    "category": "malicious",
+                    "result": "Static AI - Malicious PE"
+                },
+                "Trapmine": {
+                    "method": "blacklist",
+                    "engine_name": "Trapmine",
+                    "engine_version": "4.0.7.0",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "suspicious.low.ml.score"
+                },
+                "CMC": {
+                    "method": "blacklist",
+                    "engine_name": "CMC",
+                    "engine_version": "2.4.2022.1",
+                    "engine_update": "20251227",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Sophos": {
+                    "method": "blacklist",
+                    "engine_name": "Sophos",
+                    "engine_version": "3.3.1.0",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "Mal/Generic-S"
+                },
+                "Ikarus": {
+                    "method": "blacklist",
+                    "engine_name": "Ikarus",
+                    "engine_version": "6.4.16.0",
+                    "engine_update": "20251226",
+                    "category": "malicious",
+                    "result": "Trojan-Ransom.Akira"
+                },
+                "GData": {
+                    "method": "blacklist",
+                    "engine_name": "GData",
+                    "engine_version": "GD:27.42987AVA:64.30391",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "Gen:Variant.Ransom.Akira.12"
+                },
+                "Jiangmin": {
+                    "method": "blacklist",
+                    "engine_name": "Jiangmin",
+                    "engine_version": "16.0.100",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "Trojan.Akira.l"
+                },
+                "Webroot": {
+                    "method": "blacklist",
+                    "engine_name": "Webroot",
+                    "engine_version": "1.9.0.8",
+                    "engine_update": "20250227",
+                    "category": "malicious",
+                    "result": "W32.Trojan.Gen"
+                },
+                "Google": {
+                    "method": "blacklist",
+                    "engine_name": "Google",
+                    "engine_version": "1766815254",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "Detected"
+                },
+                "Avira": {
+                    "method": "blacklist",
+                    "engine_name": "Avira",
+                    "engine_version": "8.3.3.24",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "TR/AD.Nekark.mflks"
+                },
+                "Varist": {
+                    "method": "blacklist",
+                    "engine_name": "Varist",
+                    "engine_version": "6.6.1.3",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "W32/Filecoder.QZZV-0658"
+                },
+                "Antiy-AVL": {
+                    "method": "blacklist",
+                    "engine_name": "Antiy-AVL",
+                    "engine_version": "3.0",
+                    "engine_update": "20251227",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Kingsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Kingsoft",
+                    "engine_version": "None",
+                    "engine_update": "20251225",
+                    "category": "malicious",
+                    "result": "Win64.Trojan-Ransom.Akira.b"
+                },
+                "Gridinsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Gridinsoft",
+                    "engine_version": "1.0.231.174",
+                    "engine_update": "20251227",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Xcitium": {
+                    "method": "blacklist",
+                    "engine_name": "Xcitium",
+                    "engine_version": "38291",
+                    "engine_update": "20251225",
+                    "category": "malicious",
+                    "result": "Malware@#vm67dl8egilb"
+                },
+                "Arcabit": {
+                    "method": "blacklist",
+                    "engine_name": "Arcabit",
+                    "engine_version": "2025.0.0.23",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.Akira.12"
+                },
+                "SUPERAntiSpyware": {
+                    "method": "blacklist",
+                    "engine_name": "SUPERAntiSpyware",
+                    "engine_version": "5.6.0.1032",
+                    "engine_update": "20251226",
+                    "category": "undetected",
+                    "result": null
+                },
+                "ZoneAlarm": {
+                    "method": "blacklist",
+                    "engine_name": "ZoneAlarm",
+                    "engine_version": "6.21-110947348",
+                    "engine_update": "20251227",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Microsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Microsoft",
+                    "engine_version": "1.1.25110.1",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "Ransom:Win32/Akira.A!ibt"
+                },
+                "Cynet": {
+                    "method": "blacklist",
+                    "engine_name": "Cynet",
+                    "engine_version": "4.0.3.4",
+                    "engine_update": "20251226",
+                    "category": "malicious",
+                    "result": "Malicious (score: 99)"
+                },
+                "AhnLab-V3": {
+                    "method": "blacklist",
+                    "engine_name": "AhnLab-V3",
+                    "engine_version": "3.29.1.10604",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "Ransomware/Win.Akira.C5666088"
+                },
+                "Acronis": {
+                    "method": "blacklist",
+                    "engine_name": "Acronis",
+                    "engine_version": "1.2.0.121",
+                    "engine_update": "20240328",
+                    "category": "undetected",
+                    "result": null
+                },
+                "VBA32": {
+                    "method": "blacklist",
+                    "engine_name": "VBA32",
+                    "engine_version": "5.5.0",
+                    "engine_update": "20251224",
+                    "category": "malicious",
+                    "result": "TrojanRansom.Win64.Akira"
+                },
+                "TACHYON": {
+                    "method": "blacklist",
+                    "engine_name": "TACHYON",
+                    "engine_version": "2025-12-26.02",
+                    "engine_update": "20251227",
+                    "category": "undetected",
+                    "result": null
+                },
+                "DeepInstinct": {
+                    "method": "blacklist",
+                    "engine_name": "DeepInstinct",
+                    "engine_version": "5.0.0.8",
+                    "engine_update": "20251226",
+                    "category": "malicious",
+                    "result": "MALICIOUS"
+                },
+                "Malwarebytes": {
+                    "method": "blacklist",
+                    "engine_name": "Malwarebytes",
+                    "engine_version": "3.1.0.185",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "Ransom.Akira"
+                },
+                "Panda": {
+                    "method": "blacklist",
+                    "engine_name": "Panda",
+                    "engine_version": "4.6.4.2",
+                    "engine_update": "20251226",
+                    "category": "malicious",
+                    "result": "Trj/GdSda.A"
+                },
+                "Zoner": {
+                    "method": "blacklist",
+                    "engine_name": "Zoner",
+                    "engine_version": "2.2.2.0",
+                    "engine_update": "20251227",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Rising": {
+                    "method": "blacklist",
+                    "engine_name": "Rising",
+                    "engine_version": "25.0.0.28",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "Ransom.Agent!8.6B7 (CLOUD)"
+                },
+                "Yandex": {
+                    "method": "blacklist",
+                    "engine_name": "Yandex",
+                    "engine_version": "5.5.2.24",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "Trojan.Filecoder!RFAJqN/vvro"
+                },
+                "TrellixENS": {
+                    "method": "blacklist",
+                    "engine_name": "TrellixENS",
+                    "engine_version": "6.0.6.653",
+                    "engine_update": "20251226",
+                    "category": "malicious",
+                    "result": "Ransom-Akira!2A7A76CDE7E9"
+                },
+                "huorong": {
+                    "method": "blacklist",
+                    "engine_name": "huorong",
+                    "engine_version": "45735af:45735af:3883e7f:3883e7f",
+                    "engine_update": "20251226",
+                    "category": "malicious",
+                    "result": "Ransom/Akira.c"
+                },
+                "MaxSecure": {
+                    "method": "blacklist",
+                    "engine_name": "MaxSecure",
+                    "engine_version": "1.0.0.1",
+                    "engine_update": "20251226",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Fortinet": {
+                    "method": "blacklist",
+                    "engine_name": "Fortinet",
+                    "engine_version": "7.0.30.0",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "W32/Filecoder.OKE!tr"
+                },
+                "AVG": {
+                    "method": "blacklist",
+                    "engine_name": "AVG",
+                    "engine_version": "23.9.8494.0",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "Win32:MalwareX-gen [Misc]"
+                },
+                "Paloalto": {
+                    "method": "blacklist",
+                    "engine_name": "Paloalto",
+                    "engine_version": "0.9.0.1003",
+                    "engine_update": "20251227",
+                    "category": "malicious",
+                    "result": "generic.ml"
+                },
+                "alibabacloud": {
+                    "method": "blacklist",
+                    "engine_name": "alibabacloud",
+                    "engine_version": "2.2.0",
+                    "engine_update": "20250321",
+                    "category": "malicious",
+                    "result": "Ransomware:Win/Akira.A9Rep"
+                },
+                "Trustlook": {
+                    "method": "blacklist",
+                    "engine_name": "Trustlook",
+                    "engine_version": "1.0",
+                    "engine_update": "20251227",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "SymantecMobileInsight": {
+                    "method": "blacklist",
+                    "engine_name": "SymantecMobileInsight",
+                    "engine_version": "2.0",
+                    "engine_update": "20250124",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "BitDefenderFalx": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefenderFalx",
+                    "engine_version": "2.0.936",
+                    "engine_update": "20251216",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "Avast-Mobile": {
+                    "method": "blacklist",
+                    "engine_name": "Avast-Mobile",
+                    "engine_version": "251226-02",
+                    "engine_update": "20251226",
+                    "category": "type-unsupported",
+                    "result": null
+                }
+            },
+            "last_analysis_date": 1766822461,
+            "sigma_analysis_stats": {
+                "critical": 0,
+                "high": 3,
+                "medium": 5,
+                "low": 1
+            },
+            "creation_date": 1712731848,
+            "sha1": "89d195f59bba9c3b43635607f9f1c3051645332c",
+            "unique_sources": 8,
+            "md5": "2a7a76cde7e970c06316e3ae4feadbe3",
+            "ssdeep": "24576:dpN2CMwVhLcqnB+c9z2Va31qIU2p1GA3zaIJYj9+M+C6vU1KKoPAFGG+TR3aZX:UC5Uqn4c9z2Vu1qIU2pAA3rM+C6vZJAp"
+        }
+    }
+}

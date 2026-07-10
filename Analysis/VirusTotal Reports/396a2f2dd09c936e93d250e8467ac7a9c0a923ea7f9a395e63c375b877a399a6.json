@@ -1,0 +1,1585 @@
+{
+    "data": {
+        "id": "396a2f2dd09c936e93d250e8467ac7a9c0a923ea7f9a395e63c375b877a399a6",
+        "type": "file",
+        "links": {
+            "self": "https://www.virustotal.com/api/v3/files/396a2f2dd09c936e93d250e8467ac7a9c0a923ea7f9a395e63c375b877a399a6"
+        },
+        "attributes": {
+            "type_description": "Win32 EXE",
+            "md5": "ca52ef8f80a99a01e97dc8cf7d3f5487",
+            "first_submission_date": 1707778270,
+            "creation_date": 1585664245,
+            "times_submitted": 8,
+            "magika": "PEBIN",
+            "last_submission_date": 1763719469,
+            "reputation": -56,
+            "filecondis": {
+                "dhash": "707c3e3c2d5c1000",
+                "raw_md5": "7e5e957ef0e7c7cb13b84975822064c7"
+            },
+            "popular_threat_classification": {
+                "suggested_threat_label": "ransomware.phobos/fadtg",
+                "popular_threat_name": [
+                    {
+                        "count": 30,
+                        "value": "phobos"
+                    },
+                    {
+                        "count": 2,
+                        "value": "fadtg"
+                    },
+                    {
+                        "count": 2,
+                        "value": "smyxccw"
+                    }
+                ],
+                "popular_threat_category": [
+                    {
+                        "count": 38,
+                        "value": "ransomware"
+                    },
+                    {
+                        "count": 24,
+                        "value": "trojan"
+                    },
+                    {
+                        "count": 2,
+                        "value": "virus"
+                    }
+                ]
+            },
+            "tags": [
+                "calls-wmi",
+                "detect-debug-environment",
+                "checks-user-input",
+                "checks-cpu-name",
+                "peexe",
+                "long-sleeps",
+                "persistence"
+            ],
+            "unique_sources": 8,
+            "magic": "PE32 executable (GUI) Intel 80386, for MS Windows",
+            "sandbox_verdicts": {
+                "CAPE Sandbox": {
+                    "category": "malicious",
+                    "sandbox_name": "CAPE Sandbox",
+                    "malware_classification": [
+                        "MALWARE"
+                    ],
+                    "malware_names": [
+                        "Phobos"
+                    ]
+                },
+                "Zenbox": {
+                    "category": "malicious",
+                    "confidence": 100,
+                    "sandbox_name": "Zenbox",
+                    "malware_classification": [
+                        "MALWARE",
+                        "STEALER",
+                        "RANSOM",
+                        "SPREADER",
+                        "ADWARE",
+                        "TROJAN",
+                        "EVADER"
+                    ],
+                    "malware_names": [
+                        "Phobos"
+                    ]
+                }
+            },
+            "ssdeep": "1536:1NeRBl5PT/rx1mzwRMSTdLpJ1BNl0+EAF+oV+Qp3U:1QRrmzwR5J/Na+Ee93U",
+            "type_tags": [
+                "executable",
+                "windows",
+                "win32",
+                "pe",
+                "peexe"
+            ],
+            "sha1": "d4bf7b56d1f022e14a870d724e8da274288bc5db",
+            "detectiteasy": {
+                "filetype": "PE32",
+                "values": [
+                    {
+                        "info": "LTCG/C",
+                        "version": "16.00.40219",
+                        "type": "Compiler",
+                        "name": "Microsoft Visual C/C++"
+                    },
+                    {
+                        "version": "10.00.40219",
+                        "type": "Linker",
+                        "name": "Microsoft Linker"
+                    },
+                    {
+                        "version": "2010",
+                        "type": "Tool",
+                        "name": "Visual Studio"
+                    }
+                ]
+            },
+            "meaningful_name": "Xeno.exe",
+            "authentihash": "3bb8faf8baa75aa9827cb90e05de6b049f70cb48c946f982da7c6b22c6c438e6",
+            "sigma_analysis_results": [
+                {
+                    "rule_level": "critical",
+                    "rule_id": "b8a9a3d755cac11238eb37aa06d27255714356075872c2e2e140acfb3e8ab8b0",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "WannaCry Ransomware Activity",
+                    "rule_description": "Detects WannaCry ransomware activity",
+                    "rule_author": "Florian Roth (Nextron Systems), Tom U. @c_APT_ure (collection), oscd.community, Jonhnathan Ribeiro",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Hashes": "SHA1=F094D4FCF1F11F4280264F65EDFD08CD8D122D96,MD5=C46E3768DB01E7DC3B92EF42CC1B9C73,SHA256=3AD26DB8DC988EAD9E73FECF4D8D888A66F7965AC09F8AF4E3CFCD09028A5B59,IMPHASH=5590A306D0FA939852B69E8411CA102B",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "bcdedit.exe",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Boot Configuration Data Editor",
+                                "FileVersion": "10.0.17134.950 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "\"C:\\Windows\\system32\\cmd.exe\"",
+                                "CommandLine": "bcdedit  /set {default} recoveryenabled no",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Windows\\System32\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\System32\\bcdedit.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Hashes": "SHA1=51A31AA648D9B084A814C1083E2FE4A49CF17EA6,MD5=EE1E2C4D42579B19D765420E07589148,SHA256=5897AF142FACD58CF3C919263612D81A2D052B8769EA73343CC123650C1EC410,IMPHASH=9A00B7A0CB1FA540BC07C0F8C801306A",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "WBADMIN.EXE",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Command Line Interface for Microsoft\\xae BLB Backup",
+                                "EventID": "1",
+                                "ParentCommandLine": "\"C:\\Windows\\system32\\cmd.exe\"",
+                                "CommandLine": "wbadmin  delete catalog -quiet",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentImage": "C:\\Windows\\System32\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\System32\\wbadmin.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "critical",
+                    "rule_id": "be6d29855558a0e8c404486d8f1838ce35594866f126f9c1c62a9792e9c76be2",
+                    "rule_source": "Joe Security Rule Set (GitHub)",
+                    "rule_title": "Delete shadow copy via WMIC",
+                    "rule_description": "Delete shadow copy via WMIC",
+                    "rule_author": "Joe Security",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "wmic.exe",
+                                "Hashes": "SHA1=BF0B46AE28A0DCCC62CF1F3C32B60A46EA928C52,MD5=EC80E603E0090B3AC3C1234C2BA43A0F,SHA256=D368BCB7934DB0C53D1E7277DCB47AF2B709253CBF0EEE9869EE7E17ED226EA3,IMPHASH=59A9108CA1CECC9147C5FBAB104EBF33",
+                                "Description": "WMI Commandline Utility",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "\"C:\\Windows\\system32\\cmd.exe\"",
+                                "CommandLine": "wmic  shadowcopy delete",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Windows\\System32\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\System32\\wbem\\WMIC.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "EventID": "1",
+                                "CommandLine": "wmic  shadowcopy delete",
+                                "Image": "wmic"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "high",
+                    "rule_id": "2da0b3cba5dc2b56e1426049598590c54a224e6d15740b9b07c108e089c84520",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Boot Configuration Tampering Via Bcdedit.EXE",
+                    "rule_description": "Detects the use of the bcdedit command to tamper with the boot configuration data. This technique is often times used by malware or attackers as a destructive way before launching ransomware.",
+                    "rule_author": "E.M. Anhaus (originally from Atomic Blue Detections, Endgame), oscd.community",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Hashes": "SHA1=F094D4FCF1F11F4280264F65EDFD08CD8D122D96,MD5=C46E3768DB01E7DC3B92EF42CC1B9C73,SHA256=3AD26DB8DC988EAD9E73FECF4D8D888A66F7965AC09F8AF4E3CFCD09028A5B59,IMPHASH=5590A306D0FA939852B69E8411CA102B",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "bcdedit.exe",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Boot Configuration Data Editor",
+                                "FileVersion": "10.0.17134.950 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "\"C:\\Windows\\system32\\cmd.exe\"",
+                                "CommandLine": "bcdedit  /set {default} bootstatuspolicy ignoreallfailures",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Windows\\System32\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\System32\\bcdedit.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "bcdedit.exe",
+                                "Hashes": "SHA1=F094D4FCF1F11F4280264F65EDFD08CD8D122D96,MD5=C46E3768DB01E7DC3B92EF42CC1B9C73,SHA256=3AD26DB8DC988EAD9E73FECF4D8D888A66F7965AC09F8AF4E3CFCD09028A5B59,IMPHASH=5590A306D0FA939852B69E8411CA102B",
+                                "Description": "Boot Configuration Data Editor",
+                                "FileVersion": "10.0.17134.950 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "\"C:\\Windows\\system32\\cmd.exe\"",
+                                "CommandLine": "bcdedit  /set {default} recoveryenabled no",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Windows\\System32\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\System32\\bcdedit.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "high",
+                    "rule_id": "90a2634e64f0a02343bf17b797e3d249061fdee81d36e5dac2d8e3fe2a2df280",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Suspicious Volume Shadow Copy VSS_PS.dll Load",
+                    "rule_description": "Detects the image load of vss_ps.dll by uncommon executables",
+                    "rule_author": "Markus Neis, @markus_neis",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Hashes": "SHA1=104B8788B32D58AFBC8DA6FBFE4BEE46E0529165,MD5=8DF1F5B7ABA8E4DAD54F514F1A1846D5,SHA256=08400092E20D62B26DA59FED64AA4BEB2ED77794A5544E75236B053569B965DF,IMPHASH=C5B469536773ACBE4A39A962769B5BF4",
+                                "SignatureStatus": "Valid",
+                                "ImageLoaded": "C:\\Windows\\System32\\vss_ps.dll",
+                                "Description": "Microsoft\\xae Volume Shadow Copy Service proxy/stub",
+                                "OriginalFileName": "VSS_PS.DLL",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "EventID": "7",
+                                "Signature": "Microsoft Windows",
+                                "Signed": "true",
+                                "Image": "C:\\Windows\\System32\\vssadmin.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "high",
+                    "rule_id": "ad5e4d4b939797a70a9aa742d979a4742c2cfedddd663fb1a43b2795c1e6054b",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Shadow Copies Deletion Using Operating Systems Utilities",
+                    "rule_description": "Shadow Copies deletion using operating systems utilities",
+                    "rule_author": "Florian Roth (Nextron Systems), Michael Haag, Teymur Kheirkhabarov, Daniil Yugoslavskiy, oscd.community, Andreas Hunkeler (@Karneades)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "VSSADMIN.EXE",
+                                "Hashes": "SHA1=B09B5638BCE6904D2D84854A0371959247E7729A,MD5=47D51216EF45075B5F7EAA117CC70E40,SHA256=C946C4EDA61355A1B8E134E7A184A15C9A358B9675B6172A83E4937AE9EF4B03,IMPHASH=C1EDC431CD345F0A0F32019895D13FCE",
+                                "Description": "Command Line Interface for Microsoft\\xae Volume Shadow Copy Service ",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "\"C:\\Windows\\system32\\cmd.exe\"",
+                                "CommandLine": "vssadmin  delete shadows /all /quiet",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Windows\\System32\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\System32\\vssadmin.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "wmic.exe",
+                                "Hashes": "SHA1=BF0B46AE28A0DCCC62CF1F3C32B60A46EA928C52,MD5=EC80E603E0090B3AC3C1234C2BA43A0F,SHA256=D368BCB7934DB0C53D1E7277DCB47AF2B709253CBF0EEE9869EE7E17ED226EA3,IMPHASH=59A9108CA1CECC9147C5FBAB104EBF33",
+                                "Description": "WMI Commandline Utility",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "\"C:\\Windows\\system32\\cmd.exe\"",
+                                "CommandLine": "wmic  shadowcopy delete",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Windows\\System32\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\System32\\wbem\\WMIC.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "WBADMIN.EXE",
+                                "Hashes": "SHA1=51A31AA648D9B084A814C1083E2FE4A49CF17EA6,MD5=EE1E2C4D42579B19D765420E07589148,SHA256=5897AF142FACD58CF3C919263612D81A2D052B8769EA73343CC123650C1EC410,IMPHASH=9A00B7A0CB1FA540BC07C0F8C801306A",
+                                "Description": "Command Line Interface for Microsoft\\xae BLB Backup",
+                                "EventID": "1",
+                                "ParentCommandLine": "\"C:\\Windows\\system32\\cmd.exe\"",
+                                "CommandLine": "wbadmin  delete catalog -quiet",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentImage": "C:\\Windows\\System32\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\System32\\wbadmin.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "4d91cff1255532aacd25d7b82261d545afc7d30837d1643a0dd2c4617aec5865",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Disable Microsoft Defender Firewall via Registry",
+                    "rule_description": "Adversaries may disable or modify system firewalls in order to bypass controls limiting network usage",
+                    "rule_author": "frack113",
+                    "match_context": [
+                        {
+                            "values": {
+                                "EventID": "13",
+                                "EventType": "SetValue",
+                                "Details": "DWORD (0x00000000)",
+                                "TargetObject": "HKLM\\System\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\PublicProfile\\EnableFirewall"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "56b8c79acb8e444c2b00be5c9d3cb8e33e863ccb3506d635f907a49cd053c84f",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Startup Folder File Write",
+                    "rule_description": "A General detection for files being created in the Windows startup directory. This could be an indicator of persistence.",
+                    "rule_author": "Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Image": "C:\\Users\\george\\Desktop\\AntiRecuvaDB.exe",
+                                "TargetFilename": "C:\\Users\\george\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\AntiRecuvaDB.exe",
+                                "EventID": "11"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Image": "C:\\Users\\george\\Desktop\\AntiRecuvaDB.exe",
+                                "EventID": "11",
+                                "TargetFilename": "C:\\Users\\george\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\AntiRecuvaDB.exe:Zone.Identifier"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Image": "C:\\Users\\george\\Desktop\\AntiRecuvaDB.exe",
+                                "TargetFilename": "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp\\AntiRecuvaDB.exe",
+                                "EventID": "11"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Image": "C:\\Users\\george\\Desktop\\AntiRecuvaDB.exe",
+                                "TargetFilename": "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp\\AntiRecuvaDB.exe:Zone.Identifier",
+                                "EventID": "11"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TargetFilename": "%USERPROFILE%\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\AntiRecuvaDB.exe"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "5a783ec4b26d8a6276f21c1226c5896266e2591f44f079ca9950892310b00429",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Firewall Disabled via Netsh.EXE",
+                    "rule_description": "Detects netsh commands that turns off the Windows firewall",
+                    "rule_author": "Fatih Sirin",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "netsh.exe",
+                                "Hashes": "SHA1=130DADD41BE6AC88692FEFA704F86B695A776250,MD5=98CC37BBF363A38834253E22C80A8F32,SHA256=D6072E8809E95B8297FBDC431FFDA58A04B845664145A8443318FC4FC2EAB573,IMPHASH=90B4317BE51850B8EF9F14EB56FB7DDC",
+                                "Description": "Network Command Shell",
+                                "EventID": "1",
+                                "ParentCommandLine": "\"C:\\Windows\\system32\\cmd.exe\"",
+                                "CommandLine": "netsh  advfirewall set currentprofile state off",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentImage": "C:\\Windows\\System32\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\System32\\netsh.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "netsh.exe",
+                                "Hashes": "SHA1=130DADD41BE6AC88692FEFA704F86B695A776250,MD5=98CC37BBF363A38834253E22C80A8F32,SHA256=D6072E8809E95B8297FBDC431FFDA58A04B845664145A8443318FC4FC2EAB573,IMPHASH=90B4317BE51850B8EF9F14EB56FB7DDC",
+                                "Description": "Network Command Shell",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "\"C:\\Windows\\system32\\cmd.exe\"",
+                                "CommandLine": "netsh  firewall set opmode mode=disable",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Windows\\System32\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\System32\\netsh.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "5be9da0a90b142239a3ff2819edf2283938855da3b4c80d63d8e6db63c2c4fe7",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Hidden Executable In NTFS Alternate Data Stream",
+                    "rule_description": "Detects the creation of an ADS (Alternate Data Stream) that contains an executable by looking at a non-empty Imphash",
+                    "rule_author": "Florian Roth (Nextron Systems), @0xrawsec",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Hash": "SHA1=D4BF7B56D1F022E14A870D724E8DA274288BC5DB,MD5=CA52EF8F80A99A01E97DC8CF7D3F5487,SHA256=396A2F2DD09C936E93D250E8467AC7A9C0A923EA7F9A395E63C375B877A399A6,IMPHASH=851A0BA8FBB71710075BDFE6DCEF92EB",
+                                "Image": "C:\\Users\\george\\Desktop\\AntiRecuvaDB.exe",
+                                "EventID": "15",
+                                "TargetFilename": "C:\\Users\\george\\AppData\\Local\\AntiRecuvaDB.exe"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Hash": "SHA1=D4BF7B56D1F022E14A870D724E8DA274288BC5DB,MD5=CA52EF8F80A99A01E97DC8CF7D3F5487,SHA256=396A2F2DD09C936E93D250E8467AC7A9C0A923EA7F9A395E63C375B877A399A6,IMPHASH=851A0BA8FBB71710075BDFE6DCEF92EB",
+                                "Image": "C:\\Users\\george\\Desktop\\AntiRecuvaDB.exe",
+                                "TargetFilename": "C:\\Users\\george\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\AntiRecuvaDB.exe",
+                                "EventID": "15"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TargetFilename": "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp\\AntiRecuvaDB.exe",
+                                "Image": "C:\\Users\\george\\Desktop\\AntiRecuvaDB.exe",
+                                "EventID": "15",
+                                "Hash": "SHA1=D4BF7B56D1F022E14A870D724E8DA274288BC5DB,MD5=CA52EF8F80A99A01E97DC8CF7D3F5487,SHA256=396A2F2DD09C936E93D250E8467AC7A9C0A923EA7F9A395E63C375B877A399A6,IMPHASH=851A0BA8FBB71710075BDFE6DCEF92EB"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "8984d13764576549e824707eeafa56e2bc51d0ba2e3cccdb362a5dc69926c991",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Firewall Rule Update Via Netsh.EXE",
+                    "rule_description": "Detects execution of netsh with the \"advfirewall\" and the \"set\" option in order to set new values for properties of a existing rule",
+                    "rule_author": "X__Junior (Nextron Systems)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "netsh.exe",
+                                "Hashes": "SHA1=130DADD41BE6AC88692FEFA704F86B695A776250,MD5=98CC37BBF363A38834253E22C80A8F32,SHA256=D6072E8809E95B8297FBDC431FFDA58A04B845664145A8443318FC4FC2EAB573,IMPHASH=90B4317BE51850B8EF9F14EB56FB7DDC",
+                                "Description": "Network Command Shell",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "\"C:\\Windows\\system32\\cmd.exe\"",
+                                "CommandLine": "netsh  firewall set opmode mode=disable",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Windows\\System32\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\System32\\netsh.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "8b5db9da5732dc549b0e8b56fe5933d7c95ed760f3ac20568ab95347ef8c5bcc",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "CurrentVersion Autorun Keys Modification",
+                    "rule_description": "Detects modification of autostart extensibility point (ASEP) in registry.",
+                    "rule_author": "Victor Sergeev, Daniil Yugoslavskiy, Gleb Sukhodolskiy, Timur Zinniatullin, oscd.community, Tim Shelton, frack113 (split)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "EventType": "SetValue",
+                                "Details": "C:\\Users\\george\\AppData\\Local\\AntiRecuvaDB.exe",
+                                "Image": "C:\\Users\\george\\Desktop\\AntiRecuvaDB.exe",
+                                "EventID": "13",
+                                "TargetObject": "HKU\\S-1-5-21-1015118539-3749460369-599379286-1001\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\AntiRecuvaDB"
+                            }
+                        },
+                        {
+                            "values": {
+                                "EventType": "SetValue",
+                                "Details": "C:\\Users\\george\\AppData\\Local\\AntiRecuvaDB.exe",
+                                "Image": "C:\\Users\\george\\Desktop\\AntiRecuvaDB.exe",
+                                "EventID": "13",
+                                "TargetObject": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\AntiRecuvaDB"
+                            }
+                        },
+                        {
+                            "values": {
+                                "EventID": "13",
+                                "EventType": "SetValue",
+                                "Details": "%USERPROFILE%\\AppData\\Local\\AntiRecuvaDB.exe",
+                                "TargetObject": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\AntiRecuvaDB"
+                            }
+                        },
+                        {
+                            "values": {
+                                "EventID": "13",
+                                "EventType": "SetValue",
+                                "Details": "%USERPROFILE%\\AppData\\Local\\AntiRecuvaDB.exe",
+                                "TargetObject": "HKU\\%SID%\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\AntiRecuvaDB"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Details": "C:\\Users\\<USER>\\AppData\\Local\\396a2f2dd09c936e93d250e8467ac7a9c0a923ea7f9a395e63c375b877a399a6.exe",
+                                "EventType": "SetValue",
+                                "EventID": "13",
+                                "TargetObject": "HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\396a2f2dd09c936e93d250e8467ac7a9c0a923ea7f9a395e63c375b877a399a6"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "b8c95f5909e68be942c69ab250a3b47557e33b2d1d582cd72e665210efeadb8f",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "PowerShell Module File Created By Non-PowerShell Process",
+                    "rule_description": "Detects the creation of a new PowerShell module \".psm1\", \".psd1\", \".dll\", \".ps1\", etc. by a non-PowerShell process",
+                    "rule_author": "Nasreddine Bencherchali (Nextron Systems)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Image": "C:\\Users\\george\\Desktop\\AntiRecuvaDB.exe",
+                                "EventID": "11",
+                                "TargetFilename": "C:\\Program Files\\WindowsPowerShell\\Modules\\PackageManagement\\1.0.0.1\\DSCResources\\en-US\\PackageManagementDscUtilities.strings.psd1.id[5B639AFD-3511].[backmydata@skiff.com].backmydata"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Image": "C:\\Users\\george\\Desktop\\AntiRecuvaDB.exe",
+                                "TargetFilename": "C:\\Program Files\\WindowsPowerShell\\Modules\\PackageManagement\\1.0.0.1\\DSCResources\\MSFT_PackageManagement\\en-US\\MSFT_PackageManagement.schema.mfl.id[5B639AFD-3511].[backmydata@skiff.com].backmydata",
+                                "EventID": "11"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Image": "C:\\Users\\george\\Desktop\\AntiRecuvaDB.exe",
+                                "TargetFilename": "C:\\Program Files\\WindowsPowerShell\\Modules\\PackageManagement\\1.0.0.1\\DSCResources\\MSFT_PackageManagement\\en-US\\MSFT_PackageManagement.strings.psd1.id[5B639AFD-3511].[backmydata@skiff.com].backmydata",
+                                "EventID": "11"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Image": "C:\\Users\\george\\Desktop\\AntiRecuvaDB.exe",
+                                "EventID": "11",
+                                "TargetFilename": "C:\\Program Files\\WindowsPowerShell\\Modules\\PackageManagement\\1.0.0.1\\DSCResources\\MSFT_PackageManagement\\MSFT_PackageManagement.psm1.id[5B639AFD-3511].[backmydata@skiff.com].backmydata"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Image": "C:\\Users\\george\\Desktop\\AntiRecuvaDB.exe",
+                                "EventID": "11",
+                                "TargetFilename": "C:\\Program Files\\WindowsPowerShell\\Modules\\PackageManagement\\1.0.0.1\\DSCResources\\MSFT_PackageManagement\\MSFT_PackageManagement.schema.mof.id[5B639AFD-3511].[backmydata@skiff.com].backmydata"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "pe_info": {
+                "timestamp": 1585664245,
+                "imphash": "851a0ba8fbb71710075bdfe6dcef92eb",
+                "machine_type": 332,
+                "entry_point": 12199,
+                "sections": [
+                    {
+                        "name": ".text",
+                        "chi2": 165247.25,
+                        "virtual_address": 4096,
+                        "flags": "rx",
+                        "raw_size": 34304,
+                        "entropy": 6.59,
+                        "virtual_size": 34200,
+                        "md5": "a491c4d91a4b5889442e891da7aad09f"
+                    },
+                    {
+                        "name": ".rdata",
+                        "chi2": 124785.38,
+                        "virtual_address": 40960,
+                        "flags": "r",
+                        "raw_size": 4096,
+                        "entropy": 5.28,
+                        "virtual_size": 3708,
+                        "md5": "a73fadb324bbeec4e8315214d839bd02"
+                    },
+                    {
+                        "name": ".data",
+                        "chi2": 38177.89,
+                        "virtual_address": 45056,
+                        "flags": "rw",
+                        "raw_size": 1536,
+                        "entropy": 6.21,
+                        "virtual_size": 9913,
+                        "md5": "f795b8ea95f75b573ce8231267c7259d"
+                    },
+                    {
+                        "name": ".reloc",
+                        "chi2": 31901.55,
+                        "virtual_address": 57344,
+                        "flags": "r",
+                        "raw_size": 1536,
+                        "entropy": 5.7,
+                        "virtual_size": 1518,
+                        "md5": "63531957a01468434c794b6b08c13046"
+                    },
+                    {
+                        "name": ".cdata",
+                        "chi2": 11685.06,
+                        "virtual_address": 61440,
+                        "flags": "rw",
+                        "raw_size": 19968,
+                        "entropy": 7.87,
+                        "virtual_size": 19560,
+                        "md5": "605d4eba213199d2d3975e3388237c2c"
+                    }
+                ],
+                "compiler_product_versions": [
+                    "[ C ] VS2008 SP1 build 30729 count=1",
+                    "[IMP] VS2008 SP1 build 30729 count=19",
+                    "[---] Unmarked objects count=111",
+                    "[ASM] VS2010 SP1 build 40219 count=1",
+                    "[ C ] VS2010 SP1 build 40219 count=1",
+                    "[LNK] VS2010 SP1 build 40219 count=1",
+                    "id: 0xae, version: 40219 count=18"
+                ],
+                "rich_pe_header_hash": "256b60751602028612562b73ecdb163c",
+                "import_list": [
+                    {
+                        "library_name": "MPR.dll",
+                        "imported_functions": [
+                            "WNetCloseEnum",
+                            "WNetEnumResourceW",
+                            "WNetOpenEnumW",
+                            "WNetUseConnectionW"
+                        ]
+                    },
+                    {
+                        "library_name": "WS2_32.dll",
+                        "imported_functions": [
+                            "closesocket",
+                            "connect",
+                            "getpeername",
+                            "getsockopt",
+                            "htonl",
+                            "htons",
+                            "ioctlsocket",
+                            "ntohl",
+                            "recv",
+                            "select",
+                            "socket",
+                            "WSAAddressToStringW",
+                            "WSAGetLastError"
+                        ]
+                    },
+                    {
+                        "library_name": "IPHLPAPI.DLL",
+                        "imported_functions": [
+                            "GetIpAddrTable"
+                        ]
+                    },
+                    {
+                        "library_name": "WINHTTP.dll",
+                        "imported_functions": [
+                            "WinHttpCloseHandle",
+                            "WinHttpConnect",
+                            "WinHttpOpen",
+                            "WinHttpOpenRequest",
+                            "WinHttpReceiveResponse",
+                            "WinHttpSendRequest"
+                        ]
+                    },
+                    {
+                        "library_name": "KERNEL32.dll",
+                        "imported_functions": [
+                            "AllocConsole",
+                            "CloseHandle",
+                            "CopyFileW",
+                            "CreateEventW",
+                            "CreateFileW",
+                            "CreateMutexW",
+                            "CreatePipe",
+                            "CreateProcessW",
+                            "CreateThread",
+                            "CreateToolhelp32Snapshot",
+                            "DeleteCriticalSection",
+                            "DeleteFileW",
+                            "EnterCriticalSection",
+                            "ExitProcess",
+                            "ExpandEnvironmentStringsW",
+                            "FindClose",
+                            "FindFirstFileW",
+                            "FindNextFileW",
+                            "FlushFileBuffers",
+                            "GetComputerNameW",
+                            "GetCurrentProcess",
+                            "GetCurrentProcessId",
+                            "GetCurrentThreadId",
+                            "GetExitCodeThread",
+                            "GetFileAttributesW",
+                            "GetFileSizeEx",
+                            "GetLastError",
+                            "GetLocaleInfoW",
+                            "GetLocalTime",
+                            "GetLogicalDrives",
+                            "GetModuleFileNameW",
+                            "GetModuleHandleA",
+                            "GetProcAddress",
+                            "GetProcessHeap",
+                            "GetStdHandle",
+                            "GetTickCount",
+                            "GetVersion",
+                            "GetVolumeInformationW",
+                            "HeapAlloc",
+                            "HeapFree",
+                            "HeapReAlloc",
+                            "InitializeCriticalSectionAndSpinCount",
+                            "LeaveCriticalSection",
+                            "MoveFileW",
+                            "MultiByteToWideChar",
+                            "OpenMutexW",
+                            "OpenProcess",
+                            "Process32FirstW",
+                            "Process32NextW",
+                            "QueryPerformanceCounter",
+                            "ReadFile",
+                            "ReadProcessMemory",
+                            "ReleaseMutex",
+                            "ResetEvent",
+                            "SetEndOfFile",
+                            "SetEvent",
+                            "SetFileAttributesW",
+                            "SetFilePointer",
+                            "SetFilePointerEx",
+                            "SetHandleInformation",
+                            "Sleep",
+                            "SystemTimeToFileTime",
+                            "TerminateProcess",
+                            "WaitForMultipleObjects",
+                            "WaitForSingleObject",
+                            "WideCharToMultiByte",
+                            "WriteConsoleW",
+                            "WriteFile"
+                        ]
+                    },
+                    {
+                        "library_name": "USER32.dll",
+                        "imported_functions": [
+                            "GetShellWindow",
+                            "GetWindowThreadProcessId"
+                        ]
+                    },
+                    {
+                        "library_name": "ADVAPI32.dll",
+                        "imported_functions": [
+                            "AdjustTokenPrivileges",
+                            "AllocateAndInitializeSid",
+                            "DuplicateTokenEx",
+                            "EqualSid",
+                            "FreeSid",
+                            "GetTokenInformation",
+                            "LookupAccountSidW",
+                            "LookupPrivilegeValueW",
+                            "OpenProcessToken",
+                            "RegCloseKey",
+                            "RegOpenKeyExW",
+                            "RegQueryValueExW",
+                            "RegSetValueExW"
+                        ]
+                    },
+                    {
+                        "library_name": "SHELL32.dll",
+                        "imported_functions": [
+                            "ShellExecuteExW"
+                        ]
+                    },
+                    {
+                        "library_name": "ole32.dll",
+                        "imported_functions": [
+                            "CoGetObject",
+                            "CoInitializeEx",
+                            "CoUninitialize"
+                        ]
+                    }
+                ]
+            },
+            "vhash": "064056655d655d70d8z447z37z13z25zd7z",
+            "sha256": "396a2f2dd09c936e93d250e8467ac7a9c0a923ea7f9a395e63c375b877a399a6",
+            "last_modification_date": 1765786732,
+            "sigma_analysis_stats": {
+                "critical": 2,
+                "high": 3,
+                "medium": 7,
+                "low": 0
+            },
+            "crowdsourced_yara_results": [
+                {
+                    "description": "Identifies Phobos ransomware",
+                    "author": "Elastic Security",
+                    "ruleset_name": "Windows_Ransomware_Phobos",
+                    "rule_name": "Windows_Ransomware_Phobos_11ea7be5",
+                    "ruleset_id": "0152045188",
+                    "match_in_subfile": true,
+                    "source": "https://github.com/elastic/protections-artifacts"
+                },
+                {
+                    "ruleset_id": "0085a9b111",
+                    "rule_name": "win_phobos_auto",
+                    "ruleset_name": "win.phobos_auto",
+                    "description": "Detects win.phobos.",
+                    "author": "Felix Bilstein - yara-signator at cocacoding dot com",
+                    "match_date": 1731277468,
+                    "source": "https://malpedia.caad.fkie.fraunhofer.de/"
+                },
+                {
+                    "description": "Detects Phobos ransomware",
+                    "author": "ditekshen",
+                    "ruleset_name": "malware",
+                    "rule_name": "MALWARE_Win_Phobos",
+                    "ruleset_id": "00cc803bdc",
+                    "match_in_subfile": true,
+                    "source": "https://github.com/ditekshen/detection"
+                },
+                {
+                    "ruleset_id": "0152045188",
+                    "rule_name": "Windows_Ransomware_Phobos_11ea7be5",
+                    "ruleset_name": "Windows_Ransomware_Phobos",
+                    "description": "Identifies Phobos ransomware",
+                    "author": "Elastic Security",
+                    "match_date": 1765779535,
+                    "ruleset_version": "0152045188|195c9611ddb90db599d7ffc1a9b0e8c45688007d",
+                    "source": "https://github.com/elastic/protections-artifacts"
+                },
+                {
+                    "description": "Detects win.phobos.",
+                    "author": "Felix Bilstein - yara-signator at cocacoding dot com",
+                    "ruleset_name": "win.phobos_auto",
+                    "rule_name": "win_phobos_auto",
+                    "ruleset_id": "0085a9b111",
+                    "match_in_subfile": true,
+                    "source": "https://malpedia.caad.fkie.fraunhofer.de/"
+                },
+                {
+                    "ruleset_id": "00cc803bdc",
+                    "rule_name": "MALWARE_Win_Phobos",
+                    "ruleset_name": "malware",
+                    "description": "Detects Phobos ransomware",
+                    "author": "ditekshen",
+                    "match_date": 1765779535,
+                    "ruleset_version": "00cc803bdc|e76c93dcdedff04076380ffc60ea54e45b313635",
+                    "source": "https://github.com/ditekshen/detection"
+                },
+                {
+                    "ruleset_id": "01ae05d258",
+                    "ruleset_name": "ransomware_win_eking_rich_header",
+                    "rule_name": "ransomware_win_eking_rich_header",
+                    "match_date": 1765779535,
+                    "description": "Detect Eking ransomware using its rich header",
+                    "author": "Sekoia.io",
+                    "ruleset_version": "01ae05d258|834366aa118f4e231f6f835e1dd479dab29dc599",
+                    "source": "https://github.com/SEKOIA-IO/Community"
+                }
+            ],
+            "total_votes": {
+                "harmless": 0,
+                "malicious": 6
+            },
+            "last_analysis_stats": {
+                "malicious": 66,
+                "suspicious": 0,
+                "undetected": 6,
+                "harmless": 0,
+                "timeout": 0,
+                "confirmed-timeout": 0,
+                "failure": 0,
+                "type-unsupported": 4
+            },
+            "type_extension": "exe",
+            "last_analysis_results": {
+                "Bkav": {
+                    "method": "blacklist",
+                    "engine_name": "Bkav",
+                    "engine_version": "2.0.0.1",
+                    "engine_update": "20251214",
+                    "category": "malicious",
+                    "result": "W32.RansomBeadsBH.Trojan"
+                },
+                "Acronis": {
+                    "method": "blacklist",
+                    "engine_name": "Acronis",
+                    "engine_version": "1.2.0.121",
+                    "engine_update": "20240328",
+                    "category": "malicious",
+                    "result": "suspicious"
+                },
+                "Lionic": {
+                    "method": "blacklist",
+                    "engine_name": "Lionic",
+                    "engine_version": "8.16",
+                    "engine_update": "20251214",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Phobos.j!c"
+                },
+                "tehtris": {
+                    "method": "blacklist",
+                    "engine_name": "tehtris",
+                    "engine_version": "v0.1.4",
+                    "engine_update": "20251215",
+                    "category": "undetected",
+                    "result": null
+                },
+                "ClamAV": {
+                    "method": "blacklist",
+                    "engine_name": "ClamAV",
+                    "engine_version": "1.5.1.0",
+                    "engine_update": "20251214",
+                    "category": "malicious",
+                    "result": "Win.Ransomware.Ulise-7594403-0"
+                },
+                "CTX": {
+                    "method": "blacklist",
+                    "engine_name": "CTX",
+                    "engine_version": "2024.8.29.1",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "exe.ransomware.phobos"
+                },
+                "CAT-QuickHeal": {
+                    "method": "blacklist",
+                    "engine_name": "CAT-QuickHeal",
+                    "engine_version": "22.00",
+                    "engine_update": "20251214",
+                    "category": "malicious",
+                    "result": "Ransom.Phobos.S11618290"
+                },
+                "Skyhigh": {
+                    "method": "blacklist",
+                    "engine_name": "Skyhigh",
+                    "engine_version": "v2021.2.0+4045",
+                    "engine_update": "20251214",
+                    "category": "malicious",
+                    "result": "BehavesLike.Win32.Generic.kc"
+                },
+                "ALYac": {
+                    "method": "blacklist",
+                    "engine_name": "ALYac",
+                    "engine_version": "2.0.0.10",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.Phobos"
+                },
+                "Cylance": {
+                    "method": "blacklist",
+                    "engine_name": "Cylance",
+                    "engine_version": "3.0.0.0",
+                    "engine_update": "20251205",
+                    "category": "malicious",
+                    "result": "Unsafe"
+                },
+                "VIPRE": {
+                    "method": "blacklist",
+                    "engine_name": "VIPRE",
+                    "engine_version": "6.0.0.35",
+                    "engine_update": "20251214",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.PHU"
+                },
+                "Sangfor": {
+                    "method": "blacklist",
+                    "engine_name": "Sangfor",
+                    "engine_version": "2.22.3.0",
+                    "engine_update": "20251212",
+                    "category": "malicious",
+                    "result": "Ransom.Win32.Phobos_1.se2"
+                },
+                "K7AntiVirus": {
+                    "method": "blacklist",
+                    "engine_name": "K7AntiVirus",
+                    "engine_version": "14.23.57984",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Ransomware ( 005d62761 )"
+                },
+                "BitDefender": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefender",
+                    "engine_version": "7.2",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.PHU"
+                },
+                "K7GW": {
+                    "method": "blacklist",
+                    "engine_name": "K7GW",
+                    "engine_version": "14.23.57984",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Ransomware ( 005d62761 )"
+                },
+                "CrowdStrike": {
+                    "method": "blacklist",
+                    "engine_name": "CrowdStrike",
+                    "engine_version": "1.0",
+                    "engine_update": "20231026",
+                    "category": "malicious",
+                    "result": "win/malicious_confidence_100% (W)"
+                },
+                "Baidu": {
+                    "method": "blacklist",
+                    "engine_name": "Baidu",
+                    "engine_version": "1.0.0.2",
+                    "engine_update": "20190318",
+                    "category": "undetected",
+                    "result": null
+                },
+                "VirIT": {
+                    "method": "blacklist",
+                    "engine_name": "VirIT",
+                    "engine_version": "9.5.1104",
+                    "engine_update": "20251212",
+                    "category": "malicious",
+                    "result": "Ransom.Win32.Phobos.GEN"
+                },
+                "Paloalto": {
+                    "method": "blacklist",
+                    "engine_name": "Paloalto",
+                    "engine_version": "0.9.0.1003",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "generic.ml"
+                },
+                "Symantec": {
+                    "method": "blacklist",
+                    "engine_name": "Symantec",
+                    "engine_version": "1.22.0.0",
+                    "engine_update": "20251214",
+                    "category": "malicious",
+                    "result": "Ransom.Phobos"
+                },
+                "Elastic": {
+                    "method": "blacklist",
+                    "engine_name": "Elastic",
+                    "engine_version": "4.0.241",
+                    "engine_update": "20251209",
+                    "category": "malicious",
+                    "result": "Windows.Ransomware.Phobos"
+                },
+                "ESET-NOD32": {
+                    "method": "blacklist",
+                    "engine_name": "ESET-NOD32",
+                    "engine_version": "18.2.18.0",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Win32/Filecoder.Phobos.C trojan"
+                },
+                "APEX": {
+                    "method": "blacklist",
+                    "engine_name": "APEX",
+                    "engine_version": "6.725",
+                    "engine_update": "20251213",
+                    "category": "malicious",
+                    "result": "Malicious"
+                },
+                "TrendMicro-HouseCall": {
+                    "method": "blacklist",
+                    "engine_name": "TrendMicro-HouseCall",
+                    "engine_version": "24.550.0.1002",
+                    "engine_update": "20251214",
+                    "category": "malicious",
+                    "result": "Ransom.Win32.PHOBOS.SMYXCCW"
+                },
+                "Avast": {
+                    "method": "blacklist",
+                    "engine_name": "Avast",
+                    "engine_version": "23.9.8494.0",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Win32:Phobos-D [Ransom]"
+                },
+                "Cynet": {
+                    "method": "blacklist",
+                    "engine_name": "Cynet",
+                    "engine_version": "4.0.3.4",
+                    "engine_update": "20251214",
+                    "category": "malicious",
+                    "result": "Malicious (score: 100)"
+                },
+                "Kaspersky": {
+                    "method": "blacklist",
+                    "engine_name": "Kaspersky",
+                    "engine_version": "22.0.1.28",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "HEUR:Trojan-Ransom.Win32.Phobos.vho"
+                },
+                "Alibaba": {
+                    "method": "blacklist",
+                    "engine_name": "Alibaba",
+                    "engine_version": "0.3.0.5",
+                    "engine_update": "20190527",
+                    "category": "malicious",
+                    "result": "Ransom:Win32/Phobos.665"
+                },
+                "NANO-Antivirus": {
+                    "method": "blacklist",
+                    "engine_name": "NANO-Antivirus",
+                    "engine_version": "1.0.170.26895",
+                    "engine_update": "20251214",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Filecoder.himsij"
+                },
+                "ViRobot": {
+                    "method": "blacklist",
+                    "engine_name": "ViRobot",
+                    "engine_version": "2014.3.20.0",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Ransom.56832.K"
+                },
+                "MicroWorld-eScan": {
+                    "method": "blacklist",
+                    "engine_name": "MicroWorld-eScan",
+                    "engine_version": "14.0.409.0",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.PHU"
+                },
+                "Rising": {
+                    "method": "blacklist",
+                    "engine_name": "Rising",
+                    "engine_version": "25.0.0.28",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Ransom.Phobos!1.C277 (CLASSIC)"
+                },
+                "Sophos": {
+                    "method": "blacklist",
+                    "engine_name": "Sophos",
+                    "engine_version": "3.3.1.0",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Troj/Phobos-B"
+                },
+                "F-Secure": {
+                    "method": "blacklist",
+                    "engine_name": "F-Secure",
+                    "engine_version": "18.10.1547.307",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Malware.W32/AVI.Infector.fadtg"
+                },
+                "DrWeb": {
+                    "method": "blacklist",
+                    "engine_name": "DrWeb",
+                    "engine_version": "7.0.72.9030",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Trojan.Encoder.31543"
+                },
+                "Zillya": {
+                    "method": "blacklist",
+                    "engine_name": "Zillya",
+                    "engine_version": "2.0.0.5505",
+                    "engine_update": "20251213",
+                    "category": "malicious",
+                    "result": "Trojan.Phobos.Win32.146"
+                },
+                "TrendMicro": {
+                    "method": "blacklist",
+                    "engine_name": "TrendMicro",
+                    "engine_version": "24.550.0.1002",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Ransom.Win32.PHOBOS.SMYXCCW"
+                },
+                "McAfeeD": {
+                    "method": "blacklist",
+                    "engine_name": "McAfeeD",
+                    "engine_version": "1.2.0.10275",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "ti!396A2F2DD09C"
+                },
+                "SentinelOne": {
+                    "method": "blacklist",
+                    "engine_name": "SentinelOne",
+                    "engine_version": "7.4.1.3",
+                    "engine_update": "20251013",
+                    "category": "malicious",
+                    "result": "Static AI - Malicious PE"
+                },
+                "Trapmine": {
+                    "method": "blacklist",
+                    "engine_name": "Trapmine",
+                    "engine_version": "4.0.7.0",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "malicious.high.ml.score"
+                },
+                "CMC": {
+                    "method": "blacklist",
+                    "engine_name": "CMC",
+                    "engine_version": "2.4.2022.1",
+                    "engine_update": "20251208",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Emsisoft": {
+                    "method": "blacklist",
+                    "engine_name": "Emsisoft",
+                    "engine_version": "2024.8.0.61147",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.PHU (B)"
+                },
+                "Ikarus": {
+                    "method": "blacklist",
+                    "engine_name": "Ikarus",
+                    "engine_version": "6.4.16.0",
+                    "engine_update": "20251214",
+                    "category": "malicious",
+                    "result": "Trojan-Ransom.Phobos"
+                },
+                "Jiangmin": {
+                    "method": "blacklist",
+                    "engine_name": "Jiangmin",
+                    "engine_version": "16.0.100",
+                    "engine_update": "20251214",
+                    "category": "malicious",
+                    "result": "Trojan.Generic.ervnl"
+                },
+                "Webroot": {
+                    "method": "blacklist",
+                    "engine_name": "Webroot",
+                    "engine_version": "1.9.0.8",
+                    "engine_update": "20250227",
+                    "category": "malicious",
+                    "result": "W32.Ransom.Phobos"
+                },
+                "Google": {
+                    "method": "blacklist",
+                    "engine_name": "Google",
+                    "engine_version": "1765774846",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Detected"
+                },
+                "Avira": {
+                    "method": "blacklist",
+                    "engine_name": "Avira",
+                    "engine_version": "8.3.3.24",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "W32/AVI.Infector.fadtg"
+                },
+                "Antiy-AVL": {
+                    "method": "blacklist",
+                    "engine_name": "Antiy-AVL",
+                    "engine_version": "3.0",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Trojan[Ransom]/Win32.Phobos"
+                },
+                "Kingsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Kingsoft",
+                    "engine_version": "None",
+                    "engine_update": "20251214",
+                    "category": "malicious",
+                    "result": "Win32.Trojan-Ransom.Phobos.vho"
+                },
+                "Microsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Microsoft",
+                    "engine_version": "1.1.25110.1",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Ransom:Win32/Phobos.PM"
+                },
+                "Gridinsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Gridinsoft",
+                    "engine_version": "1.0.231.174",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Ransom.Win32.Phobos.ko!s1"
+                },
+                "Xcitium": {
+                    "method": "blacklist",
+                    "engine_name": "Xcitium",
+                    "engine_version": "38263",
+                    "engine_update": "20251214",
+                    "category": "malicious",
+                    "result": "Malware@#3do9vc3ao0a33"
+                },
+                "Arcabit": {
+                    "method": "blacklist",
+                    "engine_name": "Arcabit",
+                    "engine_version": "2025.0.0.23",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.PHU"
+                },
+                "SUPERAntiSpyware": {
+                    "method": "blacklist",
+                    "engine_name": "SUPERAntiSpyware",
+                    "engine_version": "5.6.0.1032",
+                    "engine_update": "20251214",
+                    "category": "undetected",
+                    "result": null
+                },
+                "ZoneAlarm": {
+                    "method": "blacklist",
+                    "engine_name": "ZoneAlarm",
+                    "engine_version": "6.21-110947147",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Troj/Phobos-B"
+                },
+                "GData": {
+                    "method": "blacklist",
+                    "engine_name": "GData",
+                    "engine_version": "GD:27.42873AVA:64.30328",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Win32.Trojan-Ransom.Phobos.C"
+                },
+                "Varist": {
+                    "method": "blacklist",
+                    "engine_name": "Varist",
+                    "engine_version": "6.6.1.3",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "W32/Ransom.NA.gen!Eldorado"
+                },
+                "AhnLab-V3": {
+                    "method": "blacklist",
+                    "engine_name": "AhnLab-V3",
+                    "engine_version": "3.29.1.10604",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Ransomware/Win.Phobos.R363595"
+                },
+                "DeepInstinct": {
+                    "method": "blacklist",
+                    "engine_name": "DeepInstinct",
+                    "engine_version": "5.0.0.8",
+                    "engine_update": "20251214",
+                    "category": "malicious",
+                    "result": "MALICIOUS"
+                },
+                "VBA32": {
+                    "method": "blacklist",
+                    "engine_name": "VBA32",
+                    "engine_version": "5.5.0",
+                    "engine_update": "20251212",
+                    "category": "malicious",
+                    "result": "BScope.Trojan.MulDrop"
+                },
+                "TACHYON": {
+                    "method": "blacklist",
+                    "engine_name": "TACHYON",
+                    "engine_version": "2025-12-15.01",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Ransom/W32.Dharma.62464"
+                },
+                "Malwarebytes": {
+                    "method": "blacklist",
+                    "engine_name": "Malwarebytes",
+                    "engine_version": "3.1.0.181",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Generic.Malware.Gen.DDS"
+                },
+                "Zoner": {
+                    "method": "blacklist",
+                    "engine_name": "Zoner",
+                    "engine_version": "2.2.2.0",
+                    "engine_update": "20251215",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Tencent": {
+                    "method": "blacklist",
+                    "engine_name": "Tencent",
+                    "engine_version": "1.0.0.1",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Trojan-Ransom.Win32.Phobos.fa"
+                },
+                "Yandex": {
+                    "method": "blacklist",
+                    "engine_name": "Yandex",
+                    "engine_version": "5.5.2.24",
+                    "engine_update": "20251214",
+                    "category": "undetected",
+                    "result": null
+                },
+                "TrellixENS": {
+                    "method": "blacklist",
+                    "engine_name": "TrellixENS",
+                    "engine_version": "6.0.6.653",
+                    "engine_update": "20251214",
+                    "category": "malicious",
+                    "result": "Ransom-Phobos!CA52EF8F80A9"
+                },
+                "huorong": {
+                    "method": "blacklist",
+                    "engine_name": "huorong",
+                    "engine_version": "2125019:2125019:5143f68:5143f68",
+                    "engine_update": "20251214",
+                    "category": "malicious",
+                    "result": "Ransom/LockFile.kz"
+                },
+                "MaxSecure": {
+                    "method": "blacklist",
+                    "engine_name": "MaxSecure",
+                    "engine_version": "1.0.0.1",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Trojan.Malware.200479240.susgen"
+                },
+                "Fortinet": {
+                    "method": "blacklist",
+                    "engine_name": "Fortinet",
+                    "engine_version": "7.0.30.0",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "W32/FilecoderPhobos.C!tr.ransom"
+                },
+                "AVG": {
+                    "method": "blacklist",
+                    "engine_name": "AVG",
+                    "engine_version": "23.9.8494.0",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Win32:Phobos-D [Ransom]"
+                },
+                "Panda": {
+                    "method": "blacklist",
+                    "engine_name": "Panda",
+                    "engine_version": "4.6.4.2",
+                    "engine_update": "20251214",
+                    "category": "malicious",
+                    "result": "Trj/Genetic.gen"
+                },
+                "alibabacloud": {
+                    "method": "blacklist",
+                    "engine_name": "alibabacloud",
+                    "engine_version": "2.2.0",
+                    "engine_update": "20250321",
+                    "category": "malicious",
+                    "result": "RansomWare:Win/Phobos"
+                },
+                "Avast-Mobile": {
+                    "method": "blacklist",
+                    "engine_name": "Avast-Mobile",
+                    "engine_version": "251214-00",
+                    "engine_update": "20251214",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "SymantecMobileInsight": {
+                    "method": "blacklist",
+                    "engine_name": "SymantecMobileInsight",
+                    "engine_version": "2.0",
+                    "engine_update": "20250124",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "BitDefenderFalx": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefenderFalx",
+                    "engine_version": "2.0.936",
+                    "engine_update": "20251208",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "Trustlook": {
+                    "method": "blacklist",
+                    "engine_name": "Trustlook",
+                    "engine_version": "1.0",
+                    "engine_update": "20251215",
+                    "category": "type-unsupported",
+                    "result": null
+                }
+            },
+            "size": 62464,
+            "tlsh": "T12253CE16B46980B2CD718670283B6F5F4FFAA105847484578F2A1E9A3F95072EB3E377",
+            "trid": [
+                {
+                    "file_type": "Win64 Executable (generic)",
+                    "probability": 30.2
+                },
+                {
+                    "file_type": "Win32 Dynamic Link Library (generic)",
+                    "probability": 18.9
+                },
+                {
+                    "file_type": "Win16 NE executable (generic)",
+                    "probability": 14.5
+                },
+                {
+                    "file_type": "Win32 Executable (generic)",
+                    "probability": 12.9
+                },
+                {
+                    "file_type": "Windows Icons Library (generic)",
+                    "probability": 5.9
+                }
+            ],
+            "names": [
+                "Xeno.exe",
+                "396a2f2dd09c936e93d250e8467ac7a9c0a923ea7f9a395e63c375b877a399a6.exe",
+                "build.exe",
+                "396a2f2dd09c936e93d250e8467ac7a9c0a923ea7f9a395e63c375b877a399a6",
+                "AntiRecuvaDB.exe"
+            ],
+            "sigma_analysis_summary": {
+                "Sigma Integrated Rule Set (GitHub)": {
+                    "critical": 0,
+                    "high": 3,
+                    "medium": 7,
+                    "low": 0
+                },
+                "Joe Security Rule Set (GitHub)": {
+                    "critical": 1,
+                    "high": 0,
+                    "medium": 0,
+                    "low": 0
+                }
+            },
+            "last_analysis_date": 1765779413,
+            "first_seen_itw_date": 1707816125,
+            "type_tag": "peexe",
+            "crowdsourced_ai_results": [
+                {
+                    "source": "palm",
+                    "category": "code_insight",
+                    "analysis": "This sample is a network worm with multiple propagation and defense evasion capabilities. It scans the local network for open SMB ports (TCP/445) and enumerates network shares using WNet APIs to spread laterally. It also copies itself to other drives, likely including removable ones. The malware establishes persistence by creating registry Run keys. For privilege escalation, it employs a UAC bypass technique, stealing the access token from the shell process using `DuplicateTokenEx`. Additionally, it can enumerate and terminate other processes (`TerminateProcess`), likely to disable security software. C2 communication is performed via HTTP POST requests using `WinHttpSendRequest`.",
+                    "verdict": "malicious",
+                    "id": "396a2f2dd09c936e93d250e8467ac7a9c0a923ea7f9a395e63c375b877a399a6-file-palm"
+                }
+            ]
+        }
+    }
+}

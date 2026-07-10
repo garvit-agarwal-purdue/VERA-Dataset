@@ -1,0 +1,1086 @@
+{
+    "data": {
+        "id": "c0a93e275a2bee052e73361e24651345fba2322265eaa6881b2a10430365d92d",
+        "type": "file",
+        "links": {
+            "self": "https://www.virustotal.com/api/v3/files/c0a93e275a2bee052e73361e24651345fba2322265eaa6881b2a10430365d92d"
+        },
+        "attributes": {
+            "crowdsourced_ids_results": [
+                {
+                    "rule_category": "Potentially Bad Traffic",
+                    "alert_severity": "low",
+                    "rule_msg": "ET INFO DYNAMIC_DNS Query to a *.mypicture .info Domain",
+                    "rule_raw": "alert dns $HOME_NET any -> any any (msg:\"ET INFO DYNAMIC_DNS Query to a *.mypicture .info Domain\"; dns.query; content:\".mypicture.info\"; fast_pattern; nocase; endswith; reference:url,changeip.com; classtype:bad-unknown; sid:2036034; rev:1; metadata:attack_target Client_and_Server, created_at 2022_04_14, deployment Perimeter, performance_impact Low, signature_severity Informational, updated_at 2022_04_14;)",
+                    "rule_url": "https://rules.emergingthreats.net/",
+                    "alert_context": [
+                        {
+                            "dest_ip": "8.8.8.8",
+                            "dest_port": 53
+                        }
+                    ],
+                    "rule_references": [
+                        "https://changeip.com"
+                    ],
+                    "rule_source": "Proofpoint Emerging Threats Open",
+                    "rule_id": "1:2036034"
+                }
+            ],
+            "sigma_analysis_results": [
+                {
+                    "rule_level": "critical",
+                    "rule_id": "ab2075510415e5fab5635dc30ecec20ea16d6bead9c4397297335c9520922561",
+                    "rule_source": "Joe Security Rule Set (GitHub)",
+                    "rule_title": "Add file from suspicious location to autostart registry",
+                    "rule_description": "Add file from suspicious location to autostart registry",
+                    "rule_author": "Joe Security",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Product": "Microsoft\u00ae Windows\u00ae Operating System",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "Cmd.Exe",
+                                "Hashes": "MD5=F3BDBE3BB6F734E357235F4D5898582D,SHA256=3685495D051137B1C4EFDE22C26DF0883614B6453B762FA84588DA55ED2E7744,IMPHASH=0AF8419BE362159398343D7B31721726",
+                                "Description": "Windows Command Processor",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "\"C:\\Users\\george\\AppData\\Local\\Temp\\USBServers32.exe\"",
+                                "CommandLine": "C:\\Windows\\system32\\cmd.exe /c reg add HKEY_CURRENT_USER\\Software\\Microsoft\\windows\\currentVersion\\run /v USBServers32 /t REG_SZ /d \"C:\\Users\\george\\AppData\\Local\\Temp\\USBServers32.exe\" /f",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Users\\george\\AppData\\Local\\Temp\\USBServers32.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "Cmd.Exe",
+                                "Hashes": "MD5=F3BDBE3BB6F734E357235F4D5898582D,SHA256=3685495D051137B1C4EFDE22C26DF0883614B6453B762FA84588DA55ED2E7744,IMPHASH=0AF8419BE362159398343D7B31721726",
+                                "Description": "Windows Command Processor",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "\"C:\\Users\\george\\AppData\\Local\\Temp\\USBServers32.exe\"",
+                                "CommandLine": "C:\\Windows\\system32\\cmd.exe /c reg add HKEY_CURRENT_USER\\Software\\Microsoft\\windows\\currentVersion\\run /v USBServers32 /t REG_SZ /d \"C:\\Users\\george\\AppData\\Local\\Temp\\USBServers32.exe\" /f",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Users\\george\\AppData\\Local\\Temp\\USBServers32.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "high",
+                    "rule_id": "27b72c2678411f21ba21bd10b44b7e9c45594d5a5f61f14223b81a8906675039",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "New RUN Key Pointing to Suspicious Folder",
+                    "rule_description": "Detects suspicious new RUN key element pointing to an executable in a suspicious folder",
+                    "rule_author": "Florian Roth (Nextron Systems), Markus Neis, Sander Wiebing, Swachchhanda Shrawan Poudel (Nextron Systems)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "RuleName": "T1060,RunKey",
+                                "Details": "C:\\Users\\george\\AppData\\Local\\Temp\\USBServers32.exe",
+                                "EventType": "SetValue",
+                                "Image": "C:\\Windows\\SysWOW64\\reg.exe",
+                                "EventID": "13",
+                                "TargetObject": "HKU\\S-1-5-21-1015118539-3749460369-599379286-1001\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\USBServers32"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "8b5db9da5732dc549b0e8b56fe5933d7c95ed760f3ac20568ab95347ef8c5bcc",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "CurrentVersion Autorun Keys Modification",
+                    "rule_description": "Detects modification of autostart extensibility point (ASEP) in registry.",
+                    "rule_author": "Victor Sergeev, Daniil Yugoslavskiy, Gleb Sukhodolskiy, Timur Zinniatullin, oscd.community, Tim Shelton, frack113 (split)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "RuleName": "T1060,RunKey",
+                                "EventType": "SetValue",
+                                "EventID": "13",
+                                "Image": "C:\\Windows\\SysWOW64\\reg.exe",
+                                "Details": "C:\\Users\\george\\AppData\\Local\\Temp\\USBServers32.exe",
+                                "TargetObject": "HKU\\S-1-5-21-1015118539-3749460369-599379286-1001\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\USBServers32"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "aa87efb252a9cf7bb1fb0114336bd08c338bc9046dd498d187c209cd94ddbc6a",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Potential Persistence Attempt Via Run Keys Using Reg.EXE",
+                    "rule_description": "Detects suspicious command line reg.exe tool adding key to RUN key in Registry",
+                    "rule_author": "Florian Roth (Nextron Systems), Swachchhanda Shrawan Poudel (Nextron Systems)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Product": "Microsoft\u00ae Windows\u00ae Operating System",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "reg.exe",
+                                "Hashes": "MD5=CEE2A7E57DF2A159A065A34913A055C2,SHA256=829206FB125010140C40F9A8D08ECEBCBD437A50B351D420B473C13F931191CC,IMPHASH=869B9FF91668F96EF68FBE0DB3602587",
+                                "Description": "Registry Console Tool",
+                                "EventID": "1",
+                                "ParentCommandLine": "C:\\Windows\\system32\\cmd.exe /c reg add HKEY_CURRENT_USER\\Software\\Microsoft\\windows\\currentVersion\\run /v USBServers32 /t REG_SZ /d \"C:\\Users\\george\\AppData\\Local\\Temp\\USBServers32.exe\" /f",
+                                "CommandLine": "reg  add HKEY_CURRENT_USER\\Software\\Microsoft\\windows\\currentVersion\\run /v USBServers32 /t REG_SZ /d \"C:\\Users\\george\\AppData\\Local\\Temp\\USBServers32.exe\" /f",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentImage": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\reg.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "reg.exe",
+                                "Hashes": "MD5=CEE2A7E57DF2A159A065A34913A055C2,SHA256=829206FB125010140C40F9A8D08ECEBCBD437A50B351D420B473C13F931191CC,IMPHASH=869B9FF91668F96EF68FBE0DB3602587",
+                                "Description": "Registry Console Tool",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "C:\\Windows\\system32\\cmd.exe /c reg add HKEY_CURRENT_USER\\Software\\Microsoft\\windows\\currentVersion\\run /v USBServers32 /t REG_SZ /d \"C:\\Users\\george\\AppData\\Local\\Temp\\USBServers32.exe\" /f",
+                                "CommandLine": "reg  add HKEY_CURRENT_USER\\Software\\Microsoft\\windows\\currentVersion\\run /v USBServers32 /t REG_SZ /d \"C:\\Users\\george\\AppData\\Local\\Temp\\USBServers32.exe\" /f",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\reg.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "b5f76af9d8101930af8d4fee71f3a5395b47eff6bb88e581db02bf890242d79b",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Direct Autorun Keys Modification",
+                    "rule_description": "Detects direct modification of autostart extensibility point (ASEP) in registry using reg.exe.",
+                    "rule_author": "Victor Sergeev, Daniil Yugoslavskiy, oscd.community, Swachchhanda Shrawan Poudel (Nextron Systems)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Hashes": "MD5=CEE2A7E57DF2A159A065A34913A055C2,SHA256=829206FB125010140C40F9A8D08ECEBCBD437A50B351D420B473C13F931191CC,IMPHASH=869B9FF91668F96EF68FBE0DB3602587",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "reg.exe",
+                                "Product": "Microsoft\u00ae Windows\u00ae Operating System",
+                                "Description": "Registry Console Tool",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "C:\\Windows\\system32\\cmd.exe /c reg add HKEY_CURRENT_USER\\Software\\Microsoft\\windows\\currentVersion\\run /v USBServers32 /t REG_SZ /d \"C:\\Users\\george\\AppData\\Local\\Temp\\USBServers32.exe\" /f",
+                                "CommandLine": "reg  add HKEY_CURRENT_USER\\Software\\Microsoft\\windows\\currentVersion\\run /v USBServers32 /t REG_SZ /d \"C:\\Users\\george\\AppData\\Local\\Temp\\USBServers32.exe\" /f",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\reg.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "reg.exe",
+                                "Hashes": "MD5=CEE2A7E57DF2A159A065A34913A055C2,SHA256=829206FB125010140C40F9A8D08ECEBCBD437A50B351D420B473C13F931191CC,IMPHASH=869B9FF91668F96EF68FBE0DB3602587",
+                                "Description": "Registry Console Tool",
+                                "EventID": "1",
+                                "ParentCommandLine": "C:\\Windows\\system32\\cmd.exe /c reg add HKEY_CURRENT_USER\\Software\\Microsoft\\windows\\currentVersion\\run /v USBServers32 /t REG_SZ /d \"C:\\Users\\george\\AppData\\Local\\Temp\\USBServers32.exe\" /f",
+                                "CommandLine": "reg  add HKEY_CURRENT_USER\\Software\\Microsoft\\windows\\currentVersion\\run /v USBServers32 /t REG_SZ /d \"C:\\Users\\george\\AppData\\Local\\Temp\\USBServers32.exe\" /f",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentImage": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\reg.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "last_submission_date": 1664959040,
+            "authentihash": "347d03f542c00481743689ba85547f19837808927863cbd419369d861bb8a4ca",
+            "vhash": "015046655d151az191dfz1lz",
+            "first_seen_itw_date": 1389847978,
+            "names": [
+                "unknown",
+                "63bc45cab0f5c9b4278526c527484390.virobj",
+                "63bc45cab0f5c9b4278526c527484390",
+                "vt-upload-IN3W_",
+                "78UciSEt.wbs"
+            ],
+            "type_description": "Win32 EXE",
+            "type_tag": "peexe",
+            "first_submission_date": 1395390379,
+            "tlsh": "T13AD30252BA9646C0F0701230A56373325D1B7EC99084D5BA9F24FD69A8FF295F81EB0F",
+            "magic": "PE32 executable for MS Windows (GUI) Intel 80386 32-bit",
+            "crowdsourced_ids_stats": {
+                "high": 0,
+                "info": 0,
+                "medium": 0,
+                "low": 1
+            },
+            "sigma_analysis_stats": {
+                "critical": 1,
+                "high": 1,
+                "medium": 3,
+                "low": 0
+            },
+            "times_submitted": 5,
+            "creation_date": 1337214677,
+            "sha256": "c0a93e275a2bee052e73361e24651345fba2322265eaa6881b2a10430365d92d",
+            "sha1": "f4641fe0b90318bbf2c7236b768329b3ee899faa",
+            "total_votes": {
+                "harmless": 0,
+                "malicious": 0
+            },
+            "size": 133780,
+            "meaningful_name": "unknown",
+            "pe_info": {
+                "timestamp": 1337214677,
+                "imphash": "ab4e1d9d23e055febe406d1bcb01c527",
+                "machine_type": 332,
+                "entry_point": 13732,
+                "resource_details": [
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 36488.16,
+                        "filetype": "unknown",
+                        "entropy": 3.4840474128723145,
+                        "sha256": "d5763b11120ca94e2642721c44c9bbc08de6a2e7396023b085c1917ad99c78ab",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 1567.2,
+                        "filetype": "ICO",
+                        "entropy": 2.160964012145996,
+                        "sha256": "a0c9d012e2bf6b2fe05c2d97cb5594d97cf2f539e97935c12abd7a3562f4d9bf",
+                        "type": "RT_GROUP_ICON"
+                    }
+                ],
+                "resource_langs": {
+                    "ENGLISH US": 2
+                },
+                "resource_types": {
+                    "RT_ICON": 1,
+                    "RT_GROUP_ICON": 1
+                },
+                "overlay": {
+                    "chi2": 940.0,
+                    "filetype": "unknown",
+                    "entropy": 7.99517822265625,
+                    "offset": 18944,
+                    "size": 114836,
+                    "md5": "d299ebcbac92f0166e1b4d073e5a59e6"
+                },
+                "sections": [
+                    {
+                        "name": ".text",
+                        "chi2": 78476.65,
+                        "virtual_address": 4096,
+                        "entropy": 6.29,
+                        "raw_size": 10240,
+                        "flags": "rx",
+                        "virtual_size": 10054,
+                        "md5": "34f6a095a82b94a836af103ad264b30c"
+                    },
+                    {
+                        "name": ".rdata",
+                        "chi2": 56510.8,
+                        "virtual_address": 16384,
+                        "entropy": 4.62,
+                        "raw_size": 1536,
+                        "flags": "r",
+                        "virtual_size": 1388,
+                        "md5": "ba33c4b3868e98296eb3a8ad96fafd35"
+                    },
+                    {
+                        "name": ".data",
+                        "chi2": 184308.91,
+                        "virtual_address": 20480,
+                        "entropy": 2.53,
+                        "raw_size": 1536,
+                        "flags": "rw",
+                        "virtual_size": 5328,
+                        "md5": "f64e89820510dbae6bd573cbfa2344ce"
+                    },
+                    {
+                        "name": ".rsrc",
+                        "chi2": 500389.06,
+                        "virtual_address": 28672,
+                        "entropy": 2.97,
+                        "raw_size": 4608,
+                        "flags": "r",
+                        "virtual_size": 4104,
+                        "md5": "e6f78b3ad487689a78415a27ffadf3fc"
+                    }
+                ],
+                "compiler_product_versions": [
+                    "id: 12, version: 7291 count=1",
+                    "[ C ] VS98 (6.0) build 8168 count=11",
+                    "id: 14, version: 7299 count=2",
+                    "[LNK] VS98 (6.0) imp/exp build 8168 count=2",
+                    "[---] Unmarked objects count=57",
+                    "id: 19, version: 8034 count=5",
+                    "[C++] VS98 (6.0) build 8168 count=2",
+                    "[RES] VS98 (6.0) cvtres build 1720 count=1"
+                ],
+                "rich_pe_header_hash": "567561680adce91f48d9743a674fe37e",
+                "import_list": [
+                    {
+                        "library_name": "SHELL32.dll",
+                        "imported_functions": [
+                            "ShellExecuteA"
+                        ]
+                    },
+                    {
+                        "library_name": "KERNEL32.dll",
+                        "imported_functions": [
+                            "CloseHandle",
+                            "CreateEventA",
+                            "CreateFileA",
+                            "CreatePipe",
+                            "CreateProcessA",
+                            "CreateThread",
+                            "FindClose",
+                            "FindFirstFileA",
+                            "FindNextFileA",
+                            "GetDriveTypeA",
+                            "GetFileAttributesA",
+                            "GetLogicalDrives",
+                            "GetModuleFileNameA",
+                            "GetModuleHandleA",
+                            "GetStartupInfoA",
+                            "GetSystemDirectoryA",
+                            "GetTempPathA",
+                            "OpenEventA",
+                            "ReadDirectoryChangesW",
+                            "ReadFile",
+                            "SetEvent",
+                            "Sleep",
+                            "TerminateThread",
+                            "WaitForSingleObject",
+                            "WideCharToMultiByte"
+                        ]
+                    },
+                    {
+                        "library_name": "MSVCRT.dll",
+                        "imported_functions": [
+                            "??2@YAPAXI@Z",
+                            "??3@YAXPAX@Z",
+                            "__getmainargs",
+                            "__p__commode",
+                            "__p__fmode",
+                            "__set_app_type",
+                            "__setusermatherr",
+                            "_acmdln",
+                            "_adjust_fdiv",
+                            "_controlfp",
+                            "_except_handler3",
+                            "_exit",
+                            "_initterm",
+                            "_strlwr",
+                            "_XcptFilter",
+                            "exit",
+                            "fclose",
+                            "fopen",
+                            "fprintf",
+                            "fread",
+                            "fseek",
+                            "ftell",
+                            "fwrite",
+                            "rewind",
+                            "setlocale",
+                            "sprintf",
+                            "strncmp",
+                            "strncpy",
+                            "strrchr"
+                        ]
+                    }
+                ]
+            },
+            "sigma_analysis_summary": {
+                "Joe Security Rule Set (GitHub)": {
+                    "critical": 1,
+                    "high": 0,
+                    "medium": 0,
+                    "low": 0
+                },
+                "Sigma Integrated Rule Set (GitHub)": {
+                    "critical": 0,
+                    "high": 1,
+                    "medium": 3,
+                    "low": 0
+                }
+            },
+            "unique_sources": 5,
+            "last_analysis_stats": {
+                "malicious": 62,
+                "suspicious": 0,
+                "undetected": 10,
+                "harmless": 0,
+                "timeout": 0,
+                "confirmed-timeout": 0,
+                "failure": 0,
+                "type-unsupported": 4
+            },
+            "tags": [
+                "peexe",
+                "runtime-modules",
+                "direct-cpu-clock-access",
+                "overlay"
+            ],
+            "last_analysis_date": 1664974778,
+            "last_analysis_results": {
+                "Bkav": {
+                    "method": "blacklist",
+                    "engine_name": "Bkav",
+                    "engine_version": "1.3.0.9899",
+                    "engine_update": "20221005",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Lionic": {
+                    "method": "blacklist",
+                    "engine_name": "Lionic",
+                    "engine_version": "7.5",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Worm.Win32.Luder.lJbu"
+                },
+                "tehtris": {
+                    "method": "blacklist",
+                    "engine_name": "tehtris",
+                    "engine_version": "v0.1.4",
+                    "engine_update": "20221005",
+                    "category": "undetected",
+                    "result": null
+                },
+                "DrWeb": {
+                    "method": "blacklist",
+                    "engine_name": "DrWeb",
+                    "engine_version": "7.0.58.8230",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Trojan.Inject1.28605"
+                },
+                "MicroWorld-eScan": {
+                    "method": "blacklist",
+                    "engine_name": "MicroWorld-eScan",
+                    "engine_version": "14.0.409.0",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Dropped:Trojan.GenericKD.61347173"
+                },
+                "FireEye": {
+                    "method": "blacklist",
+                    "engine_name": "FireEye",
+                    "engine_version": "35.24.1.0",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Generic.mg.63bc45cab0f5c9b4"
+                },
+                "CAT-QuickHeal": {
+                    "method": "blacklist",
+                    "engine_name": "CAT-QuickHeal",
+                    "engine_version": "22.00",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Trojan.Mauvaise.SL1"
+                },
+                "ALYac": {
+                    "method": "blacklist",
+                    "engine_name": "ALYac",
+                    "engine_version": "1.1.3.1",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Dropped:Trojan.GenericKD.61347173"
+                },
+                "Cylance": {
+                    "method": "blacklist",
+                    "engine_name": "Cylance",
+                    "engine_version": "2.3.1.101",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Unsafe"
+                },
+                "Zillya": {
+                    "method": "blacklist",
+                    "engine_name": "Zillya",
+                    "engine_version": "2.0.0.4726",
+                    "engine_update": "20221005",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Sangfor": {
+                    "method": "blacklist",
+                    "engine_name": "Sangfor",
+                    "engine_version": "2.21.0.0",
+                    "engine_update": "20220929",
+                    "category": "malicious",
+                    "result": "Suspicious.Win32.Save.ins"
+                },
+                "K7AntiVirus": {
+                    "method": "blacklist",
+                    "engine_name": "K7AntiVirus",
+                    "engine_version": "12.40.44673",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "EmailWorm ( 0040f5b21 )"
+                },
+                "Alibaba": {
+                    "method": "blacklist",
+                    "engine_name": "Alibaba",
+                    "engine_version": "0.3.0.5",
+                    "engine_update": "20190527",
+                    "category": "malicious",
+                    "result": "Malware:Win32/Dorpal.ali1000029"
+                },
+                "K7GW": {
+                    "method": "blacklist",
+                    "engine_name": "K7GW",
+                    "engine_version": "12.40.44670",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "EmailWorm ( 0040f5b21 )"
+                },
+                "CrowdStrike": {
+                    "method": "blacklist",
+                    "engine_name": "CrowdStrike",
+                    "engine_version": "1.0",
+                    "engine_update": "20220418",
+                    "category": "malicious",
+                    "result": "win/malicious_confidence_100% (W)"
+                },
+                "BitDefenderTheta": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefenderTheta",
+                    "engine_version": "7.2.37796.0",
+                    "engine_update": "20220928",
+                    "category": "malicious",
+                    "result": "Gen:NN.ZexaF.34698.iqZ@a8KI8vdi"
+                },
+                "VirIT": {
+                    "method": "blacklist",
+                    "engine_name": "VirIT",
+                    "engine_version": "9.5.296",
+                    "engine_update": "20221004",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Agent4.AULW"
+                },
+                "Cyren": {
+                    "method": "blacklist",
+                    "engine_name": "Cyren",
+                    "engine_version": "6.5.1.2",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "W32/A-ae69b46a!Eldorado"
+                },
+                "Symantec": {
+                    "method": "blacklist",
+                    "engine_name": "Symantec",
+                    "engine_version": "1.18.0.0",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "W32.Gippers"
+                },
+                "Elastic": {
+                    "method": "blacklist",
+                    "engine_name": "Elastic",
+                    "engine_version": "4.0.48",
+                    "engine_update": "20220930",
+                    "category": "malicious",
+                    "result": "malicious (high confidence)"
+                },
+                "ESET-NOD32": {
+                    "method": "blacklist",
+                    "engine_name": "ESET-NOD32",
+                    "engine_version": "26038",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Win32/Mirage.P"
+                },
+                "APEX": {
+                    "method": "blacklist",
+                    "engine_name": "APEX",
+                    "engine_version": "6.341",
+                    "engine_update": "20221004",
+                    "category": "malicious",
+                    "result": "Malicious"
+                },
+                "TrendMicro-HouseCall": {
+                    "method": "blacklist",
+                    "engine_name": "TrendMicro-HouseCall",
+                    "engine_version": "10.0.0.1040",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Ransom_Blocker.R002C0CJ322"
+                },
+                "Paloalto": {
+                    "method": "blacklist",
+                    "engine_name": "Paloalto",
+                    "engine_version": "0.9.0.1003",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "generic.ml"
+                },
+                "ClamAV": {
+                    "method": "blacklist",
+                    "engine_name": "ClamAV",
+                    "engine_version": "0.105.1.0",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Win.Trojan.Agent-1118476"
+                },
+                "Kaspersky": {
+                    "method": "blacklist",
+                    "engine_name": "Kaspersky",
+                    "engine_version": "21.0.1.45",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Trojan-Ransom.Win32.Blocker.cgth"
+                },
+                "BitDefender": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefender",
+                    "engine_version": "7.2",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Dropped:Trojan.GenericKD.61347173"
+                },
+                "NANO-Antivirus": {
+                    "method": "blacklist",
+                    "engine_name": "NANO-Antivirus",
+                    "engine_version": "1.0.146.25648",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Blocker.cqmtlv"
+                },
+                "SUPERAntiSpyware": {
+                    "method": "blacklist",
+                    "engine_name": "SUPERAntiSpyware",
+                    "engine_version": "5.6.0.1032",
+                    "engine_update": "20221001",
+                    "category": "malicious",
+                    "result": "Backdoor.Bot/Variant"
+                },
+                "Avast": {
+                    "method": "blacklist",
+                    "engine_name": "Avast",
+                    "engine_version": "21.1.5827.0",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Win32:Gippers-B [Drp]"
+                },
+                "Tencent": {
+                    "method": "blacklist",
+                    "engine_name": "Tencent",
+                    "engine_version": "1.0.0.1",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Blocker.zb"
+                },
+                "Ad-Aware": {
+                    "method": "blacklist",
+                    "engine_name": "Ad-Aware",
+                    "engine_version": "3.0.21.193",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Dropped:Trojan.GenericKD.61347173"
+                },
+                "TACHYON": {
+                    "method": "blacklist",
+                    "engine_name": "TACHYON",
+                    "engine_version": "2022-10-05.02",
+                    "engine_update": "20221005",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Emsisoft": {
+                    "method": "blacklist",
+                    "engine_name": "Emsisoft",
+                    "engine_version": "2022.6.0.32461",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Dropped:Trojan.GenericKD.61347173 (B)"
+                },
+                "Comodo": {
+                    "method": "blacklist",
+                    "engine_name": "Comodo",
+                    "engine_version": "35050",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "TrojWare.Win32.Ransom.Blocker.UOY@4w6mes"
+                },
+                "F-Secure": {
+                    "method": "blacklist",
+                    "engine_name": "F-Secure",
+                    "engine_version": "18.10.978.51",
+                    "engine_update": "20221005",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Baidu": {
+                    "method": "blacklist",
+                    "engine_name": "Baidu",
+                    "engine_version": "1.0.0.2",
+                    "engine_update": "20190318",
+                    "category": "malicious",
+                    "result": "Win32.Trojan.Agent.eb"
+                },
+                "VIPRE": {
+                    "method": "blacklist",
+                    "engine_name": "VIPRE",
+                    "engine_version": "6.0.0.35",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Dropped:Trojan.GenericKD.61347173"
+                },
+                "TrendMicro": {
+                    "method": "blacklist",
+                    "engine_name": "TrendMicro",
+                    "engine_version": "11.0.0.1006",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Ransom_Blocker.R002C0CJ322"
+                },
+                "McAfee-GW-Edition": {
+                    "method": "blacklist",
+                    "engine_name": "McAfee-GW-Edition",
+                    "engine_version": "v2019.1.2+3728",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Trojan-FDWJ!63BC45CAB0F5"
+                },
+                "Trapmine": {
+                    "method": "blacklist",
+                    "engine_name": "Trapmine",
+                    "engine_version": "4.0.1.119",
+                    "engine_update": "20220907",
+                    "category": "malicious",
+                    "result": "malicious.moderate.ml.score"
+                },
+                "CMC": {
+                    "method": "blacklist",
+                    "engine_name": "CMC",
+                    "engine_version": "2.4.2022.1",
+                    "engine_update": "20221005",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Sophos": {
+                    "method": "blacklist",
+                    "engine_name": "Sophos",
+                    "engine_version": "1.4.1.0",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Troj/AutoG-GN"
+                },
+                "SentinelOne": {
+                    "method": "blacklist",
+                    "engine_name": "SentinelOne",
+                    "engine_version": "22.3.2.9",
+                    "engine_update": "20221003",
+                    "category": "malicious",
+                    "result": "Static AI - Malicious PE"
+                },
+                "Jiangmin": {
+                    "method": "blacklist",
+                    "engine_name": "Jiangmin",
+                    "engine_version": "16.0.100",
+                    "engine_update": "20221004",
+                    "category": "malicious",
+                    "result": "Trojan/Blocker.gzw"
+                },
+                "Webroot": {
+                    "method": "blacklist",
+                    "engine_name": "Webroot",
+                    "engine_version": "1.0.0.403",
+                    "engine_update": "20221005",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Google": {
+                    "method": "blacklist",
+                    "engine_name": "Google",
+                    "engine_version": "1664971241",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Detected"
+                },
+                "Avira": {
+                    "method": "blacklist",
+                    "engine_name": "Avira",
+                    "engine_version": "8.3.3.16",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "TR/Taranis.3943"
+                },
+                "Antiy-AVL": {
+                    "method": "blacklist",
+                    "engine_name": "Antiy-AVL",
+                    "engine_version": "3.0",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Trojan/Generic.ASMalwS.60F"
+                },
+                "Kingsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Kingsoft",
+                    "engine_version": "2017.9.26.565",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Win32.Troj.Undef.(kcloud)"
+                },
+                "Microsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Microsoft",
+                    "engine_version": "1.1.19600.3",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Virus:Win32/Gippers.A"
+                },
+                "Gridinsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Gridinsoft",
+                    "engine_version": "1.0.95.174",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Malware.Win32.Blocker.cc"
+                },
+                "Arcabit": {
+                    "method": "blacklist",
+                    "engine_name": "Arcabit",
+                    "engine_version": "1.0.0.889",
+                    "engine_update": "20221005",
+                    "category": "undetected",
+                    "result": null
+                },
+                "ViRobot": {
+                    "method": "blacklist",
+                    "engine_name": "ViRobot",
+                    "engine_version": "2014.3.20.0",
+                    "engine_update": "20221005",
+                    "category": "undetected",
+                    "result": null
+                },
+                "ZoneAlarm": {
+                    "method": "blacklist",
+                    "engine_name": "ZoneAlarm",
+                    "engine_version": "1.0",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Trojan-Ransom.Win32.Blocker.cgth"
+                },
+                "GData": {
+                    "method": "blacklist",
+                    "engine_name": "GData",
+                    "engine_version": "A:25.34121B:27.29060",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Win32.Trojan.PSE.10Q5N0Q"
+                },
+                "Cynet": {
+                    "method": "blacklist",
+                    "engine_name": "Cynet",
+                    "engine_version": "4.0.0.27",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Malicious (score: 100)"
+                },
+                "AhnLab-V3": {
+                    "method": "blacklist",
+                    "engine_name": "AhnLab-V3",
+                    "engine_version": "3.22.2.10299",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Trojan/Win32.Blocker.R90514"
+                },
+                "Acronis": {
+                    "method": "blacklist",
+                    "engine_name": "Acronis",
+                    "engine_version": "1.2.0.108",
+                    "engine_update": "20220426",
+                    "category": "malicious",
+                    "result": "suspicious"
+                },
+                "McAfee": {
+                    "method": "blacklist",
+                    "engine_name": "McAfee",
+                    "engine_version": "6.0.6.653",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Trojan-FDWJ!63BC45CAB0F5"
+                },
+                "MAX": {
+                    "method": "blacklist",
+                    "engine_name": "MAX",
+                    "engine_version": "2019.9.16.1",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "malware (ai score=100)"
+                },
+                "VBA32": {
+                    "method": "blacklist",
+                    "engine_name": "VBA32",
+                    "engine_version": "5.0.0",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "TrojanRansom.Blocker"
+                },
+                "Malwarebytes": {
+                    "method": "blacklist",
+                    "engine_name": "Malwarebytes",
+                    "engine_version": "4.3.3.37",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "AutoKMS.HackTool.Patcher.DDS"
+                },
+                "Zoner": {
+                    "method": "blacklist",
+                    "engine_name": "Zoner",
+                    "engine_version": "2.2.2.0",
+                    "engine_update": "20221004",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Rising": {
+                    "method": "blacklist",
+                    "engine_name": "Rising",
+                    "engine_version": "25.0.0.27",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Worm.Luder!1.9E4A (CLASSIC)"
+                },
+                "Yandex": {
+                    "method": "blacklist",
+                    "engine_name": "Yandex",
+                    "engine_version": "5.5.2.24",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Trojan.Blocker!uDZW0zEzZyQ"
+                },
+                "Ikarus": {
+                    "method": "blacklist",
+                    "engine_name": "Ikarus",
+                    "engine_version": "6.0.26.0",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Trojan.Agent4"
+                },
+                "MaxSecure": {
+                    "method": "blacklist",
+                    "engine_name": "MaxSecure",
+                    "engine_version": "1.0.0.1",
+                    "engine_update": "20221004",
+                    "category": "malicious",
+                    "result": "Ransom.Blocker.cgth"
+                },
+                "Fortinet": {
+                    "method": "blacklist",
+                    "engine_name": "Fortinet",
+                    "engine_version": "6.4.258.0",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "W32/Generic.AC.3A789!tr"
+                },
+                "AVG": {
+                    "method": "blacklist",
+                    "engine_name": "AVG",
+                    "engine_version": "21.1.5827.0",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Win32:Gippers-B [Drp]"
+                },
+                "Cybereason": {
+                    "method": "blacklist",
+                    "engine_name": "Cybereason",
+                    "engine_version": "1.2.449",
+                    "engine_update": "20210330",
+                    "category": "malicious",
+                    "result": "malicious.ab0f5c"
+                },
+                "Panda": {
+                    "method": "blacklist",
+                    "engine_name": "Panda",
+                    "engine_version": "4.6.4.2",
+                    "engine_update": "20221005",
+                    "category": "malicious",
+                    "result": "Trj/Genetic.gen"
+                },
+                "Trustlook": {
+                    "method": "blacklist",
+                    "engine_name": "Trustlook",
+                    "engine_version": "1.0",
+                    "engine_update": "20221005",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "SymantecMobileInsight": {
+                    "method": "blacklist",
+                    "engine_name": "SymantecMobileInsight",
+                    "engine_version": "2.0",
+                    "engine_update": "20220208",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "BitDefenderFalx": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefenderFalx",
+                    "engine_version": "2.0.936",
+                    "engine_update": "20220103",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "Avast-Mobile": {
+                    "method": "blacklist",
+                    "engine_name": "Avast-Mobile",
+                    "engine_version": "221005-02",
+                    "engine_update": "20221005",
+                    "category": "type-unsupported",
+                    "result": null
+                }
+            },
+            "ssdeep": "3072:32AwNLF0AXQ7+crm/nPNSm0aBXw3IhirTp84RJ:GLSAGDrknwmfBgYopV",
+            "last_modification_date": 1747844741,
+            "type_tags": [
+                "executable",
+                "windows",
+                "win32",
+                "pe",
+                "peexe"
+            ],
+            "reputation": 0,
+            "trid": [
+                {
+                    "file_type": "Microsoft Visual C++ compiled executable (generic)",
+                    "probability": 42.7
+                },
+                {
+                    "file_type": "Win32 Dynamic Link Library (generic)",
+                    "probability": 17.0
+                },
+                {
+                    "file_type": "Win16 NE executable (generic)",
+                    "probability": 13.0
+                },
+                {
+                    "file_type": "Win32 Executable (generic)",
+                    "probability": 11.6
+                },
+                {
+                    "file_type": "OS/2 Executable (generic)",
+                    "probability": 5.2
+                }
+            ],
+            "md5": "63bc45cab0f5c9b4278526c527484390",
+            "packers": {
+                "PEiD": "Microsoft Visual C++"
+            },
+            "type_extension": "exe"
+        }
+    }
+}

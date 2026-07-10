@@ -1,0 +1,1217 @@
+{
+    "data": {
+        "id": "f3e891a2a39dd948cd85e1c8335a83e640d0987dbd48c16001a02f6b7c1733ae",
+        "type": "file",
+        "links": {
+            "self": "https://www.virustotal.com/api/v3/files/f3e891a2a39dd948cd85e1c8335a83e640d0987dbd48c16001a02f6b7c1733ae"
+        },
+        "attributes": {
+            "md5": "af9ff037caca1f316e7d05db86dbd882",
+            "reputation": -44,
+            "first_seen_itw_date": 1627479370,
+            "creation_date": 1625842467,
+            "last_analysis_stats": {
+                "malicious": 66,
+                "suspicious": 0,
+                "undetected": 5,
+                "harmless": 0,
+                "timeout": 0,
+                "confirmed-timeout": 0,
+                "failure": 0,
+                "type-unsupported": 4
+            },
+            "popular_threat_classification": {
+                "suggested_threat_label": "ransomware.lockbit/encoder",
+                "popular_threat_category": [
+                    {
+                        "value": "ransomware",
+                        "count": 33
+                    },
+                    {
+                        "value": "trojan",
+                        "count": 24
+                    }
+                ],
+                "popular_threat_name": [
+                    {
+                        "value": "lockbit",
+                        "count": 30
+                    },
+                    {
+                        "value": "encoder",
+                        "count": 6
+                    }
+                ]
+            },
+            "meaningful_name": "328787___0dd10c46-e5c7-4028-96cd-6c922d65c5db.exe",
+            "authentihash": "6329c03f89401f2156befe19c83d5d1e2c2296a2b1f73e7edf9dc3cc70f195ff",
+            "type_extension": "exe",
+            "sigma_analysis_summary": {
+                "Sigma Integrated Rule Set (GitHub)": {
+                    "critical": 0,
+                    "high": 1,
+                    "medium": 2,
+                    "low": 1
+                }
+            },
+            "last_modification_date": 1768514413,
+            "size": 883200,
+            "type_tags": [
+                "executable",
+                "windows",
+                "win32",
+                "pe",
+                "peexe"
+            ],
+            "tlsh": "T16F155D1997028F56CC13207691FD9DB3A8760730937F0CE66BC466DC82E2FE9636A356",
+            "trid": [
+                {
+                    "file_type": "Win32 Dynamic Link Library (generic)",
+                    "probability": 34.3
+                },
+                {
+                    "file_type": "Win32 Executable (generic)",
+                    "probability": 23.4
+                },
+                {
+                    "file_type": "Windows Icons Library (generic)",
+                    "probability": 10.7
+                },
+                {
+                    "file_type": "OS/2 Executable (generic)",
+                    "probability": 10.5
+                },
+                {
+                    "file_type": "Generic Win/DOS Executable",
+                    "probability": 10.4
+                }
+            ],
+            "sha256": "f3e891a2a39dd948cd85e1c8335a83e640d0987dbd48c16001a02f6b7c1733ae",
+            "type_tag": "peexe",
+            "crowdsourced_yara_results": [
+                {
+                    "ruleset_id": "0002ccf6ba",
+                    "rule_name": "MAL_EXE_LockBit_v2",
+                    "ruleset_name": "gen_100days_of_yara_2023",
+                    "description": "Detection for LockBit version 2.x from 2011",
+                    "author": "Silas Cutler, modified by Florian Roth",
+                    "match_date": 1768507221,
+                    "ruleset_version": "0002ccf6ba|1d926845269a3ac8de0431da133950390b5cced3",
+                    "source": "https://github.com/Neo23x0/signature-base"
+                },
+                {
+                    "description": "Detection for LockBit version 2.x from 2011",
+                    "author": "Silas Cutler, modified by Florian Roth",
+                    "ruleset_name": "gen_100days_of_yara_2023",
+                    "rule_name": "MAL_EXE_LockBit_v2",
+                    "ruleset_id": "0002ccf6ba",
+                    "match_in_subfile": true,
+                    "source": "https://github.com/Neo23x0/signature-base"
+                },
+                {
+                    "ruleset_id": "00139d79e2",
+                    "rule_name": "Lockbit2_Jul21",
+                    "ruleset_name": "RANSOM_Lockbit2",
+                    "description": "simple rule to detect latest Lockbit ransomware Jul 2021",
+                    "author": "CB @ ATR",
+                    "match_date": 1768507221,
+                    "ruleset_version": "00139d79e2|fc51a3fe3b450838614a5a5aa327c6bd8689cbb2",
+                    "source": "https://github.com/advanced-threat-research/Yara-Rules"
+                },
+                {
+                    "ruleset_id": "015e7930ee",
+                    "rule_name": "Windows_Ransomware_Lockbit_89e64044",
+                    "ruleset_name": "Windows_Ransomware_Lockbit",
+                    "match_in_subfile": true,
+                    "author": "Elastic Security",
+                    "source": "https://github.com/elastic/protections-artifacts"
+                },
+                {
+                    "description": "Detects win.lockbit.",
+                    "author": "Felix Bilstein - yara-signator at cocacoding dot com",
+                    "ruleset_name": "win.lockbit_auto",
+                    "rule_name": "win_lockbit_auto",
+                    "ruleset_id": "0080597496",
+                    "match_in_subfile": true,
+                    "source": "https://malpedia.caad.fkie.fraunhofer.de/"
+                },
+                {
+                    "ruleset_id": "00c3b8eb5d",
+                    "rule_name": "INDICATOR_SUSPICIOUS_EXE_UACBypass_CMSTPCOM",
+                    "ruleset_name": "indicator_suspicious",
+                    "description": "Detects Windows exceutables bypassing UAC using CMSTP COM interfaces. MITRE (T1218.003)",
+                    "author": "ditekSHen",
+                    "match_date": 1768507221,
+                    "ruleset_version": "00c3b8eb5d|e76c93dcdedff04076380ffc60ea54e45b313635",
+                    "source": "https://github.com/ditekshen/detection"
+                },
+                {
+                    "description": "simple rule to detect latest Lockbit ransomware Jul 2021",
+                    "author": "CB @ ATR",
+                    "ruleset_name": "RANSOM_Lockbit2",
+                    "rule_name": "Lockbit2_Jul21",
+                    "ruleset_id": "00139d79e2",
+                    "match_in_subfile": true,
+                    "source": "https://github.com/advanced-threat-research/Yara-Rules"
+                },
+                {
+                    "ruleset_id": "015e7930ee",
+                    "rule_name": "Windows_Ransomware_Lockbit_a1c60939",
+                    "ruleset_name": "Windows_Ransomware_Lockbit",
+                    "match_in_subfile": true,
+                    "author": "Elastic Security",
+                    "source": "https://github.com/elastic/protections-artifacts"
+                },
+                {
+                    "ruleset_id": "015e7930ee",
+                    "rule_name": "Windows_Ransomware_Lockbit_89e64044",
+                    "ruleset_name": "Windows_Ransomware_Lockbit",
+                    "author": "Elastic Security",
+                    "match_date": 1768507221,
+                    "ruleset_version": "015e7930ee|13ca65eb8f789f587a26e3e3743e0ec305cc666d",
+                    "source": "https://github.com/elastic/protections-artifacts"
+                },
+                {
+                    "description": "Detects Windows exceutables bypassing UAC using CMSTP COM interfaces. MITRE (T1218.003)",
+                    "author": "ditekSHen",
+                    "ruleset_name": "indicator_suspicious",
+                    "rule_name": "INDICATOR_SUSPICIOUS_EXE_UACBypass_CMSTPCOM",
+                    "ruleset_id": "00c3b8eb5d",
+                    "match_in_subfile": true,
+                    "source": "https://github.com/ditekshen/detection"
+                },
+                {
+                    "description": "Detects executables containing anti-forensic artifcats of deletiing USN change journal. Observed in ransomware",
+                    "author": "ditekSHen",
+                    "ruleset_name": "indicator_suspicious",
+                    "rule_name": "INDICATOR_SUSPICIOUS_USNDeleteJournal",
+                    "ruleset_id": "00c3b8eb5d",
+                    "match_in_subfile": true,
+                    "source": "https://github.com/ditekshen/detection"
+                },
+                {
+                    "ruleset_id": "015e7930ee",
+                    "rule_name": "Windows_Ransomware_Lockbit_a1c60939",
+                    "ruleset_name": "Windows_Ransomware_Lockbit",
+                    "author": "Elastic Security",
+                    "match_date": 1768507221,
+                    "ruleset_version": "015e7930ee|13ca65eb8f789f587a26e3e3743e0ec305cc666d",
+                    "source": "https://github.com/elastic/protections-artifacts"
+                },
+                {
+                    "ruleset_id": "00bc40da16",
+                    "rule_name": "Lockbit",
+                    "ruleset_name": "Lockbit",
+                    "description": "Lockbit Payload",
+                    "author": "kevoreilly",
+                    "match_date": 1768507221,
+                    "ruleset_version": "00bc40da16|b488c511a7c48ed6c425bf38811bf08e87b0ddbf",
+                    "source": "https://github.com/kevoreilly/CAPEv2"
+                },
+                {
+                    "ruleset_id": "0080597496",
+                    "rule_name": "win_lockbit_auto",
+                    "ruleset_name": "win.lockbit_auto",
+                    "description": "Detects win.lockbit.",
+                    "author": "Felix Bilstein - yara-signator at cocacoding dot com",
+                    "match_date": 1768507221,
+                    "ruleset_version": "0080597496|173f2e2012643b57ff6521a58ba6dd57331de3c6",
+                    "source": "https://malpedia.caad.fkie.fraunhofer.de/"
+                },
+                {
+                    "description": "Lockbit Payload",
+                    "author": "kevoreilly",
+                    "ruleset_name": "Lockbit",
+                    "rule_name": "Lockbit",
+                    "ruleset_id": "00bc40da16",
+                    "match_in_subfile": true,
+                    "source": "https://github.com/kevoreilly/CAPEv2"
+                },
+                {
+                    "ruleset_id": "00c3b8eb5d",
+                    "rule_name": "INDICATOR_SUSPICIOUS_USNDeleteJournal",
+                    "ruleset_name": "indicator_suspicious",
+                    "description": "Detects executables containing anti-forensic artifacts of deleting USN change journal. Observed in ransomware",
+                    "author": "ditekSHen",
+                    "match_date": 1740288065,
+                    "source": "https://github.com/ditekshen/detection"
+                }
+            ],
+            "filecondis": {
+                "raw_md5": "424b5541b11ddb4d97b7c01bda76d91a",
+                "dhash": "003c3d3e2e2f2c0a"
+            },
+            "sigma_analysis_results": [
+                {
+                    "rule_level": "high",
+                    "rule_id": "27b72c2678411f21ba21bd10b44b7e9c45594d5a5f61f14223b81a8906675039",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "New RUN Key Pointing to Suspicious Folder",
+                    "rule_description": "Detects suspicious new RUN key element pointing to an executable in a suspicious folder",
+                    "rule_author": "Florian Roth (Nextron Systems), Markus Neis, Sander Wiebing",
+                    "match_context": [
+                        {
+                            "values": {
+                                "RuleName": "T1060,RunKey",
+                                "EventID": "13",
+                                "EventType": "SetValue",
+                                "Image": "C:\\Users\\Bruno\\AppData\\Local\\Temp\\executable.exe",
+                                "Details": "\"C:\\Users\\Bruno\\AppData\\Local\\Temp\\executable.exe\"",
+                                "TargetObject": "HKU\\S-1-5-21-4005801669-2598574594-602355426-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\{B0B063EF-C0C0-8D57-5D4C-5D3FEB3D0F0}"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "5572c8188426269a10ccb41fc8e9c8445391ac38a0917621b0a1ee05ec99aac9",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Change PowerShell Policies to an Insecure Level - PowerShell",
+                    "rule_description": "Detects use of Set-ExecutionPolicy to set insecure policies",
+                    "rule_author": "frack113",
+                    "match_context": [
+                        {
+                            "values": {
+                                "EventID": "4104",
+                                "ScriptBlockText": "f9c50298c31c4f832377cbc3805f78dcf568835d7138c21088e56a2c5768f935",
+                                "ScriptBlockId": "7a2520ed-4c74-4f4d-b61f-5dd990bdcff0",
+                                "MessageNumber": "1",
+                                "Path": "",
+                                "MessageTotal": "1"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "8b5db9da5732dc549b0e8b56fe5933d7c95ed760f3ac20568ab95347ef8c5bcc",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "CurrentVersion Autorun Keys Modification",
+                    "rule_description": "Detects modification of autostart extensibility point (ASEP) in registry.",
+                    "rule_author": "Victor Sergeev, Daniil Yugoslavskiy, Gleb Sukhodolskiy, Timur Zinniatullin, oscd.community, Tim Shelton, frack113 (split)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "RuleName": "T1060,RunKey",
+                                "Details": "\"C:\\Users\\Bruno\\AppData\\Local\\Temp\\executable.exe\"",
+                                "EventType": "SetValue",
+                                "Image": "C:\\Users\\Bruno\\AppData\\Local\\Temp\\executable.exe",
+                                "EventID": "13",
+                                "TargetObject": "HKU\\S-1-5-21-4005801669-2598574594-602355426-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\{B0B063EF-C0C0-8D57-5D4C-5D3FEB3D0F0}"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "low",
+                    "rule_id": "1f7f8b1e9005dd4d64cb9d30ed53ee94f68fb96262fbd72f7a0266881149c79f",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Suspicious Get-WmiObject",
+                    "rule_description": "The infrastructure for management data and operations that enables local and remote management of Windows personal computers and servers",
+                    "rule_author": "frack113",
+                    "match_context": [
+                        {
+                            "values": {
+                                "EventID": "4104",
+                                "ScriptBlockText": "10050407a4d401ef56d5a9ece4ccb6f08bba5c1ff6dfd318e419c04a972ba748",
+                                "ScriptBlockId": "8fe3efbd-853a-44c8-a79e-7fae9a574596",
+                                "MessageNumber": "1",
+                                "Path": "",
+                                "MessageTotal": "1"
+                            }
+                        },
+                        {
+                            "values": {
+                                "EventID": "4104",
+                                "ScriptBlockText": "10050407a4d401ef56d5a9ece4ccb6f08bba5c1ff6dfd318e419c04a972ba748",
+                                "ScriptBlockId": "667efede-0083-4509-b112-8287a2f25803",
+                                "MessageNumber": "1",
+                                "Path": "",
+                                "MessageTotal": "1"
+                            }
+                        },
+                        {
+                            "values": {
+                                "EventID": "4104",
+                                "ScriptBlockText": "10050407a4d401ef56d5a9ece4ccb6f08bba5c1ff6dfd318e419c04a972ba748",
+                                "ScriptBlockId": "4a0b66fa-b2f1-4fb5-9a0e-a402ec92b474",
+                                "MessageNumber": "1",
+                                "Path": "",
+                                "MessageTotal": "1"
+                            }
+                        },
+                        {
+                            "values": {
+                                "EventID": "4104",
+                                "ScriptBlockText": "10050407a4d401ef56d5a9ece4ccb6f08bba5c1ff6dfd318e419c04a972ba748",
+                                "ScriptBlockId": "14fd127e-f3a9-4ac0-9228-0963d661a09e",
+                                "MessageNumber": "1",
+                                "MessageTotal": "1",
+                                "Path": ""
+                            }
+                        },
+                        {
+                            "values": {
+                                "EventID": "4104",
+                                "ScriptBlockId": "0425096d-a6cd-4556-90f8-946ad7751f3d",
+                                "ScriptBlockText": "10050407a4d401ef56d5a9ece4ccb6f08bba5c1ff6dfd318e419c04a972ba748",
+                                "MessageNumber": "1",
+                                "Path": "",
+                                "MessageTotal": "1"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "crowdsourced_ids_stats": {
+                "info": 0,
+                "high": 0,
+                "medium": 3,
+                "low": 3
+            },
+            "last_submission_date": 1736781905,
+            "last_analysis_date": 1768507154,
+            "unique_sources": 6,
+            "type_description": "Win32 EXE",
+            "tags": [
+                "direct-cpu-clock-access",
+                "detect-debug-environment",
+                "runtime-modules",
+                "peexe",
+                "long-sleeps",
+                "checks-user-input",
+                "persistence",
+                "cve-2014-3931",
+                "exploit"
+            ],
+            "total_votes": {
+                "harmless": 1,
+                "malicious": 2
+            },
+            "ssdeep": "24576:DxAf2NuubB6RWspgjuwu7pl4Ha+UmxJH+Q1F:dAfSrWW4g+7Ht+UmxJeW",
+            "magika": "PEBIN",
+            "vhash": "0850266d6\"z",
+            "times_submitted": 8,
+            "crowdsourced_ids_results": [
+                {
+                    "rule_category": "bad-unknown",
+                    "alert_severity": "medium",
+                    "rule_msg": "PROTOCOL-DNS SPOOF query response with TTL of 1 min. and no authority",
+                    "rule_raw": "alert udp $EXTERNAL_NET 53 -> $HOME_NET any ( msg:\"PROTOCOL-DNS SPOOF query response with TTL of 1 min. and no authority\"; flow:to_client; content:\"|81 80|\",depth 4,offset 2,fast_pattern; byte_test:2,>,0,0,relative,big; byte_test:2,>,0,2,relative,big; content:\"|00 00 00 00|\",within 4,distance 4; content:\"|C0 0C 00 01 00 01|\",distance 0; byte_test:4,<,61,0,relative,big; byte_test:4,>,0,0,relative,big; metadata:policy max-detect-ips drop,ruleset community; service:dns; classtype:bad-unknown; sid:254; rev:16; )",
+                    "alert_context": [
+                        {
+                            "src_ip": "8.8.8.8",
+                            "src_port": 53
+                        }
+                    ],
+                    "rule_url": "https://www.snort.org/downloads/#rule-downloads",
+                    "rule_source": "Snort registered user ruleset",
+                    "rule_id": "1:254"
+                },
+                {
+                    "rule_category": "successful-recon-limited",
+                    "alert_severity": "medium",
+                    "rule_msg": "PROTOCOL-ICMP Unusual PING detected",
+                    "rule_raw": "alert icmp $HOME_NET any -> $EXTERNAL_NET any ( msg:\"PROTOCOL-ICMP Unusual PING detected\"; icode:0; itype:8; fragbits:!M; content:!\"ABCDEFGHIJKLMNOPQRSTUVWABCDEFGHI\",depth 32; content:!\"0123456789abcdefghijklmnopqrstuv\",depth 32; content:!\"EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE\",depth 36; content:!\"WANG2\"; content:!\"cacti-monitoring-system\",depth 65; content:!\"SolarWinds\",depth 72; metadata:policy max-detect-ips drop,ruleset community; reference:url,krebsonsecurity.com/2014/01/a-closer-look-at-the-target-malware-part-ii/; reference:url,krebsonsecurity.com/2014/01/a-first-look-at-the-target-intrusion-malware/; classtype:successful-recon-limited; sid:29456; rev:3; )",
+                    "rule_references": [
+                        "https://krebsonsecurity.com/2014/01/a-closer-look-at-the-target-malware-part-ii/",
+                        "https://krebsonsecurity.com/2014/01/a-first-look-at-the-target-intrusion-malware/"
+                    ],
+                    "rule_url": "https://www.snort.org/downloads/#rule-downloads",
+                    "rule_source": "Snort registered user ruleset",
+                    "rule_id": "1:29456"
+                },
+                {
+                    "rule_category": "misc-attack",
+                    "alert_severity": "medium",
+                    "rule_msg": "SERVER-OTHER MRLG fastping echo reply memory corruption attempt",
+                    "rule_raw": "alert icmp $EXTERNAL_NET any -> $HOME_NET any ( msg:\"SERVER-OTHER MRLG fastping echo reply memory corruption attempt\"; icode:0; itype:0; content:!\"ABCDEFGHIJKLMNOPQRSTUVWABCDEFGHI\",depth 32; content:!\"0123456789abcdefghijklmnopqrstuv\",depth 32; content:!\"EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE\",depth 36; byte_test:4,>,1000000,8,little; metadata:policy max-detect-ips drop; reference:cve,2014-3931; reference:url,mrlg.op-sec.us/; reference:url,s3.eurecom.fr/cve/CVE-2014-3931.txt; classtype:misc-attack; sid:31767; rev:2; )",
+                    "rule_references": [
+                        "https://cve.mitre.org/cgi-bin/cvename.cgi?name=2014-3931",
+                        "https://mrlg.op-sec.us/",
+                        "https://s3.eurecom.fr/cve/CVE-2014-3931.txt"
+                    ],
+                    "rule_url": "https://www.snort.org/downloads/#rule-downloads",
+                    "rule_source": "Snort registered user ruleset",
+                    "rule_id": "1:31767"
+                },
+                {
+                    "rule_category": "misc-activity",
+                    "alert_severity": "low",
+                    "rule_msg": "PROTOCOL-ICMP PING Windows",
+                    "rule_raw": "alert icmp $EXTERNAL_NET any -> $HOME_NET any ( msg:\"PROTOCOL-ICMP PING Windows\"; itype:8; content:\"abcdefghijklmnop\",depth 16; metadata:ruleset community; classtype:misc-activity; sid:382; rev:11; )",
+                    "rule_url": "https://www.snort.org/downloads/#rule-downloads",
+                    "rule_source": "Snort registered user ruleset",
+                    "rule_id": "1:382"
+                },
+                {
+                    "rule_category": "misc-activity",
+                    "alert_severity": "low",
+                    "rule_msg": "PROTOCOL-ICMP PING",
+                    "rule_raw": "alert icmp $EXTERNAL_NET any -> $HOME_NET any ( msg:\"PROTOCOL-ICMP PING\"; icode:0; itype:8; metadata:ruleset community; classtype:misc-activity; sid:384; rev:8; )",
+                    "rule_url": "https://www.snort.org/downloads/#rule-downloads",
+                    "rule_source": "Snort registered user ruleset",
+                    "rule_id": "1:384"
+                },
+                {
+                    "rule_category": "misc-activity",
+                    "alert_severity": "low",
+                    "rule_msg": "PROTOCOL-ICMP Echo Reply",
+                    "rule_raw": "alert icmp $EXTERNAL_NET any -> $HOME_NET any ( msg:\"PROTOCOL-ICMP Echo Reply\"; icode:0; itype:0; metadata:ruleset community; classtype:misc-activity; sid:408; rev:8; )",
+                    "rule_url": "https://www.snort.org/downloads/#rule-downloads",
+                    "rule_source": "Snort registered user ruleset",
+                    "rule_id": "1:408"
+                }
+            ],
+            "sigma_analysis_stats": {
+                "critical": 0,
+                "high": 1,
+                "medium": 2,
+                "low": 1
+            },
+            "detectiteasy": {
+                "filetype": "PE32",
+                "values": [
+                    {
+                        "info": "LTCG/C++",
+                        "version": "19.16.27043",
+                        "type": "Compiler",
+                        "name": "Microsoft Visual C/C++"
+                    },
+                    {
+                        "version": "14.16.27043",
+                        "type": "Linker",
+                        "name": "Microsoft Linker"
+                    },
+                    {
+                        "version": "2017 version 15.9",
+                        "type": "Tool",
+                        "name": "Visual Studio"
+                    }
+                ]
+            },
+            "pe_info": {
+                "timestamp": 1625842467,
+                "machine_type": 332,
+                "entry_point": 687520,
+                "sections": [
+                    {
+                        "name": ".text",
+                        "chi2": 5512400.0,
+                        "virtual_address": 4096,
+                        "flags": "rx",
+                        "raw_size": 823296,
+                        "entropy": 6.6,
+                        "virtual_size": 823283,
+                        "md5": "8e1a301fc1c12724bb7b06a226f6ee0b"
+                    },
+                    {
+                        "name": ".data",
+                        "chi2": 471477.66,
+                        "virtual_address": 827392,
+                        "flags": "rw",
+                        "raw_size": 58880,
+                        "entropy": 6.78,
+                        "virtual_size": 93460,
+                        "md5": "c2f365b35f3cd8d1ab93a2cc4b5ce12d"
+                    }
+                ],
+                "compiler_product_versions": [
+                    "[---] Unmarked objects count=7",
+                    "[IMP] Windows Server 2003 SP1 DDK build 4035 count=2",
+                    "[---] Unmarked objects (old) count=8",
+                    "id: 0x101, version: 26126 count=3",
+                    "id: 0x109, version: 27043 count=59",
+                    "id: 0x103, version: 27043 count=7",
+                    "id: 0x102, version: 27043 count=1"
+                ],
+                "rich_pe_header_hash": "89824521e01c5cba8c3474eb969b188b"
+            },
+            "first_submission_date": 1626671214,
+            "sha1": "844e9b219aaecb26de4994a259f822500fb75ae1",
+            "sandbox_verdicts": {
+                "DAS-Security Orcas": {
+                    "category": "malicious",
+                    "sandbox_name": "DAS-Security Orcas",
+                    "malware_classification": [
+                        "MALWARE"
+                    ]
+                },
+                "Dr.Web vxCube": {
+                    "category": "malicious",
+                    "sandbox_name": "Dr.Web vxCube",
+                    "malware_classification": [
+                        "MALWARE",
+                        "RANSOM"
+                    ]
+                },
+                "Yomi Hunter": {
+                    "category": "malicious",
+                    "sandbox_name": "Yomi Hunter",
+                    "malware_classification": [
+                        "MALWARE"
+                    ]
+                },
+                "Tencent HABO": {
+                    "category": "malicious",
+                    "sandbox_name": "Tencent HABO",
+                    "malware_classification": [
+                        "MALWARE",
+                        "EVADER",
+                        "RANSOM"
+                    ]
+                },
+                "C2AE": {
+                    "category": "undetected",
+                    "sandbox_name": "C2AE",
+                    "malware_classification": [
+                        "UNKNOWN_VERDICT"
+                    ]
+                },
+                "Lastline": {
+                    "category": "malicious",
+                    "sandbox_name": "Lastline",
+                    "malware_classification": [
+                        "MALWARE",
+                        "TROJAN"
+                    ]
+                },
+                "Zenbox": {
+                    "category": "malicious",
+                    "malware_classification": [
+                        "MALWARE",
+                        "RANSOM",
+                        "SPREADER",
+                        "EVADER"
+                    ],
+                    "sandbox_name": "Zenbox",
+                    "malware_names": [
+                        "LockBit ransomware"
+                    ],
+                    "confidence": 100
+                },
+                "CAPE Sandbox": {
+                    "category": "malicious",
+                    "malware_classification": [
+                        "MALWARE"
+                    ],
+                    "sandbox_name": "CAPE Sandbox",
+                    "malware_names": [
+                        "Lockbit"
+                    ]
+                }
+            },
+            "names": [
+                "328787___0dd10c46-e5c7-4028-96cd-6c922d65c5db.exe",
+                "LockBitRansomware.exe",
+                "af9ff037caca1f316e7d05db86dbd882.exe",
+                "lock.tmp",
+                "f3e891a2a39dd948cd85e1c8335a83e640d0987dbd48c16001a02f6b7c1733ae.exe",
+                "LockBIT_F4B0B5EF9DC08D87.exe"
+            ],
+            "magic": "PE32 executable (GUI) Intel 80386, for MS Windows",
+            "last_analysis_results": {
+                "Bkav": {
+                    "method": "blacklist",
+                    "engine_name": "Bkav",
+                    "engine_version": "2.0.0.1",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "W32.AIDetectMalware"
+                },
+                "Acronis": {
+                    "method": "blacklist",
+                    "engine_name": "Acronis",
+                    "engine_version": "1.2.0.121",
+                    "engine_update": "20240328",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Lionic": {
+                    "method": "blacklist",
+                    "engine_name": "Lionic",
+                    "engine_version": "8.16",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Lockbit.1q!c"
+                },
+                "tehtris": {
+                    "method": "blacklist",
+                    "engine_name": "tehtris",
+                    "engine_version": "v0.1.4",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Generic.Malware"
+                },
+                "ClamAV": {
+                    "method": "blacklist",
+                    "engine_name": "ClamAV",
+                    "engine_version": "1.5.1.0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Win.Ransomware.Lockbit-9886605-0"
+                },
+                "CTX": {
+                    "method": "blacklist",
+                    "engine_name": "CTX",
+                    "engine_version": "2024.8.29.1",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "exe.ransomware.lockbit"
+                },
+                "CAT-QuickHeal": {
+                    "method": "blacklist",
+                    "engine_name": "CAT-QuickHeal",
+                    "engine_version": "22.00",
+                    "engine_update": "20260114",
+                    "category": "malicious",
+                    "result": "Trojan.LckbitRnsm.S21641235"
+                },
+                "Skyhigh": {
+                    "method": "blacklist",
+                    "engine_name": "Skyhigh",
+                    "engine_version": "v2021.2.0+4045",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Ransomware-HJD!AF9FF037CACA"
+                },
+                "ALYac": {
+                    "method": "blacklist",
+                    "engine_name": "ALYac",
+                    "engine_version": "2.0.0.10",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.LockBit"
+                },
+                "Cylance": {
+                    "method": "blacklist",
+                    "engine_name": "Cylance",
+                    "engine_version": "3.0.0.0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Unsafe"
+                },
+                "VIPRE": {
+                    "method": "blacklist",
+                    "engine_name": "VIPRE",
+                    "engine_version": "6.0.0.35",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.Lockbit.C"
+                },
+                "Sangfor": {
+                    "method": "blacklist",
+                    "engine_name": "Sangfor",
+                    "engine_version": "2.22.3.0",
+                    "engine_update": "20260112",
+                    "category": "malicious",
+                    "result": "Ransom.Win32.Lockbit.Vtuh"
+                },
+                "K7AntiVirus": {
+                    "method": "blacklist",
+                    "engine_name": "K7AntiVirus",
+                    "engine_version": "14.29.58302",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Ransomware ( 005e4fca1 )"
+                },
+                "BitDefender": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefender",
+                    "engine_version": "7.2",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.Lockbit.C"
+                },
+                "K7GW": {
+                    "method": "blacklist",
+                    "engine_name": "K7GW",
+                    "engine_version": "14.29.58302",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Ransomware ( 005e4fca1 )"
+                },
+                "CrowdStrike": {
+                    "method": "blacklist",
+                    "engine_name": "CrowdStrike",
+                    "engine_version": "1.0",
+                    "engine_update": "20231026",
+                    "category": "malicious",
+                    "result": "win/malicious_confidence_100% (W)"
+                },
+                "Arcabit": {
+                    "method": "blacklist",
+                    "engine_name": "Arcabit",
+                    "engine_version": "2025.0.0.23",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.Lockbit.C"
+                },
+                "huorong": {
+                    "method": "blacklist",
+                    "engine_name": "huorong",
+                    "engine_version": "17169d9:17169d9:f0173d0:f0173d0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Ransom/LockBit.a"
+                },
+                "Baidu": {
+                    "method": "blacklist",
+                    "engine_name": "Baidu",
+                    "engine_version": "1.0.0.2",
+                    "engine_update": "20190318",
+                    "category": "undetected",
+                    "result": null
+                },
+                "VirIT": {
+                    "method": "blacklist",
+                    "engine_name": "VirIT",
+                    "engine_version": "9.5.1124",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Encoder.BYNK"
+                },
+                "Symantec": {
+                    "method": "blacklist",
+                    "engine_name": "Symantec",
+                    "engine_version": "1.22.0.0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Ransom.Lockbit"
+                },
+                "Elastic": {
+                    "method": "blacklist",
+                    "engine_name": "Elastic",
+                    "engine_version": "4.0.244",
+                    "engine_update": "20260114",
+                    "category": "malicious",
+                    "result": "Windows.Ransomware.Lockbit"
+                },
+                "ESET-NOD32": {
+                    "method": "blacklist",
+                    "engine_name": "ESET-NOD32",
+                    "engine_version": "18.2.18.0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Win32/Filecoder.Lockbit.E trojan"
+                },
+                "APEX": {
+                    "method": "blacklist",
+                    "engine_name": "APEX",
+                    "engine_version": "6.736",
+                    "engine_update": "20260113",
+                    "category": "malicious",
+                    "result": "Malicious"
+                },
+                "TrendMicro-HouseCall": {
+                    "method": "blacklist",
+                    "engine_name": "TrendMicro-HouseCall",
+                    "engine_version": "24.550.0.1002",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Ransom.Win32.LOCKBIT.SMYEBGW"
+                },
+                "Paloalto": {
+                    "method": "blacklist",
+                    "engine_name": "Paloalto",
+                    "engine_version": "0.9.0.1003",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "generic.ml"
+                },
+                "Cynet": {
+                    "method": "blacklist",
+                    "engine_name": "Cynet",
+                    "engine_version": "4.0.3.4",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Malicious (score: 99)"
+                },
+                "Kaspersky": {
+                    "method": "blacklist",
+                    "engine_name": "Kaspersky",
+                    "engine_version": "22.0.1.28",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan-Ransom.Win32.Encoder.nfh"
+                },
+                "Alibaba": {
+                    "method": "blacklist",
+                    "engine_name": "Alibaba",
+                    "engine_version": "0.3.0.5",
+                    "engine_update": "20190527",
+                    "category": "malicious",
+                    "result": "Ransom:Win32/Lockbit.1a6b3622"
+                },
+                "SUPERAntiSpyware": {
+                    "method": "blacklist",
+                    "engine_name": "SUPERAntiSpyware",
+                    "engine_version": "5.6.0.1032",
+                    "engine_update": "20260115",
+                    "category": "undetected",
+                    "result": null
+                },
+                "MicroWorld-eScan": {
+                    "method": "blacklist",
+                    "engine_name": "MicroWorld-eScan",
+                    "engine_version": "14.0.409.0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.Lockbit.C"
+                },
+                "Rising": {
+                    "method": "blacklist",
+                    "engine_name": "Rising",
+                    "engine_version": "25.0.0.28",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Ransom.Agent!8.6B7 (TFE:2:52O1dYq5exF)"
+                },
+                "Sophos": {
+                    "method": "blacklist",
+                    "engine_name": "Sophos",
+                    "engine_version": "3.3.1.0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Troj/Lockbit-A"
+                },
+                "F-Secure": {
+                    "method": "blacklist",
+                    "engine_name": "F-Secure",
+                    "engine_version": "18.10.1547.307",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Heuristic.HEUR/AGEN.1318544"
+                },
+                "DrWeb": {
+                    "method": "blacklist",
+                    "engine_name": "DrWeb",
+                    "engine_version": "7.0.72.9030",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.Encoder.34167"
+                },
+                "Zillya": {
+                    "method": "blacklist",
+                    "engine_name": "Zillya",
+                    "engine_version": "2.0.0.5524",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.Encoder.Win32.2507"
+                },
+                "TrendMicro": {
+                    "method": "blacklist",
+                    "engine_name": "TrendMicro",
+                    "engine_version": "24.550.0.1002",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Ransom_Lockbit.R002C0DGJ21"
+                },
+                "McAfeeD": {
+                    "method": "blacklist",
+                    "engine_name": "McAfeeD",
+                    "engine_version": "1.2.0.10275",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Real Protect-LS!AF9FF037CACA"
+                },
+                "Trapmine": {
+                    "method": "blacklist",
+                    "engine_name": "Trapmine",
+                    "engine_version": "4.0.8.0",
+                    "engine_update": "20260103",
+                    "category": "malicious",
+                    "result": "malicious.high.ml.score"
+                },
+                "CMC": {
+                    "method": "blacklist",
+                    "engine_name": "CMC",
+                    "engine_version": "2.4.2022.1",
+                    "engine_update": "20260115",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Emsisoft": {
+                    "method": "blacklist",
+                    "engine_name": "Emsisoft",
+                    "engine_version": "2024.8.0.61147",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.Lockbit.C (B)"
+                },
+                "Ikarus": {
+                    "method": "blacklist",
+                    "engine_name": "Ikarus",
+                    "engine_version": "6.4.16.0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan-Ransom.LockBit"
+                },
+                "Jiangmin": {
+                    "method": "blacklist",
+                    "engine_name": "Jiangmin",
+                    "engine_version": "16.0.100",
+                    "engine_update": "20260114",
+                    "category": "malicious",
+                    "result": "Trojan.Encoder.ain"
+                },
+                "Webroot": {
+                    "method": "blacklist",
+                    "engine_name": "Webroot",
+                    "engine_version": "1.9.0.8",
+                    "engine_update": "20250227",
+                    "category": "malicious",
+                    "result": "W32.Ransomware.Lockbit"
+                },
+                "Varist": {
+                    "method": "blacklist",
+                    "engine_name": "Varist",
+                    "engine_version": "6.6.1.3",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "W32/Ransom.PM.gen!Eldorado"
+                },
+                "Avira": {
+                    "method": "blacklist",
+                    "engine_name": "Avira",
+                    "engine_version": "8.3.3.24",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "HEUR/AGEN.1318544"
+                },
+                "Antiy-AVL": {
+                    "method": "blacklist",
+                    "engine_name": "Antiy-AVL",
+                    "engine_version": "3.0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan[Ransom]/Win32.LockBit.e"
+                },
+                "Kingsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Kingsoft",
+                    "engine_version": "None",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "win32.troj.undef.a"
+                },
+                "Gridinsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Gridinsoft",
+                    "engine_version": "1.0.233.174",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Ransom.Win32.Filecoder.oa!s1"
+                },
+                "Xcitium": {
+                    "method": "blacklist",
+                    "engine_name": "Xcitium",
+                    "engine_version": "38338",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Malware@#28crosh7rolwk"
+                },
+                "Microsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Microsoft",
+                    "engine_version": "1.1.25110.1",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Ransom:Win32/LockBit.SA"
+                },
+                "ViRobot": {
+                    "method": "blacklist",
+                    "engine_name": "ViRobot",
+                    "engine_version": "2014.3.20.0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Z.Lockbit.883200.D"
+                },
+                "ZoneAlarm": {
+                    "method": "blacklist",
+                    "engine_name": "ZoneAlarm",
+                    "engine_version": "6.22-112233216",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Troj/Lockbit-A"
+                },
+                "GData": {
+                    "method": "blacklist",
+                    "engine_name": "GData",
+                    "engine_version": "GD:27.43188AVA:64.30508",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.Lockbit.C"
+                },
+                "Google": {
+                    "method": "blacklist",
+                    "engine_name": "Google",
+                    "engine_version": "1768500054",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Detected"
+                },
+                "AhnLab-V3": {
+                    "method": "blacklist",
+                    "engine_name": "AhnLab-V3",
+                    "engine_version": "3.29.1.10604",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan/Win.Generic.R734382"
+                },
+                "DeepInstinct": {
+                    "method": "blacklist",
+                    "engine_name": "DeepInstinct",
+                    "engine_version": "5.0.0.8",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "MALICIOUS"
+                },
+                "VBA32": {
+                    "method": "blacklist",
+                    "engine_name": "VBA32",
+                    "engine_version": "5.5.0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "BScope.TrojanRansom.Agent"
+                },
+                "TACHYON": {
+                    "method": "blacklist",
+                    "engine_name": "TACHYON",
+                    "engine_version": "2026-01-15.02",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Ransom/W32.LockBit.883200"
+                },
+                "Malwarebytes": {
+                    "method": "blacklist",
+                    "engine_name": "Malwarebytes",
+                    "engine_version": "3.1.0.197",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Generic.Malware.Gen.DDS"
+                },
+                "Panda": {
+                    "method": "blacklist",
+                    "engine_name": "Panda",
+                    "engine_version": "4.6.4.2",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trj/CI.A"
+                },
+                "Zoner": {
+                    "method": "blacklist",
+                    "engine_name": "Zoner",
+                    "engine_version": "2.2.2.0",
+                    "engine_update": "20260115",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Tencent": {
+                    "method": "blacklist",
+                    "engine_name": "Tencent",
+                    "engine_version": "1.0.0.1",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Malware.Win32.Gencirc.10be02a3"
+                },
+                "Yandex": {
+                    "method": "blacklist",
+                    "engine_name": "Yandex",
+                    "engine_version": "5.5.2.24",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Trojan.Encoder!JA52Jc+hB4U"
+                },
+                "TrellixENS": {
+                    "method": "blacklist",
+                    "engine_name": "TrellixENS",
+                    "engine_version": "6.0.6.653",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Ransomware-HJD!AF9FF037CACA"
+                },
+                "SentinelOne": {
+                    "method": "blacklist",
+                    "engine_name": "SentinelOne",
+                    "engine_version": "7.5.3.1",
+                    "engine_update": "20251224",
+                    "category": "malicious",
+                    "result": "Static AI - Malicious PE"
+                },
+                "MaxSecure": {
+                    "method": "blacklist",
+                    "engine_name": "MaxSecure",
+                    "engine_version": "1.0.0.1",
+                    "engine_update": "20260114",
+                    "category": "malicious",
+                    "result": "Trojan.Malware.325361753.susgen"
+                },
+                "Fortinet": {
+                    "method": "blacklist",
+                    "engine_name": "Fortinet",
+                    "engine_version": "7.0.30.0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "W32/Lockbit.C2F8!tr.ransom"
+                },
+                "AVG": {
+                    "method": "blacklist",
+                    "engine_name": "AVG",
+                    "engine_version": "23.9.8494.0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Win32:LockBit-A [Ransom]"
+                },
+                "Avast": {
+                    "method": "blacklist",
+                    "engine_name": "Avast",
+                    "engine_version": "23.9.8494.0",
+                    "engine_update": "20260115",
+                    "category": "malicious",
+                    "result": "Win32:LockBit-A [Ransom]"
+                },
+                "alibabacloud": {
+                    "method": "blacklist",
+                    "engine_name": "alibabacloud",
+                    "engine_version": "2.2.0",
+                    "engine_update": "20250321",
+                    "category": "malicious",
+                    "result": "RansomWare:Win/Lockbit"
+                },
+                "Avast-Mobile": {
+                    "method": "blacklist",
+                    "engine_name": "Avast-Mobile",
+                    "engine_version": "260115-00",
+                    "engine_update": "20260115",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "SymantecMobileInsight": {
+                    "method": "blacklist",
+                    "engine_name": "SymantecMobileInsight",
+                    "engine_version": "2.0",
+                    "engine_update": "20250124",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "BitDefenderFalx": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefenderFalx",
+                    "engine_version": "2.0.936",
+                    "engine_update": "20251216",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "Trustlook": {
+                    "method": "blacklist",
+                    "engine_name": "Trustlook",
+                    "engine_version": "1.0",
+                    "engine_update": "20260115",
+                    "category": "type-unsupported",
+                    "result": null
+                }
+            }
+        }
+    }
+}

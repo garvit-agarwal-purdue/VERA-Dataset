@@ -1,0 +1,2283 @@
+{
+    "data": {
+        "id": "5c66963cf7d417ffe475afdf18906df5c6dcd8dbbb1462918f197323dabb6f19",
+        "type": "file",
+        "links": {
+            "self": "https://www.virustotal.com/api/v3/files/5c66963cf7d417ffe475afdf18906df5c6dcd8dbbb1462918f197323dabb6f19"
+        },
+        "attributes": {
+            "type_extension": "exe",
+            "sigma_analysis_stats": {
+                "high": 1,
+                "medium": 1,
+                "critical": 0,
+                "low": 1
+            },
+            "sha256": "5c66963cf7d417ffe475afdf18906df5c6dcd8dbbb1462918f197323dabb6f19",
+            "signature_info": {
+                "product": "cVi6PW59J0uKvXkU",
+                "internal name": "hr7fV6aadndtJzK7",
+                "copyright": "Copyright 2019 yR0eLdN7qyJmdf8A",
+                "original name": "KkCD3OsklCnp2Fir",
+                "description": "Discord Client",
+                "file version": "4.5.0.0"
+            },
+            "tlsh": "T12AC3074013CAC162EBDE42FA90A251E48330B7E76D75D70AACCEEDF54A02AD359152DF",
+            "last_submission_date": 1685192441,
+            "crowdsourced_yara_results": [
+                {
+                    "ruleset_id": "00c291ca7f",
+                    "rule_name": "INDICATOR_EXE_Packed_SmartAssembly",
+                    "ruleset_name": "indicator_packed",
+                    "description": "Detects executables packed with SmartAssembly",
+                    "author": "ditekSHen",
+                    "match_date": 1738633322,
+                    "source": "https://github.com/ditekshen/detection"
+                },
+                {
+                    "ruleset_id": "00cc803bdc",
+                    "rule_name": "MALWARE_Win_Thanos",
+                    "ruleset_name": "malware",
+                    "description": "Detects Thanos / Prometheus / Spook ransomware",
+                    "author": "ditekSHen",
+                    "match_date": 1738633322,
+                    "source": "https://github.com/ditekshen/detection"
+                },
+                {
+                    "ruleset_id": "015bb815e3",
+                    "rule_name": "Windows_Ransomware_Thanos_a6c09942",
+                    "ruleset_name": "Windows_Ransomware_Thanos",
+                    "description": "Identifies THANOS (Hakbit) ransomware",
+                    "author": "Elastic Security",
+                    "match_date": 1738633322,
+                    "source": "https://github.com/elastic/protections-artifacts"
+                }
+            ],
+            "authentihash": "ce39c91eff0eca4e9c0c0b36bd7af33b903753cde15cf3540066cd36e21bbf75",
+            "sigma_analysis_summary": {
+                "Sigma Integrated Rule Set (GitHub)": {
+                    "high": 1,
+                    "medium": 1,
+                    "critical": 0,
+                    "low": 1
+                }
+            },
+            "magika": "PEBIN",
+            "tags": [
+                "peexe",
+                "direct-cpu-clock-access",
+                "spreader",
+                "runtime-modules",
+                "assembly",
+                "detect-debug-environment"
+            ],
+            "meaningful_name": "KkCD3OsklCnp2Fir",
+            "detectiteasy": {
+                "filetype": "PE32",
+                "values": [
+                    {
+                        "type": "Protector",
+                        "name": "Smart Assembly"
+                    },
+                    {
+                        "type": "Compiler",
+                        "name": "VB.NET"
+                    },
+                    {
+                        "version": "v4.0.30319",
+                        "type": "Library",
+                        "name": ".NET"
+                    },
+                    {
+                        "version": "8.0",
+                        "type": "Linker",
+                        "name": "Microsoft Linker"
+                    }
+                ]
+            },
+            "size": 126976,
+            "last_analysis_stats": {
+                "malicious": 55,
+                "suspicious": 0,
+                "undetected": 15,
+                "harmless": 0,
+                "timeout": 0,
+                "confirmed-timeout": 0,
+                "failure": 1,
+                "type-unsupported": 4
+            },
+            "type_tag": "peexe",
+            "first_submission_date": 1622375416,
+            "trid": [
+                {
+                    "file_type": "Generic CIL Executable (.NET, Mono, etc.)",
+                    "probability": 67.7
+                },
+                {
+                    "file_type": "Win64 Executable (generic)",
+                    "probability": 9.7
+                },
+                {
+                    "file_type": "Win32 Dynamic Link Library (generic)",
+                    "probability": 6.0
+                },
+                {
+                    "file_type": "Win16 NE executable (generic)",
+                    "probability": 4.6
+                },
+                {
+                    "file_type": "Win32 Executable (generic)",
+                    "probability": 4.1
+                }
+            ],
+            "filecondis": {
+                "raw_md5": "808f67790edefdbc15c4679e2a8d4a27",
+                "dhash": "60783c1c2f2d0810"
+            },
+            "names": [
+                "hr7fV6aadndtJzK7",
+                "KkCD3OsklCnp2Fir",
+                "ef8f64e484ef31030ffbf2f03a71ddeb.virus"
+            ],
+            "sigma_analysis_results": [
+                {
+                    "match_context": [
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DD3-6346-070B-000000004700}",
+                                "ProcessId": "8052",
+                                "Product": "Internet Explorer",
+                                "Description": "Microsoft (R) HTML Application host",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=7083239CE743FDB68DFC933B7308E80A,SHA256=CBAB3546BDDB2E4EA340C1A7DF680DA6C4F4F2F18B8E98F6D4B66926183E269E,IMPHASH=4CB8A74361E70A5FF774A0A1A7C65989",
+                                "OriginalFileName": "MSHTA.EXE",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "11.00.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"C:\\Windows\\System32\\mshta.exe\" C:\\Users\\george\\Desktop\\RESTORE_FILES_INFO.hta",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\mshta.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560019",
+                                "RuleName": "-"
+                            }
+                        }
+                    ],
+                    "rule_level": "high",
+                    "rule_id": "31e1f4457871d51593456a4331811513af82fe4e36d2b26a582dd6baa180a91d",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Suspicious MSHTA Process Patterns",
+                    "rule_description": "Detects suspicious mshta process patterns",
+                    "rule_author": "Florian Roth"
+                },
+                {
+                    "match_context": [
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DCA-6346-F20A-000000004700}",
+                                "ProcessId": "7228",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Service Control Manager Configuration Tool",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=24A3E2603E63BCB9695A2935D3B24695,SHA256=3047D5C22A245D1E4294FCD547EC5FB0F2E5EF030B764424ACC74E7744FBE32E,IMPHASH=B037D0ADB81BF9CFC651DE01742089F1",
+                                "OriginalFileName": "sc.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"sc.exe\" config SQLWriter start= disabled",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\sc.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560010",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DCA-6346-F40A-000000004700}",
+                                "ProcessId": "6840",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Service Control Manager Configuration Tool",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=24A3E2603E63BCB9695A2935D3B24695,SHA256=3047D5C22A245D1E4294FCD547EC5FB0F2E5EF030B764424ACC74E7744FBE32E,IMPHASH=B037D0ADB81BF9CFC651DE01742089F1",
+                                "OriginalFileName": "sc.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"sc.exe\" config SQLTELEMETRY start= disabled",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\sc.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560010",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DCE-6346-FB0A-000000004700}",
+                                "ProcessId": "2160",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Service Control Manager Configuration Tool",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=24A3E2603E63BCB9695A2935D3B24695,SHA256=3047D5C22A245D1E4294FCD547EC5FB0F2E5EF030B764424ACC74E7744FBE32E,IMPHASH=B037D0ADB81BF9CFC651DE01742089F1",
+                                "OriginalFileName": "sc.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"sc.exe\" config SQLTELEMETRY$ECWDB2 start= disabled",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\sc.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560014",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DCF-6346-FD0A-000000004700}",
+                                "ProcessId": "7248",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Service Control Manager Configuration Tool",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=24A3E2603E63BCB9695A2935D3B24695,SHA256=3047D5C22A245D1E4294FCD547EC5FB0F2E5EF030B764424ACC74E7744FBE32E,IMPHASH=B037D0ADB81BF9CFC651DE01742089F1",
+                                "OriginalFileName": "sc.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"sc.exe\" config SstpSvc start= disabled",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\sc.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560015",
+                                "RuleName": "-"
+                            }
+                        }
+                    ],
+                    "rule_level": "medium",
+                    "rule_id": "b55af83c751d2c7bca8dbba245a97017e34109bff34fd50b02f60a91111ea703",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Sc Or Set-Service Cmdlet Execution to Disable Services",
+                    "rule_description": "Detects when attackers use \"sc.exe\" or the powershell \"Set-Service\" cmdlet to change the startup type of a service to \"disabled\"",
+                    "rule_author": "Nasreddine Bencherchali"
+                },
+                {
+                    "match_context": [
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DC1-6346-E50A-000000004700}",
+                                "ProcessId": "7644",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill\" /F /IM RaccineSettings.exe",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560001",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DD0-6346-000B-000000004700}",
+                                "ProcessId": "7048",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill.exe\" /IM mspub.exe /F",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560016",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DD1-6346-020B-000000004700}",
+                                "ProcessId": "7040",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill.exe\" /IM CNTAoSMgr.exe /F",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560017",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DD2-6346-030B-000000004700}",
+                                "ProcessId": "4088",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill.exe\" /IM xfssvccon.exe /F",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560018",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DD3-6346-050B-000000004700}",
+                                "ProcessId": "5800",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill.exe\" /IM mydesktopqos.exe /F",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560019",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DD4-6346-080B-000000004700}",
+                                "ProcessId": "7672",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill.exe\" /IM sqlbrowser.exe /F",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560020",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DD5-6346-0B0B-000000004700}",
+                                "ProcessId": "4016",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill.exe\" /IM sqlwriter.exe /F",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560021",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DD7-6346-0F0B-000000004700}",
+                                "ProcessId": "7264",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill.exe\" /IM mydesktopservice.exe /F",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560023",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DD8-6346-100B-000000004700}",
+                                "ProcessId": "6780",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill.exe\" /IM mspub.exe /F",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560024",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DD9-6346-120B-000000004700}",
+                                "ProcessId": "6320",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill.exe\" /IM visio.exe /F",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560025",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DDA-6346-140B-000000004700}",
+                                "ProcessId": "6948",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill.exe\" /IM tbirdconfig.exe /F",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560026",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DDA-6346-160B-000000004700}",
+                                "ProcessId": "5452",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill.exe\" /IM Ntrtscan.exe /F",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560026",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DDB-6346-180B-000000004700}",
+                                "ProcessId": "6108",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill.exe\" /IM sqlservr.exe /F",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560027",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DDC-6346-1B0B-000000004700}",
+                                "ProcessId": "3232",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill.exe\" /IM mydesktopservice.exe /F",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560028",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DDD-6346-1D0B-000000004700}",
+                                "ProcessId": "4148",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill.exe\" /IM synctime.exe /F",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560029",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DDE-6346-1F0B-000000004700}",
+                                "ProcessId": "2404",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill.exe\" /IM sqbcoreservice.exe /F",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560030",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DDF-6346-230B-000000004700}",
+                                "ProcessId": "5724",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill.exe\" /IM ocomm.exe /F",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560031",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DE0-6346-260B-000000004700}",
+                                "ProcessId": "560",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill.exe\" /IM thebat64.exe /F",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560032",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DE1-6346-280B-000000004700}",
+                                "ProcessId": "1684",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill.exe\" /IM firefoxconfig.exe /F",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560033",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DE2-6346-2A0B-000000004700}",
+                                "ProcessId": "6804",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill.exe\" /IM onenote.exe /F",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560034",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DE3-6346-2C0B-000000004700}",
+                                "ProcessId": "7480",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill.exe\" /IM mysqld-nt.exe /F",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560035",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DE4-6346-2F0B-000000004700}",
+                                "ProcessId": "7172",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill.exe\" /IM mysqld.exe /F",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560036",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DE4-6346-310B-000000004700}",
+                                "ProcessId": "8072",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill.exe\" /IM thebat.exe /F",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560036",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DE5-6346-330B-000000004700}",
+                                "ProcessId": "5932",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill.exe\" /IM PccNTMon.exe /F",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560037",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DE6-6346-350B-000000004700}",
+                                "ProcessId": "4024",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill.exe\" /IM wordpad.exe /F",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560038",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DE7-6346-380B-000000004700}",
+                                "ProcessId": "7672",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill.exe\" /IM steam.exe /F",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560039",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-6DE7-6346-3C0B-000000004700}",
+                                "ProcessId": "7108",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Terminates Processes",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-6DBF-6346-E30A-000000004700}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=15E2E0ACD891510C6268CB8899F2A1A1,SHA256=F328D587561BEED3C19289FBA43E284FB57BCE1A4C202C7379673964F9B8610D,IMPHASH=0D3E23DCB6BF63A9EB90D5BED57B4F89",
+                                "OriginalFileName": "taskkill.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\executable.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7636",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"taskkill.exe\" /IM dbeng50.exe /F",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-FFC9-62FD-564A-040000000000",
+                                "LogonId": "281174",
+                                "Image": "C:\\Windows\\SysWOW64\\taskkill.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\executable.exe\" ",
+                                "UtcTime": "1665560039",
+                                "RuleName": "-"
+                            }
+                        }
+                    ],
+                    "rule_level": "low",
+                    "rule_id": "cd06da2f3978bdb24b3f3c8f83c7df917a910c6b29921d0e375e418f340d8f3d",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Suspicious Execution of Taskkill",
+                    "rule_description": "Adversaries may stop services or processes in order to conduct Data Destruction or Data Encrypted for Impact on the data stores of services like Exchange and SQL Server.",
+                    "rule_author": "frack113"
+                }
+            ],
+            "vhash": "215036651511901d4221zc13",
+            "reputation": -9,
+            "packers": {
+                "PEiD": ".NET executable"
+            },
+            "sandbox_verdicts": {
+                "Zenbox": {
+                    "category": "malicious",
+                    "confidence": 84,
+                    "sandbox_name": "Zenbox",
+                    "malware_classification": [
+                        "MALWARE",
+                        "RANSOM",
+                        "TROJAN",
+                        "EVADER"
+                    ],
+                    "malware_names": [
+                        "Spook"
+                    ]
+                },
+                "C2AE": {
+                    "category": "malicious",
+                    "confidence": 50,
+                    "sandbox_name": "C2AE",
+                    "malware_classification": [
+                        "MALWARE"
+                    ],
+                    "malware_names": [
+                        "LnkMalicious"
+                    ]
+                },
+                "DAS-Security Orcas": {
+                    "category": "malicious",
+                    "sandbox_name": "DAS-Security Orcas",
+                    "malware_classification": [
+                        "MALWARE"
+                    ]
+                },
+                "Lastline": {
+                    "category": "malicious",
+                    "sandbox_name": "Lastline",
+                    "malware_classification": [
+                        "MALWARE",
+                        "RANSOM"
+                    ]
+                }
+            },
+            "dot_net_guids": {
+                "mvid": "0669b680-a51f-42d2-8490-e82af4ec5c6b"
+            },
+            "last_modification_date": 1746363472,
+            "unique_sources": 2,
+            "ssdeep": "3072:mGnr6Rx3Xgmzx8Tam05FdMWV/+G1c9BwfmdsqGq7VrPdCTtkf:bm3tp929ifmmqRjdY",
+            "last_analysis_date": 1738633321,
+            "last_analysis_results": {
+                "Bkav": {
+                    "method": "blacklist",
+                    "engine_name": "Bkav",
+                    "engine_version": "2.0.0.1",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "W32.AIDetectMalware.CS"
+                },
+                "Lionic": {
+                    "method": "blacklist",
+                    "engine_name": "Lionic",
+                    "engine_version": "8.16",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Trojan.MSIL.Thanos.j!c"
+                },
+                "tehtris": {
+                    "method": "blacklist",
+                    "engine_name": "tehtris",
+                    "engine_version": "v0.1.4",
+                    "engine_update": "20250204",
+                    "category": "undetected",
+                    "result": null
+                },
+                "MicroWorld-eScan": {
+                    "method": "blacklist",
+                    "engine_name": "MicroWorld-eScan",
+                    "engine_version": "14.0.409.0",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Trojan.MSIL.Basic.6.Gen"
+                },
+                "CTX": {
+                    "method": "blacklist",
+                    "engine_name": "CTX",
+                    "engine_version": "2024.8.29.1",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "exe.trojan.basic"
+                },
+                "CAT-QuickHeal": {
+                    "method": "blacklist",
+                    "engine_name": "CAT-QuickHeal",
+                    "engine_version": "22.00",
+                    "engine_update": "20250203",
+                    "category": "malicious",
+                    "result": "Ransom.Thanos.S30112711"
+                },
+                "Skyhigh": {
+                    "method": "blacklist",
+                    "engine_name": "Skyhigh",
+                    "engine_version": "v2021.2.0+4045",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Ransom-Thanos!EF8F64E484EF"
+                },
+                "McAfee": {
+                    "method": "blacklist",
+                    "engine_name": "McAfee",
+                    "engine_version": "6.0.6.653",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Ransom-Thanos!EF8F64E484EF"
+                },
+                "Cylance": {
+                    "method": "blacklist",
+                    "engine_name": "Cylance",
+                    "engine_version": "3.0.0.0",
+                    "engine_update": "20250109",
+                    "category": "malicious",
+                    "result": "Unsafe"
+                },
+                "Cynet": {
+                    "method": "blacklist",
+                    "engine_name": "Cynet",
+                    "engine_version": "4.0.3.4",
+                    "engine_update": "20250204",
+                    "category": "undetected",
+                    "result": null
+                },
+                "CrowdStrike": {
+                    "method": "blacklist",
+                    "engine_name": "CrowdStrike",
+                    "engine_version": "1.0",
+                    "engine_update": "20231026",
+                    "category": "malicious",
+                    "result": "win/malicious_confidence_100% (W)"
+                },
+                "Alibaba": {
+                    "method": "blacklist",
+                    "engine_name": "Alibaba",
+                    "engine_version": "0.3.0.5",
+                    "engine_update": "20190527",
+                    "category": "malicious",
+                    "result": "Ransom:MSIL/Thanos.6aa6681c"
+                },
+                "K7GW": {
+                    "method": "blacklist",
+                    "engine_name": "K7GW",
+                    "engine_version": "12.216.54710",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Trojan ( 005689411 )"
+                },
+                "K7AntiVirus": {
+                    "method": "blacklist",
+                    "engine_name": "K7AntiVirus",
+                    "engine_version": "12.216.54708",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Trojan ( 005689411 )"
+                },
+                "Baidu": {
+                    "method": "blacklist",
+                    "engine_name": "Baidu",
+                    "engine_version": "1.0.0.2",
+                    "engine_update": "20190318",
+                    "category": "undetected",
+                    "result": null
+                },
+                "VirIT": {
+                    "method": "blacklist",
+                    "engine_name": "VirIT",
+                    "engine_version": "9.5.884",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.MSIL_Heur.A"
+                },
+                "Symantec": {
+                    "method": "blacklist",
+                    "engine_name": "Symantec",
+                    "engine_version": "1.22.0.0",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Trojan.Gen.MBT"
+                },
+                "Elastic": {
+                    "method": "blacklist",
+                    "engine_name": "Elastic",
+                    "engine_version": "4.0.184",
+                    "engine_update": "20250129",
+                    "category": "malicious",
+                    "result": "Windows.Ransomware.Thanos"
+                },
+                "ESET-NOD32": {
+                    "method": "blacklist",
+                    "engine_name": "ESET-NOD32",
+                    "engine_version": "30660",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "a variant of MSIL/Filecoder.Thanos.A"
+                },
+                "Zoner": {
+                    "method": "blacklist",
+                    "engine_name": "Zoner",
+                    "engine_version": "2.2.2.0",
+                    "engine_update": "20250204",
+                    "category": "undetected",
+                    "result": null
+                },
+                "APEX": {
+                    "method": "blacklist",
+                    "engine_name": "APEX",
+                    "engine_version": "6.620",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Malicious"
+                },
+                "Paloalto": {
+                    "method": "blacklist",
+                    "engine_name": "Paloalto",
+                    "engine_version": "0.9.0.1003",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "generic.ml"
+                },
+                "ClamAV": {
+                    "method": "blacklist",
+                    "engine_name": "ClamAV",
+                    "engine_version": "1.4.2.0",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Win.Ransomware.Prometheus-9874369-0"
+                },
+                "GData": {
+                    "method": "blacklist",
+                    "engine_name": "GData",
+                    "engine_version": "A:25.39756B:27.39146",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Trojan.MSIL.Basic.6.Gen"
+                },
+                "Kaspersky": {
+                    "method": "blacklist",
+                    "engine_name": "Kaspersky",
+                    "engine_version": "22.0.1.28",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "HEUR:Trojan-Ransom.MSIL.Thanos.gen"
+                },
+                "BitDefender": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefender",
+                    "engine_version": "7.2",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Trojan.MSIL.Basic.6.Gen"
+                },
+                "NANO-Antivirus": {
+                    "method": "blacklist",
+                    "engine_name": "NANO-Antivirus",
+                    "engine_version": "1.0.146.25796",
+                    "engine_update": "20250204",
+                    "category": "undetected",
+                    "result": null
+                },
+                "SUPERAntiSpyware": {
+                    "method": "blacklist",
+                    "engine_name": "SUPERAntiSpyware",
+                    "engine_version": "5.6.0.1032",
+                    "engine_update": "20250204",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Avast": {
+                    "method": "blacklist",
+                    "engine_name": "Avast",
+                    "engine_version": "23.9.8494.0",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Win32:MalwareX-gen [Trj]"
+                },
+                "Tencent": {
+                    "method": "blacklist",
+                    "engine_name": "Tencent",
+                    "engine_version": "1.0.0.1",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Msil.Trojan.Thanos.Hajl"
+                },
+                "Emsisoft": {
+                    "method": "blacklist",
+                    "engine_name": "Emsisoft",
+                    "engine_version": "2024.8.0.61147",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Trojan.MSIL.Basic.6.Gen (B)"
+                },
+                "F-Secure": {
+                    "method": "blacklist",
+                    "engine_name": "F-Secure",
+                    "engine_version": "18.10.1547.307",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Heuristic.HEUR/AGEN.1307461"
+                },
+                "DrWeb": {
+                    "method": "blacklist",
+                    "engine_name": "DrWeb",
+                    "engine_version": "7.0.65.5230",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Trojan.EncoderNET.31368"
+                },
+                "Zillya": {
+                    "method": "blacklist",
+                    "engine_name": "Zillya",
+                    "engine_version": "2.0.0.5292",
+                    "engine_update": "20250203",
+                    "category": "undetected",
+                    "result": null
+                },
+                "TrendMicro": {
+                    "method": "blacklist",
+                    "engine_name": "TrendMicro",
+                    "engine_version": "11.0.0.1006",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Ransom.MSIL.THANOS.SM"
+                },
+                "McAfeeD": {
+                    "method": "blacklist",
+                    "engine_name": "McAfeeD",
+                    "engine_version": "1.2.0.7977",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Real Protect-LS!EF8F64E484EF"
+                },
+                "SentinelOne": {
+                    "method": "blacklist",
+                    "engine_name": "SentinelOne",
+                    "engine_version": "25.1.1.1",
+                    "engine_update": "20250114",
+                    "category": "malicious",
+                    "result": "Static AI - Malicious PE"
+                },
+                "Trapmine": {
+                    "method": "blacklist",
+                    "engine_name": "Trapmine",
+                    "engine_version": "4.0.3.0",
+                    "engine_update": "20250113",
+                    "category": "malicious",
+                    "result": "malicious.high.ml.score"
+                },
+                "CMC": {
+                    "method": "blacklist",
+                    "engine_name": "CMC",
+                    "engine_version": "2.4.2022.1",
+                    "engine_update": "20250203",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Sophos": {
+                    "method": "blacklist",
+                    "engine_name": "Sophos",
+                    "engine_version": "2.5.5.0",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Troj/Kryptik-YI"
+                },
+                "Ikarus": {
+                    "method": "blacklist",
+                    "engine_name": "Ikarus",
+                    "engine_version": "6.3.30.0",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Trojan-Ransom.Thanos"
+                },
+                "FireEye": {
+                    "method": "blacklist",
+                    "engine_name": "FireEye",
+                    "engine_version": "35.47.0.0",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Generic.mg.ef8f64e484ef3103"
+                },
+                "Jiangmin": {
+                    "method": "blacklist",
+                    "engine_name": "Jiangmin",
+                    "engine_version": "16.0.100",
+                    "engine_update": "20250203",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Webroot": {
+                    "method": "blacklist",
+                    "engine_name": "Webroot",
+                    "engine_version": "1.9.0.8",
+                    "engine_update": "20240910",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Varist": {
+                    "method": "blacklist",
+                    "engine_name": "Varist",
+                    "engine_version": "6.6.1.3",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "W32/MSIL_Thanos.A.gen!Eldorado"
+                },
+                "Avira": {
+                    "method": "blacklist",
+                    "engine_name": "Avira",
+                    "engine_version": "8.3.3.20",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "HEUR/AGEN.1307461"
+                },
+                "Antiy-AVL": {
+                    "method": "blacklist",
+                    "engine_name": "Antiy-AVL",
+                    "engine_version": "3.0",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Trojan[Ransom]/MSIL.Thanos"
+                },
+                "Kingsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Kingsoft",
+                    "engine_version": "None",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "malware.kb.c.1000"
+                },
+                "Gridinsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Gridinsoft",
+                    "engine_version": "1.0.207.174",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Ransom.Win32.Generic.dd!n"
+                },
+                "Xcitium": {
+                    "method": "blacklist",
+                    "engine_name": "Xcitium",
+                    "engine_version": "37445",
+                    "engine_update": "20250204",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Arcabit": {
+                    "method": "blacklist",
+                    "engine_name": "Arcabit",
+                    "engine_version": "2022.0.0.18",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Trojan.MSIL.Basic.6.Gen"
+                },
+                "ViRobot": {
+                    "method": "blacklist",
+                    "engine_name": "ViRobot",
+                    "engine_version": "2014.3.20.0",
+                    "engine_update": "20250204",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Microsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Microsoft",
+                    "engine_version": "1.1.24090.11",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Ransom:MSIL/Thanos.DC!MTB"
+                },
+                "Google": {
+                    "method": "blacklist",
+                    "engine_name": "Google",
+                    "engine_version": "1738683056",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Detected"
+                },
+                "AhnLab-V3": {
+                    "method": "blacklist",
+                    "engine_name": "AhnLab-V3",
+                    "engine_version": "3.27.0.10558",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Malware/Win32.RL_Generic.C4192539"
+                },
+                "Acronis": {
+                    "method": "blacklist",
+                    "engine_name": "Acronis",
+                    "engine_version": "1.2.0.121",
+                    "engine_update": "20240328",
+                    "category": "undetected",
+                    "result": null
+                },
+                "VBA32": {
+                    "method": "blacklist",
+                    "engine_name": "VBA32",
+                    "engine_version": "5.3.1",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Ransom.MSIL.Thanos.Heur"
+                },
+                "ALYac": {
+                    "method": "blacklist",
+                    "engine_name": "ALYac",
+                    "engine_version": "2.0.0.10",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.Thanos"
+                },
+                "TACHYON": {
+                    "method": "blacklist",
+                    "engine_name": "TACHYON",
+                    "engine_version": "2025-02-04.02",
+                    "engine_update": "20250204",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Malwarebytes": {
+                    "method": "blacklist",
+                    "engine_name": "Malwarebytes",
+                    "engine_version": "4.5.5.54",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Generic.Malware/Suspicious"
+                },
+                "Panda": {
+                    "method": "blacklist",
+                    "engine_name": "Panda",
+                    "engine_version": "4.6.4.2",
+                    "engine_update": "20250203",
+                    "category": "malicious",
+                    "result": "Trj/GdSda.A"
+                },
+                "TrendMicro-HouseCall": {
+                    "method": "blacklist",
+                    "engine_name": "TrendMicro-HouseCall",
+                    "engine_version": "10.0.0.1040",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Ransom.MSIL.THANOS.SM"
+                },
+                "Rising": {
+                    "method": "blacklist",
+                    "engine_name": "Rising",
+                    "engine_version": "25.0.0.28",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Ransom.Thanos!1.D81A (CLASSIC)"
+                },
+                "Yandex": {
+                    "method": "blacklist",
+                    "engine_name": "Yandex",
+                    "engine_version": "5.5.2.24",
+                    "engine_update": "20250204",
+                    "category": "undetected",
+                    "result": null
+                },
+                "huorong": {
+                    "method": "blacklist",
+                    "engine_name": "huorong",
+                    "engine_version": "1e33cf3:1e33cf3:2292584:2292584",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Ransom/MSIL.LockFile.d"
+                },
+                "MaxSecure": {
+                    "method": "blacklist",
+                    "engine_name": "MaxSecure",
+                    "engine_version": "1.0.0.1",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Trojan.Malware.106864989.susgen"
+                },
+                "Fortinet": {
+                    "method": "blacklist",
+                    "engine_name": "Fortinet",
+                    "engine_version": "None",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "MSIL/Filecoder.A!tr.ransom"
+                },
+                "AVG": {
+                    "method": "blacklist",
+                    "engine_name": "AVG",
+                    "engine_version": "23.9.8494.0",
+                    "engine_update": "20250204",
+                    "category": "malicious",
+                    "result": "Win32:MalwareX-gen [Trj]"
+                },
+                "DeepInstinct": {
+                    "method": "blacklist",
+                    "engine_name": "DeepInstinct",
+                    "engine_version": "5.0.0.8",
+                    "engine_update": "20250202",
+                    "category": "malicious",
+                    "result": "MALICIOUS"
+                },
+                "alibabacloud": {
+                    "method": "blacklist",
+                    "engine_name": "alibabacloud",
+                    "engine_version": "2.2.0",
+                    "engine_update": "20241030",
+                    "category": "malicious",
+                    "result": "Ransomware:Win/Thanos.A"
+                },
+                "VIPRE": {
+                    "method": "blacklist",
+                    "engine_name": "VIPRE",
+                    "engine_version": "6.0.0.35",
+                    "engine_update": "20250204",
+                    "category": "failure",
+                    "result": null
+                },
+                "Trustlook": {
+                    "method": "blacklist",
+                    "engine_name": "Trustlook",
+                    "engine_version": "1.0",
+                    "engine_update": "20250204",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "SymantecMobileInsight": {
+                    "method": "blacklist",
+                    "engine_name": "SymantecMobileInsight",
+                    "engine_version": "2.0",
+                    "engine_update": "20250124",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "BitDefenderFalx": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefenderFalx",
+                    "engine_version": "2.0.936",
+                    "engine_update": "20241203",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "Avast-Mobile": {
+                    "method": "blacklist",
+                    "engine_name": "Avast-Mobile",
+                    "engine_version": "250204-02",
+                    "engine_update": "20250204",
+                    "category": "type-unsupported",
+                    "result": null
+                }
+            },
+            "type_description": "Win32 EXE",
+            "pe_info": {
+                "timestamp": 1622138683,
+                "imphash": "f34d5f2d4577ed6d9ceec516c1f5a744",
+                "machine_type": 332,
+                "entry_point": 132090,
+                "resource_details": [
+                    {
+                        "lang": "NEUTRAL",
+                        "chi2": 76443.49,
+                        "filetype": "unknown",
+                        "entropy": 3.566664695739746,
+                        "sha256": "d969efdf7d19d37bf35d1eafc957ef45c2cdb357f7c7863fcc635061630db9bc",
+                        "type": "RT_VERSION"
+                    },
+                    {
+                        "lang": "NEUTRAL",
+                        "chi2": 11023.79,
+                        "filetype": "unknown",
+                        "entropy": 4.6628851890563965,
+                        "sha256": "70c09fd50debc9697c77b72db75fd3e1a72e4737be2ccfa17818e3f5fa4245d7",
+                        "type": "RT_MANIFEST"
+                    }
+                ],
+                "resource_langs": {
+                    "NEUTRAL": 2
+                },
+                "resource_types": {
+                    "RT_MANIFEST": 1,
+                    "RT_VERSION": 1
+                },
+                "sections": [
+                    {
+                        "name": ".text",
+                        "chi2": 1183905.38,
+                        "virtual_address": 8192,
+                        "entropy": 6.75,
+                        "raw_size": 123904,
+                        "flags": "rx",
+                        "virtual_size": 123904,
+                        "md5": "0e173f30e1a165f6499e70123bee4a7d"
+                    },
+                    {
+                        "name": ".rsrc",
+                        "chi2": 90870.25,
+                        "virtual_address": 139264,
+                        "entropy": 4.26,
+                        "raw_size": 2048,
+                        "flags": "r",
+                        "virtual_size": 1865,
+                        "md5": "968dc8cb68d312bd9f5dbb3912262c8c"
+                    },
+                    {
+                        "name": ".reloc",
+                        "chi2": 128522.0,
+                        "virtual_address": 147456,
+                        "entropy": 0.08,
+                        "raw_size": 512,
+                        "flags": "r",
+                        "virtual_size": 12,
+                        "md5": "e9174662129a5431ed8f9d04f9b38f42"
+                    }
+                ],
+                "import_list": [
+                    {
+                        "library_name": "mscoree.dll",
+                        "imported_functions": [
+                            "_CorExeMain"
+                        ]
+                    }
+                ]
+            },
+            "popular_threat_classification": {
+                "popular_threat_name": [
+                    {
+                        "count": 19,
+                        "value": "msil"
+                    },
+                    {
+                        "count": 19,
+                        "value": "thanos"
+                    },
+                    {
+                        "count": 6,
+                        "value": "basic"
+                    }
+                ],
+                "suggested_threat_label": "ransomware.msil/thanos",
+                "popular_threat_category": [
+                    {
+                        "count": 19,
+                        "value": "ransomware"
+                    },
+                    {
+                        "count": 19,
+                        "value": "trojan"
+                    }
+                ]
+            },
+            "magic": "PE32 executable (GUI) Intel 80386 Mono/.Net assembly, for MS Windows",
+            "creation_date": 1622138683,
+            "total_votes": {
+                "harmless": 0,
+                "malicious": 1
+            },
+            "type_tags": [
+                "executable",
+                "windows",
+                "win32",
+                "pe",
+                "peexe"
+            ],
+            "md5": "ef8f64e484ef31030ffbf2f03a71ddeb",
+            "sha1": "b3a7ebf8df8cd174c711bc57de25dfa8e096246d",
+            "dot_net_assembly": {
+                "entry_point_rva": 94424,
+                "metadata_header_rva": 64868,
+                "assembly_name": "LtZpMjwVXkwyANwU",
+                "resources_va": 37592,
+                "assembly_flags": 3,
+                "strongname_va": 0,
+                "external_assemblies": {
+                    "Microsoft.VisualBasic": {
+                        "version": "10.0.0.0"
+                    },
+                    "mscorlib": {
+                        "version": "4.0.0.0"
+                    },
+                    "System": {
+                        "version": "4.0.0.0"
+                    },
+                    "System.Drawing": {
+                        "version": "4.0.0.0"
+                    },
+                    "System.Windows.Forms": {
+                        "version": "4.0.0.0"
+                    },
+                    "System.Core": {
+                        "version": "4.0.0.0"
+                    },
+                    "System.Management": {
+                        "version": "4.0.0.0"
+                    }
+                },
+                "entry_point_token": 100663297,
+                "tables_rows_map": "1bf3d0fa0f00442170172f10160500001091005b7190010070000118060",
+                "external_modules": [
+                    "kernel32.dll",
+                    "ntdll.dll",
+                    "user32.dll",
+                    "advapi32.dll",
+                    "kernel32"
+                ],
+                "streams": {
+                    "#GUID": {
+                        "chi2": 240.0,
+                        "md5": "2d3d02a172ca97c0f3cabe148dac0494",
+                        "entropy": 4.0,
+                        "size": 16
+                    },
+                    "#Blob": {
+                        "chi2": 45029.0,
+                        "md5": "9447a788d5111bdd97eadb3dcc44f14d",
+                        "entropy": 5.3830766677856445,
+                        "size": 4280
+                    },
+                    "#US": {
+                        "chi2": 15649.015625,
+                        "md5": "7ce6b2c70fd7b5b97d2bdeab626e5743",
+                        "entropy": 3.5271475315093994,
+                        "size": 236
+                    },
+                    "#~": {
+                        "chi2": 282963.59375,
+                        "md5": "ef562391bbee7300600e43cf8b816efa",
+                        "entropy": 5.761053562164307,
+                        "size": 11008
+                    },
+                    "#Strings": {
+                        "chi2": 96208.9609375,
+                        "md5": "c63b56e1230aef2bd1d3479287e24adf",
+                        "entropy": 5.53354549407959,
+                        "size": 13908
+                    }
+                },
+                "tables_present": 26,
+                "assembly_flags_txt": "COMIMAGE_FLAGS_ILONLY, COMIMAGE_FLAGS_32BITREQUIRED",
+                "clr_version": "v4.0.30319",
+                "assembly_data": {
+                    "majorversion": 0,
+                    "minorversion": 0,
+                    "hashalgid": 0,
+                    "flags_text": "afPA_None",
+                    "buildnumber": 0,
+                    "flags": 0,
+                    "revisionnumber": 0,
+                    "name": "Client-1"
+                },
+                "tables_present_map": "b093da2ff57",
+                "manifest_resource": [
+                    "{93b685da-a1bc-4129-922b-07e54c6b55c7}"
+                ],
+                "clr_meta_version": "1.1",
+                "tables_rows_map_log": "4989984a786458466566746475",
+                "unmanaged_methods": {
+                    "kernel32.dll": [
+                        "GetModuleHandle",
+                        "GetCurrentProcess"
+                    ],
+                    "ntdll.dll": [
+                        "NtSetInformationProcess"
+                    ],
+                    "user32.dll": [
+                        "SystemParametersInfo"
+                    ],
+                    "advapi32.dll": [
+                        "GetKernelObjectSecurity",
+                        "SetKernelObjectSecurity"
+                    ],
+                    "kernel32": [
+                        "DeleteFile"
+                    ]
+                },
+                "type_definition_list": [
+                    {
+                        "namespace": "System",
+                        "type_definitions": [
+                            "Object",
+                            "IDisposable",
+                            "MulticastDelegate",
+                            "Attribute",
+                            "ValueType",
+                            "Enum",
+                            "DateTime",
+                            "Action`1",
+                            "Func`2",
+                            "Type",
+                            "ModuleHandle",
+                            "Uri",
+                            "IAsyncResult",
+                            "AsyncCallback",
+                            "AttributeUsageAttribute",
+                            "AttributeTargets",
+                            "String",
+                            "Int32",
+                            "Environment",
+                            "Random",
+                            "Convert",
+                            "Exception",
+                            "Console",
+                            "Byte",
+                            "BitConverter",
+                            "Double",
+                            "Char",
+                            "Array",
+                            "OperatingSystem",
+                            "Version",
+                            "PlatformID",
+                            "RuntimeFieldHandle",
+                            "RuntimeTypeHandle",
+                            "Int64",
+                            "UnauthorizedAccessException",
+                            "StringSplitOptions",
+                            "IntPtr",
+                            "ArgumentException",
+                            "ArgumentNullException",
+                            "ArgumentOutOfRangeException",
+                            "ObjectDisposedException",
+                            "Math",
+                            "UInt32",
+                            "GC",
+                            "Activator",
+                            "InvalidOperationException",
+                            "NullReferenceException",
+                            "PlatformNotSupportedException",
+                            "MidpointRounding",
+                            "RuntimeMethodHandle",
+                            "Delegate",
+                            "FormatException",
+                            "Int16"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Security.Cryptography",
+                        "type_definitions": [
+                            "ICryptoTransform",
+                            "SymmetricAlgorithm",
+                            "Rfc2898DeriveBytes",
+                            "RNGCryptoServiceProvider",
+                            "RandomNumberGenerator",
+                            "RijndaelManaged",
+                            "DeriveBytes",
+                            "PaddingMode",
+                            "CipherMode",
+                            "CryptoStream",
+                            "CryptoStreamMode",
+                            "RSACryptoServiceProvider",
+                            "AsymmetricAlgorithm",
+                            "KeySizes",
+                            "CryptographicException",
+                            "AesManaged",
+                            "Aes"
+                        ]
+                    },
+                    {
+                        "namespace": "System.IO",
+                        "type_definitions": [
+                            "MemoryStream",
+                            "FileStream",
+                            "Path",
+                            "File",
+                            "Directory",
+                            "StreamWriter",
+                            "TextWriter",
+                            "FileInfo",
+                            "FileSystemInfo",
+                            "StreamReader",
+                            "TextReader",
+                            "DirectoryInfo",
+                            "FileMode",
+                            "FileAccess",
+                            "FileShare",
+                            "Stream",
+                            "FileAttributes",
+                            "DriveInfo",
+                            "DriveType"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Collections.Generic",
+                        "type_definitions": [
+                            "List`1",
+                            "Dictionary`2",
+                            "IEnumerable`1",
+                            "Stack`1"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Diagnostics",
+                        "type_definitions": [
+                            "Stopwatch",
+                            "Process",
+                            "ProcessModule",
+                            "ProcessStartInfo",
+                            "ProcessWindowStyle"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Threading",
+                        "type_definitions": [
+                            "ThreadStart",
+                            "Thread",
+                            "ThreadPriority",
+                            "Mutex",
+                            "WaitHandle",
+                            "Monitor"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Collections.Specialized",
+                        "type_definitions": [
+                            "StringCollection"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Security",
+                        "type_definitions": [
+                            "SecureString",
+                            "UnverifiableCodeAttribute"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Security.AccessControl",
+                        "type_definitions": [
+                            "RawSecurityDescriptor",
+                            "FileSystemAccessRule",
+                            "FileSystemRights",
+                            "InheritanceFlags",
+                            "PropagationFlags",
+                            "AccessControlType",
+                            "DirectorySecurity",
+                            "AccessControlSections",
+                            "ObjectSecurity",
+                            "AccessControlModification",
+                            "AccessRule",
+                            "GenericSecurityDescriptor",
+                            "RawAcl",
+                            "CommonAce",
+                            "AceFlags",
+                            "AceQualifier",
+                            "GenericAce"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Runtime.CompilerServices",
+                        "type_definitions": [
+                            "RuntimeCompatibilityAttribute",
+                            "CompilationRelaxationsAttribute",
+                            "ExtensionAttribute",
+                            "SuppressIldasmAttribute",
+                            "RuntimeHelpers"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Reflection",
+                        "type_definitions": [
+                            "AssemblyFileVersionAttribute",
+                            "Assembly",
+                            "MemberInfo",
+                            "BindingFlags",
+                            "Binder",
+                            "FieldInfo",
+                            "MethodBase",
+                            "MethodInfo",
+                            "ParameterInfo",
+                            "Module"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Runtime.InteropServices",
+                        "type_definitions": [
+                            "GuidAttribute",
+                            "TypeLibTypeAttribute",
+                            "DispIdAttribute",
+                            "TypeLibFuncAttribute",
+                            "Marshal"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Linq",
+                        "type_definitions": [
+                            "Enumerable"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Security.Principal",
+                        "type_definitions": [
+                            "WindowsIdentity",
+                            "WindowsPrincipal",
+                            "WindowsBuiltInRole",
+                            "SecurityIdentifier",
+                            "WellKnownSidType"
+                        ]
+                    },
+                    {
+                        "namespace": "uncategorized",
+                        "type_definitions": [
+                            "SpecialFolder",
+                            "Enumerator",
+                            "ManagementObjectEnumerator"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Net",
+                        "type_definitions": [
+                            "WebClient",
+                            "WebRequest",
+                            "FtpWebRequest",
+                            "NetworkCredential",
+                            "ICredentials"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Windows.Forms",
+                        "type_definitions": [
+                            "MessageBox",
+                            "DialogResult",
+                            "MessageBoxButtons",
+                            "MessageBoxIcon",
+                            "NotifyIcon",
+                            "ToolTipIcon"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Management",
+                        "type_definitions": [
+                            "ManagementObjectSearcher",
+                            "ManagementObjectCollection",
+                            "ManagementBaseObject",
+                            "ManagementObject",
+                            "ManagementPath",
+                            "ManagementClass",
+                            "PropertyDataCollection",
+                            "PropertyData"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Text",
+                        "type_definitions": [
+                            "Encoding",
+                            "ASCIIEncoding"
+                        ]
+                    },
+                    {
+                        "namespace": "Microsoft.Win32",
+                        "type_definitions": [
+                            "Registry",
+                            "RegistryKey",
+                            "RegistryValueKind"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Drawing",
+                        "type_definitions": [
+                            "SystemIcons",
+                            "Icon",
+                            "Image"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Security.Claims",
+                        "type_definitions": [
+                            "ClaimsIdentity"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Threading.Tasks",
+                        "type_definitions": [
+                            "Parallel",
+                            "ParallelLoopResult"
+                        ]
+                    },
+                    {
+                        "namespace": "System.IO.MemoryMappedFiles",
+                        "type_definitions": [
+                            "MemoryMappedFile",
+                            "MemoryMappedViewStream"
+                        ]
+                    },
+                    {
+                        "namespace": "Microsoft.VisualBasic.Devices",
+                        "type_definitions": [
+                            "ComputerInfo"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Drawing.Imaging",
+                        "type_definitions": [
+                            "ImageFormat"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Reflection.Emit",
+                        "type_definitions": [
+                            "DynamicMethod",
+                            "ILGenerator",
+                            "OpCodes",
+                            "OpCode"
+                        ]
+                    }
+                ],
+                "unmanaged_method_list": [
+                    {
+                        "name": "kernel32.dll",
+                        "methods": [
+                            "GetModuleHandle",
+                            "GetCurrentProcess"
+                        ]
+                    },
+                    {
+                        "name": "ntdll.dll",
+                        "methods": [
+                            "NtSetInformationProcess"
+                        ]
+                    },
+                    {
+                        "name": "user32.dll",
+                        "methods": [
+                            "SystemParametersInfo"
+                        ]
+                    },
+                    {
+                        "name": "advapi32.dll",
+                        "methods": [
+                            "GetKernelObjectSecurity",
+                            "SetKernelObjectSecurity"
+                        ]
+                    },
+                    {
+                        "name": "kernel32",
+                        "methods": [
+                            "DeleteFile"
+                        ]
+                    }
+                ]
+            },
+            "times_submitted": 2
+        }
+    }
+}

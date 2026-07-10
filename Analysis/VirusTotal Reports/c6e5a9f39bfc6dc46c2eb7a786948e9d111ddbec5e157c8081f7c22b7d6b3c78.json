@@ -1,0 +1,1550 @@
+{
+    "data": {
+        "id": "c6e5a9f39bfc6dc46c2eb7a786948e9d111ddbec5e157c8081f7c22b7d6b3c78",
+        "type": "file",
+        "links": {
+            "self": "https://www.virustotal.com/api/v3/files/c6e5a9f39bfc6dc46c2eb7a786948e9d111ddbec5e157c8081f7c22b7d6b3c78"
+        },
+        "attributes": {
+            "sigma_analysis_results": [
+                {
+                    "rule_level": "critical",
+                    "rule_id": "b8a9a3d755cac11238eb37aa06d27255714356075872c2e2e140acfb3e8ab8b0",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "WannaCry Ransomware Activity",
+                    "rule_description": "Detects WannaCry ransomware activity",
+                    "rule_author": "Florian Roth (Nextron Systems), Tom U. @c_APT_ure (collection), oscd.community, Jonhnathan Ribeiro",
+                    "match_context": [
+                        {
+                            "values": {
+                                "CommandLine": "bcdedit  /set {default} recoveryenabled no",
+                                "Image": "bcdedit",
+                                "EventID": "1"
+                            }
+                        },
+                        {
+                            "values": {
+                                "CommandLine": "wbadmin  delete catalog -quiet",
+                                "Image": "wbadmin",
+                                "EventID": "1"
+                            }
+                        },
+                        {
+                            "values": {
+                                "CommandLine": "C:\\Windows\\System32\\cmd.exe /c vssadmin delete shadows /all /quiet & wmic shadowcopy delete & bcdedit /set {default} bootstatuspolicy ignoreallfailures & bcdedit /set {default} recoveryenabled no & wbadmin delete catalog -quiet",
+                                "Image": "C:\\Windows\\System32\\cmd.exe",
+                                "EventID": "1"
+                            }
+                        },
+                        {
+                            "values": {
+                                "CommandLine": "/c bcdedit /set {default} recoveryenabled No",
+                                "Image": "/c",
+                                "EventID": "1"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "critical",
+                    "rule_id": "be6d29855558a0e8c404486d8f1838ce35594866f126f9c1c62a9792e9c76be2",
+                    "rule_source": "Joe Security Rule Set (GitHub)",
+                    "rule_title": "Delete shadow copy via WMIC",
+                    "rule_description": "Delete shadow copy via WMIC",
+                    "rule_author": "Joe Security",
+                    "match_context": [
+                        {
+                            "values": {
+                                "CommandLine": "wmic  shadowcopy delete",
+                                "Image": "wmic",
+                                "EventID": "1"
+                            }
+                        },
+                        {
+                            "values": {
+                                "CommandLine": "C:\\Windows\\System32\\cmd.exe /c vssadmin delete shadows /all /quiet & wmic shadowcopy delete & bcdedit /set {default} bootstatuspolicy ignoreallfailures & bcdedit /set {default} recoveryenabled no & wbadmin delete catalog -quiet",
+                                "Image": "C:\\Windows\\System32\\cmd.exe",
+                                "EventID": "1"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Hashes": "MD5=8A2122E8162DBEF04694B9C3E0B6CDEE,SHA256=B99D61D874728EDC0918CA0EB10EAB93D381E7367E377406E65963366C874450,IMPHASH=272245E2988E1E430500B852C4FB5E18",
+                                "CurrentDirectory": "C:\\Users\\Bruno\\Desktop\\",
+                                "OriginalFileName": "Cmd.Exe",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Windows Command Processor",
+                                "EventID": "1",
+                                "ParentCommandLine": "\"C:\\Users\\Bruno\\Desktop\\program.exe\" ",
+                                "CommandLine": "\"C:\\Windows\\System32\\cmd.exe\" /c vssadmin delete shadows /all /quiet & wmic shadowcopy delete & bcdedit /set {default} bootstatuspolicy ignoreallfailures & bcdedit /set {default} recoveryenabled no & wbadmin delete catalog -quiet",
+                                "FileVersion": "10.0.19041.746 (WinBuild.160101.0800)",
+                                "ParentImage": "C:\\Users\\Bruno\\Desktop\\program.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\System32\\cmd.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Users\\Bruno\\Desktop\\",
+                                "OriginalFileName": "wmic.exe",
+                                "Hashes": "MD5=A2EF3F0AD95FDA9262A5F9533B6DD1BD,SHA256=FA78C88DAC91FDF2EAC736E6900AC1EC4AB7A388B8F77A23FFA7E80A4AD29F5A,IMPHASH=D8770F1C24B7AAD7B5CD1817B3FEB2AA",
+                                "Description": "WMI Commandline Utility",
+                                "FileVersion": "10.0.19041.1 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "\"C:\\Windows\\System32\\cmd.exe\" /c vssadmin delete shadows /all /quiet & wmic shadowcopy delete & bcdedit /set {default} bootstatuspolicy ignoreallfailures & bcdedit /set {default} recoveryenabled no & wbadmin delete catalog -quiet",
+                                "CommandLine": "wmic  shadowcopy delete ",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Windows\\System32\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\System32\\wbem\\WMIC.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "high",
+                    "rule_id": "2da0b3cba5dc2b56e1426049598590c54a224e6d15740b9b07c108e089c84520",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Boot Configuration Tampering Via Bcdedit.EXE",
+                    "rule_description": "Detects the use of the bcdedit command to tamper with the boot configuration data. This technique is often times used by malware or attackers as a destructive way before launching ransomware.",
+                    "rule_author": "E.M. Anhaus (originally from Atomic Blue Detections, Endgame), oscd.community",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Users\\Bruno\\Desktop\\",
+                                "OriginalFileName": "bcdedit.exe",
+                                "Hashes": "MD5=9C7E9CFC13C52CA9BD160CB6887CD2F5,SHA256=5AD1DDC85AF5100665486B0666EC36C21EF08A55D3CBE0E2BAD3746F44DF363D,IMPHASH=ED47BFF4333B75903582989F6C229A64",
+                                "Description": "Boot Configuration Data Editor",
+                                "FileVersion": "10.0.19041.1202 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "\"C:\\Windows\\System32\\cmd.exe\" /c vssadmin delete shadows /all /quiet & wmic shadowcopy delete & bcdedit /set {default} bootstatuspolicy ignoreallfailures & bcdedit /set {default} recoveryenabled no & wbadmin delete catalog -quiet",
+                                "CommandLine": "bcdedit  /set {default} bootstatuspolicy ignoreallfailures ",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Windows\\System32\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\System32\\bcdedit.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Users\\Bruno\\Desktop\\",
+                                "OriginalFileName": "bcdedit.exe",
+                                "Hashes": "MD5=9C7E9CFC13C52CA9BD160CB6887CD2F5,SHA256=5AD1DDC85AF5100665486B0666EC36C21EF08A55D3CBE0E2BAD3746F44DF363D,IMPHASH=ED47BFF4333B75903582989F6C229A64",
+                                "Description": "Boot Configuration Data Editor",
+                                "FileVersion": "10.0.19041.1202 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "\"C:\\Windows\\System32\\cmd.exe\" /c vssadmin delete shadows /all /quiet & wmic shadowcopy delete & bcdedit /set {default} bootstatuspolicy ignoreallfailures & bcdedit /set {default} recoveryenabled no & wbadmin delete catalog -quiet",
+                                "CommandLine": "bcdedit  /set {default} recoveryenabled no ",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Windows\\System32\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\System32\\bcdedit.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "high",
+                    "rule_id": "ad5e4d4b939797a70a9aa742d979a4742c2cfedddd663fb1a43b2795c1e6054b",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Shadow Copies Deletion Using Operating Systems Utilities",
+                    "rule_description": "Shadow Copies deletion using operating systems utilities",
+                    "rule_author": "Florian Roth (Nextron Systems), Michael Haag, Teymur Kheirkhabarov, Daniil Yugoslavskiy, oscd.community, Andreas Hunkeler (@Karneades)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Users\\Bruno\\Desktop\\",
+                                "OriginalFileName": "VSSADMIN.EXE",
+                                "Hashes": "MD5=B58073DB8892B67A672906C9358020EC,SHA256=8C1FABCC2196E4D096B7D155837C5F699AD7F55EDBF84571E4F8E03500B7A8B0,IMPHASH=C1EDC431CD345F0A0F32019895D13FCE",
+                                "Description": "Command Line Interface for Microsoft\\xae Volume Shadow Copy Service ",
+                                "EventID": "1",
+                                "ParentCommandLine": "\"C:\\Windows\\System32\\cmd.exe\" /c vssadmin delete shadows /all /quiet & wmic shadowcopy delete & bcdedit /set {default} bootstatuspolicy ignoreallfailures & bcdedit /set {default} recoveryenabled no & wbadmin delete catalog -quiet",
+                                "CommandLine": "vssadmin  delete shadows /all /quiet ",
+                                "FileVersion": "10.0.19041.1 (WinBuild.160101.0800)",
+                                "ParentImage": "C:\\Windows\\System32\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\System32\\vssadmin.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Users\\Bruno\\Desktop\\",
+                                "OriginalFileName": "wmic.exe",
+                                "Hashes": "MD5=A2EF3F0AD95FDA9262A5F9533B6DD1BD,SHA256=FA78C88DAC91FDF2EAC736E6900AC1EC4AB7A388B8F77A23FFA7E80A4AD29F5A,IMPHASH=D8770F1C24B7AAD7B5CD1817B3FEB2AA",
+                                "Description": "WMI Commandline Utility",
+                                "FileVersion": "10.0.19041.1 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "\"C:\\Windows\\System32\\cmd.exe\" /c vssadmin delete shadows /all /quiet & wmic shadowcopy delete & bcdedit /set {default} bootstatuspolicy ignoreallfailures & bcdedit /set {default} recoveryenabled no & wbadmin delete catalog -quiet",
+                                "CommandLine": "wmic  shadowcopy delete ",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Windows\\System32\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\System32\\wbem\\WMIC.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Users\\Bruno\\Desktop\\",
+                                "OriginalFileName": "WBADMIN.EXE",
+                                "Hashes": "MD5=F2AA55885A2C014DA99F1355F3F71E4A,SHA256=508E5F70C29502D7BA66A35959A327E3D658514496EE7B9155D95E7409EB4FB8,IMPHASH=D72A8A096458529EDF54E67F5F212651",
+                                "Description": "Command Line Interface for Microsoft\\xae BLB Backup",
+                                "EventID": "1",
+                                "ParentCommandLine": "\"C:\\Windows\\System32\\cmd.exe\" /c vssadmin delete shadows /all /quiet & wmic shadowcopy delete & bcdedit /set {default} bootstatuspolicy ignoreallfailures & bcdedit /set {default} recoveryenabled no & wbadmin delete catalog -quiet",
+                                "CommandLine": "wbadmin  delete catalog -quiet",
+                                "FileVersion": "10.0.19041.1202 (WinBuild.160101.0800)",
+                                "ParentImage": "C:\\Windows\\System32\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\System32\\wbadmin.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "8b5db9da5732dc549b0e8b56fe5933d7c95ed760f3ac20568ab95347ef8c5bcc",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "CurrentVersion Autorun Keys Modification",
+                    "rule_description": "Detects modification of autostart extensibility point (ASEP) in registry.",
+                    "rule_author": "Victor Sergeev, Daniil Yugoslavskiy, Gleb Sukhodolskiy, Timur Zinniatullin, oscd.community, Tim Shelton, frack113 (split)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "RuleName": "T1060,RunKey",
+                                "EventType": "SetValue",
+                                "Details": "\"C:\\Users\\Bruno\\Desktop\\program.exe\"",
+                                "Image": "C:\\Users\\Bruno\\Desktop\\program.exe",
+                                "EventID": "13",
+                                "TargetObject": "HKU\\S-1-5-21-4005801669-2598574594-602355426-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\XO1XADpO01"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "de683a6054ff03b9c12e58c842648f759cfcf797f91dc01078d285e8f3f8e856",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Suspicious Copy From or To System Directory",
+                    "rule_description": "Detects a suspicious copy operation that tries to copy a program from system (System32, SysWOW64, WinSxS) directories to another on disk.\nOften used to move LOLBINs such as 'certutil' or 'desktopimgdownldr' to a different location with a different name in order to bypass detections based on locations.\n",
+                    "rule_author": "Florian Roth (Nextron Systems), Markus Neis, Tim Shelton (HAWK.IO), Nasreddine Bencherchali (Nextron Systems)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "CommandLine": "C:\\Windows\\System32\\cmd.exe /c vssadmin delete shadows /all /quiet & wmic shadowcopy delete & bcdedit /set {default} bootstatuspolicy ignoreallfailures & bcdedit /set {default} recoveryenabled no & wbadmin delete catalog -quiet",
+                                "Image": "C:\\Windows\\System32\\cmd.exe",
+                                "EventID": "1"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Hashes": "MD5=8A2122E8162DBEF04694B9C3E0B6CDEE,SHA256=B99D61D874728EDC0918CA0EB10EAB93D381E7367E377406E65963366C874450,IMPHASH=272245E2988E1E430500B852C4FB5E18",
+                                "CurrentDirectory": "C:\\Users\\Bruno\\Desktop\\",
+                                "OriginalFileName": "Cmd.Exe",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Windows Command Processor",
+                                "FileVersion": "10.0.19041.746 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "\"C:\\Users\\Bruno\\Desktop\\program.exe\" ",
+                                "CommandLine": "\"C:\\Windows\\System32\\cmd.exe\" /c vssadmin delete shadows /all /quiet & wmic shadowcopy delete & bcdedit /set {default} bootstatuspolicy ignoreallfailures & bcdedit /set {default} recoveryenabled no & wbadmin delete catalog -quiet",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Users\\Bruno\\Desktop\\program.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\System32\\cmd.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "first_submission_date": 1593773587,
+            "md5": "81d9cac2627d252af11b3ced0f2928d8",
+            "unique_sources": 5,
+            "names": [
+                "ya9w9nrhj.exe",
+                "c6e5a9f39bfc6dc46c2eb7a786948e9d111ddbec5e157c8081f7c22b7d6b3c78.exe",
+                "81d9cac2627d252af11b3ced0f2928d8.exe",
+                "c6e5a9f39bfc6dc46c2eb7a786948e9d111ddbec5e157c8081f7c22b7d6b3c78.vir",
+                "mtx999.exe",
+                "6aea.exe",
+                "12b5.exe"
+            ],
+            "times_submitted": 6,
+            "sha256": "c6e5a9f39bfc6dc46c2eb7a786948e9d111ddbec5e157c8081f7c22b7d6b3c78",
+            "type_extension": "exe",
+            "last_analysis_stats": {
+                "malicious": 54,
+                "suspicious": 0,
+                "undetected": 11,
+                "harmless": 0,
+                "timeout": 7,
+                "confirmed-timeout": 0,
+                "failure": 0,
+                "type-unsupported": 4
+            },
+            "last_modification_date": 1766274045,
+            "sandbox_verdicts": {
+                "Zenbox": {
+                    "category": "malicious",
+                    "malware_classification": [
+                        "MALWARE",
+                        "RANSOM",
+                        "EVADER"
+                    ],
+                    "sandbox_name": "Zenbox",
+                    "malware_names": [
+                        "LockBit ransomware"
+                    ],
+                    "confidence": 84
+                },
+                "SecondWrite": {
+                    "category": "malicious",
+                    "sandbox_name": "SecondWrite",
+                    "malware_classification": [
+                        "MALWARE",
+                        "TROJAN"
+                    ]
+                },
+                "Dr.Web vxCube": {
+                    "category": "malicious",
+                    "sandbox_name": "Dr.Web vxCube",
+                    "malware_classification": [
+                        "MALWARE",
+                        "RANSOM"
+                    ]
+                },
+                "Lastline": {
+                    "category": "malicious",
+                    "sandbox_name": "Lastline",
+                    "malware_classification": [
+                        "MALWARE",
+                        "TROJAN"
+                    ]
+                },
+                "Tencent HABO": {
+                    "category": "malicious",
+                    "sandbox_name": "Tencent HABO",
+                    "malware_classification": [
+                        "MALWARE",
+                        "EVADER",
+                        "RANSOM"
+                    ]
+                },
+                "CAPE Sandbox": {
+                    "category": "malicious",
+                    "malware_classification": [
+                        "MALWARE"
+                    ],
+                    "sandbox_name": "CAPE Sandbox",
+                    "malware_names": [
+                        "Lockbit"
+                    ]
+                }
+            },
+            "magic": "PE32 executable (GUI) Intel 80386, for MS Windows",
+            "total_votes": {
+                "harmless": 0,
+                "malicious": 2
+            },
+            "tlsh": "T18344AE0176E18471E7A30635C8748E624A7FFDF25A709A9732A42B0E2DE41D09A2777F",
+            "last_analysis_results": {
+                "Bkav": {
+                    "method": "blacklist",
+                    "engine_name": "Bkav",
+                    "engine_version": "2.0.0.1",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "W32.AIDetectMalware"
+                },
+                "Lionic": {
+                    "method": "blacklist",
+                    "engine_name": "Lionic",
+                    "engine_version": "8.16",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Lockbit.1q!c"
+                },
+                "tehtris": {
+                    "method": "blacklist",
+                    "engine_name": "tehtris",
+                    "engine_version": "v0.1.4",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Generic.Malware"
+                },
+                "MicroWorld-eScan": {
+                    "method": "blacklist",
+                    "engine_name": "MicroWorld-eScan",
+                    "engine_version": "14.0.409.0",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Gen:Variant.Ransom.Makop.80"
+                },
+                "ClamAV": {
+                    "method": "blacklist",
+                    "engine_name": "ClamAV",
+                    "engine_version": "1.5.1.0",
+                    "engine_update": "20251125",
+                    "category": "undetected",
+                    "result": null
+                },
+                "CTX": {
+                    "method": "blacklist",
+                    "engine_name": "CTX",
+                    "engine_version": "2024.8.29.1",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "exe.trojan.lockbit"
+                },
+                "CAT-QuickHeal": {
+                    "method": "blacklist",
+                    "engine_name": "CAT-QuickHeal",
+                    "engine_version": "22.00",
+                    "engine_update": "20251124",
+                    "category": "malicious",
+                    "result": "Trojan.HynamerRI.S14849018"
+                },
+                "ALYac": {
+                    "method": "blacklist",
+                    "engine_name": "ALYac",
+                    "engine_version": "2.0.0.10",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.LockBit"
+                },
+                "Cylance": {
+                    "method": "blacklist",
+                    "engine_name": "Cylance",
+                    "engine_version": "3.0.0.0",
+                    "engine_update": "20251120",
+                    "category": "malicious",
+                    "result": "Unsafe"
+                },
+                "Zillya": {
+                    "method": "blacklist",
+                    "engine_name": "Zillya",
+                    "engine_version": "2.0.0.5489",
+                    "engine_update": "20251124",
+                    "category": "malicious",
+                    "result": "Trojan.DelShad.Win32.545"
+                },
+                "Sangfor": {
+                    "method": "blacklist",
+                    "engine_name": "Sangfor",
+                    "engine_version": "2.22.3.0",
+                    "engine_update": "20251124",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Save.a"
+                },
+                "K7AntiVirus": {
+                    "method": "blacklist",
+                    "engine_name": "K7AntiVirus",
+                    "engine_version": "14.20.57789",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Trojan ( 0056a9ad1 )"
+                },
+                "K7GW": {
+                    "method": "blacklist",
+                    "engine_name": "K7GW",
+                    "engine_version": "14.20.57789",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Trojan ( 0056a9ad1 )"
+                },
+                "CrowdStrike": {
+                    "method": "blacklist",
+                    "engine_name": "CrowdStrike",
+                    "engine_version": "1.0",
+                    "engine_update": "20231026",
+                    "category": "malicious",
+                    "result": "win/malicious_confidence_100% (W)"
+                },
+                "huorong": {
+                    "method": "blacklist",
+                    "engine_name": "huorong",
+                    "engine_version": "37255d6:37255d6:62349a7:62349a7",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Ransom/LockFile.g"
+                },
+                "Baidu": {
+                    "method": "blacklist",
+                    "engine_name": "Baidu",
+                    "engine_version": "1.0.0.2",
+                    "engine_update": "20190318",
+                    "category": "undetected",
+                    "result": null
+                },
+                "VirIT": {
+                    "method": "blacklist",
+                    "engine_name": "VirIT",
+                    "engine_version": "9.5.1092",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.MulDrop4.BLMT"
+                },
+                "Symantec": {
+                    "method": "blacklist",
+                    "engine_name": "Symantec",
+                    "engine_version": "1.22.0.0",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Packed.Generic.525"
+                },
+                "Elastic": {
+                    "method": "blacklist",
+                    "engine_name": "Elastic",
+                    "engine_version": "4.0.239",
+                    "engine_update": "20251121",
+                    "category": "malicious",
+                    "result": "malicious (high confidence)"
+                },
+                "ESET-NOD32": {
+                    "method": "blacklist",
+                    "engine_name": "ESET-NOD32",
+                    "engine_version": "18.2.18.0",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Win32/Kryptik.HEPZ trojan"
+                },
+                "Zoner": {
+                    "method": "blacklist",
+                    "engine_name": "Zoner",
+                    "engine_version": "2.2.2.0",
+                    "engine_update": "20251125",
+                    "category": "undetected",
+                    "result": null
+                },
+                "TrendMicro-HouseCall": {
+                    "method": "blacklist",
+                    "engine_name": "TrendMicro-HouseCall",
+                    "engine_version": "24.550.0.1002",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.VSX.PE04C9t"
+                },
+                "Paloalto": {
+                    "method": "blacklist",
+                    "engine_name": "Paloalto",
+                    "engine_version": "0.9.0.1003",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "generic.ml"
+                },
+                "Cynet": {
+                    "method": "blacklist",
+                    "engine_name": "Cynet",
+                    "engine_version": "4.0.3.4",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Malicious (score: 100)"
+                },
+                "Alibaba": {
+                    "method": "blacklist",
+                    "engine_name": "Alibaba",
+                    "engine_version": "0.3.0.5",
+                    "engine_update": "20190527",
+                    "category": "malicious",
+                    "result": "Malware:Win32/km_24ade.None"
+                },
+                "NANO-Antivirus": {
+                    "method": "blacklist",
+                    "engine_name": "NANO-Antivirus",
+                    "engine_version": "1.0.170.26895",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.DelShad.hmrmhh"
+                },
+                "ViRobot": {
+                    "method": "blacklist",
+                    "engine_name": "ViRobot",
+                    "engine_version": "2014.3.20.0",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Lockbit.253440"
+                },
+                "Rising": {
+                    "method": "blacklist",
+                    "engine_name": "Rising",
+                    "engine_version": "25.0.0.28",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Trojan.Kryptik!1.C883 (CLASSIC)"
+                },
+                "Emsisoft": {
+                    "method": "blacklist",
+                    "engine_name": "Emsisoft",
+                    "engine_version": "2024.8.0.61147",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Gen:Variant.Ransom.Makop.80 (B)"
+                },
+                "F-Secure": {
+                    "method": "blacklist",
+                    "engine_name": "F-Secure",
+                    "engine_version": "18.10.1547.307",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Heuristic.HEUR/AGEN.1316984"
+                },
+                "DrWeb": {
+                    "method": "blacklist",
+                    "engine_name": "DrWeb",
+                    "engine_version": "7.0.72.9030",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Trojan.PWS.Stealer.28840"
+                },
+                "VIPRE": {
+                    "method": "blacklist",
+                    "engine_name": "VIPRE",
+                    "engine_version": "6.0.0.35",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Gen:Variant.Ransom.Makop.80"
+                },
+                "TrendMicro": {
+                    "method": "blacklist",
+                    "engine_name": "TrendMicro",
+                    "engine_version": "24.550.0.1002",
+                    "engine_update": "20251125",
+                    "category": "undetected",
+                    "result": null
+                },
+                "McAfeeD": {
+                    "method": "blacklist",
+                    "engine_name": "McAfeeD",
+                    "engine_version": "1.2.0.10275",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Real Protect-LS!81D9CAC2627D"
+                },
+                "Trapmine": {
+                    "method": "blacklist",
+                    "engine_name": "Trapmine",
+                    "engine_version": "4.0.7.0",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "malicious.moderate.ml.score"
+                },
+                "CMC": {
+                    "method": "blacklist",
+                    "engine_name": "CMC",
+                    "engine_version": "2.4.2022.1",
+                    "engine_update": "20251125",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Sophos": {
+                    "method": "blacklist",
+                    "engine_name": "Sophos",
+                    "engine_version": "3.3.1.0",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Mal/Generic-S"
+                },
+                "Ikarus": {
+                    "method": "blacklist",
+                    "engine_name": "Ikarus",
+                    "engine_version": "6.4.16.0",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Crypt"
+                },
+                "GData": {
+                    "method": "blacklist",
+                    "engine_name": "GData",
+                    "engine_version": "GD:27.42643AVA:64.30206",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Gen:Variant.Ransom.Makop.80"
+                },
+                "Jiangmin": {
+                    "method": "blacklist",
+                    "engine_name": "Jiangmin",
+                    "engine_version": "16.0.100",
+                    "engine_update": "20251124",
+                    "category": "malicious",
+                    "result": "Trojan.Zenpak.nwr"
+                },
+                "Webroot": {
+                    "method": "blacklist",
+                    "engine_name": "Webroot",
+                    "engine_version": "1.9.0.8",
+                    "engine_update": "20250227",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Google": {
+                    "method": "blacklist",
+                    "engine_name": "Google",
+                    "engine_version": "1764082908",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Detected"
+                },
+                "Avira": {
+                    "method": "blacklist",
+                    "engine_name": "Avira",
+                    "engine_version": "8.3.3.24",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "HEUR/AGEN.1316984"
+                },
+                "Antiy-AVL": {
+                    "method": "blacklist",
+                    "engine_name": "Antiy-AVL",
+                    "engine_version": "3.0",
+                    "engine_update": "20251125",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Kingsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Kingsoft",
+                    "engine_version": "None",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "malware.kb.a.1000"
+                },
+                "Gridinsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Gridinsoft",
+                    "engine_version": "1.0.229.174",
+                    "engine_update": "20251125",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Xcitium": {
+                    "method": "blacklist",
+                    "engine_name": "Xcitium",
+                    "engine_version": "38219",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Malware@#3r9s4rrgy81tg"
+                },
+                "Arcabit": {
+                    "method": "blacklist",
+                    "engine_name": "Arcabit",
+                    "engine_version": "2025.0.0.23",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.Makop.80"
+                },
+                "SUPERAntiSpyware": {
+                    "method": "blacklist",
+                    "engine_name": "SUPERAntiSpyware",
+                    "engine_version": "5.6.0.1032",
+                    "engine_update": "20251125",
+                    "category": "undetected",
+                    "result": null
+                },
+                "ZoneAlarm": {
+                    "method": "blacklist",
+                    "engine_name": "ZoneAlarm",
+                    "engine_version": "6.21-110946731",
+                    "engine_update": "20251125",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Microsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Microsoft",
+                    "engine_version": "1.1.25100.9002",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Trojan:Win32/Racealer.DEA!MTB"
+                },
+                "Varist": {
+                    "method": "blacklist",
+                    "engine_name": "Varist",
+                    "engine_version": "6.6.1.3",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "W32/S-39cc082c!Eldorado"
+                },
+                "AhnLab-V3": {
+                    "method": "blacklist",
+                    "engine_name": "AhnLab-V3",
+                    "engine_version": "3.29.0.10596",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Trojan/Win32.MalPe.R342979"
+                },
+                "Acronis": {
+                    "method": "blacklist",
+                    "engine_name": "Acronis",
+                    "engine_version": "1.2.0.121",
+                    "engine_update": "20240328",
+                    "category": "undetected",
+                    "result": null
+                },
+                "TACHYON": {
+                    "method": "blacklist",
+                    "engine_name": "TACHYON",
+                    "engine_version": "2025-11-25.03",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Ransom/W32.LockBit.253440"
+                },
+                "Malwarebytes": {
+                    "method": "blacklist",
+                    "engine_name": "Malwarebytes",
+                    "engine_version": "3.1.0.176",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Generic.Malware.Gen.DDS"
+                },
+                "Panda": {
+                    "method": "blacklist",
+                    "engine_name": "Panda",
+                    "engine_version": "4.6.4.2",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Trj/GdSda.A"
+                },
+                "APEX": {
+                    "method": "blacklist",
+                    "engine_name": "APEX",
+                    "engine_version": "6.719",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Malicious"
+                },
+                "Tencent": {
+                    "method": "blacklist",
+                    "engine_name": "Tencent",
+                    "engine_version": "1.0.0.1",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Malware.Win32.Gencirc.13b381d5"
+                },
+                "Yandex": {
+                    "method": "blacklist",
+                    "engine_name": "Yandex",
+                    "engine_version": "5.5.2.24",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Trojan.Zenpak!b2bBAAil/y4"
+                },
+                "SentinelOne": {
+                    "method": "blacklist",
+                    "engine_name": "SentinelOne",
+                    "engine_version": "7.4.1.3",
+                    "engine_update": "20251013",
+                    "category": "malicious",
+                    "result": "Static AI - Malicious PE"
+                },
+                "MaxSecure": {
+                    "method": "blacklist",
+                    "engine_name": "MaxSecure",
+                    "engine_version": "1.0.0.1",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "Trojan.Malware.300983.susgen"
+                },
+                "Fortinet": {
+                    "method": "blacklist",
+                    "engine_name": "Fortinet",
+                    "engine_version": "7.0.30.0",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "W32/CoinMiner.HEPW!tr"
+                },
+                "DeepInstinct": {
+                    "method": "blacklist",
+                    "engine_name": "DeepInstinct",
+                    "engine_version": "5.0.0.8",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "MALICIOUS"
+                },
+                "alibabacloud": {
+                    "method": "blacklist",
+                    "engine_name": "alibabacloud",
+                    "engine_version": "2.2.0",
+                    "engine_update": "20250321",
+                    "category": "malicious",
+                    "result": "Ransomware:Win/LockFile.GZ"
+                },
+                "VBA32": {
+                    "method": "blacklist",
+                    "engine_name": "VBA32",
+                    "engine_version": null,
+                    "engine_update": "20251125",
+                    "category": "timeout",
+                    "result": null
+                },
+                "Avast": {
+                    "method": "blacklist",
+                    "engine_name": "Avast",
+                    "engine_version": "23.9.8494.0",
+                    "engine_update": "20251125",
+                    "category": "timeout",
+                    "result": null
+                },
+                "Kaspersky": {
+                    "method": "blacklist",
+                    "engine_name": "Kaspersky",
+                    "engine_version": "22.0.1.28",
+                    "engine_update": "20251125",
+                    "category": "timeout",
+                    "result": null
+                },
+                "BitDefender": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefender",
+                    "engine_version": "7.2",
+                    "engine_update": "20251125",
+                    "category": "timeout",
+                    "result": null
+                },
+                "Skyhigh": {
+                    "method": "blacklist",
+                    "engine_name": "Skyhigh",
+                    "engine_version": null,
+                    "engine_update": "20251125",
+                    "category": "timeout",
+                    "result": null
+                },
+                "TrellixENS": {
+                    "method": "blacklist",
+                    "engine_name": "TrellixENS",
+                    "engine_version": "6.0.6.653",
+                    "engine_update": "20251125",
+                    "category": "timeout",
+                    "result": null
+                },
+                "AVG": {
+                    "method": "blacklist",
+                    "engine_name": "AVG",
+                    "engine_version": "23.9.8494.0",
+                    "engine_update": "20251125",
+                    "category": "timeout",
+                    "result": null
+                },
+                "Trustlook": {
+                    "method": "blacklist",
+                    "engine_name": "Trustlook",
+                    "engine_version": "1.0",
+                    "engine_update": "20251125",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "SymantecMobileInsight": {
+                    "method": "blacklist",
+                    "engine_name": "SymantecMobileInsight",
+                    "engine_version": "2.0",
+                    "engine_update": "20250124",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "BitDefenderFalx": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefenderFalx",
+                    "engine_version": "2.0.936",
+                    "engine_update": "20250416",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "Avast-Mobile": {
+                    "method": "blacklist",
+                    "engine_name": "Avast-Mobile",
+                    "engine_version": "251125-00",
+                    "engine_update": "20251125",
+                    "category": "type-unsupported",
+                    "result": null
+                }
+            },
+            "ssdeep": "3072:J1rxNteUB+mcyAdSnsMObgqyoGGeV1EZyOdBDT0ynl0Xp8K7:J1rxN5B6mBugqafEpBDT0ylQp",
+            "crowdsourced_ids_results": [
+                {
+                    "rule_category": "trojan-activity",
+                    "alert_severity": "high",
+                    "rule_msg": "MALWARE-CNC DNS Fast Flux attempt",
+                    "rule_raw": "alert udp $EXTERNAL_NET 53 -> $HOME_NET any ( msg:\"MALWARE-CNC DNS Fast Flux attempt\"; flow:to_client; content:\"|00 01|\",depth 2,offset 4; byte_test:2,>,1,0,relative; byte_test:1,=,1,2,bitmask 0x80; content:\"|00 01 00 01|\",distance 6; content:\"|00 01 00 01 00 00 00 05|\",distance 0; metadata:policy max-detect-ips drop; service:dns; reference:url,attack.mitre.org/techniques/T1568/001/; classtype:trojan-activity; sid:57756; rev:2; )",
+                    "alert_context": [
+                        {
+                            "src_ip": "8.8.8.8",
+                            "src_port": 53
+                        }
+                    ],
+                    "rule_references": [
+                        "https://attack.mitre.org/techniques/T1568/001/"
+                    ],
+                    "rule_source": "Snort registered user ruleset",
+                    "rule_url": "https://www.snort.org/downloads/#rule-downloads",
+                    "rule_id": "1:57756"
+                }
+            ],
+            "type_tags": [
+                "executable",
+                "windows",
+                "win32",
+                "pe",
+                "peexe"
+            ],
+            "detectiteasy": {
+                "filetype": "PE32",
+                "values": [
+                    {
+                        "info": "EXE32",
+                        "version": "2013-2017",
+                        "type": "Compiler",
+                        "name": "EP:Microsoft Visual C/C++"
+                    },
+                    {
+                        "info": "LTCG/C++",
+                        "version": "18.00.40629",
+                        "type": "Compiler",
+                        "name": "Microsoft Visual C/C++"
+                    },
+                    {
+                        "version": "12.00.40629",
+                        "type": "Linker",
+                        "name": "Microsoft Linker"
+                    },
+                    {
+                        "version": "2013",
+                        "type": "Tool",
+                        "name": "Visual Studio"
+                    }
+                ]
+            },
+            "authentihash": "dcdc8bffcd11274de869ac4c46e913be418f80ff4e7df6874c3d3a9109c16bb6",
+            "last_submission_date": 1705767591,
+            "sigma_analysis_summary": {
+                "Sigma Integrated Rule Set (GitHub)": {
+                    "critical": 0,
+                    "high": 2,
+                    "medium": 2,
+                    "low": 0
+                },
+                "Joe Security Rule Set (GitHub)": {
+                    "critical": 1,
+                    "high": 0,
+                    "medium": 0,
+                    "low": 0
+                }
+            },
+            "tags": [
+                "long-sleeps",
+                "peexe",
+                "persistence",
+                "spreader",
+                "calls-wmi",
+                "detect-debug-environment"
+            ],
+            "meaningful_name": "ya9w9nrhj.exe",
+            "type_description": "Win32 EXE",
+            "popular_threat_classification": {
+                "popular_threat_name": [
+                    {
+                        "count": 5,
+                        "value": "lockbit"
+                    },
+                    {
+                        "count": 5,
+                        "value": "makop"
+                    },
+                    {
+                        "count": 2,
+                        "value": "delshad"
+                    }
+                ],
+                "suggested_threat_label": "trojan.lockbit/makop",
+                "popular_threat_category": [
+                    {
+                        "count": 22,
+                        "value": "trojan"
+                    },
+                    {
+                        "count": 9,
+                        "value": "ransomware"
+                    }
+                ]
+            },
+            "crowdsourced_yara_results": [
+                {
+                    "description": "Detects win.lockbit.",
+                    "author": "Felix Bilstein - yara-signator at cocacoding dot com",
+                    "ruleset_name": "win.lockbit_auto",
+                    "rule_name": "win_lockbit_auto",
+                    "ruleset_id": "0080597496",
+                    "match_in_subfile": true,
+                    "source": "https://malpedia.caad.fkie.fraunhofer.de/"
+                },
+                {
+                    "description": "Detects Windows exceutables bypassing UAC using CMSTP COM interfaces. MITRE (T1218.003)",
+                    "author": "ditekSHen",
+                    "ruleset_name": "indicator_suspicious",
+                    "rule_name": "INDICATOR_SUSPICIOUS_EXE_UACBypass_CMSTPCOM",
+                    "ruleset_id": "00c3b8eb5d",
+                    "match_in_subfile": true,
+                    "source": "https://github.com/ditekshen/detection"
+                },
+                {
+                    "description": "Detects executables containing anti-forensic artifacts of deleting USN change journal. Observed in ransomware",
+                    "author": "ditekSHen",
+                    "ruleset_name": "indicator_suspicious",
+                    "rule_name": "INDICATOR_SUSPICIOUS_USNDeleteJournal",
+                    "ruleset_id": "00c3b8eb5d",
+                    "match_in_subfile": true,
+                    "source": "https://github.com/ditekshen/detection"
+                },
+                {
+                    "description": "Lockbit Payload",
+                    "author": "kevoreilly",
+                    "ruleset_name": "Lockbit",
+                    "rule_name": "Lockbit",
+                    "ruleset_id": "00bc40da16",
+                    "match_in_subfile": true,
+                    "source": "https://github.com/kevoreilly/CAPEv2"
+                },
+                {
+                    "description": "Detects executables containing commands for clearing Windows Event Logs",
+                    "author": "ditekSHen",
+                    "ruleset_name": "indicator_suspicious",
+                    "rule_name": "INDICATOR_SUSPICIOUS_ClearWinLogs",
+                    "ruleset_id": "00c3b8eb5d",
+                    "match_in_subfile": true,
+                    "source": "https://github.com/ditekshen/detection"
+                },
+                {
+                    "description": "Detects executables containing many references to VEEAM. Observed in ransomware",
+                    "author": "ditekSHen",
+                    "ruleset_name": "indicator_suspicious",
+                    "rule_name": "INDICATOR_SUSPICOUS_EXE_References_VEEAM",
+                    "ruleset_id": "00c3b8eb5d",
+                    "match_in_subfile": true,
+                    "source": "https://github.com/ditekshen/detection"
+                },
+                {
+                    "description": "Detects command variations typically used by ransomware",
+                    "author": "ditekSHen",
+                    "ruleset_name": "indicator_suspicious",
+                    "rule_name": "INDICATOR_SUSPICIOUS_GENRansomware",
+                    "ruleset_id": "00c3b8eb5d",
+                    "match_in_subfile": true,
+                    "source": "https://github.com/ditekshen/detection"
+                }
+            ],
+            "last_analysis_date": 1764087029,
+            "vhash": "025046655d756018z58nz1fz",
+            "type_tag": "peexe",
+            "sigma_analysis_stats": {
+                "critical": 2,
+                "high": 2,
+                "medium": 2,
+                "low": 0
+            },
+            "sha1": "1d19670a5eb9ba2399bcb9a967fad24cd75b1f2a",
+            "reputation": -91,
+            "trid": [
+                {
+                    "file_type": "Win32 Executable MS Visual C++ (generic)",
+                    "probability": 47.3
+                },
+                {
+                    "file_type": "Win64 Executable (generic)",
+                    "probability": 15.9
+                },
+                {
+                    "file_type": "Win32 Dynamic Link Library (generic)",
+                    "probability": 9.9
+                },
+                {
+                    "file_type": "Win16 NE executable (generic)",
+                    "probability": 7.6
+                },
+                {
+                    "file_type": "Win32 Executable (generic)",
+                    "probability": 6.8
+                }
+            ],
+            "magika": "PEBIN",
+            "size": 253440,
+            "creation_date": 1573020851,
+            "filecondis": {
+                "raw_md5": "5f7fd22dbfecbf8499a52d12b5183281",
+                "dhash": "00303c1c1d140000"
+            },
+            "pe_info": {
+                "timestamp": 1573020851,
+                "imphash": "d824fb8d6324dfb7bc7592dceba22edb",
+                "machine_type": 332,
+                "entry_point": 10847,
+                "resource_details": [
+                    {
+                        "lang": "SWEDISH FINLAND",
+                        "chi2": 210659.95,
+                        "filetype": "unknown",
+                        "entropy": 4.1837663650512695,
+                        "sha256": "320efb6f796cb2eaa3f9ba67ab9a3c707cc620bcd66d629d87ee670ca0251fa2",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "SWEDISH FINLAND",
+                        "chi2": 156765.62,
+                        "filetype": "unknown",
+                        "entropy": 4.2130303382873535,
+                        "sha256": "822fac54dfa84097d8d68cbb204a168110bf2e1ef553c4db15be39d12aaf1709",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "SWEDISH FINLAND",
+                        "chi2": 111276.82,
+                        "filetype": "unknown",
+                        "entropy": 4.274240016937256,
+                        "sha256": "08da5c70a04799c56947948e8106baa3ca4809efbd45233981be2e07d2d42758",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "SWEDISH FINLAND",
+                        "chi2": 84197.55,
+                        "filetype": "unknown",
+                        "entropy": 4.053043842315674,
+                        "sha256": "22b223b8e12ddfcd4ef26bc85e210e0d814248690e7c97d25960bca992c78bcf",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "SWEDISH FINLAND",
+                        "chi2": 161154.12,
+                        "filetype": "unknown",
+                        "entropy": 6.100318908691406,
+                        "sha256": "410094078e212236431118e5f06aa662406197a43ddf28385ad23fdbda15290b",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "SWEDISH FINLAND",
+                        "chi2": 39344.75,
+                        "filetype": "unknown",
+                        "entropy": 6.528208255767822,
+                        "sha256": "59d3bd43794a30e8ebe0e6c11ce1fdf1ca4feaec1c81fe887faa456d62927f6d",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "SWEDISH FINLAND",
+                        "chi2": 16095.66,
+                        "filetype": "unknown",
+                        "entropy": 6.620054244995117,
+                        "sha256": "1d988214b144e57993feb7dbebab2ce4a47f8ea58b5f7592c81febb118e12b1d",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "SWEDISH FINLAND",
+                        "chi2": 10017.51,
+                        "filetype": "unknown",
+                        "entropy": 6.4320197105407715,
+                        "sha256": "153ab735db52af35e722b1de0801052724fc639037f86c412cce8ab737d77122",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "SWEDISH FINLAND",
+                        "chi2": 68916.37,
+                        "filetype": "unknown",
+                        "entropy": 5.678061008453369,
+                        "sha256": "e425f0c9e19ce9fd6a39d47949cb27e5946da44a89c3bc92969e5faed18fcd29",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "SWEDISH FINLAND",
+                        "chi2": 27717.7,
+                        "filetype": "unknown",
+                        "entropy": 6.264283657073975,
+                        "sha256": "d06fdd31f604345cbb78f21207e637d295e0a14e22c1910a7d576eb62336148b",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "SWEDISH FINLAND",
+                        "chi2": 23973.8,
+                        "filetype": "unknown",
+                        "entropy": 6.236517429351807,
+                        "sha256": "4657099e993509b573831494afb557270a418a4046c805237f30587399060449",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "SWEDISH FINLAND",
+                        "chi2": 23844.21,
+                        "filetype": "unknown",
+                        "entropy": 6.231966018676758,
+                        "sha256": "8a683f0ebd42e54a1bf1daf5d4d180d5fb82565137e64f49bcdb04392e1b7ba4",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "SWEDISH FINLAND",
+                        "chi2": 125555.28,
+                        "filetype": "unknown",
+                        "entropy": 6.325048923492432,
+                        "sha256": "0cdf15ce665d1737a2e920740fcb191c328a2adae73be48ec2d10d27e295f99f",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "SWEDISH FINLAND",
+                        "chi2": 43373.52,
+                        "filetype": "unknown",
+                        "entropy": 6.546087265014648,
+                        "sha256": "94dd77dce411a415490124a1a151c8eb02e4f6c13613150ca1b7e06e8506d3b2",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "SWEDISH FINLAND",
+                        "chi2": 5223.44,
+                        "filetype": "unknown",
+                        "entropy": 6.8687615394592285,
+                        "sha256": "c238c1eadab23637e3cf652502af7517edd36ea7b3cfd1e068059029a153a148",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "NEUTRAL",
+                        "chi2": 51196.2,
+                        "filetype": "unknown",
+                        "entropy": 3.2350919246673584,
+                        "sha256": "8bd94f6c12ff6e4917a433a45b4b4dc3bd39d5b2b6a81ff2078f58da480b18b9",
+                        "type": "RT_STRING"
+                    },
+                    {
+                        "lang": "NEUTRAL",
+                        "chi2": 119625.06,
+                        "filetype": "unknown",
+                        "entropy": 3.298166036605835,
+                        "sha256": "d1ebe3fbc144204e335b42c9fdacdb9e62ed55419e1728292f60594d9070bc80",
+                        "type": "RT_STRING"
+                    },
+                    {
+                        "lang": "NEUTRAL",
+                        "chi2": 43299.44,
+                        "filetype": "unknown",
+                        "entropy": 3.181182384490967,
+                        "sha256": "8632c1de45544809928400ffeb0b774c9eeba7be1f3d67a91842e88f1940e029",
+                        "type": "RT_STRING"
+                    },
+                    {
+                        "lang": "NEUTRAL",
+                        "chi2": 9287.07,
+                        "filetype": "unknown",
+                        "entropy": 3.231919765472412,
+                        "sha256": "5b571338fd7606fa0d8da6c32cc2e2b18ab49b91409a75fd9b8fd0a7ac62d628",
+                        "type": "RT_ACCELERATOR"
+                    },
+                    {
+                        "lang": "NEUTRAL",
+                        "chi2": 2763.2,
+                        "filetype": "unknown",
+                        "entropy": 2.842092275619507,
+                        "sha256": "b26722778e208dd069bfa0e895f4e67952eeca67b8f9322c0f568d7cfe5fd737",
+                        "type": "RT_ACCELERATOR"
+                    },
+                    {
+                        "lang": "SWEDISH FINLAND",
+                        "chi2": 7349.54,
+                        "filetype": "ICO",
+                        "entropy": 2.9268767833709717,
+                        "sha256": "2dbfd4354f265eb483558658bda6433196f8592ad95968b8ce2efe7150bc943e",
+                        "type": "RT_GROUP_ICON"
+                    },
+                    {
+                        "lang": "SWEDISH FINLAND",
+                        "chi2": 8364.71,
+                        "filetype": "ICO",
+                        "entropy": 2.8581185340881348,
+                        "sha256": "146e554f0d56db9a88224cd6921744fdfe1f8ee4a9e3ac79711f9ab15f9d3c7f",
+                        "type": "RT_GROUP_ICON"
+                    },
+                    {
+                        "lang": "NEUTRAL",
+                        "chi2": 35181.1,
+                        "filetype": "unknown",
+                        "entropy": 3.3904683589935303,
+                        "sha256": "79016cdd510b70b87082e286e8e6e7458f97eff54c4ae7c813ccb15ab752d7d0",
+                        "type": "RT_VERSION"
+                    }
+                ],
+                "resource_langs": {
+                    "SWEDISH FINLAND": 17,
+                    "NEUTRAL": 6
+                },
+                "resource_types": {
+                    "RT_ACCELERATOR": 2,
+                    "RT_ICON": 15,
+                    "RT_STRING": 3,
+                    "RT_VERSION": 1,
+                    "RT_GROUP_ICON": 2
+                },
+                "sections": [
+                    {
+                        "name": ".text",
+                        "chi2": 298268.59,
+                        "virtual_address": 4096,
+                        "flags": "rx",
+                        "raw_size": 58880,
+                        "entropy": 6.71,
+                        "virtual_size": 58781,
+                        "md5": "f2ed9e0c658572fb7b11c872fa89a93f"
+                    },
+                    {
+                        "name": ".rdata",
+                        "chi2": 1238554.38,
+                        "virtual_address": 65536,
+                        "flags": "r",
+                        "raw_size": 27648,
+                        "entropy": 4.77,
+                        "virtual_size": 27332,
+                        "md5": "7d55088687bbf9ab829bbc07769cede7"
+                    },
+                    {
+                        "name": ".data",
+                        "chi2": 906984.94,
+                        "virtual_address": 94208,
+                        "flags": "rw",
+                        "raw_size": 109568,
+                        "entropy": 7.21,
+                        "virtual_size": 8772136,
+                        "md5": "891b9a531a771ffb511b6f4fb0803d97"
+                    },
+                    {
+                        "name": ".rsrc",
+                        "chi2": 1014801.62,
+                        "virtual_address": 8867840,
+                        "flags": "r",
+                        "raw_size": 56320,
+                        "entropy": 6.34,
+                        "virtual_size": 55920,
+                        "md5": "5ebea9a092c71252604ed931f2b18c75"
+                    }
+                ],
+                "compiler_product_versions": [
+                    "[ASM] VS2013 build 21005 count=27",
+                    "[C++] VS2013 build 21005 count=64",
+                    "[ C ] VS2013 build 21005 count=179",
+                    "[IMP] VS2008 SP1 build 30729 count=7",
+                    "[---] Unmarked objects count=128",
+                    "[RES] VS2013 build 21005 count=1",
+                    "[LNK] VS2013 UPD5 build 40629 count=1",
+                    "id: 0xe5, version: 40629 count=1"
+                ],
+                "rich_pe_header_hash": "4cf25f8950598ee152d56f835c155383",
+                "import_list": [
+                    {
+                        "library_name": "KERNEL32.dll",
+                        "imported_functions": [
+                            "AllocConsole",
+                            "BuildCommDCBAndTimeoutsW",
+                            "CloseHandle",
+                            "CommConfigDialogA",
+                            "CreateFileW",
+                            "CreateMutexA",
+                            "DecodePointer",
+                            "DeleteCriticalSection",
+                            "DeleteFileA",
+                            "EncodePointer",
+                            "EnterCriticalSection",
+                            "ExitProcess",
+                            "FindActCtxSectionStringA",
+                            "FlushFileBuffers",
+                            "FreeEnvironmentStringsW",
+                            "GetACP",
+                            "GetCalendarInfoW",
+                            "GetCommandLineA",
+                            "GetConsoleCP",
+                            "GetConsoleMode",
+                            "GetConsoleTitleW",
+                            "GetCPInfo",
+                            "GetCurrentProcess",
+                            "GetCurrentProcessId",
+                            "GetCurrentThreadId",
+                            "GetEnvironmentStringsW",
+                            "GetFileAttributesW",
+                            "GetFileType",
+                            "GetLastError",
+                            "GetModuleFileNameA",
+                            "GetModuleFileNameW",
+                            "GetModuleHandleExW",
+                            "GetModuleHandleW",
+                            "GetOEMCP",
+                            "GetPrivateProfileSectionW",
+                            "GetProcAddress",
+                            "GetProcessHeap",
+                            "GetProcessHeaps",
+                            "GetStartupInfoW",
+                            "GetStdHandle",
+                            "GetStringTypeW",
+                            "GetSystemTimeAsFileTime",
+                            "GetWindowsDirectoryA",
+                            "GlobalAlloc",
+                            "HeapAlloc",
+                            "HeapFree",
+                            "HeapLock",
+                            "HeapReAlloc",
+                            "HeapSize",
+                            "HeapWalk",
+                            "InitializeCriticalSectionAndSpinCount",
+                            "IsDebuggerPresent",
+                            "IsProcessorFeaturePresent",
+                            "IsValidCodePage",
+                            "LCMapStringW",
+                            "LeaveCriticalSection",
+                            "LoadLibraryExW",
+                            "lstrcpynW",
+                            "lstrlenW",
+                            "MultiByteToWideChar",
+                            "OutputDebugStringW",
+                            "QueryPerformanceCounter",
+                            "RaiseException",
+                            "ReleaseMutex",
+                            "RtlUnwind",
+                            "SetDefaultCommConfigW",
+                            "SetEndOfFile",
+                            "SetEvent",
+                            "SetFilePointerEx",
+                            "SetFileShortNameA",
+                            "SetLastError",
+                            "SetStdHandle",
+                            "SetSystemPowerState",
+                            "SetUnhandledExceptionFilter",
+                            "Sleep",
+                            "TerminateProcess",
+                            "TlsAlloc",
+                            "TlsFree",
+                            "TlsGetValue",
+                            "TlsSetValue",
+                            "UnhandledExceptionFilter",
+                            "VirtualProtect",
+                            "WaitNamedPipeW",
+                            "WideCharToMultiByte",
+                            "WriteConsoleW",
+                            "WriteFile",
+                            "WriteProcessMemory",
+                            "ZombifyActCtx"
+                        ]
+                    },
+                    {
+                        "library_name": "USER32.dll",
+                        "imported_functions": [
+                            "GetCaretPos"
+                        ]
+                    },
+                    {
+                        "library_name": "ADVAPI32.dll",
+                        "imported_functions": [
+                            "DeregisterEventSource"
+                        ]
+                    }
+                ]
+            },
+            "crowdsourced_ids_stats": {
+                "info": 0,
+                "high": 1,
+                "medium": 0,
+                "low": 0
+            }
+        }
+    }
+}

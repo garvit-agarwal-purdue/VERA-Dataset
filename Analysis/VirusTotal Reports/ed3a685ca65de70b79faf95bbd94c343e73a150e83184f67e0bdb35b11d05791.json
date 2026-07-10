@@ -1,0 +1,1136 @@
+{
+    "data": {
+        "id": "ed3a685ca65de70b79faf95bbd94c343e73a150e83184f67e0bdb35b11d05791",
+        "type": "file",
+        "links": {
+            "self": "https://www.virustotal.com/api/v3/files/ed3a685ca65de70b79faf95bbd94c343e73a150e83184f67e0bdb35b11d05791"
+        },
+        "attributes": {
+            "meaningful_name": "Erebus.exe",
+            "crowdsourced_yara_results": [
+                {
+                    "ruleset_id": "009cfa8ad5",
+                    "rule_name": "sandboxdetect_misc",
+                    "ruleset_name": "sandboxdetect",
+                    "description": "Sandbox detection tricks",
+                    "author": "AlienVault Labs",
+                    "match_date": 1765919403,
+                    "ruleset_version": "009cfa8ad5|347a57b31829b6f8e3280e0fd6a0ed49e5453c67",
+                    "source": "https://github.com/AlienVault-Labs/AlienVaultLabs"
+                },
+                {
+                    "ruleset_id": "00c3b8eb5d",
+                    "rule_name": "INDICATOR_SUSPICIOUS_EXE_UACBypass_EventViewer",
+                    "ruleset_name": "indicator_suspicious",
+                    "description": "detects Windows exceutables potentially bypassing UAC using eventvwr.exe",
+                    "author": "ditekSHen",
+                    "match_date": 1765919403,
+                    "ruleset_version": "00c3b8eb5d|e76c93dcdedff04076380ffc60ea54e45b313635",
+                    "source": "https://github.com/ditekshen/detection"
+                },
+                {
+                    "ruleset_id": "0086f22321",
+                    "rule_name": "win_erebus_auto",
+                    "ruleset_name": "win.erebus_auto",
+                    "description": "Detects win.erebus.",
+                    "author": "Felix Bilstein - yara-signator at cocacoding dot com",
+                    "match_date": 1765919403,
+                    "ruleset_version": "0086f22321|6558c417dcf07146b1309b6acde6be0aa96dea10",
+                    "source": "https://malpedia.caad.fkie.fraunhofer.de/"
+                }
+            ],
+            "ssdeep": "24576:DxIWmj1GwuqWt6GoXrxv7EJoD7p1YQzA+GdctrOvpk5P4TB5tP9P6F:Dnqqo5PzA+Gda4TB5tFP6F",
+            "md5": "0ced87772881b63caf95f1d828ba40c5",
+            "crowdsourced_ids_results": [
+                {
+                    "rule_category": "policy-violation",
+                    "alert_severity": "info",
+                    "rule_msg": "POLICY-OTHER TOR Project domain request",
+                    "rule_raw": "alert udp $HOME_NET any -> any 53 ( msg:\"POLICY-OTHER TOR Project domain request\"; flow:to_server; byte_test:1,!&,0xF8,2; content:\"|0A|torproject\",fast_pattern,nocase; service:dns; classtype:policy-violation; sid:43350; rev:3; )",
+                    "alert_context": [
+                        {
+                            "dest_ip": "114.114.114.114",
+                            "dest_port": 53
+                        }
+                    ],
+                    "rule_url": "https://www.snort.org/downloads/#rule-downloads",
+                    "rule_source": "Snort registered user ruleset",
+                    "rule_id": "1:43350"
+                }
+            ],
+            "type_tag": "peexe",
+            "names": [
+                "Erebus.exe",
+                "ed3a685ca65de70b79faf95bbd94c343e73a150e83184f67e0bdb35b11d05791.exe",
+                "erebus",
+                "(Xakep-Shadow-RU)ed3a685ca65de70b79faf95bbd94c343e73a150e83184f67e0bdb35b11d05791_MPuqxpNyrS.exe",
+                "localfile~",
+                "unknown",
+                "myfile.exe",
+                "ed3a685ca65de70b79faf95bbd94c343e73a150e83184f67e0bdb35b11d05791",
+                "Erebus2017.malware",
+                "1.exe",
+                "erebus.exe",
+                "gxyegj.exe",
+                "h2ATEgqmze.exe"
+            ],
+            "sandbox_verdicts": {
+                "DAS-Security Orcas": {
+                    "category": "harmless",
+                    "sandbox_name": "DAS-Security Orcas",
+                    "malware_classification": [
+                        "CLEAN"
+                    ]
+                },
+                "Lastline": {
+                    "category": "malicious",
+                    "sandbox_name": "Lastline",
+                    "malware_classification": [
+                        "MALWARE",
+                        "TROJAN"
+                    ]
+                }
+            },
+            "last_analysis_stats": {
+                "malicious": 66,
+                "suspicious": 0,
+                "undetected": 6,
+                "harmless": 0,
+                "timeout": 0,
+                "confirmed-timeout": 0,
+                "failure": 0,
+                "type-unsupported": 4
+            },
+            "total_votes": {
+                "harmless": 0,
+                "malicious": 8
+            },
+            "pe_info": {
+                "timestamp": 1486387787,
+                "imphash": "528498246e893d454b0afdebdb745c46",
+                "machine_type": 332,
+                "entry_point": 742426,
+                "resource_details": [
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 4031.47,
+                        "filetype": "XML",
+                        "entropy": 4.911615371704102,
+                        "sha256": "4bb79dcea0a901f7d9eac5aa05728ae92acb42e0cb22e5dd14134f4421a3d8df",
+                        "type": "RT_MANIFEST"
+                    }
+                ],
+                "resource_langs": {
+                    "ENGLISH US": 1
+                },
+                "resource_types": {
+                    "RT_MANIFEST": 1
+                },
+                "sections": [
+                    {
+                        "name": ".text",
+                        "chi2": 5189942.0,
+                        "virtual_address": 4096,
+                        "flags": "rx",
+                        "raw_size": 935936,
+                        "entropy": 6.63,
+                        "virtual_size": 935496,
+                        "md5": "8779c22da5933b283326c71276172930"
+                    },
+                    {
+                        "name": ".rdata",
+                        "chi2": 7845914.0,
+                        "virtual_address": 942080,
+                        "flags": "r",
+                        "raw_size": 230400,
+                        "entropy": 5.5,
+                        "virtual_size": 230034,
+                        "md5": "88a5d2cc1a5412f7633131ee1fe7a407"
+                    },
+                    {
+                        "name": ".data",
+                        "chi2": 543220.75,
+                        "virtual_address": 1175552,
+                        "flags": "rw",
+                        "raw_size": 30720,
+                        "entropy": 5.03,
+                        "virtual_size": 47976,
+                        "md5": "80ec265e65fd9c8f704c3a82db41d246"
+                    },
+                    {
+                        "name": ".rsrc",
+                        "chi2": 9292.0,
+                        "virtual_address": 1224704,
+                        "flags": "r",
+                        "raw_size": 512,
+                        "entropy": 4.72,
+                        "virtual_size": 480,
+                        "md5": "9c3280f335e8e346ce925599d24fcc62"
+                    },
+                    {
+                        "name": ".reloc",
+                        "chi2": 199380.42,
+                        "virtual_address": 1228800,
+                        "flags": "r",
+                        "raw_size": 50688,
+                        "entropy": 6.6,
+                        "virtual_size": 50388,
+                        "md5": "7e3d9ca463d61754fd376c1c54aa69d6"
+                    }
+                ],
+                "compiler_product_versions": [
+                    "[ASM] VS2013 build 21005 count=42",
+                    "[C++] VS2013 build 21005 count=87",
+                    "[ C ] VS2010 SP1 build 40219 count=7",
+                    "[ASM] VS2010 SP1 build 40219 count=1",
+                    "[IMP] VS2008 SP1 build 30729 count=15",
+                    "[---] Unmarked objects count=193",
+                    "[ C ] VS2013 build 21005 count=326",
+                    "[RES] VS2013 build 21005 count=1",
+                    "[LNK] VS2013 UPD2 build 30501 count=1",
+                    "id: 0xc7, version: 41118 count=7",
+                    "id: 0xe5, version: 30501 count=35"
+                ],
+                "rich_pe_header_hash": "cc3aa26bac4d3e1c07769a9d37ee9f39",
+                "import_list": [
+                    {
+                        "library_name": "WLDAP32.dll",
+                        "imported_functions": [
+                            "Ord(143)",
+                            "Ord(200)",
+                            "Ord(211)",
+                            "Ord(22)",
+                            "Ord(26)",
+                            "Ord(27)",
+                            "Ord(30)",
+                            "Ord(301)",
+                            "Ord(32)",
+                            "Ord(33)",
+                            "Ord(35)",
+                            "Ord(41)",
+                            "Ord(46)",
+                            "Ord(50)",
+                            "Ord(60)",
+                            "Ord(79)"
+                        ]
+                    },
+                    {
+                        "library_name": "urlmon.dll",
+                        "imported_functions": [
+                            "URLDownloadToFileW"
+                        ]
+                    },
+                    {
+                        "library_name": "WS2_32.dll",
+                        "imported_functions": [
+                            "__WSAFDIsSet",
+                            "accept",
+                            "bind",
+                            "closesocket",
+                            "connect",
+                            "freeaddrinfo",
+                            "getaddrinfo",
+                            "gethostname",
+                            "getpeername",
+                            "getsockname",
+                            "getsockopt",
+                            "htons",
+                            "ioctlsocket",
+                            "listen",
+                            "ntohs",
+                            "recv",
+                            "recvfrom",
+                            "select",
+                            "send",
+                            "sendto",
+                            "setsockopt",
+                            "socket",
+                            "WSACleanup",
+                            "WSAGetLastError",
+                            "WSAIoctl",
+                            "WSASetLastError",
+                            "WSAStartup"
+                        ]
+                    },
+                    {
+                        "library_name": "KERNEL32.dll",
+                        "imported_functions": [
+                            "AreFileApisANSI",
+                            "CloseHandle",
+                            "CompareStringW",
+                            "CopyFileW",
+                            "CreateDirectoryW",
+                            "CreateFileW",
+                            "CreateThread",
+                            "DecodePointer",
+                            "DeleteCriticalSection",
+                            "DeleteFileW",
+                            "DeviceIoControl",
+                            "EncodePointer",
+                            "EnterCriticalSection",
+                            "EnumSystemLocalesW",
+                            "ExitProcess",
+                            "ExitThread",
+                            "ExpandEnvironmentStringsA",
+                            "FileTimeToLocalFileTime",
+                            "FileTimeToSystemTime",
+                            "FindClose",
+                            "FindFirstFileExW",
+                            "FindFirstFileW",
+                            "FindNextFileW",
+                            "FlushFileBuffers",
+                            "FormatMessageA",
+                            "FreeEnvironmentStringsW",
+                            "FreeLibrary",
+                            "GetACP",
+                            "GetCommandLineW",
+                            "GetConsoleCP",
+                            "GetConsoleMode",
+                            "GetCPInfo",
+                            "GetCurrentDirectoryW",
+                            "GetCurrentProcess",
+                            "GetCurrentProcessId",
+                            "GetCurrentThreadId",
+                            "GetDateFormatW",
+                            "GetDriveTypeW",
+                            "GetEnvironmentStringsW",
+                            "GetFileAttributesW",
+                            "GetFileInformationByHandle",
+                            "GetFileType",
+                            "GetFullPathNameW",
+                            "GetLastError",
+                            "GetLocaleInfoW",
+                            "GetModuleFileNameW",
+                            "GetModuleHandleA",
+                            "GetModuleHandleExW",
+                            "GetModuleHandleW",
+                            "GetOEMCP",
+                            "GetProcAddress",
+                            "GetProcessHeap",
+                            "GetStartupInfoW",
+                            "GetStdHandle",
+                            "GetStringTypeW",
+                            "GetSystemTimeAsFileTime",
+                            "GetTickCount",
+                            "GetTimeFormatW",
+                            "GetTimeZoneInformation",
+                            "GetUserDefaultLCID",
+                            "GetVersion",
+                            "HeapAlloc",
+                            "HeapFree",
+                            "HeapReAlloc",
+                            "HeapSize",
+                            "InitializeCriticalSection",
+                            "InitializeCriticalSectionAndSpinCount",
+                            "IsDebuggerPresent",
+                            "IsProcessorFeaturePresent",
+                            "IsValidCodePage",
+                            "IsValidLocale",
+                            "LCMapStringW",
+                            "LeaveCriticalSection",
+                            "LoadLibraryA",
+                            "LoadLibraryExW",
+                            "LocalFree",
+                            "lstrlenW",
+                            "MultiByteToWideChar",
+                            "OutputDebugStringW",
+                            "PeekNamedPipe",
+                            "QueryPerformanceCounter",
+                            "RaiseException",
+                            "ReadConsoleW",
+                            "ReadFile",
+                            "RemoveDirectoryW",
+                            "RtlUnwind",
+                            "SetEndOfFile",
+                            "SetEnvironmentVariableA",
+                            "SetEnvironmentVariableW",
+                            "SetFilePointerEx",
+                            "SetLastError",
+                            "SetStdHandle",
+                            "SetUnhandledExceptionFilter",
+                            "Sleep",
+                            "SleepEx",
+                            "SystemTimeToTzSpecificLocalTime",
+                            "TerminateProcess",
+                            "TlsAlloc",
+                            "TlsFree",
+                            "TlsGetValue",
+                            "TlsSetValue",
+                            "UnhandledExceptionFilter",
+                            "VerifyVersionInfoA",
+                            "VerSetConditionMask",
+                            "WaitForMultipleObjects",
+                            "WaitForSingleObject",
+                            "WideCharToMultiByte",
+                            "WriteConsoleW",
+                            "WriteFile"
+                        ]
+                    },
+                    {
+                        "library_name": "ADVAPI32.dll",
+                        "imported_functions": [
+                            "CryptAcquireContextA",
+                            "CryptCreateHash",
+                            "CryptDestroyHash",
+                            "CryptDestroyKey",
+                            "CryptEncrypt",
+                            "CryptGenRandom",
+                            "CryptGetHashParam",
+                            "CryptHashData",
+                            "CryptImportKey",
+                            "CryptReleaseContext",
+                            "GetTokenInformation",
+                            "OpenProcessToken",
+                            "RegCloseKey",
+                            "RegCreateKeyW",
+                            "RegDeleteKeyW",
+                            "RegEnumKeyExW",
+                            "RegOpenKeyExW",
+                            "RegSetValueExA"
+                        ]
+                    },
+                    {
+                        "library_name": "SHELL32.dll",
+                        "imported_functions": [
+                            "ShellExecuteExW",
+                            "ShellExecuteW"
+                        ]
+                    }
+                ]
+            },
+            "trid": [
+                {
+                    "file_type": "Win64 Executable (generic)",
+                    "probability": 32.2
+                },
+                {
+                    "file_type": "Win32 Dynamic Link Library (generic)",
+                    "probability": 20.1
+                },
+                {
+                    "file_type": "Win16 NE executable (generic)",
+                    "probability": 15.4
+                },
+                {
+                    "file_type": "Win32 Executable (generic)",
+                    "probability": 13.7
+                },
+                {
+                    "file_type": "OS/2 Executable (generic)",
+                    "probability": 6.2
+                }
+            ],
+            "type_description": "Win32 EXE",
+            "filecondis": {
+                "dhash": "203a3c1e0e1f1600",
+                "raw_md5": "ac78f06502ff47e1017c02e451601ac3"
+            },
+            "creation_date": 1486387787,
+            "last_analysis_date": 1765919267,
+            "sha256": "ed3a685ca65de70b79faf95bbd94c343e73a150e83184f67e0bdb35b11d05791",
+            "crowdsourced_ids_stats": {
+                "high": 0,
+                "info": 1,
+                "medium": 0,
+                "low": 0
+            },
+            "popular_threat_classification": {
+                "suggested_threat_label": "trojan.erebus/jsixy",
+                "popular_threat_name": [
+                    {
+                        "value": "erebus",
+                        "count": 25
+                    },
+                    {
+                        "value": "jsixy",
+                        "count": 2
+                    },
+                    {
+                        "value": "ransomheur",
+                        "count": 2
+                    }
+                ],
+                "popular_threat_category": [
+                    {
+                        "value": "trojan",
+                        "count": 27
+                    },
+                    {
+                        "value": "ransomware",
+                        "count": 20
+                    },
+                    {
+                        "value": "virus",
+                        "count": 2
+                    }
+                ]
+            },
+            "magic": "PE32 executable (GUI) Intel 80386, for MS Windows",
+            "first_submission_date": 1486393211,
+            "last_analysis_results": {
+                "Bkav": {
+                    "method": "blacklist",
+                    "engine_name": "Bkav",
+                    "engine_version": "2.0.0.1",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "W32.AIDetectMalware"
+                },
+                "Lionic": {
+                    "method": "blacklist",
+                    "engine_name": "Lionic",
+                    "engine_version": "8.16",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Erebus.j!c"
+                },
+                "tehtris": {
+                    "method": "blacklist",
+                    "engine_name": "tehtris",
+                    "engine_version": "v0.1.4",
+                    "engine_update": "20251216",
+                    "category": "undetected",
+                    "result": null
+                },
+                "MicroWorld-eScan": {
+                    "method": "blacklist",
+                    "engine_name": "MicroWorld-eScan",
+                    "engine_version": "14.0.409.0",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.Erebus.A"
+                },
+                "ClamAV": {
+                    "method": "blacklist",
+                    "engine_name": "ClamAV",
+                    "engine_version": "1.5.1.0",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Multios.Malware.Erebus-6330868-0"
+                },
+                "CTX": {
+                    "method": "blacklist",
+                    "engine_name": "CTX",
+                    "engine_version": "2024.8.29.1",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "exe.trojan.erebus"
+                },
+                "CAT-QuickHeal": {
+                    "method": "blacklist",
+                    "engine_name": "CAT-QuickHeal",
+                    "engine_version": "22.00",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Ransom.Erebus.S470952"
+                },
+                "Skyhigh": {
+                    "method": "blacklist",
+                    "engine_name": "Skyhigh",
+                    "engine_version": "v2021.2.0+4045",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "BehavesLike.Win32.Infected.th"
+                },
+                "ALYac": {
+                    "method": "blacklist",
+                    "engine_name": "ALYac",
+                    "engine_version": "2.0.0.10",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.Erebus"
+                },
+                "Cylance": {
+                    "method": "blacklist",
+                    "engine_name": "Cylance",
+                    "engine_version": "3.0.0.0",
+                    "engine_update": "20251205",
+                    "category": "malicious",
+                    "result": "Unsafe"
+                },
+                "Zillya": {
+                    "method": "blacklist",
+                    "engine_name": "Zillya",
+                    "engine_version": "2.0.0.5506",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Trojan.Agentb.Win32.15966"
+                },
+                "Sangfor": {
+                    "method": "blacklist",
+                    "engine_name": "Sangfor",
+                    "engine_version": "2.22.3.0",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Suspicious.Win32.Save.a"
+                },
+                "K7AntiVirus": {
+                    "method": "blacklist",
+                    "engine_name": "K7AntiVirus",
+                    "engine_version": "14.23.58005",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Ransomware ( 0065121a1 )"
+                },
+                "BitDefender": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefender",
+                    "engine_version": "7.2",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.Erebus.A"
+                },
+                "K7GW": {
+                    "method": "blacklist",
+                    "engine_name": "K7GW",
+                    "engine_version": "14.24.57988",
+                    "engine_update": "20251215",
+                    "category": "malicious",
+                    "result": "Ransomware ( 0065121a1 )"
+                },
+                "CrowdStrike": {
+                    "method": "blacklist",
+                    "engine_name": "CrowdStrike",
+                    "engine_version": "1.0",
+                    "engine_update": "20231026",
+                    "category": "malicious",
+                    "result": "win/malicious_confidence_100% (W)"
+                },
+                "huorong": {
+                    "method": "blacklist",
+                    "engine_name": "huorong",
+                    "engine_version": "abe3f46:abe3f46:a0a445c:a0a445c",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Ransom/Erebus.a"
+                },
+                "Baidu": {
+                    "method": "blacklist",
+                    "engine_name": "Baidu",
+                    "engine_version": "1.0.0.2",
+                    "engine_update": "20190318",
+                    "category": "undetected",
+                    "result": null
+                },
+                "VirIT": {
+                    "method": "blacklist",
+                    "engine_name": "VirIT",
+                    "engine_version": "9.5.1106",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Erebus.A"
+                },
+                "Symantec": {
+                    "method": "blacklist",
+                    "engine_name": "Symantec",
+                    "engine_version": "1.22.0.0",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "ML.Attribute.HighConfidence"
+                },
+                "Elastic": {
+                    "method": "blacklist",
+                    "engine_name": "Elastic",
+                    "engine_version": "4.0.241",
+                    "engine_update": "20251209",
+                    "category": "malicious",
+                    "result": "malicious (high confidence)"
+                },
+                "ESET-NOD32": {
+                    "method": "blacklist",
+                    "engine_name": "ESET-NOD32",
+                    "engine_version": "18.2.18.0",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Win32/Filecoder.Erebus.A trojan"
+                },
+                "Zoner": {
+                    "method": "blacklist",
+                    "engine_name": "Zoner",
+                    "engine_version": "2.2.2.0",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.54067"
+                },
+                "TrendMicro-HouseCall": {
+                    "method": "blacklist",
+                    "engine_name": "TrendMicro-HouseCall",
+                    "engine_version": "24.550.0.1002",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Ransom_EREBUS.TOR"
+                },
+                "Paloalto": {
+                    "method": "blacklist",
+                    "engine_name": "Paloalto",
+                    "engine_version": "0.9.0.1003",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "generic.ml"
+                },
+                "Cynet": {
+                    "method": "blacklist",
+                    "engine_name": "Cynet",
+                    "engine_version": "4.0.3.4",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Malicious (score: 100)"
+                },
+                "Kaspersky": {
+                    "method": "blacklist",
+                    "engine_name": "Kaspersky",
+                    "engine_version": "22.0.1.28",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Trojan-Ransom.Win32.Erebus.a"
+                },
+                "Alibaba": {
+                    "method": "blacklist",
+                    "engine_name": "Alibaba",
+                    "engine_version": "0.3.0.5",
+                    "engine_update": "20190527",
+                    "category": "malicious",
+                    "result": "Ransom:Win32/Erebus.42fd5d77"
+                },
+                "NANO-Antivirus": {
+                    "method": "blacklist",
+                    "engine_name": "NANO-Antivirus",
+                    "engine_version": "1.0.170.26895",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.AD.eopnoy"
+                },
+                "ViRobot": {
+                    "method": "blacklist",
+                    "engine_name": "ViRobot",
+                    "engine_version": "2014.3.20.0",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Z.Erebus.1249280"
+                },
+                "Rising": {
+                    "method": "blacklist",
+                    "engine_name": "Rising",
+                    "engine_version": "25.0.0.28",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Heuristic.b (CLASSIC)"
+                },
+                "Sophos": {
+                    "method": "blacklist",
+                    "engine_name": "Sophos",
+                    "engine_version": "3.3.1.0",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Mal/Generic-S"
+                },
+                "F-Secure": {
+                    "method": "blacklist",
+                    "engine_name": "F-Secure",
+                    "engine_version": "18.10.1547.307",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Trojan.TR/AD.RansomHeur.jsixy"
+                },
+                "DrWeb": {
+                    "method": "blacklist",
+                    "engine_name": "DrWeb",
+                    "engine_version": "7.0.72.9030",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Trojan.MulDrop7.16052"
+                },
+                "VIPRE": {
+                    "method": "blacklist",
+                    "engine_name": "VIPRE",
+                    "engine_version": "6.0.0.35",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.Erebus.A"
+                },
+                "TrendMicro": {
+                    "method": "blacklist",
+                    "engine_name": "TrendMicro",
+                    "engine_version": "24.550.0.1002",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Ransom_EREBUS.TOR"
+                },
+                "McAfeeD": {
+                    "method": "blacklist",
+                    "engine_name": "McAfeeD",
+                    "engine_version": "1.2.0.10275",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "ti!ED3A685CA65D"
+                },
+                "Trapmine": {
+                    "method": "blacklist",
+                    "engine_name": "Trapmine",
+                    "engine_version": "4.0.7.0",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "malicious.moderate.ml.score"
+                },
+                "CMC": {
+                    "method": "blacklist",
+                    "engine_name": "CMC",
+                    "engine_version": "2.4.2022.1",
+                    "engine_update": "20251208",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Emsisoft": {
+                    "method": "blacklist",
+                    "engine_name": "Emsisoft",
+                    "engine_version": "2024.8.0.61147",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.Erebus.A (B)"
+                },
+                "Ikarus": {
+                    "method": "blacklist",
+                    "engine_name": "Ikarus",
+                    "engine_version": "6.4.16.0",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Trojan.Khalesi"
+                },
+                "GData": {
+                    "method": "blacklist",
+                    "engine_name": "GData",
+                    "engine_version": "GD:27.42894AVA:64.30337",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Win32.Trojan.Agent.KFJIR6"
+                },
+                "Jiangmin": {
+                    "method": "blacklist",
+                    "engine_name": "Jiangmin",
+                    "engine_version": "16.0.100",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Trojan.Generic.aruso"
+                },
+                "Webroot": {
+                    "method": "blacklist",
+                    "engine_name": "Webroot",
+                    "engine_version": "1.9.0.8",
+                    "engine_update": "20250227",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Varist": {
+                    "method": "blacklist",
+                    "engine_name": "Varist",
+                    "engine_version": "6.6.1.3",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "W32/Erebus.MMYK-8563"
+                },
+                "Avira": {
+                    "method": "blacklist",
+                    "engine_name": "Avira",
+                    "engine_version": "8.3.3.24",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "TR/AD.RansomHeur.jsixy"
+                },
+                "Antiy-AVL": {
+                    "method": "blacklist",
+                    "engine_name": "Antiy-AVL",
+                    "engine_version": "3.0",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Trojan/Win32.Agent"
+                },
+                "Kingsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Kingsoft",
+                    "engine_version": "None",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Win32.HeurC.KVMH017.a"
+                },
+                "Gridinsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Gridinsoft",
+                    "engine_version": "1.0.231.174",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Ransom.Win32.Generic.oa!s1"
+                },
+                "Xcitium": {
+                    "method": "blacklist",
+                    "engine_name": "Xcitium",
+                    "engine_version": "38270",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Malware@#12hxba1hhecfy"
+                },
+                "Arcabit": {
+                    "method": "blacklist",
+                    "engine_name": "Arcabit",
+                    "engine_version": "2025.0.0.23",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.Erebus.A"
+                },
+                "SUPERAntiSpyware": {
+                    "method": "blacklist",
+                    "engine_name": "SUPERAntiSpyware",
+                    "engine_version": "5.6.0.1032",
+                    "engine_update": "20251216",
+                    "category": "undetected",
+                    "result": null
+                },
+                "ZoneAlarm": {
+                    "method": "blacklist",
+                    "engine_name": "ZoneAlarm",
+                    "engine_version": "6.21-110947175",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Troj/Ransom-EGM"
+                },
+                "Microsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Microsoft",
+                    "engine_version": "1.1.25110.1",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Ransom:Win32/Erebus.A!rsm"
+                },
+                "Google": {
+                    "method": "blacklist",
+                    "engine_name": "Google",
+                    "engine_version": "1765915233",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Detected"
+                },
+                "AhnLab-V3": {
+                    "method": "blacklist",
+                    "engine_name": "AhnLab-V3",
+                    "engine_version": "3.29.1.10604",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Trojan/Win32.Erebus.C1776373"
+                },
+                "Acronis": {
+                    "method": "blacklist",
+                    "engine_name": "Acronis",
+                    "engine_version": "1.2.0.121",
+                    "engine_update": "20240328",
+                    "category": "undetected",
+                    "result": null
+                },
+                "VBA32": {
+                    "method": "blacklist",
+                    "engine_name": "VBA32",
+                    "engine_version": "5.5.0",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "TrojanRansom.Erebus"
+                },
+                "TACHYON": {
+                    "method": "blacklist",
+                    "engine_name": "TACHYON",
+                    "engine_version": "2025-12-16.02",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Ransom/W32.Erebus.1249280"
+                },
+                "DeepInstinct": {
+                    "method": "blacklist",
+                    "engine_name": "DeepInstinct",
+                    "engine_version": "5.0.0.8",
+                    "engine_update": "20251214",
+                    "category": "malicious",
+                    "result": "MALICIOUS"
+                },
+                "Malwarebytes": {
+                    "method": "blacklist",
+                    "engine_name": "Malwarebytes",
+                    "engine_version": "3.1.0.181",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Floxif.Virus.FileInfector.DDS"
+                },
+                "Panda": {
+                    "method": "blacklist",
+                    "engine_name": "Panda",
+                    "engine_version": "4.6.4.2",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Trj/WLT.C"
+                },
+                "APEX": {
+                    "method": "blacklist",
+                    "engine_name": "APEX",
+                    "engine_version": "6.726",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Malicious"
+                },
+                "Tencent": {
+                    "method": "blacklist",
+                    "engine_name": "Tencent",
+                    "engine_version": "1.0.0.1",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Trojan-Ransom.Win32.Erebus.a"
+                },
+                "Yandex": {
+                    "method": "blacklist",
+                    "engine_name": "Yandex",
+                    "engine_version": "5.5.2.24",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Trojan.Agent!BSmel8c4Byc"
+                },
+                "TrellixENS": {
+                    "method": "blacklist",
+                    "engine_name": "TrellixENS",
+                    "engine_version": "6.0.6.653",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Generic.aav"
+                },
+                "SentinelOne": {
+                    "method": "blacklist",
+                    "engine_name": "SentinelOne",
+                    "engine_version": "7.4.1.3",
+                    "engine_update": "20251013",
+                    "category": "malicious",
+                    "result": "Static AI - Suspicious PE"
+                },
+                "MaxSecure": {
+                    "method": "blacklist",
+                    "engine_name": "MaxSecure",
+                    "engine_version": "1.0.0.1",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Trojan.Malware.7164915.susgen"
+                },
+                "Fortinet": {
+                    "method": "blacklist",
+                    "engine_name": "Fortinet",
+                    "engine_version": "7.0.30.0",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "W32/Generic!tr"
+                },
+                "AVG": {
+                    "method": "blacklist",
+                    "engine_name": "AVG",
+                    "engine_version": "23.9.8494.0",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Win32:Malware-gen"
+                },
+                "Avast": {
+                    "method": "blacklist",
+                    "engine_name": "Avast",
+                    "engine_version": "23.9.8494.0",
+                    "engine_update": "20251216",
+                    "category": "malicious",
+                    "result": "Win32:Malware-gen"
+                },
+                "alibabacloud": {
+                    "method": "blacklist",
+                    "engine_name": "alibabacloud",
+                    "engine_version": "2.2.0",
+                    "engine_update": "20250321",
+                    "category": "malicious",
+                    "result": "Ransomware:Win/Erebus.A"
+                },
+                "Avast-Mobile": {
+                    "method": "blacklist",
+                    "engine_name": "Avast-Mobile",
+                    "engine_version": "251216-00",
+                    "engine_update": "20251216",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "SymantecMobileInsight": {
+                    "method": "blacklist",
+                    "engine_name": "SymantecMobileInsight",
+                    "engine_version": "2.0",
+                    "engine_update": "20250124",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "BitDefenderFalx": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefenderFalx",
+                    "engine_version": "2.0.936",
+                    "engine_update": "20251216",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "Trustlook": {
+                    "method": "blacklist",
+                    "engine_name": "Trustlook",
+                    "engine_version": "1.0",
+                    "engine_update": "20251216",
+                    "category": "type-unsupported",
+                    "result": null
+                }
+            },
+            "last_modification_date": 1765926599,
+            "tags": [
+                "checks-user-input",
+                "direct-cpu-clock-access",
+                "idle",
+                "detect-debug-environment",
+                "peexe",
+                "runtime-modules"
+            ],
+            "times_submitted": 19,
+            "reputation": -241,
+            "last_submission_date": 1750076709,
+            "authentihash": "08ac66454d9cd3116a78f2d399840c286da8243dffbad987287dc6288fa3dabb",
+            "detectiteasy": {
+                "filetype": "PE32",
+                "values": [
+                    {
+                        "info": "EXE32",
+                        "version": "2013-2017",
+                        "type": "Compiler",
+                        "name": "EP:Microsoft Visual C/C++"
+                    },
+                    {
+                        "info": "LTCG/C++",
+                        "version": "18.00.30501",
+                        "type": "Compiler",
+                        "name": "Microsoft Visual C/C++"
+                    },
+                    {
+                        "version": "12.00.30501",
+                        "type": "Linker",
+                        "name": "Microsoft Linker"
+                    },
+                    {
+                        "version": "2013",
+                        "type": "Tool",
+                        "name": "Visual Studio"
+                    }
+                ]
+            },
+            "magika": "PEBIN",
+            "tlsh": "T1C745AE22F693C172E8A210B0497DBB1EA47DB824173D5EE7F3E80E1D59715C16B3A34A",
+            "vhash": "016056655d55556128z6dhz21z16z1b7z",
+            "sha1": "6e5fca51a018272d1b1003b16dce6ee9e836908c",
+            "size": 1249280,
+            "type_extension": "exe",
+            "type_tags": [
+                "executable",
+                "windows",
+                "win32",
+                "pe",
+                "peexe"
+            ],
+            "unique_sources": 13
+        }
+    }
+}

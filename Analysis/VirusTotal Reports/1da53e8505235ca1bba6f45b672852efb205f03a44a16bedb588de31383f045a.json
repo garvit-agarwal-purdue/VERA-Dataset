@@ -1,0 +1,1743 @@
+{
+    "data": {
+        "id": "1da53e8505235ca1bba6f45b672852efb205f03a44a16bedb588de31383f045a",
+        "type": "file",
+        "links": {
+            "self": "https://www.virustotal.com/api/v3/files/1da53e8505235ca1bba6f45b672852efb205f03a44a16bedb588de31383f045a"
+        },
+        "attributes": {
+            "detectiteasy": {
+                "filetype": "PE32",
+                "values": [
+                    {
+                        "type": "Protector",
+                        "name": "Smart Assembly"
+                    },
+                    {
+                        "version": "v2.0.50727",
+                        "type": "Library",
+                        "name": ".NET"
+                    },
+                    {
+                        "version": "8.0",
+                        "type": "Linker",
+                        "name": "Microsoft Linker"
+                    }
+                ]
+            },
+            "names": [
+                "stub_2.exe",
+                "Dweik.exe",
+                "ad76a6098df431046ffdf41b1a2ed40a.exe",
+                "svchost.exe",
+                "unknown",
+                "7085a8916c714d2aeb6a28480449df00",
+                "200601_200701.exe",
+                "XL7m.jpeg"
+            ],
+            "first_seen_itw_date": 1509036404,
+            "magic": "PE32 executable (GUI) Intel 80386 Mono/.Net assembly, for MS Windows",
+            "filecondis": {
+                "dhash": "00383c3c2e0d1400",
+                "raw_md5": "7be11a4418c6e9f70d10e28225ee0144"
+            },
+            "times_submitted": 4,
+            "magika": "PEBIN",
+            "trid": [
+                {
+                    "file_type": "Generic CIL Executable (.NET, Mono, etc.)",
+                    "probability": 67.7
+                },
+                {
+                    "file_type": "Win64 Executable (generic)",
+                    "probability": 9.7
+                },
+                {
+                    "file_type": "Win32 Dynamic Link Library (generic)",
+                    "probability": 6.0
+                },
+                {
+                    "file_type": "Win16 NE executable (generic)",
+                    "probability": 4.6
+                },
+                {
+                    "file_type": "Win32 Executable (generic)",
+                    "probability": 4.1
+                }
+            ],
+            "size": 217088,
+            "crowdsourced_ids_results": [
+                {
+                    "rule_category": "Potentially Bad Traffic",
+                    "alert_severity": "low",
+                    "rule_msg": "ET INFO DYNAMIC_DNS Query to a Suspicious no-ip Domain",
+                    "rule_raw": "alert dns $HOME_NET any -> any any (msg:\"ET INFO DYNAMIC_DNS Query to a Suspicious no-ip Domain\"; dns.query; content:\".no-ip.\"; classtype:bad-unknown; sid:2013743; rev:5; metadata:created_at 2011_10_05, former_category HUNTING, updated_at 2020_08_17;)",
+                    "alert_context": [
+                        {
+                            "dest_port": 53,
+                            "dest_ip": "8.8.8.8"
+                        },
+                        {
+                            "dest_ip": "218.85.157.99",
+                            "dest_port": 53
+                        }
+                    ],
+                    "rule_url": "https://rules.emergingthreats.net/",
+                    "rule_source": "Proofpoint Emerging Threats Open",
+                    "rule_id": "1:2013743"
+                },
+                {
+                    "rule_category": "Potentially Bad Traffic",
+                    "alert_severity": "low",
+                    "rule_msg": "ET INFO Observed DNS Query to .biz TLD",
+                    "rule_raw": "alert dns $HOME_NET any -> any any (msg:\"ET INFO Observed DNS Query to .biz TLD\"; dns.query; content:\".biz\"; nocase; endswith; reference:url,www.spamhaus.org/statistics/tlds/; classtype:bad-unknown; sid:2027863; rev:4; metadata:affected_product Any, attack_target Client_Endpoint, created_at 2019_08_13, deployment Perimeter, former_category INFO, signature_severity Major, updated_at 2020_09_17;)",
+                    "rule_references": [
+                        "https://www.spamhaus.org/statistics/tlds/"
+                    ],
+                    "alert_context": [
+                        {
+                            "dest_port": 53,
+                            "dest_ip": "8.8.8.8"
+                        },
+                        {
+                            "dest_ip": "218.85.157.99",
+                            "dest_port": 53
+                        }
+                    ],
+                    "rule_url": "https://rules.emergingthreats.net/",
+                    "rule_source": "Proofpoint Emerging Threats Open",
+                    "rule_id": "1:2027863"
+                }
+            ],
+            "meaningful_name": "Dweik.exe",
+            "type_tag": "peexe",
+            "authentihash": "48503eeb390e7f97e83abcd5236446067c7442cc0f59d2ae202e979077de10fa",
+            "last_analysis_results": {
+                "Bkav": {
+                    "method": "blacklist",
+                    "engine_name": "Bkav",
+                    "engine_version": "2.0.0.1",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "W32.AIDetectMalware.CS"
+                },
+                "Lionic": {
+                    "method": "blacklist",
+                    "engine_name": "Lionic",
+                    "engine_version": "8.16",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Blocker.V!c"
+                },
+                "Elastic": {
+                    "method": "blacklist",
+                    "engine_name": "Elastic",
+                    "engine_version": "4.0.192",
+                    "engine_update": "20250305",
+                    "category": "malicious",
+                    "result": "malicious (high confidence)"
+                },
+                "MicroWorld-eScan": {
+                    "method": "blacklist",
+                    "engine_name": "MicroWorld-eScan",
+                    "engine_version": "14.0.409.0",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "IL:Trojan.MSILMamut.6768"
+                },
+                "CTX": {
+                    "method": "blacklist",
+                    "engine_name": "CTX",
+                    "engine_version": "2024.8.29.1",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "exe.trojan.blocker"
+                },
+                "CAT-QuickHeal": {
+                    "method": "blacklist",
+                    "engine_name": "CAT-QuickHeal",
+                    "engine_version": "22.00",
+                    "engine_update": "20250305",
+                    "category": "malicious",
+                    "result": "Trojan.Ghanarava.166485334049df00"
+                },
+                "Skyhigh": {
+                    "method": "blacklist",
+                    "engine_name": "Skyhigh",
+                    "engine_version": "v2021.2.0+4045",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "Artemis!Trojan"
+                },
+                "ALYac": {
+                    "method": "blacklist",
+                    "engine_name": "ALYac",
+                    "engine_version": "2.0.0.10",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "IL:Trojan.MSILMamut.6768"
+                },
+                "Cylance": {
+                    "method": "blacklist",
+                    "engine_name": "Cylance",
+                    "engine_version": "3.0.0.0",
+                    "engine_update": "20250109",
+                    "category": "malicious",
+                    "result": "Unsafe"
+                },
+                "Zillya": {
+                    "method": "blacklist",
+                    "engine_name": "Zillya",
+                    "engine_version": "2.0.0.5313",
+                    "engine_update": "20250305",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Sangfor": {
+                    "method": "blacklist",
+                    "engine_name": "Sangfor",
+                    "engine_version": "2.22.3.0",
+                    "engine_update": "20250305",
+                    "category": "malicious",
+                    "result": "Suspicious.Win32.Save.a"
+                },
+                "K7AntiVirus": {
+                    "method": "blacklist",
+                    "engine_name": "K7AntiVirus",
+                    "engine_version": "12.221.55038",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "Trojan ( 700000121 )"
+                },
+                "Alibaba": {
+                    "method": "blacklist",
+                    "engine_name": "Alibaba",
+                    "engine_version": "0.3.0.5",
+                    "engine_update": "20190527",
+                    "category": "malicious",
+                    "result": "Ransom:Win32/Blocker.e40de87f"
+                },
+                "K7GW": {
+                    "method": "blacklist",
+                    "engine_name": "K7GW",
+                    "engine_version": "12.221.55038",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "Trojan ( 700000121 )"
+                },
+                "CrowdStrike": {
+                    "method": "blacklist",
+                    "engine_name": "CrowdStrike",
+                    "engine_version": "1.0",
+                    "engine_update": "20231026",
+                    "category": "malicious",
+                    "result": "win/malicious_confidence_100% (W)"
+                },
+                "Arcabit": {
+                    "method": "blacklist",
+                    "engine_name": "Arcabit",
+                    "engine_version": "2022.0.0.18",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "IL:Trojan.MSILMamut.D1A70"
+                },
+                "huorong": {
+                    "method": "blacklist",
+                    "engine_name": "huorong",
+                    "engine_version": "d3756e1:d3756e1:308c1cd:308c1cd",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "Trojan/MSIL.Obfuscated.l"
+                },
+                "Baidu": {
+                    "method": "blacklist",
+                    "engine_name": "Baidu",
+                    "engine_version": "1.0.0.2",
+                    "engine_update": "20190318",
+                    "category": "undetected",
+                    "result": null
+                },
+                "VirIT": {
+                    "method": "blacklist",
+                    "engine_name": "VirIT",
+                    "engine_version": "9.5.906",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Generic.AEET"
+                },
+                "Symantec": {
+                    "method": "blacklist",
+                    "engine_name": "Symantec",
+                    "engine_version": "1.22.0.0",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "ML.Attribute.HighConfidence"
+                },
+                "tehtris": {
+                    "method": "blacklist",
+                    "engine_name": "tehtris",
+                    "engine_version": "v0.1.4",
+                    "engine_update": "20250306",
+                    "category": "undetected",
+                    "result": null
+                },
+                "ESET-NOD32": {
+                    "method": "blacklist",
+                    "engine_name": "ESET-NOD32",
+                    "engine_version": "30827",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "a variant of MSIL/Packed.NetShrink.A"
+                },
+                "Zoner": {
+                    "method": "blacklist",
+                    "engine_name": "Zoner",
+                    "engine_version": "2.2.2.0",
+                    "engine_update": "20250306",
+                    "category": "undetected",
+                    "result": null
+                },
+                "APEX": {
+                    "method": "blacklist",
+                    "engine_name": "APEX",
+                    "engine_version": "6.630",
+                    "engine_update": "20250304",
+                    "category": "malicious",
+                    "result": "Malicious"
+                },
+                "Paloalto": {
+                    "method": "blacklist",
+                    "engine_name": "Paloalto",
+                    "engine_version": "0.9.0.1003",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "generic.ml"
+                },
+                "ClamAV": {
+                    "method": "blacklist",
+                    "engine_name": "ClamAV",
+                    "engine_version": "1.4.2.0",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "Win.Packed.Netshrink-7000970-0"
+                },
+                "Kaspersky": {
+                    "method": "blacklist",
+                    "engine_name": "Kaspersky",
+                    "engine_version": "22.0.1.28",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "Trojan-Ransom.Win32.Blocker.bhbm"
+                },
+                "BitDefender": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefender",
+                    "engine_version": "7.2",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "IL:Trojan.MSILMamut.6768"
+                },
+                "NANO-Antivirus": {
+                    "method": "blacklist",
+                    "engine_name": "NANO-Antivirus",
+                    "engine_version": "1.0.170.26436",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Blocker.bskkyq"
+                },
+                "ViRobot": {
+                    "method": "blacklist",
+                    "engine_name": "ViRobot",
+                    "engine_version": "2014.3.20.0",
+                    "engine_update": "20250306",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Avast": {
+                    "method": "blacklist",
+                    "engine_name": "Avast",
+                    "engine_version": "23.9.8494.0",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "MSIL:Injector-DR [Trj]"
+                },
+                "Tencent": {
+                    "method": "blacklist",
+                    "engine_name": "Tencent",
+                    "engine_version": "1.0.0.1",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "Win32.Trojan-Ransom.Blocker.Ymhl"
+                },
+                "Emsisoft": {
+                    "method": "blacklist",
+                    "engine_name": "Emsisoft",
+                    "engine_version": "2024.8.0.61147",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "IL:Trojan.MSILMamut.6768 (B)"
+                },
+                "F-Secure": {
+                    "method": "blacklist",
+                    "engine_name": "F-Secure",
+                    "engine_version": "18.10.1547.307",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "Heuristic.HEUR/AGEN.1310660"
+                },
+                "DrWeb": {
+                    "method": "blacklist",
+                    "engine_name": "DrWeb",
+                    "engine_version": "7.0.65.5230",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "Win32.HLLW.Autoruner.25074"
+                },
+                "VIPRE": {
+                    "method": "blacklist",
+                    "engine_name": "VIPRE",
+                    "engine_version": "6.0.0.35",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "IL:Trojan.MSILMamut.6768"
+                },
+                "TrendMicro": {
+                    "method": "blacklist",
+                    "engine_name": "TrendMicro",
+                    "engine_version": "11.0.0.1006",
+                    "engine_update": "20250306",
+                    "category": "undetected",
+                    "result": null
+                },
+                "McAfeeD": {
+                    "method": "blacklist",
+                    "engine_name": "McAfeeD",
+                    "engine_version": "1.2.0.7977",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "ti!1DA53E850523"
+                },
+                "Trapmine": {
+                    "method": "blacklist",
+                    "engine_name": "Trapmine",
+                    "engine_version": "4.0.4.0",
+                    "engine_update": "20250205",
+                    "category": "malicious",
+                    "result": "suspicious.low.ml.score"
+                },
+                "CMC": {
+                    "method": "blacklist",
+                    "engine_name": "CMC",
+                    "engine_version": "2.4.2022.1",
+                    "engine_update": "20250306",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Sophos": {
+                    "method": "blacklist",
+                    "engine_name": "Sophos",
+                    "engine_version": "2.5.5.0",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "Mal/Generic-S"
+                },
+                "Ikarus": {
+                    "method": "blacklist",
+                    "engine_name": "Ikarus",
+                    "engine_version": "6.3.30.0",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "Trojan.Msil"
+                },
+                "FireEye": {
+                    "method": "blacklist",
+                    "engine_name": "FireEye",
+                    "engine_version": "35.47.0.0",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "Generic.mg.7085a8916c714d2a"
+                },
+                "Jiangmin": {
+                    "method": "blacklist",
+                    "engine_name": "Jiangmin",
+                    "engine_version": "16.0.100",
+                    "engine_update": "20250305",
+                    "category": "malicious",
+                    "result": "Trojan.Blocker.qnf"
+                },
+                "Webroot": {
+                    "method": "blacklist",
+                    "engine_name": "Webroot",
+                    "engine_version": "1.9.0.8",
+                    "engine_update": "20250227",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Google": {
+                    "method": "blacklist",
+                    "engine_name": "Google",
+                    "engine_version": "1741296620",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "Detected"
+                },
+                "Avira": {
+                    "method": "blacklist",
+                    "engine_name": "Avira",
+                    "engine_version": "8.3.3.20",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "HEUR/AGEN.1310660"
+                },
+                "Varist": {
+                    "method": "blacklist",
+                    "engine_name": "Varist",
+                    "engine_version": "6.6.1.3",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "W32/Trojan.FDR.gen!Eldorado"
+                },
+                "Antiy-AVL": {
+                    "method": "blacklist",
+                    "engine_name": "Antiy-AVL",
+                    "engine_version": "3.0",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "Trojan[Ransom]/Win32.Blocker"
+                },
+                "Kingsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Kingsoft",
+                    "engine_version": "None",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "Win32.Troj.Undef.a"
+                },
+                "Gridinsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Gridinsoft",
+                    "engine_version": "1.0.210.174",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "Ransom.Win32.Blocker.vl!ni"
+                },
+                "Xcitium": {
+                    "method": "blacklist",
+                    "engine_name": "Xcitium",
+                    "engine_version": "37531",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "Malware@#2p74axjfl0vum"
+                },
+                "Microsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Microsoft",
+                    "engine_version": "1.1.25010.7",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "Backdoor:Win32/Bladabindi!ml"
+                },
+                "SUPERAntiSpyware": {
+                    "method": "blacklist",
+                    "engine_name": "SUPERAntiSpyware",
+                    "engine_version": "5.6.0.1032",
+                    "engine_update": "20250306",
+                    "category": "undetected",
+                    "result": null
+                },
+                "GData": {
+                    "method": "blacklist",
+                    "engine_name": "GData",
+                    "engine_version": "A:25.39902B:27.39507",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "IL:Trojan.MSILMamut.6768"
+                },
+                "Cynet": {
+                    "method": "blacklist",
+                    "engine_name": "Cynet",
+                    "engine_version": "4.0.3.4",
+                    "engine_update": "20250306",
+                    "category": "undetected",
+                    "result": null
+                },
+                "AhnLab-V3": {
+                    "method": "blacklist",
+                    "engine_name": "AhnLab-V3",
+                    "engine_version": "3.27.1.10534",
+                    "engine_update": "20250306",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Acronis": {
+                    "method": "blacklist",
+                    "engine_name": "Acronis",
+                    "engine_version": "1.2.0.121",
+                    "engine_update": "20240328",
+                    "category": "undetected",
+                    "result": null
+                },
+                "McAfee": {
+                    "method": "blacklist",
+                    "engine_name": "McAfee",
+                    "engine_version": "6.0.6.653",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "GenericRXQE-RZ!7085A8916C71"
+                },
+                "TACHYON": {
+                    "method": "blacklist",
+                    "engine_name": "TACHYON",
+                    "engine_version": "2025-03-06.02",
+                    "engine_update": "20250306",
+                    "category": "undetected",
+                    "result": null
+                },
+                "VBA32": {
+                    "method": "blacklist",
+                    "engine_name": "VBA32",
+                    "engine_version": "5.3.1",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "TScope.Trojan.MSIL"
+                },
+                "Malwarebytes": {
+                    "method": "blacklist",
+                    "engine_name": "Malwarebytes",
+                    "engine_version": "4.5.5.54",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "Malware.AI.3819032658"
+                },
+                "Panda": {
+                    "method": "blacklist",
+                    "engine_name": "Panda",
+                    "engine_version": "4.6.4.2",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "Trj/CI.A"
+                },
+                "TrendMicro-HouseCall": {
+                    "method": "blacklist",
+                    "engine_name": "TrendMicro-HouseCall",
+                    "engine_version": "10.0.0.1040",
+                    "engine_update": "20250306",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Rising": {
+                    "method": "blacklist",
+                    "engine_name": "Rising",
+                    "engine_version": "25.0.0.28",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "Malware.Obfus/MSIL@AI.94 (RDM.MSIL2:HwsjW8mCHoF9O/wZaxXeyQ)"
+                },
+                "Yandex": {
+                    "method": "blacklist",
+                    "engine_name": "Yandex",
+                    "engine_version": "5.5.2.24",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "Trojan.Blocker!uKM6N3hgzQM"
+                },
+                "SentinelOne": {
+                    "method": "blacklist",
+                    "engine_name": "SentinelOne",
+                    "engine_version": "25.1.1.1",
+                    "engine_update": "20250114",
+                    "category": "malicious",
+                    "result": "Static AI - Malicious PE"
+                },
+                "MaxSecure": {
+                    "method": "blacklist",
+                    "engine_name": "MaxSecure",
+                    "engine_version": "1.0.0.1",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "Trojan.Malware.5815292.susgen"
+                },
+                "Fortinet": {
+                    "method": "blacklist",
+                    "engine_name": "Fortinet",
+                    "engine_version": "7.0.30.0",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "MSIL/Bbindi.W!tr"
+                },
+                "AVG": {
+                    "method": "blacklist",
+                    "engine_name": "AVG",
+                    "engine_version": "23.9.8494.0",
+                    "engine_update": "20250306",
+                    "category": "malicious",
+                    "result": "MSIL:Injector-DR [Trj]"
+                },
+                "DeepInstinct": {
+                    "method": "blacklist",
+                    "engine_name": "DeepInstinct",
+                    "engine_version": "5.0.0.8",
+                    "engine_update": "20250227",
+                    "category": "malicious",
+                    "result": "MALICIOUS"
+                },
+                "alibabacloud": {
+                    "method": "blacklist",
+                    "engine_name": "alibabacloud",
+                    "engine_version": "2.2.0",
+                    "engine_update": "20241030",
+                    "category": "malicious",
+                    "result": "Ransomware:MSIL/Blocker.bhbm"
+                },
+                "Trustlook": {
+                    "method": "blacklist",
+                    "engine_name": "Trustlook",
+                    "engine_version": "1.0",
+                    "engine_update": "20250306",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "SymantecMobileInsight": {
+                    "method": "blacklist",
+                    "engine_name": "SymantecMobileInsight",
+                    "engine_version": "2.0",
+                    "engine_update": "20250124",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "BitDefenderFalx": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefenderFalx",
+                    "engine_version": "2.0.936",
+                    "engine_update": "20241203",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "Avast-Mobile": {
+                    "method": "blacklist",
+                    "engine_name": "Avast-Mobile",
+                    "engine_version": "250306-00",
+                    "engine_update": "20250306",
+                    "category": "type-unsupported",
+                    "result": null
+                }
+            },
+            "vhash": "22503665551160a8f320a0",
+            "md5": "7085a8916c714d2aeb6a28480449df00",
+            "sigma_analysis_summary": {
+                "Sigma Integrated Rule Set (GitHub)": {
+                    "high": 3,
+                    "medium": 0,
+                    "critical": 0,
+                    "low": 2
+                }
+            },
+            "type_extension": "exe",
+            "popular_threat_classification": {
+                "popular_threat_name": [
+                    {
+                        "count": 11,
+                        "value": "blocker"
+                    },
+                    {
+                        "count": 9,
+                        "value": "msil"
+                    },
+                    {
+                        "count": 7,
+                        "value": "msilmamut"
+                    }
+                ],
+                "popular_threat_category": [
+                    {
+                        "count": 27,
+                        "value": "trojan"
+                    },
+                    {
+                        "count": 6,
+                        "value": "ransomware"
+                    }
+                ],
+                "suggested_threat_label": "trojan.blocker/msil"
+            },
+            "type_tags": [
+                "executable",
+                "windows",
+                "win32",
+                "pe",
+                "peexe"
+            ],
+            "last_modification_date": 1746385044,
+            "pe_info": {
+                "timestamp": 1369857179,
+                "imphash": "f34d5f2d4577ed6d9ceec516c1f5a744",
+                "machine_type": 332,
+                "entry_point": 191624,
+                "resource_details": [
+                    {
+                        "lang": "NEUTRAL",
+                        "chi2": 89068.63,
+                        "filetype": "unknown",
+                        "entropy": 3.049861192703247,
+                        "sha256": "927dcec4770e6047c2e64ebf8b0d2175471f10d198ad2886f8aacd97ea16972d",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "NEUTRAL",
+                        "chi2": 32132.74,
+                        "filetype": "unknown",
+                        "entropy": 3.510178565979004,
+                        "sha256": "f416a6ec354b1aed0e480266b913c2c5771b7fcfdd184d709521ecf4b297b575",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "NEUTRAL",
+                        "chi2": 23644.2,
+                        "filetype": "unknown",
+                        "entropy": 3.4707114696502686,
+                        "sha256": "3b28066053e3d393efe607aaf4d20c428ec7bf8b40e9564f5dbcca29b1a5385a",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "NEUTRAL",
+                        "chi2": 18269.19,
+                        "filetype": "unknown",
+                        "entropy": 3.334334373474121,
+                        "sha256": "a15256f7f9e9d5d6bfde01e44f8ab153178cbf021b0213ee41b377e8193ac6bb",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "NEUTRAL",
+                        "chi2": 108266.5,
+                        "filetype": "unknown",
+                        "entropy": 5.475883960723877,
+                        "sha256": "f08b75893d324a1b89c16cd936952d30030b01702368ead4738414f1dc62b601",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "NEUTRAL",
+                        "chi2": 51678.2,
+                        "filetype": "unknown",
+                        "entropy": 5.964785575866699,
+                        "sha256": "aa7ce735a368ddb5e42bed74f59c265e18da06880817fa7404022675bd797615",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "NEUTRAL",
+                        "chi2": 47021.77,
+                        "filetype": "unknown",
+                        "entropy": 5.953876972198486,
+                        "sha256": "2e2de0552ac2ad8d502a9e2663bfbab36dca03ae9f7e238c7c2cddc6190b68cc",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "NEUTRAL",
+                        "chi2": 107767.67,
+                        "filetype": "unknown",
+                        "entropy": 4.252336025238037,
+                        "sha256": "5973ef7aa8aae8ff858a6d84b3a91dcdb8f125a065b64eb06ded2ff12d5bc673",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "NEUTRAL",
+                        "chi2": 257453.38,
+                        "filetype": "unknown",
+                        "entropy": 5.240568161010742,
+                        "sha256": "974136fc0a6e72bab16e56b349ab3646301ce3ea4982077ab1f5bbc6bd7ee421",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "NEUTRAL",
+                        "chi2": 109666.28,
+                        "filetype": "unknown",
+                        "entropy": 5.265566349029541,
+                        "sha256": "d417938d51460aba53190cf8d4e5742929b035a03e283673257f6407874e6806",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "NEUTRAL",
+                        "chi2": 53350.14,
+                        "filetype": "unknown",
+                        "entropy": 5.555305004119873,
+                        "sha256": "94c82f26f12ad5281dee024aeba1296e02e63301777d454ce030440431fcf21f",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "NEUTRAL",
+                        "chi2": 23980.42,
+                        "filetype": "unknown",
+                        "entropy": 5.561298847198486,
+                        "sha256": "a6645b1a41bcda4666397df71eebfa7ce87007bf6ff3671ef3d411e34ade9c1a",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "NEUTRAL",
+                        "chi2": 17451.74,
+                        "filetype": "ICO",
+                        "entropy": 2.5370774269104004,
+                        "sha256": "db4f32e73226167de49d41912c34941e4ed0276a481995164924842974b0e318",
+                        "type": "RT_GROUP_ICON"
+                    },
+                    {
+                        "lang": "NEUTRAL",
+                        "chi2": 67293.54,
+                        "filetype": "unknown",
+                        "entropy": 3.2934789657592773,
+                        "sha256": "83d8a635ead3e2835c1b6318a8115d4bf34a31c90f9c77645482835687e4716d",
+                        "type": "RT_VERSION"
+                    },
+                    {
+                        "lang": "NEUTRAL",
+                        "chi2": 4719.86,
+                        "filetype": "unknown",
+                        "entropy": 5.00111722946167,
+                        "sha256": "c0085eb467d2fc9c9f395047e057183b3cd1503a4087d0db565161c13527a76f",
+                        "type": "RT_MANIFEST"
+                    }
+                ],
+                "resource_langs": {
+                    "NEUTRAL": 15
+                },
+                "resource_types": {
+                    "RT_ICON": 12,
+                    "RT_MANIFEST": 1,
+                    "RT_VERSION": 1,
+                    "RT_GROUP_ICON": 1
+                },
+                "sections": [
+                    {
+                        "name": ".text",
+                        "chi2": 2716449.0,
+                        "virtual_address": 8192,
+                        "entropy": 6.41,
+                        "raw_size": 183808,
+                        "flags": "rx",
+                        "virtual_size": 183438,
+                        "md5": "46d491df177fa2107adb9dec322e849e"
+                    },
+                    {
+                        "name": ".rsrc",
+                        "chi2": 955338.06,
+                        "virtual_address": 196608,
+                        "entropy": 5.55,
+                        "raw_size": 32256,
+                        "flags": "r",
+                        "virtual_size": 32022,
+                        "md5": "3de6949fefc42acb66fa89a15a238613"
+                    },
+                    {
+                        "name": ".reloc",
+                        "chi2": 128015.0,
+                        "virtual_address": 229376,
+                        "entropy": 0.1,
+                        "raw_size": 512,
+                        "flags": "r",
+                        "virtual_size": 12,
+                        "md5": "bde6b2d031d9f8e6776709e0468648a1"
+                    }
+                ],
+                "import_list": [
+                    {
+                        "library_name": "mscoree.dll",
+                        "imported_functions": [
+                            "_CorExeMain"
+                        ]
+                    }
+                ]
+            },
+            "unique_sources": 4,
+            "sha1": "71a0e63cd1d7c1cd91959aa3f8eb50ff31b99215",
+            "sha256": "1da53e8505235ca1bba6f45b672852efb205f03a44a16bedb588de31383f045a",
+            "dot_net_assembly": {
+                "entry_point_rva": 141556,
+                "metadata_header_rva": 122900,
+                "assembly_name": "wLoader",
+                "resources_va": 49994,
+                "assembly_flags": 1,
+                "strongname_va": 0,
+                "external_assemblies": {
+                    "System.Xml": {
+                        "version": "2.0.0.0"
+                    },
+                    "mscorlib": {
+                        "version": "2.0.0.0"
+                    },
+                    "System.Web.Services": {
+                        "version": "2.0.0.0"
+                    },
+                    "System": {
+                        "version": "2.0.0.0"
+                    }
+                },
+                "entry_point_token": 100663395,
+                "tables_rows_map": "15e520a6016d01f29d21a00100430002022012110001004000022c000",
+                "external_modules": [
+                    "kernel32"
+                ],
+                "streams": {
+                    "#GUID": {
+                        "chi2": 240.0,
+                        "md5": "3e78900e95bc1ee007da48f0f0cd9d49",
+                        "entropy": 4.0,
+                        "size": 16
+                    },
+                    "#Blob": {
+                        "chi2": 35556.50390625,
+                        "md5": "d14c5f4c416d4a41cab78018e9ca5339",
+                        "entropy": 5.430914402008057,
+                        "size": 3560
+                    },
+                    "#US": {
+                        "chi2": 91437.03125,
+                        "md5": "83b21fdd9a5cb71171603ce698dff50c",
+                        "entropy": 3.9237139225006104,
+                        "size": 1432
+                    },
+                    "#~": {
+                        "chi2": 424135.34375,
+                        "md5": "773869b62de10fd019af8ee6fabcfa96",
+                        "entropy": 4.7507805824279785,
+                        "size": 9956
+                    },
+                    "#Strings": {
+                        "chi2": 39613.41796875,
+                        "md5": "cb1a0ce470bb31ee3702ad5704f3feaa",
+                        "entropy": 5.041289806365967,
+                        "size": 3584
+                    }
+                },
+                "tables_present": 23,
+                "assembly_flags_txt": "COMIMAGE_FLAGS_ILONLY",
+                "clr_version": "v2.0.50727",
+                "assembly_data": {
+                    "majorversion": 0,
+                    "minorversion": 0,
+                    "hashalgid": 0,
+                    "flags_text": "afPA_None",
+                    "buildnumber": 0,
+                    "flags": 0,
+                    "revisionnumber": 0,
+                    "name": "wLoader"
+                },
+                "tables_present_map": "3093da29f57",
+                "manifest_resource": [
+                    "{6aa39610-9d49-4904-b101-b342e6acdb29}",
+                    "{7f3fc4a5-70f1-4d06-9253-97479e58b748}"
+                ],
+                "clr_meta_version": "1.1",
+                "tables_rows_map_log": "4889a749476844444464547",
+                "unmanaged_methods": {
+                    "kernel32": [
+                        "MoveFileEx"
+                    ]
+                },
+                "type_definition_list": [
+                    {
+                        "namespace": "System",
+                        "type_definitions": [
+                            "ValueType",
+                            "Object",
+                            "ApplicationException",
+                            "Attribute",
+                            "IDisposable",
+                            "MulticastDelegate",
+                            "EventArgs",
+                            "Version",
+                            "Type",
+                            "ResolveEventArgs",
+                            "RuntimeTypeHandle",
+                            "AppDomain",
+                            "ResolveEventHandler",
+                            "Array",
+                            "RuntimeFieldHandle",
+                            "IAsyncResult",
+                            "AsyncCallback",
+                            "AttributeUsageAttribute",
+                            "AttributeTargets",
+                            "STAThreadAttribute",
+                            "Char",
+                            "Byte",
+                            "String",
+                            "Math",
+                            "Exception",
+                            "Convert",
+                            "BadImageFormatException",
+                            "Int32",
+                            "Activator",
+                            "FormatException",
+                            "InvalidOperationException",
+                            "ArgumentOutOfRangeException",
+                            "Int16"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Configuration",
+                        "type_definitions": [
+                            "ApplicationSettingsBase",
+                            "SettingsBase"
+                        ]
+                    },
+                    {
+                        "namespace": "System.IO",
+                        "type_definitions": [
+                            "MemoryStream",
+                            "Stream",
+                            "SeekOrigin",
+                            "Path",
+                            "Directory",
+                            "DirectoryInfo",
+                            "File",
+                            "FileStream",
+                            "FileLoadException",
+                            "FileNotFoundException"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Web.Services.Protocols",
+                        "type_definitions": [
+                            "SoapHttpClientProtocol",
+                            "SoapDocumentMethodAttribute",
+                            "WebClientProtocol"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Resources",
+                        "type_definitions": [
+                            "ResourceManager"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Globalization",
+                        "type_definitions": [
+                            "CultureInfo"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Collections",
+                        "type_definitions": [
+                            "Hashtable"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Reflection",
+                        "type_definitions": [
+                            "Assembly",
+                            "AssemblyName",
+                            "MethodBase",
+                            "ParameterInfo",
+                            "MethodInfo",
+                            "AssemblyProductAttribute",
+                            "AssemblyTrademarkAttribute",
+                            "AssemblyFileVersionAttribute",
+                            "AssemblyCompanyAttribute",
+                            "AssemblyConfigurationAttribute",
+                            "AssemblyTitleAttribute",
+                            "AssemblyDescriptionAttribute",
+                            "AssemblyCopyrightAttribute",
+                            "MemberInfo",
+                            "Module",
+                            "PropertyInfo"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Runtime.InteropServices",
+                        "type_definitions": [
+                            "GCHandle",
+                            "GCHandleType",
+                            "GuidAttribute",
+                            "ComVisibleAttribute",
+                            "Marshal"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Diagnostics",
+                        "type_definitions": [
+                            "Process",
+                            "ProcessModule",
+                            "StackTrace",
+                            "StackFrame"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Threading",
+                        "type_definitions": [
+                            "Thread",
+                            "ThreadStart",
+                            "Monitor"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Security.Policy",
+                        "type_definitions": [
+                            "Evidence"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Text",
+                        "type_definitions": [
+                            "Encoding",
+                            "StringBuilder"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Security.Cryptography",
+                        "type_definitions": [
+                            "ICryptoTransform"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Runtime.CompilerServices",
+                        "type_definitions": [
+                            "CompilationRelaxationsAttribute",
+                            "SuppressIldasmAttribute",
+                            "RuntimeCompatibilityAttribute",
+                            "RuntimeHelpers"
+                        ]
+                    },
+                    {
+                        "namespace": "System.CodeDom.Compiler",
+                        "type_definitions": [
+                            "GeneratedCodeAttribute"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Web.Services",
+                        "type_definitions": [
+                            "WebServiceBindingAttribute"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Xml.Serialization",
+                        "type_definitions": [
+                            "XmlElementAttribute"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Collections.Generic",
+                        "type_definitions": [
+                            "Dictionary`2"
+                        ]
+                    },
+                    {
+                        "namespace": "System.IO.Compression",
+                        "type_definitions": [
+                            "DeflateStream",
+                            "CompressionMode"
+                        ]
+                    },
+                    {
+                        "namespace": "System.Text.RegularExpressions",
+                        "type_definitions": [
+                            "Regex"
+                        ]
+                    }
+                ],
+                "unmanaged_method_list": [
+                    {
+                        "name": "kernel32",
+                        "methods": [
+                            "MoveFileEx"
+                        ]
+                    }
+                ]
+            },
+            "first_submission_date": 1369851767,
+            "reputation": 0,
+            "signature_info": {
+                "description": "Microsoft Office",
+                "file version": "1.0.0.0",
+                "original name": "Dweik.exe",
+                "product": "Mr.Dweik",
+                "comments": "Mohammed Dweik",
+                "internal name": "stub_2.exe",
+                "copyright": "Mohammed Dweik"
+            },
+            "crowdsourced_yara_results": [
+                {
+                    "ruleset_id": "00c291ca7f",
+                    "rule_name": "INDICATOR_EXE_Packed_SmartAssembly",
+                    "ruleset_name": "indicator_packed",
+                    "description": "Detects executables packed with SmartAssembly",
+                    "author": "ditekSHen",
+                    "match_date": 1741301059,
+                    "source": "https://github.com/ditekshen/detection"
+                },
+                {
+                    "description": "Detects executables packed with SmartAssembly",
+                    "author": "ditekSHen",
+                    "ruleset_name": "indicator_packed",
+                    "rule_name": "INDICATOR_EXE_Packed_SmartAssembly",
+                    "ruleset_id": "00c291ca7f",
+                    "match_in_subfile": true,
+                    "source": "https://github.com/ditekshen/detection"
+                }
+            ],
+            "packers": {
+                "PEiD": ".NET executable"
+            },
+            "sigma_analysis_stats": {
+                "high": 3,
+                "medium": 0,
+                "critical": 0,
+                "low": 2
+            },
+            "tlsh": "T180246C4BFA899E76C7292633D46389E863E4D92E7907E70B10F86C391F723DC48125E5",
+            "ssdeep": "3072:QasHgj91HFR/FKSqovPQPxclHR8MJPdnVvp9AIzC++nhmqq0t5Mm:hsHgLLFDqmuqHXFRLzCbnhmL0t5",
+            "crowdsourced_ids_stats": {
+                "high": 0,
+                "info": 0,
+                "medium": 0,
+                "low": 2
+            },
+            "total_votes": {
+                "harmless": 0,
+                "malicious": 0
+            },
+            "last_analysis_date": 1741301058,
+            "type_description": "Win32 EXE",
+            "last_analysis_stats": {
+                "malicious": 58,
+                "suspicious": 0,
+                "undetected": 14,
+                "harmless": 0,
+                "timeout": 0,
+                "confirmed-timeout": 0,
+                "failure": 0,
+                "type-unsupported": 4
+            },
+            "sigma_analysis_results": [
+                {
+                    "match_context": [
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-7094-6341-8006-000000003000}",
+                                "ProcessId": "6016",
+                                "Product": "Mr.Dweik",
+                                "Description": "Microsoft Office",
+                                "Company": "Dweik :$",
+                                "ParentProcessGuid": "{C784477D-7086-6341-7E06-000000003000}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=7085A8916C714D2AEB6A28480449DF00,SHA256=1DA53E8505235CA1BBA6F45B672852EFB205F03A44A16BEDB588DE31383F045A,IMPHASH=F34D5F2D4577ED6D9CEEC516C1F5A744",
+                                "OriginalFileName": "Dweik.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\Dweik.exe",
+                                "FileVersion": "1.0.0.0",
+                                "ParentProcessId": "7084",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"C:\\ProgramData\\svchost.exe\" ",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-D964-62FC-27D5-030000000000",
+                                "LogonId": "251175",
+                                "Image": "C:\\ProgramData\\svchost.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\Dweik.exe\" ",
+                                "UtcTime": "1665233044",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-70A7-6341-8306-000000003000}",
+                                "ProcessId": "7868",
+                                "Product": "Mr.Dweik",
+                                "Description": "Microsoft Office",
+                                "Company": "Dweik :$",
+                                "ParentProcessGuid": "{C784477D-D965-62FC-6B00-000000003000}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=7085A8916C714D2AEB6A28480449DF00,SHA256=1DA53E8505235CA1BBA6F45B672852EFB205F03A44A16BEDB588DE31383F045A,IMPHASH=F34D5F2D4577ED6D9CEEC516C1F5A744",
+                                "OriginalFileName": "Dweik.exe",
+                                "ParentImage": "C:\\Windows\\explorer.exe",
+                                "FileVersion": "1.0.0.0",
+                                "ParentProcessId": "4892",
+                                "CurrentDirectory": "C:\\ProgramData\\",
+                                "CommandLine": "\"C:\\ProgramData\\svchost.exe\" ..",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-D964-62FC-51D5-030000000000",
+                                "LogonId": "251217",
+                                "Image": "C:\\ProgramData\\svchost.exe",
+                                "IntegrityLevel": "Medium",
+                                "ParentCommandLine": "C:\\Windows\\Explorer.EXE",
+                                "UtcTime": "1665233063",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-70B7-6341-8806-000000003000}",
+                                "ProcessId": "7012",
+                                "Product": "Mr.Dweik",
+                                "Description": "Microsoft Office",
+                                "Company": "Dweik :$",
+                                "ParentProcessGuid": "{C784477D-D965-62FC-6B00-000000003000}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=7085A8916C714D2AEB6A28480449DF00,SHA256=1DA53E8505235CA1BBA6F45B672852EFB205F03A44A16BEDB588DE31383F045A,IMPHASH=F34D5F2D4577ED6D9CEEC516C1F5A744",
+                                "OriginalFileName": "Dweik.exe",
+                                "ParentImage": "C:\\Windows\\explorer.exe",
+                                "FileVersion": "1.0.0.0",
+                                "ParentProcessId": "4892",
+                                "CurrentDirectory": "C:\\ProgramData\\",
+                                "CommandLine": "\"C:\\ProgramData\\svchost.exe\" ..",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-D964-62FC-51D5-030000000000",
+                                "LogonId": "251217",
+                                "Image": "C:\\ProgramData\\svchost.exe",
+                                "IntegrityLevel": "Medium",
+                                "ParentCommandLine": "C:\\Windows\\Explorer.EXE",
+                                "UtcTime": "1665233079",
+                                "RuleName": "-"
+                            }
+                        }
+                    ],
+                    "rule_level": "high",
+                    "rule_id": "25fc56c1bee673d7ff3edcf371e4d2a36c0af83222da348961b87735c8efa61f",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "System File Execution Location Anomaly",
+                    "rule_description": "Detects a Windows program executable started from a suspicious folder",
+                    "rule_author": "Florian Roth, Patrick Bareiss, Anton Kutepov, oscd.community, Nasreddine Bencherchali"
+                },
+                {
+                    "match_context": [
+                        {
+                            "values": {
+                                "EventID": "11",
+                                "ProcessId": "7868",
+                                "TargetFilename": "C:\\Users\\george\\AppData\\Local\\Microsoft\\CLR_v2.0\\UsageLogs\\svchost.exe.log",
+                                "ProcessGuid": "{C784477D-70A7-6341-8306-000000003000}",
+                                "CreationUtcTime": "1665233079",
+                                "UtcTime": "1665233079",
+                                "RuleName": "ProcessHostingdotNETCode",
+                                "Image": "C:\\ProgramData\\svchost.exe"
+                            }
+                        }
+                    ],
+                    "rule_level": "high",
+                    "rule_id": "a0cf7d21374ebc3567492775f48033b67b0a81b95521f405e5be52f2950f9d18",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Suspicious CLR Logs Creation",
+                    "rule_description": "Detects suspicious .NET assembly executions. Could detect using Cobalt Strike's command execute-assembly.",
+                    "rule_author": "omkar72, oscd.community, Wojciech Lesicki"
+                },
+                {
+                    "match_context": [
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-7094-6341-8006-000000003000}",
+                                "ProcessId": "6016",
+                                "Product": "Mr.Dweik",
+                                "Description": "Microsoft Office",
+                                "Company": "Dweik :$",
+                                "ParentProcessGuid": "{C784477D-7086-6341-7E06-000000003000}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=7085A8916C714D2AEB6A28480449DF00,SHA256=1DA53E8505235CA1BBA6F45B672852EFB205F03A44A16BEDB588DE31383F045A,IMPHASH=F34D5F2D4577ED6D9CEEC516C1F5A744",
+                                "OriginalFileName": "Dweik.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\Dweik.exe",
+                                "FileVersion": "1.0.0.0",
+                                "ParentProcessId": "7084",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"C:\\ProgramData\\svchost.exe\" ",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-D964-62FC-27D5-030000000000",
+                                "LogonId": "251175",
+                                "Image": "C:\\ProgramData\\svchost.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\Dweik.exe\" ",
+                                "UtcTime": "1665233044",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-70A7-6341-8306-000000003000}",
+                                "ProcessId": "7868",
+                                "Product": "Mr.Dweik",
+                                "Description": "Microsoft Office",
+                                "Company": "Dweik :$",
+                                "ParentProcessGuid": "{C784477D-D965-62FC-6B00-000000003000}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=7085A8916C714D2AEB6A28480449DF00,SHA256=1DA53E8505235CA1BBA6F45B672852EFB205F03A44A16BEDB588DE31383F045A,IMPHASH=F34D5F2D4577ED6D9CEEC516C1F5A744",
+                                "OriginalFileName": "Dweik.exe",
+                                "ParentImage": "C:\\Windows\\explorer.exe",
+                                "FileVersion": "1.0.0.0",
+                                "ParentProcessId": "4892",
+                                "CurrentDirectory": "C:\\ProgramData\\",
+                                "CommandLine": "\"C:\\ProgramData\\svchost.exe\" ..",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-D964-62FC-51D5-030000000000",
+                                "LogonId": "251217",
+                                "Image": "C:\\ProgramData\\svchost.exe",
+                                "IntegrityLevel": "Medium",
+                                "ParentCommandLine": "C:\\Windows\\Explorer.EXE",
+                                "UtcTime": "1665233063",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-70B7-6341-8806-000000003000}",
+                                "ProcessId": "7012",
+                                "Product": "Mr.Dweik",
+                                "Description": "Microsoft Office",
+                                "Company": "Dweik :$",
+                                "ParentProcessGuid": "{C784477D-D965-62FC-6B00-000000003000}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=7085A8916C714D2AEB6A28480449DF00,SHA256=1DA53E8505235CA1BBA6F45B672852EFB205F03A44A16BEDB588DE31383F045A,IMPHASH=F34D5F2D4577ED6D9CEEC516C1F5A744",
+                                "OriginalFileName": "Dweik.exe",
+                                "ParentImage": "C:\\Windows\\explorer.exe",
+                                "FileVersion": "1.0.0.0",
+                                "ParentProcessId": "4892",
+                                "CurrentDirectory": "C:\\ProgramData\\",
+                                "CommandLine": "\"C:\\ProgramData\\svchost.exe\" ..",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-D964-62FC-51D5-030000000000",
+                                "LogonId": "251217",
+                                "Image": "C:\\ProgramData\\svchost.exe",
+                                "IntegrityLevel": "Medium",
+                                "ParentCommandLine": "C:\\Windows\\Explorer.EXE",
+                                "UtcTime": "1665233079",
+                                "RuleName": "-"
+                            }
+                        }
+                    ],
+                    "rule_level": "high",
+                    "rule_id": "a0daa529834b3c5230b4524da005a6b6503e7cb061e298a8f74e0dc1fee0a008",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Suspicious Svchost Process",
+                    "rule_description": "Detects a suspicious svchost process start",
+                    "rule_author": "Florian Roth"
+                },
+                {
+                    "match_context": [
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-7094-6341-8006-000000003000}",
+                                "ProcessId": "6016",
+                                "Product": "Mr.Dweik",
+                                "Description": "Microsoft Office",
+                                "Company": "Dweik :$",
+                                "ParentProcessGuid": "{C784477D-7086-6341-7E06-000000003000}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=7085A8916C714D2AEB6A28480449DF00,SHA256=1DA53E8505235CA1BBA6F45B672852EFB205F03A44A16BEDB588DE31383F045A,IMPHASH=F34D5F2D4577ED6D9CEEC516C1F5A744",
+                                "OriginalFileName": "Dweik.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\Dweik.exe",
+                                "FileVersion": "1.0.0.0",
+                                "ParentProcessId": "7084",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"C:\\ProgramData\\svchost.exe\" ",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-D964-62FC-27D5-030000000000",
+                                "LogonId": "251175",
+                                "Image": "C:\\ProgramData\\svchost.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\Dweik.exe\" ",
+                                "UtcTime": "1665233044",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-70A7-6341-8306-000000003000}",
+                                "ProcessId": "7868",
+                                "Product": "Mr.Dweik",
+                                "Description": "Microsoft Office",
+                                "Company": "Dweik :$",
+                                "ParentProcessGuid": "{C784477D-D965-62FC-6B00-000000003000}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=7085A8916C714D2AEB6A28480449DF00,SHA256=1DA53E8505235CA1BBA6F45B672852EFB205F03A44A16BEDB588DE31383F045A,IMPHASH=F34D5F2D4577ED6D9CEEC516C1F5A744",
+                                "OriginalFileName": "Dweik.exe",
+                                "ParentImage": "C:\\Windows\\explorer.exe",
+                                "FileVersion": "1.0.0.0",
+                                "ParentProcessId": "4892",
+                                "CurrentDirectory": "C:\\ProgramData\\",
+                                "CommandLine": "\"C:\\ProgramData\\svchost.exe\" ..",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-D964-62FC-51D5-030000000000",
+                                "LogonId": "251217",
+                                "Image": "C:\\ProgramData\\svchost.exe",
+                                "IntegrityLevel": "Medium",
+                                "ParentCommandLine": "C:\\Windows\\Explorer.EXE",
+                                "UtcTime": "1665233063",
+                                "RuleName": "-"
+                            }
+                        },
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-70B7-6341-8806-000000003000}",
+                                "ProcessId": "7012",
+                                "Product": "Mr.Dweik",
+                                "Description": "Microsoft Office",
+                                "Company": "Dweik :$",
+                                "ParentProcessGuid": "{C784477D-D965-62FC-6B00-000000003000}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=7085A8916C714D2AEB6A28480449DF00,SHA256=1DA53E8505235CA1BBA6F45B672852EFB205F03A44A16BEDB588DE31383F045A,IMPHASH=F34D5F2D4577ED6D9CEEC516C1F5A744",
+                                "OriginalFileName": "Dweik.exe",
+                                "ParentImage": "C:\\Windows\\explorer.exe",
+                                "FileVersion": "1.0.0.0",
+                                "ParentProcessId": "4892",
+                                "CurrentDirectory": "C:\\ProgramData\\",
+                                "CommandLine": "\"C:\\ProgramData\\svchost.exe\" ..",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-D964-62FC-51D5-030000000000",
+                                "LogonId": "251217",
+                                "Image": "C:\\ProgramData\\svchost.exe",
+                                "IntegrityLevel": "Medium",
+                                "ParentCommandLine": "C:\\Windows\\Explorer.EXE",
+                                "UtcTime": "1665233079",
+                                "RuleName": "-"
+                            }
+                        }
+                    ],
+                    "rule_level": "low",
+                    "rule_id": "afd546ea5eff265c454f77f6e7641ade6e5a791d79de155fa27d377be1581535",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Windows Processes Suspicious Parent Directory",
+                    "rule_description": "Detect suspicious parent processes of well-known Windows processes",
+                    "rule_author": "vburov"
+                },
+                {
+                    "match_context": [
+                        {
+                            "values": {
+                                "EventID": "11",
+                                "ProcessId": "7084",
+                                "Image": "C:\\Users\\george\\Desktop\\Dweik.exe",
+                                "ProcessGuid": "{C784477D-7086-6341-7E06-000000003000}",
+                                "CreationUtcTime": "1665233044",
+                                "UtcTime": "1665233044",
+                                "RuleName": "EXE",
+                                "TargetFilename": "C:\\ProgramData\\svchost.exe"
+                            }
+                        },
+                        {
+                            "values": {
+                                "EventID": "11",
+                                "ProcessId": "6016",
+                                "TargetFilename": "C:\\Users\\george\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\ad76a6098df431046ffdf41b1a2ed40a.exe",
+                                "ProcessGuid": "{C784477D-7094-6341-8006-000000003000}",
+                                "CreationUtcTime": "1665233053",
+                                "UtcTime": "1665233053",
+                                "RuleName": "T1023",
+                                "Image": "C:\\ProgramData\\svchost.exe"
+                            }
+                        },
+                        {
+                            "values": {
+                                "EventID": "11",
+                                "ProcessId": "6016",
+                                "TargetFilename": "C:\\Users\\george\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\ad76a6098df431046ffdf41b1a2ed40a.exe",
+                                "RuleName": "T1023",
+                                "CreationUtcTime": "1665233053",
+                                "UtcTime": "1665233064",
+                                "ProcessGuid": "{C784477D-7094-6341-8006-000000003000}",
+                                "Image": "C:\\ProgramData\\svchost.exe"
+                            }
+                        },
+                        {
+                            "values": {
+                                "EventID": "11",
+                                "ProcessId": "6016",
+                                "TargetFilename": "C:\\Users\\george\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\ad76a6098df431046ffdf41b1a2ed40a.exe",
+                                "ProcessGuid": "{C784477D-7094-6341-8006-000000003000}",
+                                "CreationUtcTime": "1665233053",
+                                "UtcTime": "1665233072",
+                                "RuleName": "T1023",
+                                "Image": "C:\\ProgramData\\svchost.exe"
+                            }
+                        },
+                        {
+                            "values": {
+                                "EventID": "11",
+                                "ProcessId": "7868",
+                                "TargetFilename": "C:\\Users\\george\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\ad76a6098df431046ffdf41b1a2ed40a.exe",
+                                "ProcessGuid": "{C784477D-70A7-6341-8306-000000003000}",
+                                "CreationUtcTime": "1665233053",
+                                "UtcTime": "1665233075",
+                                "RuleName": "T1023",
+                                "Image": "C:\\ProgramData\\svchost.exe"
+                            }
+                        },
+                        {
+                            "values": {
+                                "EventID": "11",
+                                "ProcessId": "6016",
+                                "TargetFilename": "C:\\Users\\george\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\ad76a6098df431046ffdf41b1a2ed40a.exe",
+                                "RuleName": "T1023",
+                                "CreationUtcTime": "1665233053",
+                                "UtcTime": "1665233081",
+                                "ProcessGuid": "{C784477D-7094-6341-8006-000000003000}",
+                                "Image": "C:\\ProgramData\\svchost.exe"
+                            }
+                        },
+                        {
+                            "values": {
+                                "EventID": "11",
+                                "ProcessId": "6016",
+                                "Image": "C:\\ProgramData\\svchost.exe",
+                                "ProcessGuid": "{C784477D-7094-6341-8006-000000003000}",
+                                "CreationUtcTime": "1665233053",
+                                "UtcTime": "1665233114",
+                                "RuleName": "T1023",
+                                "TargetFilename": "C:\\Users\\george\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\ad76a6098df431046ffdf41b1a2ed40a.exe"
+                            }
+                        },
+                        {
+                            "values": {
+                                "EventID": "11",
+                                "ProcessId": "6016",
+                                "TargetFilename": "C:\\Users\\george\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\ad76a6098df431046ffdf41b1a2ed40a.exe",
+                                "RuleName": "T1023",
+                                "CreationUtcTime": "1665233053",
+                                "UtcTime": "1665233122",
+                                "ProcessGuid": "{C784477D-7094-6341-8006-000000003000}",
+                                "Image": "C:\\ProgramData\\svchost.exe"
+                            }
+                        }
+                    ],
+                    "rule_level": "low",
+                    "rule_id": "b5386a23355681c43cfbd2f2ccfe4b16ed45324d0d7b5583487a9f302ee1e427",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Creation of an Executable by an Executable",
+                    "rule_description": "Detects the creation of an executable by another executable",
+                    "rule_author": "frack113"
+                }
+            ],
+            "last_submission_date": 1665232957,
+            "creation_date": 1369857179,
+            "dot_net_guids": {
+                "typelib_id": "ac045e25-5d9e-42b8-a1ce-4c3a95960eae",
+                "mvid": "0c4ea59b-1f6e-408a-9263-f04a977a7ba3"
+            },
+            "sandbox_verdicts": {
+                "Zenbox": {
+                    "category": "malicious",
+                    "confidence": 96,
+                    "sandbox_name": "Zenbox",
+                    "malware_classification": [
+                        "MALWARE",
+                        "TROJAN",
+                        "ADWARE",
+                        "EVADER"
+                    ],
+                    "malware_names": [
+                        "Njrat"
+                    ]
+                }
+            },
+            "tags": [
+                "assembly",
+                "direct-cpu-clock-access",
+                "detect-debug-environment",
+                "peexe",
+                "runtime-modules",
+                "persistence"
+            ]
+        }
+    }
+}

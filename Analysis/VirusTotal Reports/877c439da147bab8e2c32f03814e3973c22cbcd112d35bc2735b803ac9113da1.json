@@ -1,0 +1,1529 @@
+{
+    "data": {
+        "id": "877c439da147bab8e2c32f03814e3973c22cbcd112d35bc2735b803ac9113da1",
+        "type": "file",
+        "links": {
+            "self": "https://www.virustotal.com/api/v3/files/877c439da147bab8e2c32f03814e3973c22cbcd112d35bc2735b803ac9113da1"
+        },
+        "attributes": {
+            "type_tag": "peexe",
+            "last_analysis_date": 1743121919,
+            "sandbox_verdicts": {
+                "Zenbox": {
+                    "category": "malicious",
+                    "confidence": 100,
+                    "sandbox_name": "Zenbox",
+                    "malware_classification": [
+                        "MALWARE",
+                        "STEALER",
+                        "RANSOM",
+                        "PHISHING",
+                        "TROJAN",
+                        "EVADER"
+                    ],
+                    "malware_names": [
+                        "Maze"
+                    ]
+                },
+                "C2AE": {
+                    "category": "malicious",
+                    "confidence": 70,
+                    "sandbox_name": "C2AE",
+                    "malware_classification": [
+                        "RANSOM"
+                    ],
+                    "malware_names": [
+                        "Maze",
+                        "RansomGeneric"
+                    ]
+                },
+                "Lastline": {
+                    "category": "malicious",
+                    "sandbox_name": "Lastline",
+                    "malware_classification": [
+                        "MALWARE",
+                        "TROJAN"
+                    ]
+                }
+            },
+            "magika": "PEBIN",
+            "last_submission_date": 1636385153,
+            "sha256": "877c439da147bab8e2c32f03814e3973c22cbcd112d35bc2735b803ac9113da1",
+            "popular_threat_classification": {
+                "suggested_threat_label": "ransomware.maze/regsup",
+                "popular_threat_category": [
+                    {
+                        "value": "ransomware",
+                        "count": 25
+                    },
+                    {
+                        "value": "trojan",
+                        "count": 20
+                    }
+                ],
+                "popular_threat_name": [
+                    {
+                        "value": "maze",
+                        "count": 22
+                    },
+                    {
+                        "value": "regsup",
+                        "count": 3
+                    },
+                    {
+                        "value": "chacha",
+                        "count": 2
+                    }
+                ]
+            },
+            "crowdsourced_ids_results": [
+                {
+                    "rule_category": "A Network Trojan was detected",
+                    "alert_severity": "high",
+                    "rule_msg": "ET MALWARE Maze/ID Ransomware Activity",
+                    "rule_raw": "alert http $HOME_NET any -> [92.63.0.0/16,91.218.114.0/24,149.56.245.196] any (msg:\"ET MALWARE Maze/ID Ransomware Activity\"; flow:established,to_server; urilen:>1; http.method; content:\"POST\"; http.user_agent; content:\"Mozilla/5.0 (Windows NT 6.1|3b 20|WOW64|3b 20|Trident/7.0|3b 20|AS|3b 20|rv|3a|11.0) like Gecko\"; depth:72; endswith; fast_pattern; http.request_body; pcre:\"/^[\\x20-\\x7e\\r\\n]{0,20}[^\\x20-\\x7e\\r\\n]/\"; reference:md5,f83fb9ce6a83da58b20685c1d7e1e546; reference:md5,9823800f063a1d4ee7a749961db7540f; classtype:trojan-activity; sid:2027392; rev:6; metadata:affected_product Windows_XP_Vista_7_8_10_Server_32_64_Bit, attack_target Client_Endpoint, created_at 2019_05_29, deployment Perimeter, former_category MALWARE, malware_family Maze_Ransomware, signature_severity Major, tag Ransomware, tag Maze, updated_at 2020_11_17, mitre_tactic_id TA0040, mitre_tactic_name Impact, mitre_technique_id T1486, mitre_technique_name Data_Encrypted_for_Impact;)",
+                    "alert_context": [
+                        {
+                            "url": "http://91.218.114.25/register/register/xmgfvgq.phtml?hnla=1107b&cfvw=r86",
+                            "hostname": "91.218.114.25",
+                            "dest_port": 80,
+                            "dest_ip": "91.218.114.25"
+                        }
+                    ],
+                    "rule_url": "https://rules.emergingthreats.net/",
+                    "rule_source": "Proofpoint Emerging Threats Open",
+                    "rule_references": [
+                        "https://www.virustotal.com/gui/search/f83fb9ce6a83da58b20685c1d7e1e546",
+                        "https://www.virustotal.com/gui/search/9823800f063a1d4ee7a749961db7540f"
+                    ],
+                    "rule_id": "1:2027392"
+                },
+                {
+                    "rule_category": "policy-violation",
+                    "alert_severity": "info",
+                    "rule_msg": "POLICY-OTHER HTTP request by IPv4 address attempt",
+                    "rule_raw": "alert tcp any any -> any $HTTP_PORTS ( msg:\"POLICY-OTHER HTTP request by IPv4 address attempt\"; flow:to_server,established; http_header; content:\"Host:\",fast_pattern,nocase; pcre:\"/^Host\\x3a\\s*(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\s*:?\\s*\\d*\\s*$/ims\"; service:http; reference:url,www.w3.org/Protocols/rfc2616/rfc2616-sec15.html; classtype:policy-violation; sid:50447; rev:1; )",
+                    "alert_context": [
+                        {
+                            "dest_port": 80,
+                            "dest_ip": "91.218.114.25"
+                        }
+                    ],
+                    "rule_url": "https://www.snort.org/downloads/#rule-downloads",
+                    "rule_source": "Snort registered user ruleset",
+                    "rule_references": [
+                        "https://www.w3.org/Protocols/rfc2616/rfc2616-sec15.html"
+                    ],
+                    "rule_id": "1:50447"
+                }
+            ],
+            "last_analysis_stats": {
+                "malicious": 68,
+                "suspicious": 0,
+                "undetected": 5,
+                "harmless": 0,
+                "timeout": 0,
+                "confirmed-timeout": 0,
+                "failure": 0,
+                "type-unsupported": 4
+            },
+            "magic": "PE32 executable (GUI) Intel 80386, for MS Windows",
+            "md5": "be537a66d01c67076c8491b05866c894",
+            "pe_info": {
+                "timestamp": 1572269364,
+                "imphash": "9208957cb88350ddbe4e0ccf97008a5d",
+                "machine_type": 332,
+                "entry_point": 137696,
+                "sections": [
+                    {
+                        "name": ".text",
+                        "chi2": 3674890.0,
+                        "virtual_address": 4096,
+                        "entropy": 6.19,
+                        "raw_size": 240640,
+                        "flags": "rx",
+                        "virtual_size": 240548,
+                        "md5": "a3572b798e194bdf018b9e8865cc2b62"
+                    },
+                    {
+                        "name": ".rdata",
+                        "chi2": 3063652.25,
+                        "virtual_address": 245760,
+                        "entropy": 5.29,
+                        "raw_size": 65536,
+                        "flags": "r",
+                        "virtual_size": 65514,
+                        "md5": "f5b7c71daa93b9b2deb0ee088cb061fa"
+                    },
+                    {
+                        "name": ".data",
+                        "chi2": 4594.54,
+                        "virtual_address": 311296,
+                        "entropy": 7.97,
+                        "raw_size": 66560,
+                        "flags": "rw",
+                        "virtual_size": 66472,
+                        "md5": "4b46515331d2ba95e9d39d1117bae37a"
+                    }
+                ],
+                "compiler_product_versions": [
+                    "[---] Unmarked objects count=172",
+                    "[---] Unmarked objects (old) count=51",
+                    "[LNK] VS2013 build 21005 count=1",
+                    "id: 0xd0, version: 65501 count=2",
+                    "id: 0xe1, version: 20806 count=2",
+                    "id: 0xdf, version: 20806 count=7",
+                    "id: 0xe0, version: 20806 count=2",
+                    "id: 0xcb, version: 65501 count=29"
+                ],
+                "rich_pe_header_hash": "0e6b30f16e3010a5f96ae708e5bdcc10",
+                "import_list": [
+                    {
+                        "library_name": "USER32.dll",
+                        "imported_functions": [
+                            "AdjustWindowRect",
+                            "AnimateWindow",
+                            "CloseWindow",
+                            "CreateWindowExW",
+                            "DeferWindowPos",
+                            "DefWindowProcA",
+                            "DestroyWindow",
+                            "DispatchMessageA",
+                            "EnumChildWindows",
+                            "GetForegroundWindow",
+                            "GetMessageA",
+                            "MessageBoxA",
+                            "MessageBoxW",
+                            "PostQuitMessage",
+                            "RegisterClassExW",
+                            "ReleaseDC",
+                            "ShutdownBlockReasonCreate",
+                            "ShutdownBlockReasonDestroy",
+                            "TranslateMessage",
+                            "wsprintfA",
+                            "wsprintfW"
+                        ]
+                    },
+                    {
+                        "library_name": "GDI32.dll",
+                        "imported_functions": [
+                            "DeleteObject",
+                            "GetDeviceCaps",
+                            "SelectPalette",
+                            "SetPaletteEntries",
+                            "SetPixel"
+                        ]
+                    },
+                    {
+                        "library_name": "KERNEL32.dll",
+                        "imported_functions": [
+                            "AllocConsole",
+                            "Beep",
+                            "CloseHandle",
+                            "CreateDirectoryW",
+                            "CreateFileA",
+                            "CreateFileMappingW",
+                            "CreateFileW",
+                            "CreateMutexW",
+                            "CreateProcessW",
+                            "CreateThread",
+                            "CreateToolhelp32Snapshot",
+                            "DeleteCriticalSection",
+                            "DeviceIoControl",
+                            "EnterCriticalSection",
+                            "ExitProcess",
+                            "ExitThread",
+                            "ExpandEnvironmentStringsW",
+                            "FindClose",
+                            "FindFirstFileW",
+                            "FindNextFileW",
+                            "FreeLibrary",
+                            "GetCommandLineW",
+                            "GetCurrentProcess",
+                            "GetCurrentProcessId",
+                            "GetDriveTypeW",
+                            "GetFileSize",
+                            "GetFileSizeEx",
+                            "GetLastError",
+                            "GetModuleHandleA",
+                            "GetModuleHandleW",
+                            "GetProcAddress",
+                            "GetShortPathNameW",
+                            "GetStdHandle",
+                            "GetSystemDirectoryW",
+                            "GetTickCount",
+                            "GetTickCount64",
+                            "GetUserDefaultUILanguage",
+                            "GetVersionExA",
+                            "GetWindowsDirectoryA",
+                            "GlobalAlloc",
+                            "GlobalFree",
+                            "HeapAlloc",
+                            "InitializeCriticalSection",
+                            "IsBadReadPtr",
+                            "IsProcessorFeaturePresent",
+                            "LeaveCriticalSection",
+                            "LoadLibraryA",
+                            "LocalAlloc",
+                            "LocalFree",
+                            "lstrcat",
+                            "lstrcatW",
+                            "lstrcmp",
+                            "lstrcmpiW",
+                            "lstrcmpW",
+                            "lstrcpy",
+                            "lstrcpynW",
+                            "lstrcpyW",
+                            "lstrlen",
+                            "lstrlenW",
+                            "MapViewOfFile",
+                            "MoveFileExA",
+                            "MoveFileExW",
+                            "OpenMutexW",
+                            "OutputDebugStringW",
+                            "Process32FirstW",
+                            "Process32NextW",
+                            "ReadFile",
+                            "SetFileAttributesW",
+                            "SetFilePointerEx",
+                            "SetLastError",
+                            "SetThreadExecutionState",
+                            "Sleep",
+                            "TerminateThread",
+                            "TlsGetValue",
+                            "TlsSetValue",
+                            "UnmapViewOfFile",
+                            "VirtualAlloc",
+                            "VirtualFree",
+                            "VirtualProtect",
+                            "VirtualQuery",
+                            "WaitForMultipleObjects",
+                            "WaitForSingleObject",
+                            "WriteConsoleW",
+                            "WriteFile"
+                        ]
+                    },
+                    {
+                        "library_name": "ADVAPI32.dll",
+                        "imported_functions": [
+                            "AreAllAccessesGranted",
+                            "CryptAcquireContextW",
+                            "CryptDecrypt",
+                            "CryptDestroyKey",
+                            "CryptEncrypt",
+                            "CryptExportKey",
+                            "CryptGenKey",
+                            "CryptGenRandom",
+                            "CryptImportKey",
+                            "CryptReleaseContext",
+                            "EncryptionDisable",
+                            "EqualDomainSid",
+                            "GetSidSubAuthority",
+                            "GetSidSubAuthorityCount",
+                            "InitializeSecurityDescriptor",
+                            "LookupAccountSidW",
+                            "LsaAddAccountRights",
+                            "LsaClose",
+                            "LsaCreateTrustedDomainEx",
+                            "LsaFreeMemory",
+                            "LsaQueryTrustedDomainInfo"
+                        ]
+                    },
+                    {
+                        "library_name": "SHELL32.dll",
+                        "imported_functions": [
+                            "ShellExecuteExW",
+                            "SHGetFolderPathW"
+                        ]
+                    },
+                    {
+                        "library_name": "Secur32.dll",
+                        "imported_functions": [
+                            "LsaConnectUntrusted"
+                        ]
+                    },
+                    {
+                        "library_name": "NETAPI32.dll",
+                        "imported_functions": [
+                            "DsRoleFreeMemory",
+                            "DsRoleGetPrimaryDomainInformation"
+                        ]
+                    },
+                    {
+                        "library_name": "SHLWAPI.dll",
+                        "imported_functions": [
+                            "StrStrW",
+                            "StrToIntA"
+                        ]
+                    },
+                    {
+                        "library_name": "MPR.dll",
+                        "imported_functions": [
+                            "WNetAddConnection2W",
+                            "WNetCloseEnum",
+                            "WNetEnumResourceW",
+                            "WNetOpenEnumW"
+                        ]
+                    },
+                    {
+                        "library_name": "WS2_32.dll",
+                        "imported_functions": [
+                            "closesocket",
+                            "connect",
+                            "gethostbyname",
+                            "inet_addr",
+                            "inet_ntoa",
+                            "inet_pton",
+                            "ntohs",
+                            "recv",
+                            "send",
+                            "shutdown",
+                            "socket",
+                            "WSACleanup",
+                            "WSAGetLastError",
+                            "WSAStartup"
+                        ]
+                    },
+                    {
+                        "library_name": "WININET.dll",
+                        "imported_functions": [
+                            "HttpOpenRequestA",
+                            "HttpQueryInfoA",
+                            "HttpSendRequestA",
+                            "InternetCloseHandle",
+                            "InternetConnectA",
+                            "InternetCrackUrlA",
+                            "InternetOpenA",
+                            "InternetReadFile"
+                        ]
+                    },
+                    {
+                        "library_name": "CRYPT32.dll",
+                        "imported_functions": [
+                            "CryptBinaryToStringA",
+                            "CryptBinaryToStringW",
+                            "CryptStringToBinaryA"
+                        ]
+                    },
+                    {
+                        "library_name": "ole32.dll",
+                        "imported_functions": [
+                            "CoCreateInstance",
+                            "CoInitializeEx",
+                            "CoUninitialize"
+                        ]
+                    },
+                    {
+                        "library_name": "OLEAUT32.dll",
+                        "imported_functions": [
+                            "VariantClear",
+                            "VariantInit"
+                        ]
+                    }
+                ]
+            },
+            "creation_date": 1572269364,
+            "tags": [
+                "calls-wmi",
+                "long-sleeps",
+                "runtime-modules",
+                "peexe",
+                "detect-debug-environment",
+                "malware"
+            ],
+            "type_tags": [
+                "executable",
+                "windows",
+                "win32",
+                "pe",
+                "peexe"
+            ],
+            "size": 373760,
+            "times_submitted": 5,
+            "first_submission_date": 1574623228,
+            "sigma_analysis_summary": {
+                "Sigma Integrated Rule Set (GitHub)": {
+                    "high": 1,
+                    "medium": 2,
+                    "critical": 0,
+                    "low": 0
+                },
+                "Joe Security Rule Set (GitHub)": {
+                    "high": 0,
+                    "medium": 0,
+                    "critical": 1,
+                    "low": 0
+                }
+            },
+            "type_description": "Win32 EXE",
+            "sha1": "8614c5aa7abe3b91ffbc5637dd53bdff886aa1c1",
+            "reputation": -101,
+            "authentihash": "f6b25cc0958fc0c24a8c45a30f413d6c6b854336df7dde3f27b30bd9d9606d66",
+            "unique_sources": 2,
+            "names": [
+                "partmgr.sys",
+                "hvghv5mZ1hPTQU44E2.exe",
+                "lXL7wZXpf67BqEJOb.exe",
+                "4fZOtj38UbxNQn3YVqXGOpWu4.exe",
+                "UhnW6lDjw1zKA7tJ.exe",
+                "WNbPiH40C4z9DEicEqzESI208hXXSMs.exe",
+                "aMfQ7pSSM1ZTLn4r4E.exe",
+                "93FEFr4pJiGnUgZnJsMTyKeV.exe",
+                "czyEtVJce8INokJqyQEPPAfwVuLF.exe",
+                "wemfAbwcf7LzJUE7mtI0gEhsi8MD4.exe",
+                "RPllbWWfVDgSyDUaXNxnu.exe",
+                "uJ9ig6nHNdEMpknRdDQvfU.exe",
+                "xE26pSur6nXKVzcf.exe",
+                "wiqoswCprYXiSeFKoE.exe",
+                "iT1mvFLnd7usz4IchIvF.exe",
+                "7c03b49d24c948f838b737fb476d57849a1fd6b205f94214bf2a5a3b7a36f17a_unpacked",
+                "877c439da147bab8e2c32f03814e3973c22cbcd112d35bc2735b803ac9113da1.sample"
+            ],
+            "vhash": "035036655d7153z30500541z23z3023z1020200151z81ze7z",
+            "last_analysis_results": {
+                "Bkav": {
+                    "method": "blacklist",
+                    "engine_name": "Bkav",
+                    "engine_version": "2.0.0.1",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "W32.AIDetectMalware"
+                },
+                "Lionic": {
+                    "method": "blacklist",
+                    "engine_name": "Lionic",
+                    "engine_version": "8.16",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Maze.4!c"
+                },
+                "AVG": {
+                    "method": "blacklist",
+                    "engine_name": "AVG",
+                    "engine_version": "23.9.8494.0",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Win32:RansomX-gen [Ransom]"
+                },
+                "Elastic": {
+                    "method": "blacklist",
+                    "engine_name": "Elastic",
+                    "engine_version": "4.0.198",
+                    "engine_update": "20250326",
+                    "category": "malicious",
+                    "result": "Windows.Ransomware.Maze"
+                },
+                "MicroWorld-eScan": {
+                    "method": "blacklist",
+                    "engine_name": "MicroWorld-eScan",
+                    "engine_version": "14.0.409.0",
+                    "engine_update": "20250328",
+                    "category": "malicious",
+                    "result": "Generic.Ransom.Maze.Packed.081A09B8"
+                },
+                "CTX": {
+                    "method": "blacklist",
+                    "engine_name": "CTX",
+                    "engine_version": "2024.8.29.1",
+                    "engine_update": "20250328",
+                    "category": "malicious",
+                    "result": "exe.ransomware.maze"
+                },
+                "CAT-QuickHeal": {
+                    "method": "blacklist",
+                    "engine_name": "CAT-QuickHeal",
+                    "engine_version": "22.00",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Ransom.Maze.S13817050"
+                },
+                "Skyhigh": {
+                    "method": "blacklist",
+                    "engine_name": "Skyhigh",
+                    "engine_version": "v2021.2.0+4045",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "BehavesLike.Win32.Generic.fh"
+                },
+                "McAfee": {
+                    "method": "blacklist",
+                    "engine_name": "McAfee",
+                    "engine_version": "6.0.6.653",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Ransom-maze!BE537A66D01C"
+                },
+                "Malwarebytes": {
+                    "method": "blacklist",
+                    "engine_name": "Malwarebytes",
+                    "engine_version": "4.5.5.54",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Generic.Malware.AI.DDS"
+                },
+                "Zillya": {
+                    "method": "blacklist",
+                    "engine_name": "Zillya",
+                    "engine_version": "2.0.0.5325",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Trojan.Filecoder.Win32.10770"
+                },
+                "Sangfor": {
+                    "method": "blacklist",
+                    "engine_name": "Sangfor",
+                    "engine_version": "2.22.3.0",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Save.a"
+                },
+                "K7AntiVirus": {
+                    "method": "blacklist",
+                    "engine_name": "K7AntiVirus",
+                    "engine_version": "12.226.55264",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Trojan ( 0054eda51 )"
+                },
+                "Alibaba": {
+                    "method": "blacklist",
+                    "engine_name": "Alibaba",
+                    "engine_version": "0.3.0.5",
+                    "engine_update": "20190527",
+                    "category": "malicious",
+                    "result": "Ransom:Win32/Regsup.8a5c4053"
+                },
+                "K7GW": {
+                    "method": "blacklist",
+                    "engine_name": "K7GW",
+                    "engine_version": "12.226.55265",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Trojan ( 0054eda51 )"
+                },
+                "CrowdStrike": {
+                    "method": "blacklist",
+                    "engine_name": "CrowdStrike",
+                    "engine_version": "1.0",
+                    "engine_update": "20231026",
+                    "category": "malicious",
+                    "result": "win/malicious_confidence_100% (W)"
+                },
+                "Baidu": {
+                    "method": "blacklist",
+                    "engine_name": "Baidu",
+                    "engine_version": "1.0.0.2",
+                    "engine_update": "20190318",
+                    "category": "undetected",
+                    "result": null
+                },
+                "VirIT": {
+                    "method": "blacklist",
+                    "engine_name": "VirIT",
+                    "engine_version": "9.5.921",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Encoder.BSBN"
+                },
+                "Symantec": {
+                    "method": "blacklist",
+                    "engine_name": "Symantec",
+                    "engine_version": "1.22.0.0",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Downloader"
+                },
+                "tehtris": {
+                    "method": "blacklist",
+                    "engine_name": "tehtris",
+                    "engine_version": "v0.1.4",
+                    "engine_update": "20250328",
+                    "category": "undetected",
+                    "result": null
+                },
+                "ESET-NOD32": {
+                    "method": "blacklist",
+                    "engine_name": "ESET-NOD32",
+                    "engine_version": "30940",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "a variant of Win32/Filecoder.Maze.B"
+                },
+                "Cynet": {
+                    "method": "blacklist",
+                    "engine_name": "Cynet",
+                    "engine_version": "4.0.3.4",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Malicious (score: 100)"
+                },
+                "APEX": {
+                    "method": "blacklist",
+                    "engine_name": "APEX",
+                    "engine_version": "6.637",
+                    "engine_update": "20250325",
+                    "category": "malicious",
+                    "result": "Malicious"
+                },
+                "Paloalto": {
+                    "method": "blacklist",
+                    "engine_name": "Paloalto",
+                    "engine_version": "0.9.0.1003",
+                    "engine_update": "20250328",
+                    "category": "malicious",
+                    "result": "generic.ml"
+                },
+                "ClamAV": {
+                    "method": "blacklist",
+                    "engine_name": "ClamAV",
+                    "engine_version": "1.4.2.0",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Win.Malware.Agent-7761659-0"
+                },
+                "GData": {
+                    "method": "blacklist",
+                    "engine_name": "GData",
+                    "engine_version": "GD:27.39760AVA:64.28906",
+                    "engine_update": "20250328",
+                    "category": "malicious",
+                    "result": "Generic.Ransom.Maze.Packed.081A09B8"
+                },
+                "Kaspersky": {
+                    "method": "blacklist",
+                    "engine_name": "Kaspersky",
+                    "engine_version": "22.0.1.28",
+                    "engine_update": "20250328",
+                    "category": "malicious",
+                    "result": "HEUR:Trojan.Win32.Generic"
+                },
+                "BitDefender": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefender",
+                    "engine_version": "7.2",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Generic.Ransom.Maze.Packed.081A09B8"
+                },
+                "NANO-Antivirus": {
+                    "method": "blacklist",
+                    "engine_name": "NANO-Antivirus",
+                    "engine_version": "1.0.170.26436",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Virus.Win32.Gen.ccmw"
+                },
+                "SUPERAntiSpyware": {
+                    "method": "blacklist",
+                    "engine_name": "SUPERAntiSpyware",
+                    "engine_version": "5.6.0.1032",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Ransom.Maze/Variant"
+                },
+                "Avast": {
+                    "method": "blacklist",
+                    "engine_name": "Avast",
+                    "engine_version": "23.9.8494.0",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Win32:RansomX-gen [Ransom]"
+                },
+                "Tencent": {
+                    "method": "blacklist",
+                    "engine_name": "Tencent",
+                    "engine_version": "1.0.0.1",
+                    "engine_update": "20250328",
+                    "category": "malicious",
+                    "result": "Malware.Win32.Gencirc.10badcce"
+                },
+                "Emsisoft": {
+                    "method": "blacklist",
+                    "engine_name": "Emsisoft",
+                    "engine_version": "2024.8.0.61147",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Generic.Ransom.Maze.Packed.081A09B8 (B)"
+                },
+                "F-Secure": {
+                    "method": "blacklist",
+                    "engine_name": "F-Secure",
+                    "engine_version": "18.10.1547.307",
+                    "engine_update": "20250328",
+                    "category": "malicious",
+                    "result": "Trojan.TR/Agent.dag"
+                },
+                "DrWeb": {
+                    "method": "blacklist",
+                    "engine_name": "DrWeb",
+                    "engine_version": "7.0.65.5230",
+                    "engine_update": "20250328",
+                    "category": "malicious",
+                    "result": "Trojan.Encoder.29783"
+                },
+                "VIPRE": {
+                    "method": "blacklist",
+                    "engine_name": "VIPRE",
+                    "engine_version": "6.0.0.35",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Generic.Ransom.Maze.Packed.081A09B8"
+                },
+                "TrendMicro": {
+                    "method": "blacklist",
+                    "engine_name": "TrendMicro",
+                    "engine_version": "24.550.0.1002",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Ransom.Win32.MAZE.SMDA"
+                },
+                "McAfeeD": {
+                    "method": "blacklist",
+                    "engine_name": "McAfeeD",
+                    "engine_version": "1.2.0.7977",
+                    "engine_update": "20250328",
+                    "category": "malicious",
+                    "result": "Real Protect-LS!BE537A66D01C"
+                },
+                "SentinelOne": {
+                    "method": "blacklist",
+                    "engine_name": "SentinelOne",
+                    "engine_version": "25.1.1.1",
+                    "engine_update": "20250114",
+                    "category": "malicious",
+                    "result": "Static AI - Malicious PE"
+                },
+                "Trapmine": {
+                    "method": "blacklist",
+                    "engine_name": "Trapmine",
+                    "engine_version": "4.0.4.0",
+                    "engine_update": "20250310",
+                    "category": "malicious",
+                    "result": "malicious.moderate.ml.score"
+                },
+                "CMC": {
+                    "method": "blacklist",
+                    "engine_name": "CMC",
+                    "engine_version": "2.4.2022.1",
+                    "engine_update": "20250327",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Sophos": {
+                    "method": "blacklist",
+                    "engine_name": "Sophos",
+                    "engine_version": "3.0.3.0",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Troj/Maze-O"
+                },
+                "Ikarus": {
+                    "method": "blacklist",
+                    "engine_name": "Ikarus",
+                    "engine_version": "6.3.30.0",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Trojan-Ransom.Maze"
+                },
+                "FireEye": {
+                    "method": "blacklist",
+                    "engine_name": "FireEye",
+                    "engine_version": "35.47.0.0",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Generic.mg.be537a66d01c6707"
+                },
+                "Jiangmin": {
+                    "method": "blacklist",
+                    "engine_name": "Jiangmin",
+                    "engine_version": "16.0.100",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Trojan.Generic.ehayr"
+                },
+                "Webroot": {
+                    "method": "blacklist",
+                    "engine_name": "Webroot",
+                    "engine_version": "1.9.0.8",
+                    "engine_update": "20250227",
+                    "category": "malicious",
+                    "result": "W32.Ransom.Gen"
+                },
+                "Varist": {
+                    "method": "blacklist",
+                    "engine_name": "Varist",
+                    "engine_version": "6.6.1.3",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "W32/Filecoder.L.gen!Eldorado"
+                },
+                "Avira": {
+                    "method": "blacklist",
+                    "engine_name": "Avira",
+                    "engine_version": "8.3.3.20",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "TR/Agent.dag"
+                },
+                "Antiy-AVL": {
+                    "method": "blacklist",
+                    "engine_name": "Antiy-AVL",
+                    "engine_version": "3.0",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Trojan/Win32.Maze"
+                },
+                "Kingsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Kingsoft",
+                    "engine_version": "None",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Win32.Trojan.Regsup.pef"
+                },
+                "Gridinsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Gridinsoft",
+                    "engine_version": "1.0.211.174",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Ransom.Win32.Filecoder.dd!s1"
+                },
+                "Xcitium": {
+                    "method": "blacklist",
+                    "engine_name": "Xcitium",
+                    "engine_version": "37589",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Malware@#1d6us040j3j20"
+                },
+                "Arcabit": {
+                    "method": "blacklist",
+                    "engine_name": "Arcabit",
+                    "engine_version": "2022.0.0.18",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Generic.Ransom.Maze.Packed.081A09B8"
+                },
+                "ViRobot": {
+                    "method": "blacklist",
+                    "engine_name": "ViRobot",
+                    "engine_version": "2014.3.20.0",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.MazeRansom.373760"
+                },
+                "ZoneAlarm": {
+                    "method": "blacklist",
+                    "engine_name": "ZoneAlarm",
+                    "engine_version": "6.15-102622241",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Troj/RansMaz-J"
+                },
+                "Microsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Microsoft",
+                    "engine_version": "1.1.25020.1007",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Ransom:Win32/Maze.PA!MTB"
+                },
+                "Google": {
+                    "method": "blacklist",
+                    "engine_name": "Google",
+                    "engine_version": "1743114640",
+                    "engine_update": "20250328",
+                    "category": "malicious",
+                    "result": "Detected"
+                },
+                "AhnLab-V3": {
+                    "method": "blacklist",
+                    "engine_name": "AhnLab-V3",
+                    "engine_version": "3.27.1.10534",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Malware/Win32.RL_Generic.R301617"
+                },
+                "Acronis": {
+                    "method": "blacklist",
+                    "engine_name": "Acronis",
+                    "engine_version": "1.2.0.121",
+                    "engine_update": "20240328",
+                    "category": "undetected",
+                    "result": null
+                },
+                "VBA32": {
+                    "method": "blacklist",
+                    "engine_name": "VBA32",
+                    "engine_version": "5.3.2",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "BScope.Trojan.Regsup"
+                },
+                "ALYac": {
+                    "method": "blacklist",
+                    "engine_name": "ALYac",
+                    "engine_version": "2.0.0.10",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.ChaCha"
+                },
+                "TACHYON": {
+                    "method": "blacklist",
+                    "engine_name": "TACHYON",
+                    "engine_version": "2025-03-28.01",
+                    "engine_update": "20250328",
+                    "category": "malicious",
+                    "result": "Ransom/W32.Maze.373760"
+                },
+                "Cylance": {
+                    "method": "blacklist",
+                    "engine_name": "Cylance",
+                    "engine_version": "3.0.0.0",
+                    "engine_update": "20250109",
+                    "category": "malicious",
+                    "result": "Unsafe"
+                },
+                "Panda": {
+                    "method": "blacklist",
+                    "engine_name": "Panda",
+                    "engine_version": "4.6.4.2",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Trj/Genetic.gen"
+                },
+                "TrendMicro-HouseCall": {
+                    "method": "blacklist",
+                    "engine_name": "TrendMicro-HouseCall",
+                    "engine_version": "24.550.0.1002",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Ransom.Win32.MAZE.SMDA"
+                },
+                "Rising": {
+                    "method": "blacklist",
+                    "engine_name": "Rising",
+                    "engine_version": "25.0.0.28",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Ransom.Maze!1.BE87 (CLASSIC)"
+                },
+                "Yandex": {
+                    "method": "blacklist",
+                    "engine_name": "Yandex",
+                    "engine_version": "5.5.2.24",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Trojan.GenAsa!3444blElMMQ"
+                },
+                "huorong": {
+                    "method": "blacklist",
+                    "engine_name": "huorong",
+                    "engine_version": "a324776:a324776:f6799c3:f6799c3",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Ransom/ChaCha.a"
+                },
+                "MaxSecure": {
+                    "method": "blacklist",
+                    "engine_name": "MaxSecure",
+                    "engine_version": "1.0.0.1",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "Trojan.Malware.7164915.susgen"
+                },
+                "Fortinet": {
+                    "method": "blacklist",
+                    "engine_name": "Fortinet",
+                    "engine_version": "7.0.30.0",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "W32/Filecoder.NVY!tr"
+                },
+                "Zoner": {
+                    "method": "blacklist",
+                    "engine_name": "Zoner",
+                    "engine_version": "2.2.2.0",
+                    "engine_update": "20250327",
+                    "category": "undetected",
+                    "result": null
+                },
+                "DeepInstinct": {
+                    "method": "blacklist",
+                    "engine_name": "DeepInstinct",
+                    "engine_version": "5.0.0.8",
+                    "engine_update": "20250327",
+                    "category": "malicious",
+                    "result": "MALICIOUS"
+                },
+                "alibabacloud": {
+                    "method": "blacklist",
+                    "engine_name": "alibabacloud",
+                    "engine_version": "2.2.0",
+                    "engine_update": "20250321",
+                    "category": "malicious",
+                    "result": "RansomWare:Win/Maze"
+                },
+                "Trustlook": {
+                    "method": "blacklist",
+                    "engine_name": "Trustlook",
+                    "engine_version": "1.0",
+                    "engine_update": "20250328",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "SymantecMobileInsight": {
+                    "method": "blacklist",
+                    "engine_name": "SymantecMobileInsight",
+                    "engine_version": "2.0",
+                    "engine_update": "20250124",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "BitDefenderFalx": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefenderFalx",
+                    "engine_version": "2.0.936",
+                    "engine_update": "20241203",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "Avast-Mobile": {
+                    "method": "blacklist",
+                    "engine_name": "Avast-Mobile",
+                    "engine_version": "250327-02",
+                    "engine_update": "20250327",
+                    "category": "type-unsupported",
+                    "result": null
+                }
+            },
+            "crowdsourced_yara_results": [
+                {
+                    "description": "Identifies MAZE ransomware",
+                    "author": "Elastic Security",
+                    "ruleset_name": "Windows_Ransomware_Maze",
+                    "rule_name": "Windows_Ransomware_Maze_61254061",
+                    "ruleset_id": "015f35d55b",
+                    "match_in_subfile": true,
+                    "source": "https://github.com/elastic/protections-artifacts"
+                },
+                {
+                    "description": "Identifies Maze ransomware in memory or unpacked.",
+                    "author": "@bartblaze",
+                    "ruleset_name": "Maze",
+                    "rule_name": "Maze",
+                    "ruleset_id": "0021d6c41a",
+                    "match_in_subfile": true,
+                    "source": "https://github.com/bartblaze/Yara-rules"
+                },
+                {
+                    "ruleset_id": "0021d6c41a",
+                    "rule_name": "Maze",
+                    "ruleset_name": "Maze",
+                    "description": "Identifies Maze ransomware in memory or unpacked.",
+                    "author": "@bartblaze",
+                    "match_date": 1743121920,
+                    "ruleset_version": "0021d6c41a|8531a8af2cb93a613b6852fcc5e414739f750f2c",
+                    "source": "https://github.com/bartblaze/Yara-rules"
+                },
+                {
+                    "description": "Identifies MAZE ransomware",
+                    "author": "Elastic Security",
+                    "ruleset_name": "Windows_Ransomware_Maze",
+                    "rule_name": "Windows_Ransomware_Maze_46f40c40",
+                    "ruleset_id": "015f35d55b",
+                    "match_in_subfile": true,
+                    "source": "https://github.com/elastic/protections-artifacts"
+                },
+                {
+                    "ruleset_id": "0084b5a9a9",
+                    "rule_name": "win_maze_auto",
+                    "ruleset_name": "win.maze_auto",
+                    "description": "Detects win.maze.",
+                    "author": "Felix Bilstein - yara-signator at cocacoding dot com",
+                    "match_date": 1743121920,
+                    "ruleset_version": "0084b5a9a9|6558c417dcf07146b1309b6acde6be0aa96dea10",
+                    "source": "https://malpedia.caad.fkie.fraunhofer.de/"
+                },
+                {
+                    "description": "Detects Maze ransomware",
+                    "author": "ditekSHen",
+                    "ruleset_name": "malware",
+                    "rule_name": "MALWARE_Win_Maze",
+                    "ruleset_id": "00cc803bdc",
+                    "match_in_subfile": true,
+                    "source": "https://github.com/ditekshen/detection"
+                },
+                {
+                    "description": "Detects win.maze.",
+                    "author": "Felix Bilstein - yara-signator at cocacoding dot com",
+                    "ruleset_name": "win.maze_auto",
+                    "rule_name": "win_maze_auto",
+                    "ruleset_id": "0084b5a9a9",
+                    "match_in_subfile": true,
+                    "source": "https://malpedia.caad.fkie.fraunhofer.de/"
+                },
+                {
+                    "ruleset_id": "015f35d55b",
+                    "rule_name": "Windows_Ransomware_Maze_20caee5b",
+                    "ruleset_name": "Windows_Ransomware_Maze",
+                    "description": "Identifies MAZE ransomware",
+                    "author": "Elastic Security",
+                    "match_date": 1743121920,
+                    "ruleset_version": "015f35d55b|195c9611ddb90db599d7ffc1a9b0e8c45688007d",
+                    "source": "https://github.com/elastic/protections-artifacts"
+                },
+                {
+                    "ruleset_id": "000a7d3924",
+                    "rule_name": "SUSP_RANSOMWARE_Indicator_Jul20",
+                    "ruleset_name": "crime_ransom_generic",
+                    "description": "Detects ransomware indicator",
+                    "author": "Florian Roth (Nextron Systems)",
+                    "match_date": 1743121920,
+                    "ruleset_version": "000a7d3924|1d926845269a3ac8de0431da133950390b5cced3",
+                    "source": "https://github.com/Neo23x0/signature-base"
+                },
+                {
+                    "description": "Identifies MAZE ransomware",
+                    "author": "Elastic Security",
+                    "ruleset_name": "Windows_Ransomware_Maze",
+                    "rule_name": "Windows_Ransomware_Maze_f88f136f",
+                    "ruleset_id": "015f35d55b",
+                    "match_in_subfile": true,
+                    "source": "https://github.com/elastic/protections-artifacts"
+                },
+                {
+                    "ruleset_id": "015f35d55b",
+                    "rule_name": "Windows_Ransomware_Maze_46f40c40",
+                    "ruleset_name": "Windows_Ransomware_Maze",
+                    "description": "Identifies MAZE ransomware",
+                    "author": "Elastic Security",
+                    "match_date": 1743121920,
+                    "ruleset_version": "015f35d55b|195c9611ddb90db599d7ffc1a9b0e8c45688007d",
+                    "source": "https://github.com/elastic/protections-artifacts"
+                },
+                {
+                    "ruleset_id": "00cc803bdc",
+                    "rule_name": "MALWARE_Win_Maze",
+                    "ruleset_name": "malware",
+                    "description": "Detects Maze ransomware",
+                    "author": "ditekSHen",
+                    "match_date": 1743121920,
+                    "ruleset_version": "00cc803bdc|e76c93dcdedff04076380ffc60ea54e45b313635",
+                    "source": "https://github.com/ditekshen/detection"
+                },
+                {
+                    "ruleset_id": "000963f4dc",
+                    "rule_name": "crime_win32_ransom_maze_dll_1",
+                    "ruleset_name": "crime_maze_ransomware",
+                    "description": "Detects Maze ransomware payload dll unpacked",
+                    "author": "@VK_Intel",
+                    "match_date": 1743121920,
+                    "ruleset_version": "000963f4dc|1d926845269a3ac8de0431da133950390b5cced3",
+                    "source": "https://github.com/Neo23x0/signature-base"
+                },
+                {
+                    "description": "Identifies MAZE ransomware",
+                    "author": "Elastic Security",
+                    "ruleset_name": "Windows_Ransomware_Maze",
+                    "rule_name": "Windows_Ransomware_Maze_20caee5b",
+                    "ruleset_id": "015f35d55b",
+                    "match_in_subfile": true,
+                    "source": "https://github.com/elastic/protections-artifacts"
+                },
+                {
+                    "ruleset_id": "015f35d55b",
+                    "rule_name": "Windows_Ransomware_Maze_61254061",
+                    "ruleset_name": "Windows_Ransomware_Maze",
+                    "description": "Identifies MAZE ransomware",
+                    "author": "Elastic Security",
+                    "match_date": 1743121920,
+                    "ruleset_version": "015f35d55b|195c9611ddb90db599d7ffc1a9b0e8c45688007d",
+                    "source": "https://github.com/elastic/protections-artifacts"
+                },
+                {
+                    "description": "Detects ransomware indicator",
+                    "author": "Florian Roth (Nextron Systems)",
+                    "ruleset_name": "crime_ransom_generic",
+                    "rule_name": "SUSP_RANSOMWARE_Indicator_Jul20",
+                    "ruleset_id": "000a7d3924",
+                    "match_in_subfile": true,
+                    "source": "https://github.com/Neo23x0/signature-base"
+                },
+                {
+                    "ruleset_id": "015f35d55b",
+                    "rule_name": "Windows_Ransomware_Maze_f88f136f",
+                    "ruleset_name": "Windows_Ransomware_Maze",
+                    "description": "Identifies MAZE ransomware",
+                    "author": "Elastic Security",
+                    "match_date": 1743121920,
+                    "ruleset_version": "015f35d55b|195c9611ddb90db599d7ffc1a9b0e8c45688007d",
+                    "source": "https://github.com/elastic/protections-artifacts"
+                },
+                {
+                    "description": "Detects Maze ransomware payload dll unpacked",
+                    "author": "@VK_Intel",
+                    "ruleset_name": "crime_maze_ransomware",
+                    "rule_name": "crime_win32_ransom_maze_dll_1",
+                    "ruleset_id": "000963f4dc",
+                    "match_in_subfile": true,
+                    "source": "https://github.com/Neo23x0/signature-base"
+                }
+            ],
+            "detectiteasy": {
+                "filetype": "PE32",
+                "values": [
+                    {
+                        "info": "C",
+                        "version": "18.00.20806",
+                        "type": "Compiler",
+                        "name": "Microsoft Visual C/C++"
+                    },
+                    {
+                        "version": "12.00.21005",
+                        "type": "Linker",
+                        "name": "Microsoft Linker"
+                    },
+                    {
+                        "version": "2013",
+                        "type": "Tool",
+                        "name": "Visual Studio"
+                    }
+                ]
+            },
+            "first_seen_itw_date": 1576605536,
+            "bytehero_info": "Trojan.Win32.Heur.Gen",
+            "meaningful_name": "partmgr.sys",
+            "ssdeep": "6144:XcP69MZEIxrLrLrLNaMiAqNoUpEHQ2DfVdaljqAS+p/WB7MerV50DErjrNg/ydlf:SCaBWj1R43cDmNg6dNoQl+vu",
+            "sigma_analysis_results": [
+                {
+                    "match_context": [
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-2C70-64A6-4006-000000004400}",
+                                "ProcessId": "8084",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "WMI Commandline Utility",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-2C57-64A6-3B06-000000004400}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=EC80E603E0090B3AC3C1234C2BA43A0F,SHA256=D368BCB7934DB0C53D1E7277DCB47AF2B709253CBF0EEE9869EE7E17ED226EA3,IMPHASH=59A9108CA1CECC9147C5FBAB104EBF33",
+                                "OriginalFileName": "wmic.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\program.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7520",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"C:\\vhxub\\rbsvl\\whsuj\\..\\..\\..\\Windows\\jt\\ijnp\\..\\..\\system32\\tjyhk\\f\\..\\..\\wbem\\j\\..\\wmic.exe\" shadowcopy delete",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-C428-648A-98F4-030000000000",
+                                "LogonId": "259224",
+                                "Image": "C:\\Windows\\System32\\wbem\\WMIC.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\program.exe\"",
+                                "UtcTime": "1688611952",
+                                "RuleName": "-"
+                            }
+                        }
+                    ],
+                    "rule_level": "critical",
+                    "rule_description": "Delete shadow copy via WMIC",
+                    "rule_source": "Joe Security Rule Set (GitHub)",
+                    "rule_title": "Delete shadow copy via WMIC",
+                    "rule_id": "be6d29855558a0e8c404486d8f1838ce35594866f126f9c1c62a9792e9c76be2",
+                    "rule_author": "Joe Security"
+                },
+                {
+                    "match_context": [
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-2C70-64A6-4006-000000004400}",
+                                "ProcessId": "8084",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "WMI Commandline Utility",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-2C57-64A6-3B06-000000004400}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=EC80E603E0090B3AC3C1234C2BA43A0F,SHA256=D368BCB7934DB0C53D1E7277DCB47AF2B709253CBF0EEE9869EE7E17ED226EA3,IMPHASH=59A9108CA1CECC9147C5FBAB104EBF33",
+                                "OriginalFileName": "wmic.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\program.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7520",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"C:\\vhxub\\rbsvl\\whsuj\\..\\..\\..\\Windows\\jt\\ijnp\\..\\..\\system32\\tjyhk\\f\\..\\..\\wbem\\j\\..\\wmic.exe\" shadowcopy delete",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-C428-648A-98F4-030000000000",
+                                "LogonId": "259224",
+                                "Image": "C:\\Windows\\System32\\wbem\\WMIC.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\program.exe\"",
+                                "UtcTime": "1688611952",
+                                "RuleName": "-"
+                            }
+                        }
+                    ],
+                    "rule_level": "high",
+                    "rule_description": "Shadow Copies deletion using operating systems utilities",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Shadow Copies Deletion Using Operating Systems Utilities",
+                    "rule_id": "ad5e4d4b939797a70a9aa742d979a4742c2cfedddd663fb1a43b2795c1e6054b",
+                    "rule_author": "Florian Roth (Nextron Systems), Michael Haag, Teymur Kheirkhabarov, Daniil Yugoslavskiy, oscd.community, Andreas Hunkeler (@Karneades)"
+                },
+                {
+                    "match_context": [
+                        {
+                            "values": {
+                                "TerminalSessionId": "1",
+                                "ProcessGuid": "{C784477D-2C70-64A6-4006-000000004400}",
+                                "ProcessId": "8084",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "WMI Commandline Utility",
+                                "Company": "Microsoft Corporation",
+                                "ParentProcessGuid": "{C784477D-2C57-64A6-3B06-000000004400}",
+                                "User": "DESKTOP-B0T93D6\\george",
+                                "Hashes": "MD5=EC80E603E0090B3AC3C1234C2BA43A0F,SHA256=D368BCB7934DB0C53D1E7277DCB47AF2B709253CBF0EEE9869EE7E17ED226EA3,IMPHASH=59A9108CA1CECC9147C5FBAB104EBF33",
+                                "OriginalFileName": "wmic.exe",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\program.exe",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentProcessId": "7520",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "CommandLine": "\"C:\\vhxub\\rbsvl\\whsuj\\..\\..\\..\\Windows\\jt\\ijnp\\..\\..\\system32\\tjyhk\\f\\..\\..\\wbem\\j\\..\\wmic.exe\" shadowcopy delete",
+                                "EventID": "1",
+                                "LogonGuid": "C784477D-C428-648A-98F4-030000000000",
+                                "LogonId": "259224",
+                                "Image": "C:\\Windows\\System32\\wbem\\WMIC.exe",
+                                "IntegrityLevel": "High",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\program.exe\"",
+                                "UtcTime": "1688611952",
+                                "RuleName": "-"
+                            }
+                        }
+                    ],
+                    "rule_level": "medium",
+                    "rule_description": "Detects potential evasion or obfuscation attempts using bogus path traversal via the commandline",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Potential Command Line Path Traversal Evasion Attempt",
+                    "rule_id": "2a64ca949e5ce433b70a21b4be0e71e5ad0cd2465395fd093410ce2d33177cdc",
+                    "rule_author": "Christian Burkard (Nextron Systems)"
+                },
+                {
+                    "match_context": [
+                        {
+                            "values": {
+                                "EventID": "11",
+                                "ProcessId": "7520",
+                                "TargetFilename": "C:\\Users\\george\\AppData\\Roaming\\Microsoft\\Word\\STARTUP\\5e620863544d3c83.tmp",
+                                "ProcessGuid": "{C784477D-2C57-64A6-3B06-000000004400}",
+                                "CreationUtcTime": "1688611939",
+                                "UtcTime": "1688611939",
+                                "RuleName": "T1165",
+                                "Image": "C:\\Users\\george\\Desktop\\program.exe"
+                            }
+                        },
+                        {
+                            "values": {
+                                "EventID": "11",
+                                "ProcessId": "7520",
+                                "Image": "C:\\Users\\george\\Desktop\\program.exe",
+                                "RuleName": "T1165",
+                                "CreationUtcTime": "1688611939",
+                                "UtcTime": "1688611939",
+                                "ProcessGuid": "{C784477D-2C57-64A6-3B06-000000004400}",
+                                "TargetFilename": "C:\\Users\\george\\AppData\\Roaming\\Microsoft\\Word\\STARTUP\\DECRYPT-FILES.txt"
+                            }
+                        },
+                        {
+                            "values": {
+                                "EventID": "11",
+                                "ProcessId": "7520",
+                                "TargetFilename": "C:\\Users\\george\\AppData\\Roaming\\Microsoft\\Word\\STARTUP\\5e620863544d3c83.tmp",
+                                "RuleName": "T1165",
+                                "CreationUtcTime": "1688611947",
+                                "UtcTime": "1688611947",
+                                "ProcessGuid": "{C784477D-2C57-64A6-3B06-000000004400}",
+                                "Image": "C:\\Users\\george\\Desktop\\program.exe"
+                            }
+                        },
+                        {
+                            "values": {
+                                "EventID": "11",
+                                "ProcessId": "7520",
+                                "TargetFilename": "C:\\Users\\george\\AppData\\Roaming\\Microsoft\\Word\\STARTUP\\5e620863544d3c83.tmp",
+                                "ProcessGuid": "{C784477D-2C57-64A6-3B06-000000004400}",
+                                "CreationUtcTime": "1688611951",
+                                "UtcTime": "1688611951",
+                                "RuleName": "T1165",
+                                "Image": "C:\\Users\\george\\Desktop\\program.exe"
+                            }
+                        },
+                        {
+                            "values": {
+                                "EventID": "11",
+                                "ProcessId": "7520",
+                                "TargetFilename": "C:\\Users\\george\\AppData\\Roaming\\Microsoft\\Word\\STARTUP\\5e620863544d3c83.tmp",
+                                "RuleName": "T1165",
+                                "CreationUtcTime": "1688611951",
+                                "UtcTime": "1688611952",
+                                "ProcessGuid": "{C784477D-2C57-64A6-3B06-000000004400}",
+                                "Image": "C:\\Users\\george\\Desktop\\program.exe"
+                            }
+                        }
+                    ],
+                    "rule_level": "medium",
+                    "rule_description": "Detects the creation of an file in user Word Startup",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Creation In User Word Startup Folder",
+                    "rule_id": "f441bf0f20310d2f8fb4c38b047725cf9bafb59c2a7634f73d2d38745157b248",
+                    "rule_author": "frack113"
+                }
+            ],
+            "type_extension": "exe",
+            "last_modification_date": 1743129309,
+            "tlsh": "T18F847D26E9D3DFB6DD0B883240DF633E1D372D152E114EB7D2D425A4E0A2A02BB63759",
+            "total_votes": {
+                "harmless": 0,
+                "malicious": 5
+            },
+            "trid": [
+                {
+                    "file_type": "Win32 Executable MS Visual C++ (generic)",
+                    "probability": 43.3
+                },
+                {
+                    "file_type": "Microsoft Visual C++ compiled executable (generic)",
+                    "probability": 22.9
+                },
+                {
+                    "file_type": "Win32 Dynamic Link Library (generic)",
+                    "probability": 9.1
+                },
+                {
+                    "file_type": "Win16 NE executable (generic)",
+                    "probability": 7.0
+                },
+                {
+                    "file_type": "Win32 Executable (generic)",
+                    "probability": 6.2
+                }
+            ],
+            "crowdsourced_ids_stats": {
+                "high": 1,
+                "info": 1,
+                "medium": 0,
+                "low": 0
+            },
+            "filecondis": {
+                "raw_md5": "ee83ccfd54dc2fea485b4adb0af6baa0",
+                "dhash": "00383c3e1c151800"
+            },
+            "sigma_analysis_stats": {
+                "high": 1,
+                "medium": 2,
+                "critical": 1,
+                "low": 0
+            }
+        }
+    }
+}

@@ -1,0 +1,1707 @@
+{
+    "data": {
+        "id": "c1819043839dddcca0b5de3d438cffb67c79dc26e811e97e65f13d89845cc969",
+        "type": "file",
+        "links": {
+            "self": "https://www.virustotal.com/api/v3/files/c1819043839dddcca0b5de3d438cffb67c79dc26e811e97e65f13d89845cc969"
+        },
+        "attributes": {
+            "sha1": "eef8dac70851b4124d2aea817e30da82882df885",
+            "magic": "PE32 executable (console) Intel 80386, for MS Windows",
+            "type_description": "Win32 EXE",
+            "tlsh": "T18B1602617A43C1B2D59100F04DBDAB7B4A3DAE291B3086D7E3C81E3E99305D15E37A9B",
+            "last_analysis_date": 1746175154,
+            "crowdsourced_ids_results": [
+                {
+                    "rule_category": "Potentially Bad Traffic",
+                    "alert_severity": "low",
+                    "rule_msg": "ET INFO External IP Lookup Domain DNS Lookup (my-ip .io)",
+                    "rule_raw": "alert dns $HOME_NET any -> any any (msg:\"ET INFO External IP Lookup Domain DNS Lookup (my-ip .io)\"; dns.query; dotprefix; content:\".my-ip.io\"; nocase; endswith; classtype:bad-unknown; sid:2034196; rev:1; metadata:attack_target Client_Endpoint, created_at 2021_10_15, deployment Perimeter, former_category INFO, signature_severity Informational, updated_at 2021_10_15;)",
+                    "alert_context": [
+                        {
+                            "dest_ip": "8.8.8.8",
+                            "dest_port": 53
+                        }
+                    ],
+                    "rule_url": "https://rules.emergingthreats.net/",
+                    "rule_source": "Proofpoint Emerging Threats Open",
+                    "rule_id": "1:2034196"
+                }
+            ],
+            "total_votes": {
+                "harmless": 0,
+                "malicious": 1
+            },
+            "creation_date": 1614358124,
+            "sigma_analysis_results": [
+                {
+                    "rule_level": "critical",
+                    "rule_id": "b8a9a3d755cac11238eb37aa06d27255714356075872c2e2e140acfb3e8ab8b0",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "WannaCry Ransomware Activity",
+                    "rule_description": "Detects WannaCry ransomware activity",
+                    "rule_author": "Florian Roth (Nextron Systems), Tom U. @c_APT_ure (collection), oscd.community, Jonhnathan Ribeiro",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Product": "Microsoft\u00ae Windows\u00ae Operating System",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "Cmd.Exe",
+                                "Hashes": "MD5=F3BDBE3BB6F734E357235F4D5898582D,SHA256=3685495D051137B1C4EFDE22C26DF0883614B6453B762FA84588DA55ED2E7744,IMPHASH=0AF8419BE362159398343D7B31721726",
+                                "Description": "Windows Command Processor",
+                                "EventID": "1",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\file.exe\" ",
+                                "CommandLine": "C:\\Windows\\system32\\cmd.exe /c bcdedit /set {default} recoveryenabled no",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\file.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Product": "Microsoft\u00ae Windows\u00ae Operating System",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "Cmd.Exe",
+                                "Hashes": "MD5=F3BDBE3BB6F734E357235F4D5898582D,SHA256=3685495D051137B1C4EFDE22C26DF0883614B6453B762FA84588DA55ED2E7744,IMPHASH=0AF8419BE362159398343D7B31721726",
+                                "Description": "Windows Command Processor",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\file.exe\" ",
+                                "CommandLine": "C:\\Windows\\system32\\cmd.exe /c wbadmin delete catalog -quiet",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\file.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Hashes": "MD5=F3BDBE3BB6F734E357235F4D5898582D,SHA256=3685495D051137B1C4EFDE22C26DF0883614B6453B762FA84588DA55ED2E7744,IMPHASH=0AF8419BE362159398343D7B31721726",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "Cmd.Exe",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Windows Command Processor",
+                                "EventID": "1",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\file.exe\" ",
+                                "CommandLine": "C:\\Windows\\system32\\cmd.exe /c bcdedit /set {default} recoveryenabled no",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\file.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "Cmd.Exe",
+                                "Hashes": "MD5=F3BDBE3BB6F734E357235F4D5898582D,SHA256=3685495D051137B1C4EFDE22C26DF0883614B6453B762FA84588DA55ED2E7744,IMPHASH=0AF8419BE362159398343D7B31721726",
+                                "Description": "Windows Command Processor",
+                                "EventID": "1",
+                                "ParentCommandLine": "\"C:\\Users\\george\\Desktop\\file.exe\" ",
+                                "CommandLine": "C:\\Windows\\system32\\cmd.exe /c wbadmin delete catalog -quiet",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentImage": "C:\\Users\\george\\Desktop\\file.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Users\\Bruno\\Desktop\\",
+                                "OriginalFileName": "Cmd.Exe",
+                                "Hashes": "MD5=D0FCE3AFA6AA1D58CE9FA336CC2B675B,SHA256=4D89FC34D5F0F9BABD022271C585A9477BF41E834E46B991DEAA0530FDB25E22,IMPHASH=392B4D61B1D1DADC1F06444DF258188A",
+                                "Description": "Windows Command Processor",
+                                "EventID": "1",
+                                "ParentCommandLine": "\"C:\\Users\\Bruno\\Desktop\\executable.exe\" ",
+                                "CommandLine": "C:\\Windows\\system32\\cmd.exe /c bcdedit /set {default} recoveryenabled no",
+                                "FileVersion": "10.0.19041.746 (WinBuild.160101.0800)",
+                                "ParentImage": "C:\\Users\\Bruno\\Desktop\\executable.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "high",
+                    "rule_id": "941abf5111763a135c88b4f6437475eb4c99e8d4c3ebdb4b74e30321695b0fa7",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Suspicious Windows Service Tampering",
+                    "rule_description": "Detects the usage of binaries such as 'net', 'sc' or 'powershell' in order to stop, pause, disable or delete critical or important Windows services such as AV, Backup, etc. As seen being used in some ransomware scripts\n",
+                    "rule_author": "Nasreddine Bencherchali (Nextron Systems), frack113 , X__Junior",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Hashes": "MD5=DD0561156F62BC1958CE0E370B23711B,SHA256=FD41D0261C6D22572DA448BCB5CBBB98F78A2922D1F1074D25237CC82C8CE432,IMPHASH=86350518EAE83E4A09BBF6317BA1C570",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "net.exe",
+                                "Product": "Microsoft\u00ae Windows\u00ae Operating System",
+                                "Description": "Net Command",
+                                "EventID": "1",
+                                "ParentCommandLine": "C:\\Windows\\system32\\cmd.exe /c net stop MSDTC",
+                                "CommandLine": "net  stop MSDTC",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentImage": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\net.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Hashes": "MD5=B5A26C2BF17222E86B91D26F1247AF3E,SHA256=14CC5BE4C833ACC652195DEAD113E1C3B4AC0B98EA1AEAD11957836F9AE721CF,IMPHASH=3D3E7537BD3BA07738DC5CA8AD01B073",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "net1.exe",
+                                "Product": "Microsoft\u00ae Windows\u00ae Operating System",
+                                "Description": "Net Command",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "net  stop MSDTC",
+                                "CommandLine": "C:\\Windows\\system32\\net1  stop MSDTC",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Windows\\SysWOW64\\net.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\net1.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Product": "Microsoft\u00ae Windows\u00ae Operating System",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "net.exe",
+                                "Hashes": "MD5=DD0561156F62BC1958CE0E370B23711B,SHA256=FD41D0261C6D22572DA448BCB5CBBB98F78A2922D1F1074D25237CC82C8CE432,IMPHASH=86350518EAE83E4A09BBF6317BA1C570",
+                                "Description": "Net Command",
+                                "EventID": "1",
+                                "ParentCommandLine": "C:\\Windows\\system32\\cmd.exe /c net stop SQLSERVERAGENT",
+                                "CommandLine": "net  stop SQLSERVERAGENT",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentImage": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\net.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Product": "Microsoft\u00ae Windows\u00ae Operating System",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "net1.exe",
+                                "Hashes": "MD5=B5A26C2BF17222E86B91D26F1247AF3E,SHA256=14CC5BE4C833ACC652195DEAD113E1C3B4AC0B98EA1AEAD11957836F9AE721CF,IMPHASH=3D3E7537BD3BA07738DC5CA8AD01B073",
+                                "Description": "Net Command",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "net  stop SQLSERVERAGENT",
+                                "CommandLine": "C:\\Windows\\system32\\net1  stop SQLSERVERAGENT",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Windows\\SysWOW64\\net.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\net1.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Product": "Microsoft\u00ae Windows\u00ae Operating System",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "net.exe",
+                                "Hashes": "MD5=DD0561156F62BC1958CE0E370B23711B,SHA256=FD41D0261C6D22572DA448BCB5CBBB98F78A2922D1F1074D25237CC82C8CE432,IMPHASH=86350518EAE83E4A09BBF6317BA1C570",
+                                "Description": "Net Command",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "C:\\Windows\\system32\\cmd.exe /c net stop MSSQLSERVER",
+                                "CommandLine": "net  stop MSSQLSERVER",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\net.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "4d91cff1255532aacd25d7b82261d545afc7d30837d1643a0dd2c4617aec5865",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Disable Microsoft Defender Firewall via Registry",
+                    "rule_description": "Adversaries may disable or modify system firewalls in order to bypass controls limiting network usage",
+                    "rule_author": "frack113",
+                    "match_context": [
+                        {
+                            "values": {
+                                "RuleName": "T1089",
+                                "EventID": "13",
+                                "EventType": "SetValue",
+                                "Image": "C:\\Windows\\system32\\svchost.exe",
+                                "Details": "DWORD (0x00000000)",
+                                "TargetObject": "HKLM\\System\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\PublicProfile\\EnableFirewall"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "56b8c79acb8e444c2b00be5c9d3cb8e33e863ccb3506d635f907a49cd053c84f",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Startup Folder File Write",
+                    "rule_description": "A General detection for files being created in the Windows startup directory. This could be an indicator of persistence.",
+                    "rule_author": "Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "RuleName": "T1023",
+                                "Image": "C:\\Users\\george\\Desktop\\file.exe",
+                                "EventID": "11",
+                                "TargetFilename": "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp\\file.exe"
+                            }
+                        },
+                        {
+                            "values": {
+                                "RuleName": "T1023",
+                                "Image": "C:\\Users\\george\\Desktop\\file.exe",
+                                "EventID": "11",
+                                "TargetFilename": "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp\\file.exe:Zone.Identifier"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "5a783ec4b26d8a6276f21c1226c5896266e2591f44f079ca9950892310b00429",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Firewall Disabled via Netsh.EXE",
+                    "rule_description": "Detects netsh commands that turns off the Windows firewall",
+                    "rule_author": "Fatih Sirin",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Hashes": "MD5=A0AA3322BB46BBFC36AB9DC1DBBBB807,SHA256=751525FF60A42609D4DFCBB9D70CEC0C0650FC2B14B04994EDE1B0159688278B,IMPHASH=C8D91522FEEE1152DC40833F6A4717E7",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "netsh.exe",
+                                "Product": "Microsoft\u00ae Windows\u00ae Operating System",
+                                "Description": "Network Command Shell",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "C:\\Windows\\system32\\cmd.exe /c netsh advfirewall set  currentprofile state off",
+                                "CommandLine": "netsh  advfirewall set  currentprofile state off",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\netsh.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Hashes": "MD5=A0AA3322BB46BBFC36AB9DC1DBBBB807,SHA256=751525FF60A42609D4DFCBB9D70CEC0C0650FC2B14B04994EDE1B0159688278B,IMPHASH=C8D91522FEEE1152DC40833F6A4717E7",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "netsh.exe",
+                                "Product": "Microsoft\u00ae Windows\u00ae Operating System",
+                                "Description": "Network Command Shell",
+                                "EventID": "1",
+                                "ParentCommandLine": "C:\\Windows\\system32\\cmd.exe /c netsh firewall set opmode mode=disable",
+                                "CommandLine": "netsh  firewall set opmode mode=disable",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentImage": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\netsh.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Hashes": "MD5=A0AA3322BB46BBFC36AB9DC1DBBBB807,SHA256=751525FF60A42609D4DFCBB9D70CEC0C0650FC2B14B04994EDE1B0159688278B,IMPHASH=C8D91522FEEE1152DC40833F6A4717E7",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "netsh.exe",
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "Description": "Network Command Shell",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "C:\\Windows\\system32\\cmd.exe /c netsh advfirewall set  currentprofile state off",
+                                "CommandLine": "netsh  advfirewall set  currentprofile state off",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\netsh.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Users\\Bruno\\Desktop\\",
+                                "OriginalFileName": "netsh.exe",
+                                "Hashes": "MD5=4E89A1A088BE715D6C946E55AB07C7DF,SHA256=9EFA9DAFA09AE9BA6390A8F0F6751006C18A98B6692667CA08367CDDB47AC634,IMPHASH=C8D91522FEEE1152DC40833F6A4717E7",
+                                "Description": "Network Command Shell",
+                                "EventID": "1",
+                                "ParentCommandLine": "C:\\Windows\\system32\\cmd.exe /c netsh advfirewall set  currentprofile state off",
+                                "CommandLine": "netsh  advfirewall set  currentprofile state off",
+                                "FileVersion": "10.0.19041.1 (WinBuild.160101.0800)",
+                                "ParentImage": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\netsh.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Users\\Bruno\\Desktop\\",
+                                "OriginalFileName": "netsh.exe",
+                                "Hashes": "MD5=4E89A1A088BE715D6C946E55AB07C7DF,SHA256=9EFA9DAFA09AE9BA6390A8F0F6751006C18A98B6692667CA08367CDDB47AC634,IMPHASH=C8D91522FEEE1152DC40833F6A4717E7",
+                                "Description": "Network Command Shell",
+                                "FileVersion": "10.0.19041.1 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "C:\\Windows\\system32\\cmd.exe /c netsh firewall set opmode mode=disable",
+                                "CommandLine": "netsh  firewall set opmode mode=disable",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\netsh.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "5be9da0a90b142239a3ff2819edf2283938855da3b4c80d63d8e6db63c2c4fe7",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Hidden Executable In NTFS Alternate Data Stream",
+                    "rule_description": "Detects the creation of an ADS (Alternate Data Stream) that contains an executable by looking at a non-empty Imphash",
+                    "rule_author": "Florian Roth (Nextron Systems), @0xrawsec",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Hash": "MD5=CC0C4DD633D14D2999C7C0AF25B779D4,SHA256=C1819043839DDDCCA0B5DE3D438CFFB67C79DC26E811E97E65F13D89845CC969,IMPHASH=FADA6CBA5BB68B74E893B0C75C1220BE",
+                                "Image": "C:\\Users\\george\\Desktop\\file.exe",
+                                "EventID": "15",
+                                "TargetFilename": "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp\\file.exe"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "8984d13764576549e824707eeafa56e2bc51d0ba2e3cccdb362a5dc69926c991",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Firewall Rule Update Via Netsh.EXE",
+                    "rule_description": "Detects execution of netsh with the \"advfirewall\" and the \"set\" option in order to set new values for properties of a existing rule",
+                    "rule_author": "X__Junior (Nextron Systems)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Product": "Microsoft\u00ae Windows\u00ae Operating System",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "netsh.exe",
+                                "Hashes": "MD5=A0AA3322BB46BBFC36AB9DC1DBBBB807,SHA256=751525FF60A42609D4DFCBB9D70CEC0C0650FC2B14B04994EDE1B0159688278B,IMPHASH=C8D91522FEEE1152DC40833F6A4717E7",
+                                "Description": "Network Command Shell",
+                                "EventID": "1",
+                                "ParentCommandLine": "C:\\Windows\\system32\\cmd.exe /c netsh firewall set opmode mode=disable",
+                                "CommandLine": "netsh  firewall set opmode mode=disable",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentImage": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\netsh.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Product": "Microsoft\\xae Windows\\xae Operating System",
+                                "CurrentDirectory": "C:\\Users\\Bruno\\Desktop\\",
+                                "OriginalFileName": "netsh.exe",
+                                "Hashes": "MD5=4E89A1A088BE715D6C946E55AB07C7DF,SHA256=9EFA9DAFA09AE9BA6390A8F0F6751006C18A98B6692667CA08367CDDB47AC634,IMPHASH=C8D91522FEEE1152DC40833F6A4717E7",
+                                "Description": "Network Command Shell",
+                                "FileVersion": "10.0.19041.1 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "C:\\Windows\\system32\\cmd.exe /c netsh firewall set opmode mode=disable",
+                                "CommandLine": "netsh  firewall set opmode mode=disable",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\netsh.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "low",
+                    "rule_id": "5b84c64b930b911c8206935d6c61b2a128347a34d495da3ea3523cdf5397c3ef",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Stop Windows Service Via Net.EXE",
+                    "rule_description": "Detects the stopping of a Windows service via the \"net\" utility.",
+                    "rule_author": "Jakob Weinzettl, oscd.community, Nasreddine Bencherchali (Nextron Systems)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "Product": "Microsoft\u00ae Windows\u00ae Operating System",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "net.exe",
+                                "Hashes": "MD5=DD0561156F62BC1958CE0E370B23711B,SHA256=FD41D0261C6D22572DA448BCB5CBBB98F78A2922D1F1074D25237CC82C8CE432,IMPHASH=86350518EAE83E4A09BBF6317BA1C570",
+                                "Description": "Net Command",
+                                "EventID": "1",
+                                "ParentCommandLine": "C:\\Windows\\system32\\cmd.exe /c net stop MSDTC",
+                                "CommandLine": "net  stop MSDTC",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentImage": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\net.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Product": "Microsoft\u00ae Windows\u00ae Operating System",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "net1.exe",
+                                "Hashes": "MD5=B5A26C2BF17222E86B91D26F1247AF3E,SHA256=14CC5BE4C833ACC652195DEAD113E1C3B4AC0B98EA1AEAD11957836F9AE721CF,IMPHASH=3D3E7537BD3BA07738DC5CA8AD01B073",
+                                "Description": "Net Command",
+                                "EventID": "1",
+                                "ParentCommandLine": "net  stop MSDTC",
+                                "CommandLine": "C:\\Windows\\system32\\net1  stop MSDTC",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentImage": "C:\\Windows\\SysWOW64\\net.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\net1.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Product": "Microsoft\u00ae Windows\u00ae Operating System",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "net.exe",
+                                "Hashes": "MD5=DD0561156F62BC1958CE0E370B23711B,SHA256=FD41D0261C6D22572DA448BCB5CBBB98F78A2922D1F1074D25237CC82C8CE432,IMPHASH=86350518EAE83E4A09BBF6317BA1C570",
+                                "Description": "Net Command",
+                                "EventID": "1",
+                                "ParentCommandLine": "C:\\Windows\\system32\\cmd.exe /c net stop SQLSERVERAGENT",
+                                "CommandLine": "net  stop SQLSERVERAGENT",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentImage": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\net.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Hashes": "MD5=B5A26C2BF17222E86B91D26F1247AF3E,SHA256=14CC5BE4C833ACC652195DEAD113E1C3B4AC0B98EA1AEAD11957836F9AE721CF,IMPHASH=3D3E7537BD3BA07738DC5CA8AD01B073",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "net1.exe",
+                                "Product": "Microsoft\u00ae Windows\u00ae Operating System",
+                                "Description": "Net Command",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentCommandLine": "net  stop SQLSERVERAGENT",
+                                "CommandLine": "C:\\Windows\\system32\\net1  stop SQLSERVERAGENT",
+                                "EventID": "1",
+                                "ParentImage": "C:\\Windows\\SysWOW64\\net.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\net1.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        },
+                        {
+                            "values": {
+                                "Hashes": "MD5=DD0561156F62BC1958CE0E370B23711B,SHA256=FD41D0261C6D22572DA448BCB5CBBB98F78A2922D1F1074D25237CC82C8CE432,IMPHASH=86350518EAE83E4A09BBF6317BA1C570",
+                                "CurrentDirectory": "C:\\Users\\george\\Desktop\\",
+                                "OriginalFileName": "net.exe",
+                                "Product": "Microsoft\u00ae Windows\u00ae Operating System",
+                                "Description": "Net Command",
+                                "EventID": "1",
+                                "ParentCommandLine": "C:\\Windows\\system32\\cmd.exe /c net stop MSSQLSERVER",
+                                "CommandLine": "net  stop MSSQLSERVER",
+                                "FileVersion": "10.0.17134.1 (WinBuild.160101.0800)",
+                                "ParentImage": "C:\\Windows\\SysWOW64\\cmd.exe",
+                                "IntegrityLevel": "High",
+                                "Image": "C:\\Windows\\SysWOW64\\net.exe",
+                                "Company": "Microsoft Corporation"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "sha256": "c1819043839dddcca0b5de3d438cffb67c79dc26e811e97e65f13d89845cc969",
+            "last_analysis_results": {
+                "Bkav": {
+                    "method": "blacklist",
+                    "engine_name": "Bkav",
+                    "engine_version": "2.0.0.1",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "W32.AIDetectMalware"
+                },
+                "Lionic": {
+                    "method": "blacklist",
+                    "engine_name": "Lionic",
+                    "engine_version": "8.16",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.VoidCrypt.j!c"
+                },
+                "AVG": {
+                    "method": "blacklist",
+                    "engine_name": "AVG",
+                    "engine_version": "23.9.8494.0",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "Win32:MalwareX-gen [Ransom]"
+                },
+                "Elastic": {
+                    "method": "blacklist",
+                    "engine_name": "Elastic",
+                    "engine_version": "4.0.202",
+                    "engine_update": "20250423",
+                    "category": "malicious",
+                    "result": "malicious (high confidence)"
+                },
+                "MicroWorld-eScan": {
+                    "method": "blacklist",
+                    "engine_name": "MicroWorld-eScan",
+                    "engine_version": "14.0.409.0",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.VoidCrypt.A"
+                },
+                "CMC": {
+                    "method": "blacklist",
+                    "engine_name": "CMC",
+                    "engine_version": "2.4.2022.1",
+                    "engine_update": "20250502",
+                    "category": "undetected",
+                    "result": null
+                },
+                "CAT-QuickHeal": {
+                    "method": "blacklist",
+                    "engine_name": "CAT-QuickHeal",
+                    "engine_version": "22.00",
+                    "engine_update": "20250501",
+                    "category": "malicious",
+                    "result": "Ransom.VoidCrypt.A5"
+                },
+                "Skyhigh": {
+                    "method": "blacklist",
+                    "engine_name": "Skyhigh",
+                    "engine_version": "v2021.2.0+4045",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "GenericRXSF-FU!CC0C4DD633D1"
+                },
+                "ALYac": {
+                    "method": "blacklist",
+                    "engine_name": "ALYac",
+                    "engine_version": "2.0.0.10",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.Ouroboros"
+                },
+                "Cylance": {
+                    "method": "blacklist",
+                    "engine_name": "Cylance",
+                    "engine_version": "3.0.0.0",
+                    "engine_update": "20250424",
+                    "category": "malicious",
+                    "result": "Unsafe"
+                },
+                "Zillya": {
+                    "method": "blacklist",
+                    "engine_name": "Zillya",
+                    "engine_version": "2.0.0.5351",
+                    "engine_update": "20250501",
+                    "category": "malicious",
+                    "result": "Trojan.Filecoder.Win32.18178"
+                },
+                "Sangfor": {
+                    "method": "blacklist",
+                    "engine_name": "Sangfor",
+                    "engine_version": "2.22.3.0",
+                    "engine_update": "20250430",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Save.a"
+                },
+                "K7AntiVirus": {
+                    "method": "blacklist",
+                    "engine_name": "K7AntiVirus",
+                    "engine_version": "12.233.55622",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "Trojan ( 005789501 )"
+                },
+                "Alibaba": {
+                    "method": "blacklist",
+                    "engine_name": "Alibaba",
+                    "engine_version": "0.3.0.5",
+                    "engine_update": "20190527",
+                    "category": "malicious",
+                    "result": "Ransom:Win32/Ouroboros.4025bca5"
+                },
+                "K7GW": {
+                    "method": "blacklist",
+                    "engine_name": "K7GW",
+                    "engine_version": "12.233.55623",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "Trojan ( 005789501 )"
+                },
+                "CrowdStrike": {
+                    "method": "blacklist",
+                    "engine_name": "CrowdStrike",
+                    "engine_version": "1.0",
+                    "engine_update": "20231026",
+                    "category": "malicious",
+                    "result": "win/malicious_confidence_100% (W)"
+                },
+                "huorong": {
+                    "method": "blacklist",
+                    "engine_name": "huorong",
+                    "engine_version": "18a0c64:18a0c64:7990b20:7990b20",
+                    "engine_update": "20250430",
+                    "category": "malicious",
+                    "result": "Ransom/LockFile.s"
+                },
+                "Baidu": {
+                    "method": "blacklist",
+                    "engine_name": "Baidu",
+                    "engine_version": "1.0.0.2",
+                    "engine_update": "20190318",
+                    "category": "undetected",
+                    "result": null
+                },
+                "VirIT": {
+                    "method": "blacklist",
+                    "engine_name": "VirIT",
+                    "engine_version": "9.5.945",
+                    "engine_update": "20250430",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Symantec": {
+                    "method": "blacklist",
+                    "engine_name": "Symantec",
+                    "engine_version": "1.22.0.0",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "ML.Attribute.HighConfidence"
+                },
+                "tehtris": {
+                    "method": "blacklist",
+                    "engine_name": "tehtris",
+                    "engine_version": "v0.1.4",
+                    "engine_update": "20250502",
+                    "category": "undetected",
+                    "result": null
+                },
+                "ESET-NOD32": {
+                    "method": "blacklist",
+                    "engine_name": "ESET-NOD32",
+                    "engine_version": "31131",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "a variant of Win32/Filecoder.Ouroboros.G"
+                },
+                "Cynet": {
+                    "method": "blacklist",
+                    "engine_name": "Cynet",
+                    "engine_version": "4.0.3.4",
+                    "engine_update": "20250501",
+                    "category": "malicious",
+                    "result": "Malicious (score: 100)"
+                },
+                "APEX": {
+                    "method": "blacklist",
+                    "engine_name": "APEX",
+                    "engine_version": "6.650",
+                    "engine_update": "20250501",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Paloalto": {
+                    "method": "blacklist",
+                    "engine_name": "Paloalto",
+                    "engine_version": "0.9.0.1003",
+                    "engine_update": "20250502",
+                    "category": "undetected",
+                    "result": null
+                },
+                "ClamAV": {
+                    "method": "blacklist",
+                    "engine_name": "ClamAV",
+                    "engine_version": "1.4.2.0",
+                    "engine_update": "20250501",
+                    "category": "malicious",
+                    "result": "Win.Ransomware.Vipasana-9783618-1"
+                },
+                "Kaspersky": {
+                    "method": "blacklist",
+                    "engine_name": "Kaspersky",
+                    "engine_version": "22.0.1.28",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "HEUR:Trojan-Ransom.Win32.Generic"
+                },
+                "BitDefender": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefender",
+                    "engine_version": "7.2",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.VoidCrypt.A"
+                },
+                "NANO-Antivirus": {
+                    "method": "blacklist",
+                    "engine_name": "NANO-Antivirus",
+                    "engine_version": "1.0.170.26531",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Encoder.insrwj"
+                },
+                "ViRobot": {
+                    "method": "blacklist",
+                    "engine_name": "ViRobot",
+                    "engine_version": "2014.3.20.0",
+                    "engine_update": "20250501",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Avast": {
+                    "method": "blacklist",
+                    "engine_name": "Avast",
+                    "engine_version": "23.9.8494.0",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "Win32:MalwareX-gen [Ransom]"
+                },
+                "Rising": {
+                    "method": "blacklist",
+                    "engine_name": "Rising",
+                    "engine_version": "25.0.0.28",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "Ransom.VoidCrypt!1.E159 (CLASSIC)"
+                },
+                "Emsisoft": {
+                    "method": "blacklist",
+                    "engine_name": "Emsisoft",
+                    "engine_version": "2024.8.0.61147",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.VoidCrypt.A (B)"
+                },
+                "F-Secure": {
+                    "method": "blacklist",
+                    "engine_name": "F-Secure",
+                    "engine_version": "18.10.1547.307",
+                    "engine_update": "20250502",
+                    "category": "undetected",
+                    "result": null
+                },
+                "DrWeb": {
+                    "method": "blacklist",
+                    "engine_name": "DrWeb",
+                    "engine_version": "7.0.67.2170",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "Trojan.Encoder.33514"
+                },
+                "VIPRE": {
+                    "method": "blacklist",
+                    "engine_name": "VIPRE",
+                    "engine_version": "6.0.0.35",
+                    "engine_update": "20250501",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.VoidCrypt.A"
+                },
+                "TrendMicro": {
+                    "method": "blacklist",
+                    "engine_name": "TrendMicro",
+                    "engine_version": "24.550.0.1002",
+                    "engine_update": "20250502",
+                    "category": "undetected",
+                    "result": null
+                },
+                "McAfeeD": {
+                    "method": "blacklist",
+                    "engine_name": "McAfeeD",
+                    "engine_version": "1.2.0.7977",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "ti!C1819043839D"
+                },
+                "Trapmine": {
+                    "method": "blacklist",
+                    "engine_name": "Trapmine",
+                    "engine_version": "4.0.4.0",
+                    "engine_update": "20250417",
+                    "category": "undetected",
+                    "result": null
+                },
+                "CTX": {
+                    "method": "blacklist",
+                    "engine_name": "CTX",
+                    "engine_version": "2024.8.29.1",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "exe.trojan.ouroboros"
+                },
+                "Sophos": {
+                    "method": "blacklist",
+                    "engine_name": "Sophos",
+                    "engine_version": "3.0.3.0",
+                    "engine_update": "20250501",
+                    "category": "malicious",
+                    "result": "Mal/Generic-S"
+                },
+                "Ikarus": {
+                    "method": "blacklist",
+                    "engine_name": "Ikarus",
+                    "engine_version": "6.3.30.0",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "Trojan-Ransom.Ouroboros"
+                },
+                "GData": {
+                    "method": "blacklist",
+                    "engine_name": "GData",
+                    "engine_version": "GD:27.40176AVA:64.29119",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "Win32.Trojan-Ransom.Ouroboros.A"
+                },
+                "Jiangmin": {
+                    "method": "blacklist",
+                    "engine_name": "Jiangmin",
+                    "engine_version": "16.0.100",
+                    "engine_update": "20250501",
+                    "category": "malicious",
+                    "result": "Trojan.Generic.gtxwb"
+                },
+                "Webroot": {
+                    "method": "blacklist",
+                    "engine_name": "Webroot",
+                    "engine_version": "1.9.0.8",
+                    "engine_update": "20250227",
+                    "category": "malicious",
+                    "result": "W32.Malware.gen"
+                },
+                "Varist": {
+                    "method": "blacklist",
+                    "engine_name": "Varist",
+                    "engine_version": "6.6.1.3",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "W32/Agent.EDR.gen!Eldorado"
+                },
+                "Avira": {
+                    "method": "blacklist",
+                    "engine_name": "Avira",
+                    "engine_version": "8.3.3.20",
+                    "engine_update": "20250502",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Antiy-AVL": {
+                    "method": "blacklist",
+                    "engine_name": "Antiy-AVL",
+                    "engine_version": "3.0",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "Trojan[Ransom]/Win32.VoidCrypt"
+                },
+                "Kingsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Kingsoft",
+                    "engine_version": "None",
+                    "engine_update": "20250501",
+                    "category": "malicious",
+                    "result": "Win32.Troj.Generic.jm"
+                },
+                "Gridinsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Gridinsoft",
+                    "engine_version": "1.0.215.174",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "Ransom.Win32.Generic.oa!s1"
+                },
+                "Xcitium": {
+                    "method": "blacklist",
+                    "engine_name": "Xcitium",
+                    "engine_version": "37693",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "Malware@#1l9dlmeybt67h"
+                },
+                "Arcabit": {
+                    "method": "blacklist",
+                    "engine_name": "Arcabit",
+                    "engine_version": "2022.0.0.18",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.VoidCrypt.A"
+                },
+                "SUPERAntiSpyware": {
+                    "method": "blacklist",
+                    "engine_name": "SUPERAntiSpyware",
+                    "engine_version": "5.6.0.1032",
+                    "engine_update": "20250501",
+                    "category": "undetected",
+                    "result": null
+                },
+                "ZoneAlarm": {
+                    "method": "blacklist",
+                    "engine_name": "ZoneAlarm",
+                    "engine_version": "6.15-102623123",
+                    "engine_update": "20250501",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Microsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Microsoft",
+                    "engine_version": "1.1.25030.1",
+                    "engine_update": "20250501",
+                    "category": "malicious",
+                    "result": "Ransom:Win32/VoidCrypt!pz"
+                },
+                "Google": {
+                    "method": "blacklist",
+                    "engine_name": "Google",
+                    "engine_version": "1746171021",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "Detected"
+                },
+                "AhnLab-V3": {
+                    "method": "blacklist",
+                    "engine_name": "AhnLab-V3",
+                    "engine_version": "3.27.2.10550",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "Ransomware/Win.VOIDCRYPT.R478995"
+                },
+                "Acronis": {
+                    "method": "blacklist",
+                    "engine_name": "Acronis",
+                    "engine_version": "1.2.0.121",
+                    "engine_update": "20240328",
+                    "category": "undetected",
+                    "result": null
+                },
+                "McAfee": {
+                    "method": "blacklist",
+                    "engine_name": "McAfee",
+                    "engine_version": "6.0.6.653",
+                    "engine_update": "20250501",
+                    "category": "malicious",
+                    "result": "GenericRXSF-FU!CC0C4DD633D1"
+                },
+                "TACHYON": {
+                    "method": "blacklist",
+                    "engine_name": "TACHYON",
+                    "engine_version": "2025-05-02.02",
+                    "engine_update": "20250502",
+                    "category": "undetected",
+                    "result": null
+                },
+                "VBA32": {
+                    "method": "blacklist",
+                    "engine_name": "VBA32",
+                    "engine_version": "5.3.2",
+                    "engine_update": "20250430",
+                    "category": "malicious",
+                    "result": "Trojan.Encoder"
+                },
+                "Malwarebytes": {
+                    "method": "blacklist",
+                    "engine_name": "Malwarebytes",
+                    "engine_version": "4.5.5.54",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "Generic.Malware.AI.DDS"
+                },
+                "Panda": {
+                    "method": "blacklist",
+                    "engine_name": "Panda",
+                    "engine_version": "4.6.4.2",
+                    "engine_update": "20250501",
+                    "category": "malicious",
+                    "result": "Trj/CI.A"
+                },
+                "TrendMicro-HouseCall": {
+                    "method": "blacklist",
+                    "engine_name": "TrendMicro-HouseCall",
+                    "engine_version": "24.550.0.1002",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.VSX.PE04C9Z"
+                },
+                "Tencent": {
+                    "method": "blacklist",
+                    "engine_name": "Tencent",
+                    "engine_version": "1.0.0.1",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "Trojan-Ransom.Win32.Ouroboros.16000586"
+                },
+                "Yandex": {
+                    "method": "blacklist",
+                    "engine_name": "Yandex",
+                    "engine_version": "5.5.2.24",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "Trojan.Filecoder!ocIaoUtLMVw"
+                },
+                "SentinelOne": {
+                    "method": "blacklist",
+                    "engine_name": "SentinelOne",
+                    "engine_version": "25.1.1.1",
+                    "engine_update": "20250114",
+                    "category": "malicious",
+                    "result": "Static AI - Suspicious PE"
+                },
+                "MaxSecure": {
+                    "method": "blacklist",
+                    "engine_name": "MaxSecure",
+                    "engine_version": "1.0.0.1",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "Trojan.Malware.10307848.susgen"
+                },
+                "Fortinet": {
+                    "method": "blacklist",
+                    "engine_name": "Fortinet",
+                    "engine_version": "7.0.30.0",
+                    "engine_update": "20250502",
+                    "category": "malicious",
+                    "result": "W32/Ouroboros.G!tr.ransom"
+                },
+                "Zoner": {
+                    "method": "blacklist",
+                    "engine_name": "Zoner",
+                    "engine_version": "2.2.2.0",
+                    "engine_update": "20250502",
+                    "category": "undetected",
+                    "result": null
+                },
+                "DeepInstinct": {
+                    "method": "blacklist",
+                    "engine_name": "DeepInstinct",
+                    "engine_version": "5.0.0.8",
+                    "engine_update": "20250501",
+                    "category": "malicious",
+                    "result": "MALICIOUS"
+                },
+                "alibabacloud": {
+                    "method": "blacklist",
+                    "engine_name": "alibabacloud",
+                    "engine_version": "2.2.0",
+                    "engine_update": "20250321",
+                    "category": "malicious",
+                    "result": "RansomWare:Win/Ouroboros"
+                },
+                "Trustlook": {
+                    "method": "blacklist",
+                    "engine_name": "Trustlook",
+                    "engine_version": "1.0",
+                    "engine_update": "20250502",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "SymantecMobileInsight": {
+                    "method": "blacklist",
+                    "engine_name": "SymantecMobileInsight",
+                    "engine_version": "2.0",
+                    "engine_update": "20250124",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "BitDefenderFalx": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefenderFalx",
+                    "engine_version": "2.0.936",
+                    "engine_update": "20250416",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "Avast-Mobile": {
+                    "method": "blacklist",
+                    "engine_name": "Avast-Mobile",
+                    "engine_version": "250501-02",
+                    "engine_update": "20250501",
+                    "category": "type-unsupported",
+                    "result": null
+                }
+            },
+            "meaningful_name": "c1819043839dddcca0b5de3d438cffb67c79dc26e811e97e65f13d89845cc969.exe",
+            "detectiteasy": {
+                "filetype": "PE32",
+                "values": [
+                    {
+                        "info": "EXE32",
+                        "version": "2017 v.15.5-6",
+                        "type": "Compiler",
+                        "name": "EP:Microsoft Visual C/C++"
+                    },
+                    {
+                        "info": "C",
+                        "version": "19.20.27508",
+                        "type": "Compiler",
+                        "name": "Microsoft Visual C/C++"
+                    },
+                    {
+                        "version": "14.16.27027",
+                        "type": "Linker",
+                        "name": "Microsoft Linker"
+                    },
+                    {
+                        "version": "2017 version 15.9",
+                        "type": "Tool",
+                        "name": "Visual Studio"
+                    }
+                ]
+            },
+            "size": 4144277,
+            "reputation": -1,
+            "last_modification_date": 1765311702,
+            "last_analysis_stats": {
+                "malicious": 56,
+                "suspicious": 0,
+                "undetected": 16,
+                "harmless": 0,
+                "timeout": 0,
+                "confirmed-timeout": 0,
+                "failure": 0,
+                "type-unsupported": 4
+            },
+            "first_submission_date": 1622037451,
+            "md5": "cc0c4dd633d14d2999c7c0af25b779d4",
+            "times_submitted": 1,
+            "popular_threat_classification": {
+                "suggested_threat_label": "trojan.voidcrypt/ouroboros",
+                "popular_threat_name": [
+                    {
+                        "value": "voidcrypt",
+                        "count": 11
+                    },
+                    {
+                        "value": "ouroboros",
+                        "count": 9
+                    },
+                    {
+                        "value": "encoder",
+                        "count": 3
+                    }
+                ],
+                "popular_threat_category": [
+                    {
+                        "value": "trojan",
+                        "count": 25
+                    },
+                    {
+                        "value": "ransomware",
+                        "count": 23
+                    }
+                ]
+            },
+            "filecondis": {
+                "dhash": "0000000e0f0e0d08",
+                "raw_md5": "34fee97fd43439109439c93c7da57c50"
+            },
+            "type_tags": [
+                "executable",
+                "windows",
+                "win32",
+                "pe",
+                "peexe"
+            ],
+            "sandbox_verdicts": {
+                "Zenbox": {
+                    "category": "malicious",
+                    "confidence": 84,
+                    "sandbox_name": "Zenbox",
+                    "malware_classification": [
+                        "MALWARE",
+                        "SPREADER",
+                        "EVADER"
+                    ]
+                },
+                "CAPE Sandbox": {
+                    "category": "malicious",
+                    "malware_classification": [
+                        "MALWARE"
+                    ],
+                    "sandbox_name": "CAPE Sandbox",
+                    "malware_names": [
+                        "Spyro"
+                    ]
+                }
+            },
+            "last_submission_date": 1622037451,
+            "type_extension": "exe",
+            "authentihash": "4e6d5fab2b7bfd4f26cf7403bf87d9b2f09724403cba8842b07a2a3f7ae3c331",
+            "pe_info": {
+                "timestamp": 1614358124,
+                "imphash": "fada6cba5bb68b74e893b0c75c1220be",
+                "machine_type": 332,
+                "entry_point": 721474,
+                "resource_details": [
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 4031.47,
+                        "filetype": "XML",
+                        "entropy": 4.911615371704102,
+                        "sha256": "4bb79dcea0a901f7d9eac5aa05728ae92acb42e0cb22e5dd14134f4421a3d8df",
+                        "type": "RT_MANIFEST"
+                    }
+                ],
+                "resource_langs": {
+                    "ENGLISH US": 1
+                },
+                "resource_types": {
+                    "RT_MANIFEST": 1
+                },
+                "overlay": {
+                    "chi2": 220.49,
+                    "filetype": "unknown",
+                    "entropy": 7.999941825866699,
+                    "offset": 1342464,
+                    "md5": "df782ba591b7a3bfbdec4bfef9862de6",
+                    "size": 2801813
+                },
+                "sections": [
+                    {
+                        "name": ".text",
+                        "chi2": 5550202.0,
+                        "virtual_address": 4096,
+                        "entropy": 6.64,
+                        "raw_size": 1029120,
+                        "flags": "rx",
+                        "virtual_size": 1029064,
+                        "md5": "e55e9ae929f64f1d3f5a44e79ba9442c"
+                    },
+                    {
+                        "name": ".rdata",
+                        "chi2": 7756963.0,
+                        "virtual_address": 1036288,
+                        "entropy": 5.34,
+                        "raw_size": 225792,
+                        "flags": "r",
+                        "virtual_size": 225592,
+                        "md5": "513ee2920a954d243cfcd2335e8e3bea"
+                    },
+                    {
+                        "name": ".data",
+                        "chi2": 461662.41,
+                        "virtual_address": 1265664,
+                        "entropy": 4.93,
+                        "raw_size": 28672,
+                        "flags": "rw",
+                        "virtual_size": 43996,
+                        "md5": "7796141db556114bcb85b8edf98dfa43"
+                    },
+                    {
+                        "name": ".rsrc",
+                        "chi2": 9406.0,
+                        "virtual_address": 1310720,
+                        "entropy": 4.7,
+                        "raw_size": 512,
+                        "flags": "r",
+                        "virtual_size": 480,
+                        "md5": "19f01b674475cf23491f34b852b2f72c"
+                    },
+                    {
+                        "name": ".reloc",
+                        "chi2": 223643.72,
+                        "virtual_address": 1314816,
+                        "entropy": 6.6,
+                        "raw_size": 57344,
+                        "flags": "r",
+                        "virtual_size": 57292,
+                        "md5": "a1cb055cd4055f77525ebe688048e5f6"
+                    }
+                ],
+                "compiler_product_versions": [
+                    "[C++] VS2019 v16.0.0 build 27508 count=51",
+                    "[---] Unmarked objects count=260",
+                    "[IMP] VS2008 SP1 build 30729 count=15",
+                    "[ C ] VS2019 v16.0.0 build 27508 count=107",
+                    "[LT+] VS2017 v15.9.7 build 27027 count=1",
+                    "[RES] VS2017 v15.9.7 build 27027 count=1",
+                    "[LNK] VS2017 v15.9.7 build 27027 count=1",
+                    "id: 0xf1, version: 40116 count=23",
+                    "id: 0xf3, version: 40116 count=185",
+                    "id: 0xf2, version: 40116 count=31",
+                    "id: 0xc7, version: 41118 count=6",
+                    "id: 0x103, version: 26706 count=26",
+                    "id: 0x105, version: 26706 count=134",
+                    "id: 0x104, version: 26706 count=37"
+                ],
+                "rich_pe_header_hash": "d1d8fb73a2a27f60bf394cd2d1aeb596",
+                "import_list": [
+                    {
+                        "library_name": "WS2_32.dll",
+                        "imported_functions": [
+                            "__WSAFDIsSet",
+                            "accept",
+                            "bind",
+                            "closesocket",
+                            "connect",
+                            "freeaddrinfo",
+                            "getaddrinfo",
+                            "gethostname",
+                            "getpeername",
+                            "getsockname",
+                            "getsockopt",
+                            "htonl",
+                            "htons",
+                            "inet_addr",
+                            "ioctlsocket",
+                            "listen",
+                            "ntohl",
+                            "ntohs",
+                            "recv",
+                            "recvfrom",
+                            "select",
+                            "send",
+                            "sendto",
+                            "setsockopt",
+                            "socket",
+                            "WSACleanup",
+                            "WSAGetLastError",
+                            "WSAIoctl",
+                            "WSASetLastError",
+                            "WSAStartup"
+                        ]
+                    },
+                    {
+                        "library_name": "Normaliz.dll",
+                        "imported_functions": [
+                            "IdnToAscii"
+                        ]
+                    },
+                    {
+                        "library_name": "WLDAP32.dll",
+                        "imported_functions": [
+                            "Ord(143)",
+                            "Ord(200)",
+                            "Ord(211)",
+                            "Ord(217)",
+                            "Ord(22)",
+                            "Ord(26)",
+                            "Ord(27)",
+                            "Ord(30)",
+                            "Ord(301)",
+                            "Ord(32)",
+                            "Ord(33)",
+                            "Ord(35)",
+                            "Ord(41)",
+                            "Ord(45)",
+                            "Ord(46)",
+                            "Ord(50)",
+                            "Ord(60)",
+                            "Ord(79)"
+                        ]
+                    },
+                    {
+                        "library_name": "CRYPT32.dll",
+                        "imported_functions": [
+                            "CertAddCertificateContextToStore",
+                            "CertCloseStore",
+                            "CertCreateCertificateChainEngine",
+                            "CertEnumCertificatesInStore",
+                            "CertFindCertificateInStore",
+                            "CertFindExtension",
+                            "CertFreeCertificateChain",
+                            "CertFreeCertificateChainEngine",
+                            "CertFreeCertificateContext",
+                            "CertGetCertificateChain",
+                            "CertGetNameStringA",
+                            "CertOpenStore",
+                            "CryptDecodeObjectEx",
+                            "CryptQueryObject",
+                            "CryptStringToBinaryA",
+                            "PFXImportCertStore"
+                        ]
+                    },
+                    {
+                        "library_name": "ADVAPI32.dll",
+                        "imported_functions": [
+                            "CryptAcquireContextA",
+                            "CryptCreateHash",
+                            "CryptDestroyHash",
+                            "CryptDestroyKey",
+                            "CryptEncrypt",
+                            "CryptGenRandom",
+                            "CryptGetHashParam",
+                            "CryptHashData",
+                            "CryptImportKey",
+                            "CryptReleaseContext",
+                            "RegCreateKeyExA",
+                            "RegSetValueExA"
+                        ]
+                    },
+                    {
+                        "library_name": "KERNEL32.dll",
+                        "imported_functions": [
+                            "AreFileApisANSI",
+                            "ChangeTimerQueueTimer",
+                            "CloseHandle",
+                            "CompareStringW",
+                            "CopyFileW",
+                            "CreateDirectoryExW",
+                            "CreateDirectoryW",
+                            "CreateEventW",
+                            "CreateFileA",
+                            "CreateFileW",
+                            "CreateProcessA",
+                            "CreateThread",
+                            "CreateTimerQueue",
+                            "CreateTimerQueueTimer",
+                            "CreateToolhelp32Snapshot",
+                            "DecodePointer",
+                            "DeleteCriticalSection",
+                            "DeleteFileW",
+                            "DeleteTimerQueueTimer",
+                            "DuplicateHandle",
+                            "EncodePointer",
+                            "EnterCriticalSection",
+                            "EnumSystemLocalesW",
+                            "ExitProcess",
+                            "ExitThread",
+                            "FileTimeToSystemTime",
+                            "FindClose",
+                            "FindFirstFileExA",
+                            "FindFirstFileExW",
+                            "FindFirstFileW",
+                            "FindNextFileA",
+                            "FindNextFileW",
+                            "FlushFileBuffers",
+                            "FormatMessageA",
+                            "FormatMessageW",
+                            "FreeConsole",
+                            "FreeEnvironmentStringsW",
+                            "FreeLibrary",
+                            "FreeLibraryAndExitThread",
+                            "GetACP",
+                            "GetCommandLineA",
+                            "GetCommandLineW",
+                            "GetConsoleCP",
+                            "GetConsoleMode",
+                            "GetCPInfo",
+                            "GetCurrentDirectoryW",
+                            "GetCurrentProcess",
+                            "GetCurrentProcessId",
+                            "GetCurrentThread",
+                            "GetCurrentThreadId",
+                            "GetDiskFreeSpaceExW",
+                            "GetDriveTypeA",
+                            "GetDriveTypeW",
+                            "GetEnvironmentStringsW",
+                            "GetEnvironmentVariableA",
+                            "GetExitCodeProcess",
+                            "GetExitCodeThread",
+                            "GetFileAttributesExW",
+                            "GetFileInformationByHandle",
+                            "GetFileSizeEx",
+                            "GetFileType",
+                            "GetFullPathNameW",
+                            "GetLastError",
+                            "GetLocaleInfoW",
+                            "GetLogicalDrives",
+                            "GetLogicalProcessorInformation",
+                            "GetModuleFileNameA",
+                            "GetModuleFileNameW",
+                            "GetModuleHandleA",
+                            "GetModuleHandleExW",
+                            "GetModuleHandleW",
+                            "GetNumaHighestNodeNumber",
+                            "GetOEMCP",
+                            "GetProcAddress",
+                            "GetProcessAffinityMask",
+                            "GetProcessHeap",
+                            "GetStartupInfoW",
+                            "GetStdHandle",
+                            "GetStringTypeW",
+                            "GetSystemDirectoryA",
+                            "GetSystemTimeAsFileTime",
+                            "GetThreadPriority",
+                            "GetThreadTimes",
+                            "GetTickCount",
+                            "GetTimeZoneInformation",
+                            "GetUserDefaultLCID",
+                            "GetVersionExW",
+                            "HeapAlloc",
+                            "HeapFree",
+                            "HeapReAlloc",
+                            "HeapSize",
+                            "InitializeCriticalSectionAndSpinCount",
+                            "InitializeCriticalSectionEx",
+                            "InitializeSListHead",
+                            "InterlockedFlushSList",
+                            "InterlockedPopEntrySList",
+                            "InterlockedPushEntrySList",
+                            "IsDebuggerPresent",
+                            "IsProcessorFeaturePresent",
+                            "IsValidCodePage",
+                            "IsValidLocale",
+                            "LCMapStringW",
+                            "LeaveCriticalSection",
+                            "LoadLibraryA",
+                            "LoadLibraryExW",
+                            "LoadLibraryW",
+                            "lstrcmpW",
+                            "MoveFileExA",
+                            "MoveFileExW",
+                            "MultiByteToWideChar",
+                            "OpenProcess",
+                            "PeekNamedPipe",
+                            "Process32First",
+                            "Process32Next",
+                            "QueryDepthSList",
+                            "QueryPerformanceCounter",
+                            "QueryPerformanceFrequency",
+                            "RaiseException",
+                            "ReadConsoleW",
+                            "ReadFile",
+                            "RegisterWaitForSingleObject",
+                            "ReleaseSemaphore",
+                            "ResetEvent",
+                            "RtlUnwind",
+                            "SetEndOfFile",
+                            "SetEnvironmentVariableA",
+                            "SetEvent",
+                            "SetFilePointerEx",
+                            "SetLastError",
+                            "SetStdHandle",
+                            "SetThreadAffinityMask",
+                            "SetThreadPriority",
+                            "SetUnhandledExceptionFilter",
+                            "SignalObjectAndWait",
+                            "Sleep",
+                            "SleepEx",
+                            "SwitchToThread",
+                            "SystemTimeToTzSpecificLocalTime",
+                            "TerminateProcess",
+                            "TlsAlloc",
+                            "TlsFree",
+                            "TlsGetValue",
+                            "TlsSetValue",
+                            "TryEnterCriticalSection",
+                            "UnhandledExceptionFilter",
+                            "UnregisterWait",
+                            "UnregisterWaitEx",
+                            "VerifyVersionInfoA",
+                            "VerSetConditionMask",
+                            "VirtualAlloc",
+                            "VirtualFree",
+                            "VirtualProtect",
+                            "WaitForMultipleObjects",
+                            "WaitForSingleObject",
+                            "WaitForSingleObjectEx",
+                            "WideCharToMultiByte",
+                            "WriteConsoleW",
+                            "WriteFile"
+                        ]
+                    },
+                    {
+                        "library_name": "USER32.dll",
+                        "imported_functions": [
+                            "BlockInput"
+                        ]
+                    }
+                ]
+            },
+            "vhash": "046056655d555560c2z13z9enz14z1e7z",
+            "type_tag": "peexe",
+            "magika": "PEBIN",
+            "crowdsourced_yara_results": [
+                {
+                    "ruleset_id": "00c3b8eb5d",
+                    "rule_name": "INDICATOR_SUSPICIOUS_GENRansomware",
+                    "ruleset_name": "indicator_suspicious",
+                    "description": "Detects command variations typically used by ransomware",
+                    "author": "ditekSHen",
+                    "ruleset_version": "00c3b8eb5d|e76c93dcdedff04076380ffc60ea54e45b313635",
+                    "match_date": 1746175155,
+                    "source": "https://github.com/ditekshen/detection"
+                },
+                {
+                    "ruleset_id": "00cc803bdc",
+                    "rule_name": "MALWARE_Win_Spyro",
+                    "ruleset_name": "malware",
+                    "description": "Detects Spyro / VoidCrypt / Limbozar ransomware",
+                    "author": "ditekSHen",
+                    "ruleset_version": "00cc803bdc|e76c93dcdedff04076380ffc60ea54e45b313635",
+                    "match_date": 1746175155,
+                    "source": "https://github.com/ditekshen/detection"
+                },
+                {
+                    "ruleset_id": "01a3110afa",
+                    "ruleset_version": "01a3110afa|834366aa118f4e231f6f835e1dd479dab29dc599",
+                    "ruleset_name": "ransomware_win_voidcrypt",
+                    "rule_name": "ransomware_win_voidcrypt",
+                    "match_date": 1746175155,
+                    "description": "Detect the Limbozar / VoidCrypt ransomware",
+                    "author": "Sekoia.io",
+                    "source": "https://github.com/SEKOIA-IO/Community"
+                }
+            ],
+            "crowdsourced_ids_stats": {
+                "high": 0,
+                "info": 0,
+                "medium": 0,
+                "low": 1
+            },
+            "tags": [
+                "direct-cpu-clock-access",
+                "runtime-modules",
+                "overlay",
+                "peexe"
+            ],
+            "ssdeep": "98304:qjEtOdVEfrmNNTC2zM9yklTIh5DBWM2UPXU:IdRNUj9rlgeMS",
+            "sigma_analysis_summary": {
+                "Sigma Integrated Rule Set (GitHub)": {
+                    "critical": 1,
+                    "high": 1,
+                    "medium": 5,
+                    "low": 1
+                }
+            },
+            "sigma_analysis_stats": {
+                "critical": 1,
+                "high": 1,
+                "medium": 5,
+                "low": 1
+            },
+            "trid": [
+                {
+                    "file_type": "Win64 Executable (generic)",
+                    "probability": 32.2
+                },
+                {
+                    "file_type": "Win32 Dynamic Link Library (generic)",
+                    "probability": 20.1
+                },
+                {
+                    "file_type": "Win16 NE executable (generic)",
+                    "probability": 15.4
+                },
+                {
+                    "file_type": "Win32 Executable (generic)",
+                    "probability": 13.7
+                },
+                {
+                    "file_type": "OS/2 Executable (generic)",
+                    "probability": 6.2
+                }
+            ],
+            "unique_sources": 1,
+            "names": [
+                "c1819043839dddcca0b5de3d438cffb67c79dc26e811e97e65f13d89845cc969.exe",
+                "file.exe"
+            ]
+        }
+    }
+}

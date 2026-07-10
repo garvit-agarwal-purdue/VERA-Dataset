@@ -1,0 +1,1608 @@
+{
+    "data": {
+        "id": "bd9a3d09c31a034a9434a5f182624b70e418ed4421ee991069d3b47a156bd6ba",
+        "type": "file",
+        "links": {
+            "self": "https://www.virustotal.com/api/v3/files/bd9a3d09c31a034a9434a5f182624b70e418ed4421ee991069d3b47a156bd6ba"
+        },
+        "attributes": {
+            "size": 379904,
+            "vhash": "035066656d1d0575512021z1180055jz10031fz",
+            "detectiteasy": {
+                "filetype": "PE32",
+                "values": [
+                    {
+                        "info": "EXE32",
+                        "version": "2008-2010",
+                        "type": "Compiler",
+                        "name": "EP:Microsoft Visual C/C++"
+                    },
+                    {
+                        "info": "C++",
+                        "version": "15.00.30729",
+                        "type": "Compiler",
+                        "name": "Microsoft Visual C/C++"
+                    },
+                    {
+                        "version": "9.00.30729",
+                        "type": "Linker",
+                        "name": "Microsoft Linker"
+                    },
+                    {
+                        "version": "2008",
+                        "type": "Tool",
+                        "name": "Visual Studio"
+                    }
+                ]
+            },
+            "total_votes": {
+                "harmless": 0,
+                "malicious": 2
+            },
+            "magic": "PE32 executable (GUI) Intel 80386 (stripped to external PDB) system file, for MS Windows",
+            "crowdsourced_ids_results": [
+                {
+                    "rule_category": "Malware Command and Control Activity Detected",
+                    "alert_severity": "high",
+                    "rule_msg": "ET MALWARE Locky CnC Checkin Dec 5 M1",
+                    "rule_raw": "alert http $HOME_NET any -> $EXTERNAL_NET any (msg:\"ET MALWARE Locky CnC Checkin Dec 5 M1\"; flow:to_server,established; urilen:12; http.method; content:\"POST\"; http.uri; content:\"/checkupdate\"; fast_pattern; http.header; content:\"x-requested-with|3a 20|XMLHttpRequest|0d 0a|\"; content:\"www-form-urlencoded|0d 0a|\"; http.request_body; pcre:\"/^(?:[A-Za-z]{1,10}=(?=[A-Za-z0-9_+\\x2d\\x2e%]*%[A-F0-9]{2}%[A-F0-9]{2}%[A-F0-9]{2})[A-Za-z0-9_+\\x2d\\x2e%]+&)+(?=[a-z]{0,9}[A-Z])(?=[A-Z]{0,9}[a-z])[A-Za-z]{1,10}=(?=[A-Za-z0-9_+\\x2d\\x2e%]*%[A-F0-9]{2}%[A-F0-9]{2}%[A-F0-9]{2})[A-Za-z0-9_+\\x2d\\x2e%]+\\s*$/s\"; classtype:command-and-control; sid:2023576; rev:6; metadata:affected_product Windows_XP_Vista_7_8_10_Server_32_64_Bit, attack_target Client_Endpoint, created_at 2016_12_05, deployment Perimeter, former_category MALWARE, malware_family Locky, performance_impact Low, signature_severity Major, updated_at 2020_11_04;)",
+                    "alert_context": [
+                        {
+                            "url": "http://194.31.59.5/checkupdate",
+                            "hostname": "194.31.59.5",
+                            "dest_ip": "194.31.59.5",
+                            "dest_port": 80
+                        }
+                    ],
+                    "rule_url": "https://rules.emergingthreats.net/",
+                    "rule_source": "Proofpoint Emerging Threats Open",
+                    "rule_id": "1:2023576"
+                },
+                {
+                    "rule_category": "Malware Command and Control Activity Detected",
+                    "alert_severity": "high",
+                    "rule_msg": "ET MALWARE Locky CnC Checkin HTTP Pattern",
+                    "rule_raw": "alert http $HOME_NET any -> $EXTERNAL_NET any (msg:\"ET MALWARE Locky CnC Checkin HTTP Pattern\"; flow:to_server,established; http.method; content:\"POST\"; http.header; content:\"x-requested-with|3a 20|XMLHttpRequest|0d 0a|\"; fast_pattern; content:\"www-form-urlencoded|0d 0a|\"; pcre:\"/^Referer\\x3a\\x20http\\x3a\\x2f\\x2f\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\x2f\\r?$/m\"; http.request_body; pcre:\"/^(?:[A-Za-z]{1,10}=(?=[A-Za-z0-9_+\\x2d\\x2e%]*%[A-F0-9]{2}%[A-F0-9]{2}%[A-F0-9]{2})[A-Za-z0-9_+\\x2d\\x2e%]+&)+(?=[a-z]{0,9}[A-Z])(?=[A-Z]{0,9}[a-z])[A-Za-z]{1,10}=(?=[A-Za-z0-9_+\\x2d\\x2e%]*%[A-F0-9]{2}%[A-F0-9]{2}%[A-F0-9]{2})[A-Za-z0-9_+\\x2d\\x2e%]+\\s*$/\"; classtype:command-and-control; sid:2023577; rev:4; metadata:affected_product Windows_XP_Vista_7_8_10_Server_32_64_Bit, attack_target Client_Endpoint, created_at 2016_12_05, deployment Perimeter, former_category MALWARE, malware_family Locky, performance_impact Low, signature_severity Major, updated_at 2020_10_07;)",
+                    "alert_context": [
+                        {
+                            "url": "http://194.31.59.5/checkupdate",
+                            "hostname": "194.31.59.5",
+                            "dest_ip": "194.31.59.5",
+                            "dest_port": 80
+                        }
+                    ],
+                    "rule_url": "https://rules.emergingthreats.net/",
+                    "rule_source": "Proofpoint Emerging Threats Open",
+                    "rule_id": "1:2023577"
+                },
+                {
+                    "rule_category": "policy-violation",
+                    "alert_severity": "info",
+                    "rule_msg": "POLICY-OTHER HTTP request by IPv4 address attempt",
+                    "rule_raw": "alert tcp any any -> any $HTTP_PORTS ( msg:\"POLICY-OTHER HTTP request by IPv4 address attempt\"; flow:to_server,established; http_header; content:\"Host:\",fast_pattern,nocase; pcre:\"/^Host\\x3a\\s*(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\s*:?\\s*\\d*\\s*$/ims\"; service:http; reference:url,www.w3.org/Protocols/rfc2616/rfc2616-sec15.html; classtype:policy-violation; sid:50447; rev:1; )",
+                    "rule_references": [
+                        "https://www.w3.org/Protocols/rfc2616/rfc2616-sec15.html"
+                    ],
+                    "alert_context": [
+                        {
+                            "dest_ip": "194.31.59.5",
+                            "dest_port": 80
+                        }
+                    ],
+                    "rule_url": "https://www.snort.org/downloads/#rule-downloads",
+                    "rule_source": "Snort registered user ruleset",
+                    "rule_id": "1:50447"
+                }
+            ],
+            "popular_threat_classification": {
+                "suggested_threat_label": "trojan.locky/babar",
+                "popular_threat_name": [
+                    {
+                        "value": "locky",
+                        "count": 10
+                    },
+                    {
+                        "value": "babar",
+                        "count": 7
+                    }
+                ],
+                "popular_threat_category": [
+                    {
+                        "value": "trojan",
+                        "count": 16
+                    },
+                    {
+                        "value": "ransomware",
+                        "count": 5
+                    }
+                ]
+            },
+            "last_analysis_stats": {
+                "malicious": 56,
+                "suspicious": 0,
+                "undetected": 14,
+                "harmless": 0,
+                "timeout": 0,
+                "confirmed-timeout": 0,
+                "failure": 2,
+                "type-unsupported": 4
+            },
+            "magika": "PEBIN",
+            "tags": [
+                "detect-debug-environment",
+                "direct-cpu-clock-access",
+                "malware",
+                "runtime-modules",
+                "peexe"
+            ],
+            "sandbox_verdicts": {
+                "Zenbox": {
+                    "category": "malicious",
+                    "confidence": 76,
+                    "sandbox_name": "Zenbox",
+                    "malware_classification": [
+                        "MALWARE",
+                        "RANSOM"
+                    ]
+                },
+                "Tencent HABO": {
+                    "category": "malicious",
+                    "sandbox_name": "Tencent HABO",
+                    "malware_classification": [
+                        "MALWARE",
+                        "EVADER",
+                        "RANSOM"
+                    ]
+                }
+            },
+            "trid": [
+                {
+                    "file_type": "Win32 Executable MS Visual C++ (generic)",
+                    "probability": 47.3
+                },
+                {
+                    "file_type": "Win64 Executable (generic)",
+                    "probability": 15.9
+                },
+                {
+                    "file_type": "Win32 Dynamic Link Library (generic)",
+                    "probability": 9.9
+                },
+                {
+                    "file_type": "Win16 NE executable (generic)",
+                    "probability": 7.6
+                },
+                {
+                    "file_type": "Win32 Executable (generic)",
+                    "probability": 6.8
+                }
+            ],
+            "names": [
+                "ShdCfg",
+                "ShdCfg.exe",
+                "f5.png",
+                "A1.EXE",
+                "fbe08cc20207d5c4f61757484568b9b0.virobj",
+                "09.png",
+                "ab95.png",
+                "45d8c4cfd3d167.png",
+                "24ad.png",
+                "61666a776.png",
+                "66f11177cf33.png",
+                "992ae897302.png",
+                "43.png",
+                "ba1c7053b.png",
+                "8f1f27be7315.png",
+                "6d5db98ee4a2fd41.png",
+                "befcc2ec04adbad.png",
+                "d9c3a750aa081a0d.png",
+                "570.png",
+                "87e818ed609d809.png",
+                "ac.png",
+                "587497d.png",
+                "f3ce5b4f0b9691.png",
+                "89bf68d1a0590.png",
+                "9c9d.png",
+                "fd8e23f5.png",
+                "a513812.png",
+                "87a493099a8.png",
+                "6c254608d.png",
+                "e9fe1626.png",
+                "97.png",
+                "2a052c28a1.png",
+                "980.png",
+                "Actualclinic.exe",
+                "9c061c8aa1.png",
+                "9.png",
+                "2017.2.3-05.Ransom.Actualclinic.exe1",
+                "3[1].png.2116887346.DROPPED",
+                "7c78a8.png",
+                "eb273.png",
+                "f94.png",
+                "9521b742759378.png",
+                "68b43f05b7557.png",
+                "5.png",
+                "output.106982438.txt",
+                "d74f1c07.png",
+                "a1.exe"
+            ],
+            "last_modification_date": 1746354033,
+            "filecondis": {
+                "dhash": "00003a1c1e1d3004",
+                "raw_md5": "9f13709eed2c571180455f572def6734"
+            },
+            "reputation": -62,
+            "type_tags": [
+                "executable",
+                "windows",
+                "win32",
+                "pe",
+                "peexe"
+            ],
+            "crowdsourced_ids_stats": {
+                "high": 2,
+                "info": 1,
+                "medium": 0,
+                "low": 0
+            },
+            "type_extension": "exe",
+            "type_description": "Win32 EXE",
+            "creation_date": 1486022235,
+            "signature_info": {
+                "description": "INI Wizard",
+                "file version": "1.2.0.3",
+                "original name": "ShdCfg.exe",
+                "product": "RollBack Rx Professional",
+                "internal name": "ShdCfg",
+                "copyright": "Copyright (C) Horizon DataSys Inc All rights reserved."
+            },
+            "last_analysis_results": {
+                "Bkav": {
+                    "method": "blacklist",
+                    "engine_name": "Bkav",
+                    "engine_version": "2.0.0.1",
+                    "engine_update": "20250130",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Lionic": {
+                    "method": "blacklist",
+                    "engine_name": "Lionic",
+                    "engine_version": "8.16",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Locky.15!c"
+                },
+                "Elastic": {
+                    "method": "blacklist",
+                    "engine_name": "Elastic",
+                    "engine_version": "4.0.184",
+                    "engine_update": "20250129",
+                    "category": "malicious",
+                    "result": "malicious (high confidence)"
+                },
+                "MicroWorld-eScan": {
+                    "method": "blacklist",
+                    "engine_name": "MicroWorld-eScan",
+                    "engine_version": "14.0.409.0",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Gen:Variant.Babar.195129"
+                },
+                "FireEye": {
+                    "method": "blacklist",
+                    "engine_name": "FireEye",
+                    "engine_version": "35.47.0.0",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Generic.mg.fbe08cc20207d5c4"
+                },
+                "CAT-QuickHeal": {
+                    "method": "blacklist",
+                    "engine_name": "CAT-QuickHeal",
+                    "engine_version": "22.00",
+                    "engine_update": "20250129",
+                    "category": "malicious",
+                    "result": "Trojan.Ghanarava.168508872268b9b0"
+                },
+                "Skyhigh": {
+                    "method": "blacklist",
+                    "engine_name": "Skyhigh",
+                    "engine_version": "v2021.2.0+4045",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "BehavesLike.Win32.Worm.fc"
+                },
+                "McAfee": {
+                    "method": "blacklist",
+                    "engine_name": "McAfee",
+                    "engine_version": "6.0.6.653",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "GenericRXBF-PN!FBE08CC20207"
+                },
+                "Cylance": {
+                    "method": "blacklist",
+                    "engine_name": "Cylance",
+                    "engine_version": "3.0.0.0",
+                    "engine_update": "20250109",
+                    "category": "malicious",
+                    "result": "Unsafe"
+                },
+                "Zillya": {
+                    "method": "blacklist",
+                    "engine_name": "Zillya",
+                    "engine_version": "2.0.0.5288",
+                    "engine_update": "20250129",
+                    "category": "malicious",
+                    "result": "Trojan.Locky.Win32.2706"
+                },
+                "Sangfor": {
+                    "method": "blacklist",
+                    "engine_name": "Sangfor",
+                    "engine_version": "2.22.3.0",
+                    "engine_update": "20250120",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Save.a"
+                },
+                "K7AntiVirus": {
+                    "method": "blacklist",
+                    "engine_name": "K7AntiVirus",
+                    "engine_version": "12.215.54654",
+                    "engine_update": "20250130",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Alibaba": {
+                    "method": "blacklist",
+                    "engine_name": "Alibaba",
+                    "engine_version": "0.3.0.5",
+                    "engine_update": "20190527",
+                    "category": "malicious",
+                    "result": "Ransom:Win32/Locky.d0d2d84a"
+                },
+                "K7GW": {
+                    "method": "blacklist",
+                    "engine_name": "K7GW",
+                    "engine_version": "12.215.54657",
+                    "engine_update": "20250130",
+                    "category": "undetected",
+                    "result": null
+                },
+                "CrowdStrike": {
+                    "method": "blacklist",
+                    "engine_name": "CrowdStrike",
+                    "engine_version": "1.0",
+                    "engine_update": "20231026",
+                    "category": "malicious",
+                    "result": "win/malicious_confidence_100% (W)"
+                },
+                "Baidu": {
+                    "method": "blacklist",
+                    "engine_name": "Baidu",
+                    "engine_version": "1.0.0.2",
+                    "engine_update": "20190318",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Symantec": {
+                    "method": "blacklist",
+                    "engine_name": "Symantec",
+                    "engine_version": "1.22.0.0",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "ML.Attribute.HighConfidence"
+                },
+                "tehtris": {
+                    "method": "blacklist",
+                    "engine_name": "tehtris",
+                    "engine_version": "v0.1.4",
+                    "engine_update": "20250130",
+                    "category": "undetected",
+                    "result": null
+                },
+                "ESET-NOD32": {
+                    "method": "blacklist",
+                    "engine_name": "ESET-NOD32",
+                    "engine_version": "30634",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Win32/Filecoder.Locky.C"
+                },
+                "APEX": {
+                    "method": "blacklist",
+                    "engine_name": "APEX",
+                    "engine_version": "6.617",
+                    "engine_update": "20250128",
+                    "category": "malicious",
+                    "result": "Malicious"
+                },
+                "TrendMicro-HouseCall": {
+                    "method": "blacklist",
+                    "engine_name": "TrendMicro-HouseCall",
+                    "engine_version": "10.0.0.1040",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Mal_MiliCry-1h"
+                },
+                "Paloalto": {
+                    "method": "blacklist",
+                    "engine_name": "Paloalto",
+                    "engine_version": "0.9.0.1003",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "generic.ml"
+                },
+                "ClamAV": {
+                    "method": "blacklist",
+                    "engine_name": "ClamAV",
+                    "engine_version": "1.4.2.0",
+                    "engine_update": "20250130",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Kaspersky": {
+                    "method": "blacklist",
+                    "engine_name": "Kaspersky",
+                    "engine_version": "22.0.1.28",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Trojan-Ransom.Win32.Locky.xhc"
+                },
+                "BitDefender": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefender",
+                    "engine_version": "7.2",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Gen:Variant.Babar.195129"
+                },
+                "NANO-Antivirus": {
+                    "method": "blacklist",
+                    "engine_name": "NANO-Antivirus",
+                    "engine_version": "1.0.146.25796",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.Locky.fagdor"
+                },
+                "ViRobot": {
+                    "method": "blacklist",
+                    "engine_name": "ViRobot",
+                    "engine_version": "2014.3.20.0",
+                    "engine_update": "20250129",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Avast": {
+                    "method": "blacklist",
+                    "engine_name": "Avast",
+                    "engine_version": "23.9.8494.0",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Win32:Malware-gen"
+                },
+                "Tencent": {
+                    "method": "blacklist",
+                    "engine_name": "Tencent",
+                    "engine_version": "1.0.0.1",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Malware.Win32.Gencirc.1149d4cb"
+                },
+                "Sophos": {
+                    "method": "blacklist",
+                    "engine_name": "Sophos",
+                    "engine_version": "2.5.5.0",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Mal/Generic-S"
+                },
+                "F-Secure": {
+                    "method": "blacklist",
+                    "engine_name": "F-Secure",
+                    "engine_version": "18.10.1547.307",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Heuristic.HEUR/AGEN.1322979"
+                },
+                "DrWeb": {
+                    "method": "blacklist",
+                    "engine_name": "DrWeb",
+                    "engine_version": "7.0.65.5230",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Trojan.Encoder.10218"
+                },
+                "VIPRE": {
+                    "method": "blacklist",
+                    "engine_name": "VIPRE",
+                    "engine_version": "6.0.0.35",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Gen:Variant.Babar.195129"
+                },
+                "TrendMicro": {
+                    "method": "blacklist",
+                    "engine_name": "TrendMicro",
+                    "engine_version": "11.0.0.1006",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Ransom_HPLOCKY.SME1"
+                },
+                "McAfeeD": {
+                    "method": "blacklist",
+                    "engine_name": "McAfeeD",
+                    "engine_version": "1.2.0.7977",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "ti!BD9A3D09C31A"
+                },
+                "SentinelOne": {
+                    "method": "blacklist",
+                    "engine_name": "SentinelOne",
+                    "engine_version": "25.1.1.1",
+                    "engine_update": "20250114",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Trapmine": {
+                    "method": "blacklist",
+                    "engine_name": "Trapmine",
+                    "engine_version": "4.0.3.0",
+                    "engine_update": "20250113",
+                    "category": "malicious",
+                    "result": "suspicious.low.ml.score"
+                },
+                "CMC": {
+                    "method": "blacklist",
+                    "engine_name": "CMC",
+                    "engine_version": "2.4.2022.1",
+                    "engine_update": "20250129",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Emsisoft": {
+                    "method": "blacklist",
+                    "engine_name": "Emsisoft",
+                    "engine_version": "2024.8.0.61147",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Gen:Variant.Babar.195129 (B)"
+                },
+                "Ikarus": {
+                    "method": "blacklist",
+                    "engine_name": "Ikarus",
+                    "engine_version": "6.3.30.0",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Trojan.Crypt"
+                },
+                "Webroot": {
+                    "method": "blacklist",
+                    "engine_name": "Webroot",
+                    "engine_version": "1.9.0.8",
+                    "engine_update": "20240910",
+                    "category": "malicious",
+                    "result": "W32.Trojan.Gen"
+                },
+                "Google": {
+                    "method": "blacklist",
+                    "engine_name": "Google",
+                    "engine_version": "1738234932",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Detected"
+                },
+                "Avira": {
+                    "method": "blacklist",
+                    "engine_name": "Avira",
+                    "engine_version": "8.3.3.20",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "HEUR/AGEN.1322979"
+                },
+                "Varist": {
+                    "method": "blacklist",
+                    "engine_name": "Varist",
+                    "engine_version": "6.6.1.3",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "W32/ABRisk.OBPR-3134"
+                },
+                "Antiy-AVL": {
+                    "method": "blacklist",
+                    "engine_name": "Antiy-AVL",
+                    "engine_version": "3.0",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Trojan/Win32.BTSGeneric"
+                },
+                "Kingsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Kingsoft",
+                    "engine_version": "None",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "malware.kb.a.991"
+                },
+                "Microsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Microsoft",
+                    "engine_version": "1.1.24090.11",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Ransom:Win32/FileCryptor"
+                },
+                "Gridinsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Gridinsoft",
+                    "engine_version": "1.0.206.174",
+                    "engine_update": "20250130",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Xcitium": {
+                    "method": "blacklist",
+                    "engine_name": "Xcitium",
+                    "engine_version": "37429",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Malware@#1dpxku2lboe88"
+                },
+                "Arcabit": {
+                    "method": "blacklist",
+                    "engine_name": "Arcabit",
+                    "engine_version": "2022.0.0.18",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Trojan.Babar.D2FA39"
+                },
+                "SUPERAntiSpyware": {
+                    "method": "blacklist",
+                    "engine_name": "SUPERAntiSpyware",
+                    "engine_version": "5.6.0.1032",
+                    "engine_update": "20250130",
+                    "category": "undetected",
+                    "result": null
+                },
+                "GData": {
+                    "method": "blacklist",
+                    "engine_name": "GData",
+                    "engine_version": "A:25.39732B:27.39085",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Gen:Variant.Babar.195129"
+                },
+                "Cynet": {
+                    "method": "blacklist",
+                    "engine_name": "Cynet",
+                    "engine_version": "4.0.3.4",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Malicious (score: 99)"
+                },
+                "AhnLab-V3": {
+                    "method": "blacklist",
+                    "engine_name": "AhnLab-V3",
+                    "engine_version": "3.27.0.10558",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Trojan/Win32.Locky.C1768193"
+                },
+                "Acronis": {
+                    "method": "blacklist",
+                    "engine_name": "Acronis",
+                    "engine_version": "1.2.0.121",
+                    "engine_update": "20240328",
+                    "category": "undetected",
+                    "result": null
+                },
+                "VBA32": {
+                    "method": "blacklist",
+                    "engine_name": "VBA32",
+                    "engine_version": "5.3.1",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Hoax.Locky"
+                },
+                "ALYac": {
+                    "method": "blacklist",
+                    "engine_name": "ALYac",
+                    "engine_version": "2.0.0.10",
+                    "engine_update": "20250129",
+                    "category": "malicious",
+                    "result": "Gen:Variant.Babar.195129"
+                },
+                "TACHYON": {
+                    "method": "blacklist",
+                    "engine_name": "TACHYON",
+                    "engine_version": "2025-01-30.02",
+                    "engine_update": "20250130",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Malwarebytes": {
+                    "method": "blacklist",
+                    "engine_name": "Malwarebytes",
+                    "engine_version": "4.5.5.54",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "MachineLearning/Anomalous.94%"
+                },
+                "Panda": {
+                    "method": "blacklist",
+                    "engine_name": "Panda",
+                    "engine_version": "4.6.4.2",
+                    "engine_update": "20250129",
+                    "category": "malicious",
+                    "result": "Trj/CI.A"
+                },
+                "Zoner": {
+                    "method": "blacklist",
+                    "engine_name": "Zoner",
+                    "engine_version": "2.2.2.0",
+                    "engine_update": "20250130",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Rising": {
+                    "method": "blacklist",
+                    "engine_name": "Rising",
+                    "engine_version": "25.0.0.28",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Trojan.Dynamer!8.3A0 (TFE:5:Cp0sJ1F0CYN)"
+                },
+                "Yandex": {
+                    "method": "blacklist",
+                    "engine_name": "Yandex",
+                    "engine_version": "5.5.2.24",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Trojan.GenAsa!/ZCMFI315tA"
+                },
+                "CTX": {
+                    "method": "blacklist",
+                    "engine_name": "CTX",
+                    "engine_version": "2024.8.29.1",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "exe.trojan.locky"
+                },
+                "huorong": {
+                    "method": "blacklist",
+                    "engine_name": "huorong",
+                    "engine_version": "ac719f9:ac719f9:2292584:2292584",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "VirTool/Kovter.p"
+                },
+                "MaxSecure": {
+                    "method": "blacklist",
+                    "engine_name": "MaxSecure",
+                    "engine_version": "1.0.0.1",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Trojan.Malware.10526223.susgen"
+                },
+                "Fortinet": {
+                    "method": "blacklist",
+                    "engine_name": "Fortinet",
+                    "engine_version": "None",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Generik.KHTZZWG!tr"
+                },
+                "AVG": {
+                    "method": "blacklist",
+                    "engine_name": "AVG",
+                    "engine_version": "23.9.8494.0",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "Win32:Malware-gen"
+                },
+                "DeepInstinct": {
+                    "method": "blacklist",
+                    "engine_name": "DeepInstinct",
+                    "engine_version": "5.0.0.8",
+                    "engine_update": "20250130",
+                    "category": "malicious",
+                    "result": "MALICIOUS"
+                },
+                "alibabacloud": {
+                    "method": "blacklist",
+                    "engine_name": "alibabacloud",
+                    "engine_version": "2.2.0",
+                    "engine_update": "20241030",
+                    "category": "malicious",
+                    "result": "Ransomware:Win/Locky.C"
+                },
+                "VirIT": {
+                    "method": "blacklist",
+                    "engine_name": "VirIT",
+                    "engine_version": null,
+                    "engine_update": "20250129",
+                    "category": "failure",
+                    "result": null
+                },
+                "Jiangmin": {
+                    "method": "blacklist",
+                    "engine_name": "Jiangmin",
+                    "engine_version": null,
+                    "engine_update": "20250130",
+                    "category": "failure",
+                    "result": null
+                },
+                "Trustlook": {
+                    "method": "blacklist",
+                    "engine_name": "Trustlook",
+                    "engine_version": "1.0",
+                    "engine_update": "20250130",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "SymantecMobileInsight": {
+                    "method": "blacklist",
+                    "engine_name": "SymantecMobileInsight",
+                    "engine_version": "2.0",
+                    "engine_update": "20250124",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "BitDefenderFalx": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefenderFalx",
+                    "engine_version": "2.0.936",
+                    "engine_update": "20241203",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "Avast-Mobile": {
+                    "method": "blacklist",
+                    "engine_name": "Avast-Mobile",
+                    "engine_version": "250130-02",
+                    "engine_update": "20250130",
+                    "category": "type-unsupported",
+                    "result": null
+                }
+            },
+            "md5": "fbe08cc20207d5c4f61757484568b9b0",
+            "sha1": "6d8e0490a7cb768fa0895c5a907b0e0b722e1eb9",
+            "meaningful_name": "ShdCfg.exe",
+            "sha256": "bd9a3d09c31a034a9434a5f182624b70e418ed4421ee991069d3b47a156bd6ba",
+            "type_tag": "peexe",
+            "last_submission_date": 1684764856,
+            "last_analysis_date": 1738197770,
+            "unique_sources": 11,
+            "authentihash": "6eae457a7609c9e749ed31bba6390fe88f8285362cc9c73cd05ab4377ba9864e",
+            "pe_info": {
+                "timestamp": 1486022235,
+                "imphash": "5a626d52ad593b2dba68a913102b994e",
+                "machine_type": 332,
+                "entry_point": 30151,
+                "resource_details": [
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 289.11,
+                        "filetype": "unknown",
+                        "entropy": 7.988661289215088,
+                        "sha256": "9a96add23fca7b69520e699a2921ab4d2a63bfb55c45b3a6573925f2969ba882",
+                        "type": "BIN"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 243.99,
+                        "filetype": "unknown",
+                        "entropy": 7.942526817321777,
+                        "sha256": "1a15368fed7c7f9895fc14f1a4ba9c61c4ad7e40920cf92d188450e47c425562",
+                        "type": "BIN"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 261.14,
+                        "filetype": "unknown",
+                        "entropy": 7.947621822357178,
+                        "sha256": "782aae22be782ccaf942e52e62900a3c25eb15213bece1e0a2b50266d740b7a8",
+                        "type": "BIN"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 265.36,
+                        "filetype": "unknown",
+                        "entropy": 7.9702606201171875,
+                        "sha256": "5c35a3beafd6c476c437378965ebbaeec95976dd94de1c2c3f1861cce364da45",
+                        "type": "IMG"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 285.3,
+                        "filetype": "unknown",
+                        "entropy": 7.963171005249023,
+                        "sha256": "873f0fb36eb371ae8d8263a8a9110304797abfcd429fc52929ffe47d3d212d8d",
+                        "type": "IMG"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 38518.32,
+                        "filetype": "unknown",
+                        "entropy": 5.63613224029541,
+                        "sha256": "0961ba49a8475a0c68f3dd2074a51dea206b00d61840a31f284f9e3450691f2a",
+                        "type": "UNICODEDATA"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 123172.38,
+                        "filetype": "unknown",
+                        "entropy": 5.4155097007751465,
+                        "sha256": "0466ee103dd14e0099d40935a1d12556b71c2ff6e9e68ffb3b1c32d8814de3f0",
+                        "type": "UNICODEDATA"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 297.65,
+                        "filetype": "unknown",
+                        "entropy": 7.9503302574157715,
+                        "sha256": "3b59549aa5ead630dd4251d308545716377db7a16842a33b589ba4e54e680fcd",
+                        "type": "UNICODEDATA"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 282.32,
+                        "filetype": "unknown",
+                        "entropy": 7.937442779541016,
+                        "sha256": "44db9348bc53fe434c62780eab22db214d88677d0384c3d66fe67eae2b88efd6",
+                        "type": "UNICODEDATA"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 1158.48,
+                        "filetype": "unknown",
+                        "entropy": 7.986837863922119,
+                        "sha256": "15ddb06aa48de05648a2fe84738f0fb8a7178db05f2953e791d7722cb6c3fc86",
+                        "type": "UNICODEDATA"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 244.95,
+                        "filetype": "unknown",
+                        "entropy": 7.823317050933838,
+                        "sha256": "83df08e6f9f454fa87a0f0447f11cfe346f3e64ee95801196d51e2818f8e865e",
+                        "type": "UNICODEDATA"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 22065.4,
+                        "filetype": "unknown",
+                        "entropy": 2.9160430431365967,
+                        "sha256": "6f938aab0a03120de4ef8b27aff6ba5146226c92a056a6f04e5ec8d513ce5f9d",
+                        "type": "RT_CURSOR"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 25932.0,
+                        "filetype": "unknown",
+                        "entropy": 2.3403780460357666,
+                        "sha256": "652988945185cf5d604d9b48de66288d82d8ed0acdd134398e90d002d2d9fc72",
+                        "type": "RT_CURSOR"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 22751.94,
+                        "filetype": "unknown",
+                        "entropy": 2.6949045658111572,
+                        "sha256": "99676c52310db365580965ea646ece86c62951bfd97ec0aae9f738a202a90593",
+                        "type": "RT_CURSOR"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 26837.98,
+                        "filetype": "unknown",
+                        "entropy": 2.3111374378204346,
+                        "sha256": "f9c81ce9b4176b305c554a15f0ca2b98b11be76c1f13ef22169999aa07e9612f",
+                        "type": "RT_CURSOR"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 29522.67,
+                        "filetype": "unknown",
+                        "entropy": 2.1400504112243652,
+                        "sha256": "f3ad7effb5200564a38bcb4f2bb6723fcadccb079998ee8a0c00cc0449182216",
+                        "type": "RT_CURSOR"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 24605.46,
+                        "filetype": "unknown",
+                        "entropy": 2.5521159172058105,
+                        "sha256": "a4319fd1d9a81d7a6dc9ef1818d85dc68ded85342754d2f5768e01d0edf46780",
+                        "type": "RT_CURSOR"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 20248.46,
+                        "filetype": "unknown",
+                        "entropy": 2.8131332397460938,
+                        "sha256": "2bf742d2beb4c56dd6eb68347dd8ee28da85bed9e6d165b36c6edb91da01d5d6",
+                        "type": "RT_CURSOR"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 744.94,
+                        "filetype": "PNG",
+                        "entropy": 7.926048278808594,
+                        "sha256": "8771b1c480d4dc091efcd3dd0bdf105b65f57e01119b99260177095e7e7aed8b",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 1089487.0,
+                        "filetype": "unknown",
+                        "entropy": 3.0361685752868652,
+                        "sha256": "86598db124a94ea750541c1b86611e84b7e45d27e2be98160a354c1e36d081fc",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 919076.69,
+                        "filetype": "unknown",
+                        "entropy": 2.8362786769866943,
+                        "sha256": "3f86722dfe89af69e41e03eecace5bd8a3e51227b01c2ded4a5d3ac95ebfe946",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 363421.56,
+                        "filetype": "unknown",
+                        "entropy": 3.775158166885376,
+                        "sha256": "0253141775bcfe5a4f5871de8182d185d6907703f6e6691f67dcb36cd157096a",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 164772.05,
+                        "filetype": "unknown",
+                        "entropy": 3.9437904357910156,
+                        "sha256": "218106893fdf731e0755e8f5b389324c712379f4b4d938f5b6635d012c0eda31",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 87942.25,
+                        "filetype": "unknown",
+                        "entropy": 4.126865863800049,
+                        "sha256": "980bd2c76f9fb2c61751db49ffa9b9294a01f2595d5e292060105caf66764bee",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 32877.79,
+                        "filetype": "unknown",
+                        "entropy": 4.5849409103393555,
+                        "sha256": "a825a85e5c6f8d485ef0a67efa0bc1158a3a37caa7bfd94afa913f2894f4d997",
+                        "type": "RT_ICON"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 1900.0,
+                        "filetype": "unknown",
+                        "entropy": 1.8387587070465088,
+                        "sha256": "c53efa8085835ba129c1909beaff8a67b45f50837707f22dfff0f24d8cd26710",
+                        "type": "RT_GROUP_CURSOR"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 1823.2,
+                        "filetype": "unknown",
+                        "entropy": 1.9192407131195068,
+                        "sha256": "b07e022f8ef0a8e5fd3f56986b2e5bf06df07054e9ea9177996b0a6c27d74d7c",
+                        "type": "RT_GROUP_CURSOR"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 1695.2,
+                        "filetype": "unknown",
+                        "entropy": 2.219240665435791,
+                        "sha256": "59f873c7431c3aaae52e511fe37a02baaf2e7b979a9cd6ff7cfee8bc9154ea34",
+                        "type": "RT_GROUP_CURSOR"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 1797.6,
+                        "filetype": "unknown",
+                        "entropy": 2.0192408561706543,
+                        "sha256": "ff47a48c11c234903a7d625cb8b62101909f735ad84266c98dd4834549452c39",
+                        "type": "RT_GROUP_CURSOR"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 1797.6,
+                        "filetype": "unknown",
+                        "entropy": 2.0192408561706543,
+                        "sha256": "43f40dd5140804309a4c901ec3c85b54481316e67a6fe18beb9d5c0ce3a42c3a",
+                        "type": "RT_GROUP_CURSOR"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 1797.6,
+                        "filetype": "unknown",
+                        "entropy": 2.0192408561706543,
+                        "sha256": "6e1e7738a1b6373d8829f817915822ef415a1727bb5bb7cfe809e31b3c143ac5",
+                        "type": "RT_GROUP_CURSOR"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 1797.6,
+                        "filetype": "unknown",
+                        "entropy": 2.0192408561706543,
+                        "sha256": "a0adcedb82b57089f64e2857f97cefd6cf25f4d27eefc6648bda83fd5fef66bb",
+                        "type": "RT_GROUP_CURSOR"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 7871.38,
+                        "filetype": "ICO",
+                        "entropy": 2.8947830200195312,
+                        "sha256": "8eadeda807b50250d581aa604a0aa7f651fb2d6e4729d323974fed6741bdfbb1",
+                        "type": "RT_GROUP_ICON"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 63498.25,
+                        "filetype": "unknown",
+                        "entropy": 3.4338414669036865,
+                        "sha256": "2b18eb6bf9f596633a2484412ab04f4804eefa5c933e983247d081f775b5169f",
+                        "type": "RT_VERSION"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 3596.04,
+                        "filetype": "unknown",
+                        "entropy": 5.410798072814941,
+                        "sha256": "db1d999334abe45bc5c68ee1e72657e4a52f54c2fad964debe779873329078e4",
+                        "type": "RT_HTML"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 9610.02,
+                        "filetype": "XML",
+                        "entropy": 5.159173488616943,
+                        "sha256": "197b01d8819a1667f317805eecadd0a0df96a307d8dbdc6c1629aa62d5bb3f97",
+                        "type": "RT_MANIFEST"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 1793.03,
+                        "filetype": "unknown",
+                        "entropy": 7.878124237060547,
+                        "sha256": "c7b1abc43fcf7c87a7684b1333afd826cda5ff62903d9bfda2d92b5ad0c32d61",
+                        "type": "Struct(240)"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 1564.0,
+                        "filetype": "unknown",
+                        "entropy": 7.963556289672852,
+                        "sha256": "3ad946fae49f275f4863fad6ce464dcf71c91bb1e593fac99fd9d8ccb9c0c324",
+                        "type": "Struct(240)"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 818.79,
+                        "filetype": "unknown",
+                        "entropy": 7.941608428955078,
+                        "sha256": "ace09c8a6c981da4484c8b32bd38103c4d9231e7dde1667af76f324a91aeb25d",
+                        "type": "Struct(240)"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 862.36,
+                        "filetype": "unknown",
+                        "entropy": 3.202545642852783,
+                        "sha256": "4553a65b57af53aa0886283509bb90c738297deeb23f32d23bec1d0009ed8c53",
+                        "type": "Struct(241)"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 925.73,
+                        "filetype": "unknown",
+                        "entropy": 3.5068905353546143,
+                        "sha256": "ce84b61bc04b0ff3d4602ec484c4299ad0a416a38314ad4a80bba10b0ab084d0",
+                        "type": "Struct(241)"
+                    },
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 1765.33,
+                        "filetype": "unknown",
+                        "entropy": 3.5873043537139893,
+                        "sha256": "1c0c2340825213cc7e0f2f420f0d2c3de0bb437b5c866b1b5fee25bbde895fb6",
+                        "type": "Struct(241)"
+                    }
+                ],
+                "resource_langs": {
+                    "ENGLISH US": 43
+                },
+                "resource_types": {
+                    "BIN": 3,
+                    "UNICODEDATA": 6,
+                    "RT_HTML": 1,
+                    "IMG": 2,
+                    "RT_GROUP_CURSOR": 8,
+                    "RT_ICON": 7,
+                    "Struct(240)": 3,
+                    "Struct(241)": 3,
+                    "RT_MANIFEST": 1,
+                    "RT_CURSOR": 7,
+                    "RT_VERSION": 1,
+                    "RT_GROUP_ICON": 1
+                },
+                "sections": [
+                    {
+                        "name": ".text",
+                        "chi2": 539473.88,
+                        "virtual_address": 4096,
+                        "entropy": 6.67,
+                        "raw_size": 102912,
+                        "flags": "rx",
+                        "virtual_size": 102887,
+                        "md5": "73f64b006e800068d6db5b423ca83a82"
+                    },
+                    {
+                        "name": ".rdata",
+                        "chi2": 389016.81,
+                        "virtual_address": 110592,
+                        "entropy": 6.34,
+                        "raw_size": 25600,
+                        "flags": "r",
+                        "virtual_size": 25314,
+                        "md5": "5a748449b2a1c3e5d2f6a1d620704759"
+                    },
+                    {
+                        "name": ".data",
+                        "chi2": 611795.19,
+                        "virtual_address": 139264,
+                        "entropy": 3.41,
+                        "raw_size": 5632,
+                        "flags": "rw",
+                        "virtual_size": 12896,
+                        "md5": "9139a90602ec62df80684b80aa7f3e5e"
+                    },
+                    {
+                        "name": ".tls",
+                        "chi2": 130560.0,
+                        "virtual_address": 155648,
+                        "entropy": 0.0,
+                        "raw_size": 512,
+                        "flags": "rw",
+                        "virtual_size": 9,
+                        "md5": "bf619eac0cdf3f68d496ea9344137e8b"
+                    },
+                    {
+                        "name": ".rsrc",
+                        "chi2": 820821.06,
+                        "virtual_address": 159744,
+                        "entropy": 7.35,
+                        "raw_size": 235520,
+                        "flags": "r",
+                        "virtual_size": 235344,
+                        "md5": "1d3874620f4cf5195aba761cd7d8b957"
+                    },
+                    {
+                        "name": ".reloc",
+                        "chi2": 419199.06,
+                        "virtual_address": 397312,
+                        "entropy": 4.83,
+                        "raw_size": 8704,
+                        "flags": "r",
+                        "virtual_size": 8564,
+                        "md5": "c1831ddcddbc395bfbb1237e82c917e4"
+                    }
+                ],
+                "compiler_product_versions": [
+                    "[ASM] VS2008 SP1 build 30729 count=32",
+                    "[ C ] VS2008 SP1 build 30729 count=154",
+                    "[IMP] VS2005 build 50727 count=33",
+                    "[---] Unmarked objects count=222",
+                    "[C++] VS2008 SP1 build 30729 count=56",
+                    "[RES] VS2008 build 21022 count=1",
+                    "[LNK] VS2008 SP1 build 30729 count=1",
+                    "id: 0x96, version: 20413 count=1"
+                ],
+                "rich_pe_header_hash": "4ea2ab6e396f8c52ea584139530dc0a9",
+                "import_list": [
+                    {
+                        "library_name": "KERNEL32.dll",
+                        "imported_functions": [
+                            "CloseHandle",
+                            "CompareStringA",
+                            "CompareStringW",
+                            "CreateDirectoryA",
+                            "CreateFileA",
+                            "DeleteCriticalSection",
+                            "EnterCriticalSection",
+                            "ExitProcess",
+                            "FlushFileBuffers",
+                            "FormatMessageA",
+                            "FreeEnvironmentStringsA",
+                            "FreeEnvironmentStringsW",
+                            "GetACP",
+                            "GetCommandLineA",
+                            "GetConsoleCP",
+                            "GetConsoleMode",
+                            "GetConsoleOutputCP",
+                            "GetCPInfo",
+                            "GetCurrentProcess",
+                            "GetCurrentProcessId",
+                            "GetCurrentThreadId",
+                            "GetEnvironmentStrings",
+                            "GetEnvironmentStringsW",
+                            "GetFileAttributesA",
+                            "GetFileType",
+                            "GetLastError",
+                            "GetLocaleInfoA",
+                            "GetModuleFileNameA",
+                            "GetModuleHandleA",
+                            "GetModuleHandleW",
+                            "GetOEMCP",
+                            "GetProcAddress",
+                            "GetProcessHeap",
+                            "GetStartupInfoA",
+                            "GetStdHandle",
+                            "GetStringTypeA",
+                            "GetStringTypeW",
+                            "GetSystemTimeAsFileTime",
+                            "GetTickCount",
+                            "GetTimeZoneInformation",
+                            "HeapAlloc",
+                            "HeapCreate",
+                            "HeapFree",
+                            "HeapReAlloc",
+                            "HeapSize",
+                            "InitializeCriticalSectionAndSpinCount",
+                            "InterlockedDecrement",
+                            "InterlockedIncrement",
+                            "IsDebuggerPresent",
+                            "IsValidCodePage",
+                            "LCMapStringA",
+                            "LCMapStringW",
+                            "LeaveCriticalSection",
+                            "LoadLibraryA",
+                            "LoadLibraryW",
+                            "LocalAlloc",
+                            "LocalFree",
+                            "lstrcatA",
+                            "MulDiv",
+                            "MultiByteToWideChar",
+                            "QueryPerformanceCounter",
+                            "RaiseException",
+                            "ReadFile",
+                            "RtlUnwind",
+                            "SetConsoleTitleA",
+                            "SetEndOfFile",
+                            "SetEnvironmentVariableA",
+                            "SetFilePointer",
+                            "SetHandleCount",
+                            "SetLastError",
+                            "SetStdHandle",
+                            "SetUnhandledExceptionFilter",
+                            "Sleep",
+                            "TerminateProcess",
+                            "TlsAlloc",
+                            "TlsFree",
+                            "TlsGetValue",
+                            "TlsSetValue",
+                            "UnhandledExceptionFilter",
+                            "VirtualAlloc",
+                            "VirtualFree",
+                            "WideCharToMultiByte",
+                            "WriteConsoleA",
+                            "WriteConsoleW",
+                            "WriteFile"
+                        ]
+                    },
+                    {
+                        "library_name": "USER32.dll",
+                        "imported_functions": [
+                            "AppendMenuA",
+                            "BeginPaint",
+                            "ClientToScreen",
+                            "CreateMenu",
+                            "CreatePopupMenu",
+                            "CreateWindowExA",
+                            "DeferWindowPos",
+                            "DrawMenuBar",
+                            "EnableWindow",
+                            "EndDeferWindowPos",
+                            "EndDialog",
+                            "EndPaint",
+                            "GetClientRect",
+                            "GetCursorPos",
+                            "GetDC",
+                            "GetDlgItem",
+                            "GetDlgItemTextA",
+                            "GetIconInfo",
+                            "GetMenu",
+                            "GetMenuItemInfoA",
+                            "GetScrollInfo",
+                            "GetSystemMetrics",
+                            "GetWindowDC",
+                            "GetWindowRect",
+                            "GetWindowTextA",
+                            "InsertMenuItemA",
+                            "InvalidateRect",
+                            "IsDlgButtonChecked",
+                            "IsWindowEnabled",
+                            "KillTimer",
+                            "LoadBitmapA",
+                            "LoadCursorA",
+                            "LoadIconA",
+                            "MapWindowPoints",
+                            "MessageBoxA",
+                            "OffsetRect",
+                            "PostMessageA",
+                            "PtInRect",
+                            "RegisterClassExA",
+                            "ReleaseDC",
+                            "SendMessageA",
+                            "SetCaretPos",
+                            "SetMenu",
+                            "SetMenuItemInfoA",
+                            "SetScrollInfo",
+                            "SetWindowTextA",
+                            "ShowWindow",
+                            "WindowFromPoint",
+                            "wsprintfA"
+                        ]
+                    },
+                    {
+                        "library_name": "GDI32.dll",
+                        "imported_functions": [
+                            "BitBlt",
+                            "CombineRgn",
+                            "CreateCompatibleDC",
+                            "CreateDIBSection",
+                            "CreateFontIndirectA",
+                            "CreateFontIndirectW",
+                            "CreateRectRgn",
+                            "CreateRectRgnIndirect",
+                            "DeleteDC",
+                            "DeleteObject",
+                            "EnumFontsA",
+                            "ExcludeClipRect",
+                            "GetCurrentObject",
+                            "GetFontData",
+                            "GetObjectA",
+                            "GetPaletteEntries",
+                            "GetStockObject",
+                            "PatBlt",
+                            "ScaleViewportExtEx",
+                            "ScaleWindowExtEx",
+                            "SelectClipPath",
+                            "SelectObject",
+                            "SetBkMode",
+                            "SetDIBColorTable"
+                        ]
+                    },
+                    {
+                        "library_name": "WINSPOOL.DRV",
+                        "imported_functions": [
+                            "ConnectToPrinterDlg"
+                        ]
+                    },
+                    {
+                        "library_name": "ADVAPI32.dll",
+                        "imported_functions": [
+                            "AllocateAndInitializeSid",
+                            "ConvertStringSecurityDescriptorToSecurityDescriptorA",
+                            "CopySid",
+                            "CryptAcquireContextA",
+                            "CryptGetDefaultProviderA",
+                            "CryptGetUserKey",
+                            "CryptReleaseContext",
+                            "FreeSid",
+                            "GetFileSecurityA",
+                            "GetLengthSid",
+                            "GetNamedSecurityInfoA",
+                            "GetTokenInformation",
+                            "InitializeSecurityDescriptor",
+                            "LookupAccountNameA",
+                            "LookupAccountNameW",
+                            "LookupPrivilegeValueA",
+                            "OpenProcessToken",
+                            "SetSecurityDescriptorSacl"
+                        ]
+                    },
+                    {
+                        "library_name": "USERENV.dll",
+                        "imported_functions": [
+                            "CreateEnvironmentBlock",
+                            "GetAppliedGPOListA",
+                            "GetGPOListA"
+                        ]
+                    },
+                    {
+                        "library_name": "AVIFIL32.dll",
+                        "imported_functions": [
+                            "AVIFileExit",
+                            "AVIFileInit",
+                            "AVIStreamGetFrame",
+                            "AVIStreamGetFrameClose",
+                            "AVIStreamInfoA",
+                            "AVIStreamOpenFromFileA",
+                            "AVIStreamRelease"
+                        ]
+                    },
+                    {
+                        "library_name": "MSVFW32.dll",
+                        "imported_functions": [
+                            "DrawDibClose",
+                            "DrawDibDraw",
+                            "DrawDibOpen"
+                        ]
+                    },
+                    {
+                        "library_name": "CRYPT32.dll",
+                        "imported_functions": [
+                            "CryptHashPublicKeyInfo"
+                        ]
+                    },
+                    {
+                        "library_name": "IPHLPAPI.DLL",
+                        "imported_functions": [
+                            "GetTcpTable"
+                        ]
+                    },
+                    {
+                        "library_name": "SHLWAPI.dll",
+                        "imported_functions": [
+                            "PathCompactPathA"
+                        ]
+                    },
+                    {
+                        "library_name": "COMCTL32.dll",
+                        "imported_functions": [
+                            "ImageList_Create",
+                            "Ord(17)"
+                        ]
+                    },
+                    {
+                        "library_name": "WINTRUST.dll",
+                        "imported_functions": [
+                            "WinVerifyTrust",
+                            "WTHelperProvDataFromStateData"
+                        ]
+                    },
+                    {
+                        "library_name": "OPENGL32.dll",
+                        "imported_functions": [
+                            "glClearColor",
+                            "glClearDepth",
+                            "glDepthFunc",
+                            "glEnable",
+                            "glHint",
+                            "glShadeModel"
+                        ]
+                    },
+                    {
+                        "library_name": "SETUPAPI.dll",
+                        "imported_functions": [
+                            "SetupDiGetClassDevsA",
+                            "SetupDiGetDriverInfoDetailA",
+                            "SetupDiGetSelectedDriverA"
+                        ]
+                    },
+                    {
+                        "library_name": "WTSAPI32.dll",
+                        "imported_functions": [
+                            "WTSEnumerateSessionsA",
+                            "WTSFreeMemory"
+                        ]
+                    }
+                ]
+            },
+            "ssdeep": "6144:axXJ/Kda/zF8OgQaXhbD2ZuV6L3hXmUBpbrdmc/klwQBG1LznBHDTBrEpt4IQXZo:axXJ/6GFTlaXZ6L3IqJJmc/SwQg1LznU",
+            "first_submission_date": 1486082774,
+            "times_submitted": 12,
+            "tlsh": "T101848D3DFD8C8DEDFC3E01700021AA5095AEEABD0638D74E6B7C32DDAAE39917515246"
+        }
+    }
+}

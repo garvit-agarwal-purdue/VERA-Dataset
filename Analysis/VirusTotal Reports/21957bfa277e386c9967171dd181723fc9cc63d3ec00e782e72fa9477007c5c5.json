@@ -1,0 +1,1302 @@
+{
+    "data": {
+        "id": "21957bfa277e386c9967171dd181723fc9cc63d3ec00e782e72fa9477007c5c5",
+        "type": "file",
+        "links": {
+            "self": "https://www.virustotal.com/api/v3/files/21957bfa277e386c9967171dd181723fc9cc63d3ec00e782e72fa9477007c5c5"
+        },
+        "attributes": {
+            "vhash": "074066656d151555614z2010046hz32z111z6bz",
+            "sigma_analysis_summary": {
+                "Sigma Integrated Rule Set (GitHub)": {
+                    "critical": 0,
+                    "high": 0,
+                    "medium": 2,
+                    "low": 0
+                }
+            },
+            "names": [
+                "5v28d1.exe",
+                "21957bfa277e386c9967171dd181723fc9cc63d3ec00e782e72fa9477007c5c5.exe",
+                "unknownfile",
+                "insnha.exe",
+                "myfile.exe",
+                "Win32.Ransom.Cerber@21957bfa277e386c9967171dd181723fc9cc63d3ec00e782e72fa9477007c5c5.bin",
+                "21957bfa277e386c9967171dd181723fc9cc63d3ec00e782e72fa9477007c5c5.exe.bin",
+                "400000.grandCrabNew.exe_.exe",
+                "VirusShare_41f632e9186aa82ddcf7a80ebecc47e5"
+            ],
+            "total_votes": {
+                "harmless": 0,
+                "malicious": 2
+            },
+            "type_extension": "exe",
+            "tlsh": "T1D9637C102DE08233E2E3FE3BBA357DF8583ABFD8242D761E10A6447D19691424A3579F",
+            "meaningful_name": "5v28d1.exe",
+            "trid": [
+                {
+                    "file_type": "Win32 Executable MS Visual C++ (generic)",
+                    "probability": 56.3
+                },
+                {
+                    "file_type": "Win32 Dynamic Link Library (generic)",
+                    "probability": 11.8
+                },
+                {
+                    "file_type": "Win16 NE executable (generic)",
+                    "probability": 9.0
+                },
+                {
+                    "file_type": "Win32 Executable (generic)",
+                    "probability": 8.1
+                },
+                {
+                    "file_type": "Windows Icons Library (generic)",
+                    "probability": 3.7
+                }
+            ],
+            "ssdeep": "1536:d555555555555pDf3BrpDz3txh3KciaMqqU+2bbbAV2/S2xr3IdE8mne0Avu5r+y:3/Xr9aaMqqDL2/xr3IdE8we0Avu5r++Z",
+            "type_tags": [
+                "executable",
+                "windows",
+                "win32",
+                "pe",
+                "peexe"
+            ],
+            "last_analysis_date": 1767070845,
+            "filecondis": {
+                "dhash": "fe7a3c1c1c541400",
+                "raw_md5": "647961b34fe24abeac9b6b1b9a6b9adc"
+            },
+            "sandbox_verdicts": {
+                "Zenbox": {
+                    "category": "malicious",
+                    "sandbox_name": "Zenbox",
+                    "malware_classification": [
+                        "MALWARE",
+                        "RANSOM",
+                        "TROJAN"
+                    ]
+                },
+                "SecneurX": {
+                    "category": "harmless",
+                    "sandbox_name": "SecneurX",
+                    "malware_classification": [
+                        "CLEAN"
+                    ]
+                },
+                "CAPE Sandbox": {
+                    "category": "malicious",
+                    "malware_classification": [
+                        "MALWARE"
+                    ],
+                    "sandbox_name": "CAPE Sandbox",
+                    "malware_names": [
+                        "Gandcrab"
+                    ]
+                }
+            },
+            "last_submission_date": 1674132780,
+            "magic": "PE32 executable (GUI) Intel 80386, for MS Windows",
+            "sigma_analysis_results": [
+                {
+                    "rule_level": "medium",
+                    "rule_id": "3a2766a08d32a855b604a786cddc0f76fee13e6ccd22e01d4878150f0ef1eebc",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "Suspicious DNS Query for IP Lookup Service APIs",
+                    "rule_description": "Detects DNS queries for IP lookup services such as \"api.ipify.org\" originating from a non browser process.",
+                    "rule_author": "Brandon George (blog post), Thomas Patzke",
+                    "match_context": [
+                        {
+                            "values": {
+                                "QueryStatus": "9501",
+                                "QueryName": "ipv4bot.whatismyipaddress.com",
+                                "Image": "C:\\Users\\Bruno\\Desktop\\software.exe",
+                                "EventID": "22"
+                            }
+                        },
+                        {
+                            "values": {
+                                "query": "ipv4bot.whatismyipaddress.com"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "rule_level": "medium",
+                    "rule_id": "8b5db9da5732dc549b0e8b56fe5933d7c95ed760f3ac20568ab95347ef8c5bcc",
+                    "rule_source": "Sigma Integrated Rule Set (GitHub)",
+                    "rule_title": "CurrentVersion Autorun Keys Modification",
+                    "rule_description": "Detects modification of autostart extensibility point (ASEP) in registry.",
+                    "rule_author": "Victor Sergeev, Daniil Yugoslavskiy, Gleb Sukhodolskiy, Timur Zinniatullin, oscd.community, Tim Shelton, frack113 (split)",
+                    "match_context": [
+                        {
+                            "values": {
+                                "RuleName": "T1060,RunKey",
+                                "Details": "\"C:\\Users\\Bruno\\AppData\\Roaming\\Microsoft\\pgjpkn.exe\"",
+                                "EventID": "13",
+                                "Image": "C:\\Users\\Bruno\\Desktop\\software.exe",
+                                "EventType": "SetValue",
+                                "TargetObject": "HKU\\S-1-5-21-4005801669-2598574594-602355426-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RunOnce\\djywqzzrzoy"
+                            }
+                        },
+                        {
+                            "values": {
+                                "EventType": "SetValue",
+                                "Details": "\"%USERPROFILE%\\AppData\\Roaming\\Microsoft\\dgkqjs.exe\"",
+                                "EventID": "13",
+                                "TargetObject": "HKU\\%SID%\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce\\jxkjausigdu"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "sigma_analysis_stats": {
+                "critical": 0,
+                "high": 0,
+                "medium": 2,
+                "low": 0
+            },
+            "crowdsourced_ids_results": [
+                {
+                    "rule_category": "A Network Trojan was detected",
+                    "alert_severity": "high",
+                    "rule_msg": "ET MALWARE Observed GandCrab Domain (gandcrab .bit)",
+                    "rule_id": "1:2026737",
+                    "rule_source": "Proofpoint Emerging Threats Open",
+                    "rule_url": "https://rules.emergingthreats.net/",
+                    "rule_raw": "alert dns $HOME_NET any -> any any (msg:\"ET MALWARE Observed GandCrab Domain (gandcrab .bit)\"; dns.query; content:\"gandcrab.bit\"; nocase; endswith; reference:md5,023f078d5eb70bcbf4c5ad5b87df9710; classtype:trojan-activity; sid:2026737; rev:3; metadata:affected_product Windows_XP_Vista_7_8_10_Server_32_64_Bit, attack_target Client_Endpoint, created_at 2018_12_18, deployment Perimeter, former_category TROJAN, malware_family GandCrab, performance_impact Low, signature_severity Major, updated_at 2020_09_16;)",
+                    "rule_references": [
+                        "https://www.virustotal.com/gui/search/023f078d5eb70bcbf4c5ad5b87df9710"
+                    ],
+                    "alert_context": [
+                        {
+                            "dest_ip": "101.226.226.43",
+                            "dest_port": 53
+                        }
+                    ]
+                },
+                {
+                    "rule_category": "A Network Trojan was detected",
+                    "alert_severity": "high",
+                    "rule_msg": "ET MALWARE Observed GandCrab Domain (gandcrab .bit)",
+                    "rule_id": "1:2026737",
+                    "rule_source": "Proofpoint Emerging Threats Open",
+                    "rule_url": "https://rules.emergingthreats.net/",
+                    "rule_raw": "alert dns $HOME_NET any -> any any (msg:\"ET MALWARE Observed GandCrab Domain (gandcrab .bit)\"; dns.query; content:\"gandcrab.bit\"; nocase; endswith; reference:md5,023f078d5eb70bcbf4c5ad5b87df9710; classtype:trojan-activity; sid:2026737; rev:3; metadata:affected_product Windows_XP_Vista_7_8_10_Server_32_64_Bit, attack_target Client_Endpoint, created_at 2018_12_18, deployment Perimeter, malware_family GandCrab, performance_impact Low, signature_severity Major, updated_at 2020_09_16;)",
+                    "rule_references": [
+                        "https://www.virustotal.com/gui/search/023f078d5eb70bcbf4c5ad5b87df9710"
+                    ],
+                    "alert_context": [
+                        {
+                            "dest_ip": "114.114.114.114",
+                            "dest_port": 53
+                        }
+                    ]
+                },
+                {
+                    "rule_category": "A Network Trojan was detected",
+                    "alert_severity": "high",
+                    "rule_msg": "ET MALWARE Observed GandCrab Domain (gandcrab .bit)",
+                    "rule_id": "1:2026737",
+                    "rule_source": "Proofpoint Emerging Threats Open",
+                    "rule_url": "https://rules.emergingthreats.net/",
+                    "rule_raw": "alert dns $HOME_NET any -> any any (msg:\"ET MALWARE Observed GandCrab Domain (gandcrab .bit)\"; dns.query; content:\"gandcrab.bit\"; nocase; endswith; reference:md5,023f078d5eb70bcbf4c5ad5b87df9710; classtype:trojan-activity; sid:2026737; rev:3; metadata:affected_product Windows_XP_Vista_7_8_10_Server_32_64_Bit, attack_target Client_Endpoint, created_at 2018_12_18, deployment Perimeter, malware_family GandCrab, performance_impact Low, confidence High, signature_severity Major, updated_at 2020_09_16;)",
+                    "rule_references": [
+                        "https://www.virustotal.com/gui/search/023f078d5eb70bcbf4c5ad5b87df9710"
+                    ],
+                    "alert_context": [
+                        {
+                            "dest_ip": "43.130.172.75",
+                            "dest_port": 53
+                        }
+                    ]
+                },
+                {
+                    "rule_category": "trojan-activity",
+                    "alert_severity": "high",
+                    "rule_msg": "MALWARE-CNC DNS suspicious .bit dns query",
+                    "rule_id": "1:41083",
+                    "rule_source": "Snort registered user ruleset",
+                    "rule_url": "https://www.snort.org/downloads/#rule-downloads",
+                    "rule_raw": "alert udp $HOME_NET any -> any 53 ( msg:\"MALWARE-CNC DNS suspicious .bit dns query\"; flow:to_server; byte_test:1,!&,0xF8,2; content:\"|03|bit|00|\",fast_pattern,nocase; metadata:impact_flag red,policy balanced-ips drop,policy max-detect-ips drop,policy security-ips drop; service:dns; classtype:trojan-activity; sid:41083; rev:4; )",
+                    "alert_context": [
+                        {
+                            "dest_ip": "101.226.226.43",
+                            "dest_port": 53
+                        },
+                        {
+                            "dest_ip": "114.114.114.114",
+                            "dest_port": 53
+                        }
+                    ]
+                },
+                {
+                    "rule_category": "Device Retrieving External IP Address Detected",
+                    "alert_severity": "medium",
+                    "rule_msg": "ET INFO External IP Lookup Domain in DNS Lookup (whatismyipaddress .com)",
+                    "rule_id": "1:2054170",
+                    "rule_source": "Proofpoint Emerging Threats Open",
+                    "rule_url": "https://rules.emergingthreats.net/",
+                    "rule_raw": "alert dns $HOME_NET any -> any any (msg:\"ET INFO External IP Lookup Domain in DNS Lookup (whatismyipaddress .com)\"; dns.query; dotprefix; content:\".whatismyipaddress.com\"; nocase; endswith; reference:url,github.com/chubin/awesome-console-services; classtype:external-ip-check; sid:2054170; rev:1; metadata:affected_product Any, attack_target Client_and_Server, created_at 2024_06_28, deployment Perimeter, performance_impact Low, confidence High, signature_severity Informational, tag External_IP_Lookup, updated_at 2024_06_28;)",
+                    "rule_references": [
+                        "https://github.com/chubin/awesome-console-services"
+                    ],
+                    "alert_context": [
+                        {
+                            "dest_ip": "114.114.114.114",
+                            "dest_port": 53
+                        }
+                    ]
+                },
+                {
+                    "rule_category": "Device Retrieving External IP Address Detected",
+                    "alert_severity": "medium",
+                    "rule_msg": "ET INFO External IP Lookup Domain in DNS Lookup (whatismyipaddress .com)",
+                    "rule_id": "1:2054170",
+                    "rule_source": "Proofpoint Emerging Threats Open",
+                    "rule_url": "https://rules.emergingthreats.net/",
+                    "rule_raw": "alert dns $HOME_NET any -> any any (msg:\"ET INFO External IP Lookup Domain in DNS Lookup (whatismyipaddress .com)\"; dns.query; dotprefix; content:\".whatismyipaddress.com\"; nocase; endswith; reference:url,github.com/chubin/awesome-console-services; classtype:external-ip-check; sid:2054170; rev:1; metadata:affected_product Any, attack_target Client_Endpoint, created_at 2024_06_28, deployment Perimeter, performance_impact Low, confidence High, signature_severity Informational, tag External_IP_Lookup, updated_at 2024_06_28, reviewed_at 2024_10_04, mitre_tactic_id TA0043, mitre_tactic_name Reconnaissance, mitre_technique_id T1590, mitre_technique_name Gather_Victim_Network_Information;)",
+                    "rule_references": [
+                        "https://github.com/chubin/awesome-console-services"
+                    ],
+                    "alert_context": [
+                        {
+                            "dest_ip": "8.8.8.8",
+                            "dest_port": 53
+                        }
+                    ]
+                },
+                {
+                    "rule_category": "Potentially Bad Traffic",
+                    "alert_severity": "low",
+                    "rule_msg": "ET INFO DNS Query Domain .bit",
+                    "rule_id": "1:2017645",
+                    "rule_source": "Proofpoint Emerging Threats Open",
+                    "rule_url": "https://rules.emergingthreats.net/",
+                    "rule_raw": "alert dns $HOME_NET any -> any any (msg:\"ET INFO DNS Query Domain .bit\"; dns.query; content:\".bit\"; nocase; endswith; reference:url,www.normanshark.com/blog/necurs-cc-domains-non-censorable/; classtype:bad-unknown; sid:2017645; rev:5; metadata:created_at 2013_10_30, updated_at 2020_09_15;)",
+                    "rule_references": [
+                        "https://www.normanshark.com/blog/necurs-cc-domains-non-censorable/"
+                    ],
+                    "alert_context": [
+                        {
+                            "dest_ip": "101.226.226.43",
+                            "dest_port": 53
+                        }
+                    ]
+                },
+                {
+                    "rule_category": "Potentially Bad Traffic",
+                    "alert_severity": "low",
+                    "rule_msg": "ET INFO DNS Query Domain .bit",
+                    "rule_id": "1:2017645",
+                    "rule_source": "Proofpoint Emerging Threats Open",
+                    "rule_url": "https://rules.emergingthreats.net/",
+                    "rule_raw": "alert dns $HOME_NET any -> any any (msg:\"ET INFO DNS Query Domain .bit\"; dns.query; content:\".bit\"; nocase; endswith; reference:url,www.normanshark.com/blog/necurs-cc-domains-non-censorable/; classtype:bad-unknown; sid:2017645; rev:5; metadata:created_at 2013_10_30, updated_at 2020_09_15, reviewed_at 2024_04_23;)",
+                    "rule_references": [
+                        "https://www.normanshark.com/blog/necurs-cc-domains-non-censorable/"
+                    ],
+                    "alert_context": [
+                        {
+                            "dest_ip": "114.114.114.114",
+                            "dest_port": 53
+                        }
+                    ]
+                },
+                {
+                    "rule_category": "Potentially Bad Traffic",
+                    "alert_severity": "low",
+                    "rule_msg": "ET INFO DNS Query Domain .bit",
+                    "rule_id": "1:2017645",
+                    "rule_source": "Proofpoint Emerging Threats Open",
+                    "rule_url": "https://rules.emergingthreats.net/",
+                    "rule_raw": "alert dns $HOME_NET any -> any any (msg:\"ET INFO DNS Query Domain .bit\"; dns.query; content:\".bit\"; nocase; endswith; reference:url,www.normanshark.com/blog/necurs-cc-domains-non-censorable/; classtype:bad-unknown; sid:2017645; rev:5; metadata:created_at 2013_10_30, confidence High, signature_severity Informational, updated_at 2020_09_15, reviewed_at 2024_04_23;)",
+                    "rule_references": [
+                        "https://www.normanshark.com/blog/necurs-cc-domains-non-censorable/"
+                    ],
+                    "alert_context": [
+                        {
+                            "dest_ip": "43.130.172.75",
+                            "dest_port": 53
+                        }
+                    ]
+                },
+                {
+                    "rule_category": "not-suspicious",
+                    "alert_severity": "low",
+                    "rule_msg": "TAG_LOG_PKT",
+                    "rule_id": "2:1",
+                    "rule_source": "Snort registered user ruleset",
+                    "rule_url": "https://www.snort.org/downloads/#rule-downloads",
+                    "rule_raw": "alert ( gid:2; sid:1; rev:1; msg:\"TAG_LOG_PKT\"; metadata:rule-type preproc; classtype:not-suspicious; )",
+                    "alert_context": [
+                        {
+                            "dest_ip": "66.171.248.178",
+                            "dest_port": 80
+                        }
+                    ]
+                }
+            ],
+            "crowdsourced_ids_stats": {
+                "high": 4,
+                "medium": 2,
+                "low": 4,
+                "info": 0
+            },
+            "creation_date": 1517162394,
+            "reputation": -2,
+            "sha1": "31fa0d3f068d65ee777d040d093ef145f6d36eb5",
+            "last_modification_date": 1767451475,
+            "authentihash": "6cdd516532a02b7ba1fddb91c92ebfb28809247a5daeb87680c577ec7a40c4c3",
+            "popular_threat_classification": {
+                "popular_threat_category": [
+                    {
+                        "count": 24,
+                        "value": "ransomware"
+                    },
+                    {
+                        "count": 23,
+                        "value": "trojan"
+                    }
+                ],
+                "suggested_threat_label": "ransomware.gandcrab/gandcrypt",
+                "popular_threat_name": [
+                    {
+                        "count": 25,
+                        "value": "gandcrab"
+                    },
+                    {
+                        "count": 4,
+                        "value": "gandcrypt"
+                    },
+                    {
+                        "count": 2,
+                        "value": "gen3"
+                    }
+                ]
+            },
+            "times_submitted": 7,
+            "first_submission_date": 1517727837,
+            "magika": "PEBIN",
+            "unique_sources": 7,
+            "type_tag": "peexe",
+            "md5": "41f632e9186aa82ddcf7a80ebecc47e5",
+            "detectiteasy": {
+                "filetype": "PE32",
+                "values": [
+                    {
+                        "info": "LTCG/C++",
+                        "version": "18.00.21005",
+                        "type": "Compiler",
+                        "name": "Microsoft Visual C/C++"
+                    },
+                    {
+                        "version": "12.00.21005",
+                        "type": "Linker",
+                        "name": "Microsoft Linker"
+                    },
+                    {
+                        "version": "2013",
+                        "type": "Tool",
+                        "name": "Visual Studio"
+                    }
+                ]
+            },
+            "tags": [
+                "runtime-modules",
+                "malware",
+                "long-sleeps",
+                "nxdomain",
+                "peexe",
+                "direct-cpu-clock-access"
+            ],
+            "last_analysis_stats": {
+                "malicious": 61,
+                "suspicious": 0,
+                "undetected": 9,
+                "harmless": 0,
+                "timeout": 0,
+                "confirmed-timeout": 0,
+                "failure": 0,
+                "type-unsupported": 4
+            },
+            "sha256": "21957bfa277e386c9967171dd181723fc9cc63d3ec00e782e72fa9477007c5c5",
+            "crowdsourced_yara_results": [
+                {
+                    "ruleset_id": "000a7d3924",
+                    "rule_name": "SUSP_RANSOMWARE_Indicator_Jul20",
+                    "ruleset_name": "crime_ransom_generic",
+                    "description": "Detects ransomware indicator",
+                    "author": "Florian Roth (Nextron Systems)",
+                    "match_date": 1767451366,
+                    "ruleset_version": "000a7d3924|1d926845269a3ac8de0431da133950390b5cced3",
+                    "source": "https://github.com/Neo23x0/signature-base"
+                },
+                {
+                    "ruleset_id": "00b3f0004b",
+                    "rule_name": "Gandcrab",
+                    "ruleset_name": "Gandcrab",
+                    "description": "Gandcrab Payload",
+                    "author": "kevoreilly",
+                    "match_date": 1767451366,
+                    "ruleset_version": "00b3f0004b|b488c511a7c48ed6c425bf38811bf08e87b0ddbf",
+                    "source": "https://github.com/kevoreilly/CAPEv2"
+                },
+                {
+                    "ruleset_id": "008d5ec3a7",
+                    "rule_name": "win_gandcrab_auto",
+                    "ruleset_name": "win.gandcrab_auto",
+                    "description": "Detects win.gandcrab.",
+                    "author": "Felix Bilstein - yara-signator at cocacoding dot com",
+                    "match_date": 1767451366,
+                    "ruleset_version": "008d5ec3a7|6558c417dcf07146b1309b6acde6be0aa96dea10",
+                    "source": "https://malpedia.caad.fkie.fraunhofer.de/"
+                }
+            ],
+            "last_analysis_results": {
+                "Bkav": {
+                    "method": "blacklist",
+                    "engine_name": "Bkav",
+                    "engine_version": "2.0.0.1",
+                    "engine_update": "20251229",
+                    "category": "malicious",
+                    "result": "W32.AIDetectMalware"
+                },
+                "Lionic": {
+                    "method": "blacklist",
+                    "engine_name": "Lionic",
+                    "engine_version": "8.16",
+                    "engine_update": "20251229",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.GandCrab.j!c"
+                },
+                "tehtris": {
+                    "method": "blacklist",
+                    "engine_name": "tehtris",
+                    "engine_version": "v0.1.4",
+                    "engine_update": "20251230",
+                    "category": "undetected",
+                    "result": null
+                },
+                "MicroWorld-eScan": {
+                    "method": "blacklist",
+                    "engine_name": "MicroWorld-eScan",
+                    "engine_version": "14.0.409.0",
+                    "engine_update": "20251230",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.GandCrab.AQ"
+                },
+                "CTX": {
+                    "method": "blacklist",
+                    "engine_name": "CTX",
+                    "engine_version": "2024.8.29.1",
+                    "engine_update": "20251230",
+                    "category": "malicious",
+                    "result": "exe.ransomware.gandcrab"
+                },
+                "CAT-QuickHeal": {
+                    "method": "blacklist",
+                    "engine_name": "CAT-QuickHeal",
+                    "engine_version": "22.00",
+                    "engine_update": "20260102",
+                    "category": "malicious",
+                    "result": "Trojan.Mauvaise.SL1"
+                },
+                "Skyhigh": {
+                    "method": "blacklist",
+                    "engine_name": "Skyhigh",
+                    "engine_version": "v2021.2.0+4045",
+                    "engine_update": "20251229",
+                    "category": "malicious",
+                    "result": "BehavesLike.Win32.Generic.kh"
+                },
+                "ALYac": {
+                    "method": "blacklist",
+                    "engine_name": "ALYac",
+                    "engine_version": "2.0.0.10",
+                    "engine_update": "20251230",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.GandCrab"
+                },
+                "Cylance": {
+                    "method": "blacklist",
+                    "engine_name": "Cylance",
+                    "engine_version": "3.0.0.0",
+                    "engine_update": "20251205",
+                    "category": "malicious",
+                    "result": "Unsafe"
+                },
+                "Zillya": {
+                    "method": "blacklist",
+                    "engine_name": "Zillya",
+                    "engine_version": "2.0.0.5514",
+                    "engine_update": "20251229",
+                    "category": "malicious",
+                    "result": "Trojan.GandCrypt.Win32.1635"
+                },
+                "Sangfor": {
+                    "method": "blacklist",
+                    "engine_name": "Sangfor",
+                    "engine_version": "2.22.3.0",
+                    "engine_update": "20251229",
+                    "category": "malicious",
+                    "result": "Ransom.Win32.Gandcrab_1.se"
+                },
+                "K7AntiVirus": {
+                    "method": "blacklist",
+                    "engine_name": "K7AntiVirus",
+                    "engine_version": "14.26.58135",
+                    "engine_update": "20251229",
+                    "category": "malicious",
+                    "result": "Ransomware ( 0053d33d1 )"
+                },
+                "Alibaba": {
+                    "method": "blacklist",
+                    "engine_name": "Alibaba",
+                    "engine_version": "0.3.0.5",
+                    "engine_update": "20190527",
+                    "category": "malicious",
+                    "result": "Ransom:Win32/GandCrab.7127452b"
+                },
+                "K7GW": {
+                    "method": "blacklist",
+                    "engine_name": "K7GW",
+                    "engine_version": "14.26.58137",
+                    "engine_update": "20251230",
+                    "category": "malicious",
+                    "result": "Ransomware ( 0053d33d1 )"
+                },
+                "CrowdStrike": {
+                    "method": "blacklist",
+                    "engine_name": "CrowdStrike",
+                    "engine_version": "1.0",
+                    "engine_update": "20231026",
+                    "category": "malicious",
+                    "result": "win/malicious_confidence_100% (W)"
+                },
+                "Arcabit": {
+                    "method": "blacklist",
+                    "engine_name": "Arcabit",
+                    "engine_version": "2025.0.0.23",
+                    "engine_update": "20251230",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.GandCrab.AQ"
+                },
+                "Baidu": {
+                    "method": "blacklist",
+                    "engine_name": "Baidu",
+                    "engine_version": "1.0.0.2",
+                    "engine_update": "20190318",
+                    "category": "undetected",
+                    "result": null
+                },
+                "VirIT": {
+                    "method": "blacklist",
+                    "engine_name": "VirIT",
+                    "engine_version": "9.5.1113",
+                    "engine_update": "20251229",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Symantec": {
+                    "method": "blacklist",
+                    "engine_name": "Symantec",
+                    "engine_version": "1.22.0.0",
+                    "engine_update": "20251229",
+                    "category": "malicious",
+                    "result": "Ransom.GandCrab"
+                },
+                "Elastic": {
+                    "method": "blacklist",
+                    "engine_name": "Elastic",
+                    "engine_version": "4.0.242",
+                    "engine_update": "20251219",
+                    "category": "malicious",
+                    "result": "malicious (high confidence)"
+                },
+                "ESET-NOD32": {
+                    "method": "blacklist",
+                    "engine_name": "ESET-NOD32",
+                    "engine_version": "18.2.18.0",
+                    "engine_update": "20251230",
+                    "category": "malicious",
+                    "result": "Win32/Filecoder.GandCrab.H trojan"
+                },
+                "Cynet": {
+                    "method": "blacklist",
+                    "engine_name": "Cynet",
+                    "engine_version": "4.0.3.4",
+                    "engine_update": "20251230",
+                    "category": "malicious",
+                    "result": "Malicious (score: 100)"
+                },
+                "APEX": {
+                    "method": "blacklist",
+                    "engine_name": "APEX",
+                    "engine_version": "6.730",
+                    "engine_update": "20251228",
+                    "category": "malicious",
+                    "result": "Malicious"
+                },
+                "Paloalto": {
+                    "method": "blacklist",
+                    "engine_name": "Paloalto",
+                    "engine_version": "0.9.0.1003",
+                    "engine_update": "20251230",
+                    "category": "malicious",
+                    "result": "generic.ml"
+                },
+                "ClamAV": {
+                    "method": "blacklist",
+                    "engine_name": "ClamAV",
+                    "engine_version": "1.5.1.0",
+                    "engine_update": "20251229",
+                    "category": "malicious",
+                    "result": "Win.Ransomware.Gandcrab-6502430-0"
+                },
+                "Kaspersky": {
+                    "method": "blacklist",
+                    "engine_name": "Kaspersky",
+                    "engine_version": "22.0.1.28",
+                    "engine_update": "20260103",
+                    "category": "malicious",
+                    "result": "Trojan-Ransom.Win32.GandCrypt.b"
+                },
+                "BitDefender": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefender",
+                    "engine_version": "7.2",
+                    "engine_update": "20251230",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.GandCrab.AQ"
+                },
+                "NANO-Antivirus": {
+                    "method": "blacklist",
+                    "engine_name": "NANO-Antivirus",
+                    "engine_version": "1.0.170.26895",
+                    "engine_update": "20251219",
+                    "category": "malicious",
+                    "result": "Trojan.Win32.GandCrypt.exrzjh"
+                },
+                "SUPERAntiSpyware": {
+                    "method": "blacklist",
+                    "engine_name": "SUPERAntiSpyware",
+                    "engine_version": "5.6.0.1032",
+                    "engine_update": "20251229",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Tencent": {
+                    "method": "blacklist",
+                    "engine_name": "Tencent",
+                    "engine_version": "1.0.0.1",
+                    "engine_update": "20251230",
+                    "category": "malicious",
+                    "result": "Trojan-Ransom.Win32.GandCrab.16000553"
+                },
+                "Sophos": {
+                    "method": "blacklist",
+                    "engine_name": "Sophos",
+                    "engine_version": "3.3.1.0",
+                    "engine_update": "20251229",
+                    "category": "malicious",
+                    "result": "Troj/GandCrab-A"
+                },
+                "F-Secure": {
+                    "method": "blacklist",
+                    "engine_name": "F-Secure",
+                    "engine_version": "18.10.1547.307",
+                    "engine_update": "20251229",
+                    "category": "malicious",
+                    "result": "Trojan.TR/Crypt.XPACK.Gen3"
+                },
+                "DrWeb": {
+                    "method": "blacklist",
+                    "engine_name": "DrWeb",
+                    "engine_version": "7.0.72.9030",
+                    "engine_update": "20251230",
+                    "category": "malicious",
+                    "result": "Trojan.Encoder.24384"
+                },
+                "VIPRE": {
+                    "method": "blacklist",
+                    "engine_name": "VIPRE",
+                    "engine_version": "6.0.0.35",
+                    "engine_update": "20251229",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.GandCrab.AQ"
+                },
+                "TrendMicro": {
+                    "method": "blacklist",
+                    "engine_name": "TrendMicro",
+                    "engine_version": "24.550.0.1002",
+                    "engine_update": "20260103",
+                    "category": "malicious",
+                    "result": "Ransom.Win32.GANDCRAB.SMIU"
+                },
+                "McAfeeD": {
+                    "method": "blacklist",
+                    "engine_name": "McAfeeD",
+                    "engine_version": "1.2.0.10275",
+                    "engine_update": "20251230",
+                    "category": "malicious",
+                    "result": "Real Protect-LS!41F632E9186A"
+                },
+                "SentinelOne": {
+                    "method": "blacklist",
+                    "engine_name": "SentinelOne",
+                    "engine_version": "7.5.3.1",
+                    "engine_update": "20251224",
+                    "category": "malicious",
+                    "result": "Static AI - Malicious PE"
+                },
+                "Trapmine": {
+                    "method": "blacklist",
+                    "engine_name": "Trapmine",
+                    "engine_version": "4.0.7.0",
+                    "engine_update": "20251125",
+                    "category": "malicious",
+                    "result": "malicious.high.ml.score"
+                },
+                "CMC": {
+                    "method": "blacklist",
+                    "engine_name": "CMC",
+                    "engine_version": "2.4.2022.1",
+                    "engine_update": "20251230",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Emsisoft": {
+                    "method": "blacklist",
+                    "engine_name": "Emsisoft",
+                    "engine_version": "2024.8.0.61147",
+                    "engine_update": "20251230",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.GandCrab.AQ (B)"
+                },
+                "Ikarus": {
+                    "method": "blacklist",
+                    "engine_name": "Ikarus",
+                    "engine_version": "6.4.16.0",
+                    "engine_update": "20251229",
+                    "category": "malicious",
+                    "result": "Trojan-Ransom.GandCrab"
+                },
+                "Jiangmin": {
+                    "method": "blacklist",
+                    "engine_name": "Jiangmin",
+                    "engine_version": "16.0.100",
+                    "engine_update": "20251230",
+                    "category": "malicious",
+                    "result": "Trojan.GandCrypt.c"
+                },
+                "Webroot": {
+                    "method": "blacklist",
+                    "engine_name": "Webroot",
+                    "engine_version": "1.9.0.8",
+                    "engine_update": "20250227",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Varist": {
+                    "method": "blacklist",
+                    "engine_name": "Varist",
+                    "engine_version": "6.6.1.3",
+                    "engine_update": "20260103",
+                    "category": "malicious",
+                    "result": "W32/GandCrab.AR.gen!Eldorado"
+                },
+                "Avira": {
+                    "method": "blacklist",
+                    "engine_name": "Avira",
+                    "engine_version": "8.3.3.24",
+                    "engine_update": "20251229",
+                    "category": "malicious",
+                    "result": "TR/Crypt.XPACK.Gen3"
+                },
+                "Antiy-AVL": {
+                    "method": "blacklist",
+                    "engine_name": "Antiy-AVL",
+                    "engine_version": "3.0",
+                    "engine_update": "20251230",
+                    "category": "malicious",
+                    "result": "Trojan[Ransom]/Win32.GandCrypt"
+                },
+                "Kingsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Kingsoft",
+                    "engine_version": "None",
+                    "engine_update": "20251225",
+                    "category": "malicious",
+                    "result": "malware.kb.a.999"
+                },
+                "Gridinsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Gridinsoft",
+                    "engine_version": "1.0.231.174",
+                    "engine_update": "20251230",
+                    "category": "malicious",
+                    "result": "Ransom.Win32.Gandcrab.oa!s1"
+                },
+                "Xcitium": {
+                    "method": "blacklist",
+                    "engine_name": "Xcitium",
+                    "engine_version": "38300",
+                    "engine_update": "20251229",
+                    "category": "malicious",
+                    "result": "TrojWare.Win32.Ransom.GandCrab.B@7kn2ff"
+                },
+                "Microsoft": {
+                    "method": "blacklist",
+                    "engine_name": "Microsoft",
+                    "engine_version": "1.1.25110.1",
+                    "engine_update": "20251230",
+                    "category": "malicious",
+                    "result": "Ransom:Win32/GandCrab!pz"
+                },
+                "ViRobot": {
+                    "method": "blacklist",
+                    "engine_name": "ViRobot",
+                    "engine_version": "2014.3.20.0",
+                    "engine_update": "20251230",
+                    "category": "undetected",
+                    "result": null
+                },
+                "ZoneAlarm": {
+                    "method": "blacklist",
+                    "engine_name": "ZoneAlarm",
+                    "engine_version": "6.21-110947361",
+                    "engine_update": "20251229",
+                    "category": "malicious",
+                    "result": "Troj/GandCrab-A"
+                },
+                "GData": {
+                    "method": "blacklist",
+                    "engine_name": "GData",
+                    "engine_version": "GD:27.43012AVA:64.30404",
+                    "engine_update": "20251230",
+                    "category": "malicious",
+                    "result": "Trojan.Ransom.GandCrab.AQ"
+                },
+                "Google": {
+                    "method": "blacklist",
+                    "engine_name": "Google",
+                    "engine_version": "1767063647",
+                    "engine_update": "20251230",
+                    "category": "malicious",
+                    "result": "Detected"
+                },
+                "AhnLab-V3": {
+                    "method": "blacklist",
+                    "engine_name": "AhnLab-V3",
+                    "engine_version": "3.29.1.10604",
+                    "engine_update": "20251230",
+                    "category": "malicious",
+                    "result": "Trojan/Win32.Agentb.R219506"
+                },
+                "Acronis": {
+                    "method": "blacklist",
+                    "engine_name": "Acronis",
+                    "engine_version": "1.2.0.121",
+                    "engine_update": "20240328",
+                    "category": "malicious",
+                    "result": "suspicious"
+                },
+                "VBA32": {
+                    "method": "blacklist",
+                    "engine_name": "VBA32",
+                    "engine_version": "5.5.0",
+                    "engine_update": "20251231",
+                    "category": "malicious",
+                    "result": "TrojanRansom.GandCrypt"
+                },
+                "TACHYON": {
+                    "method": "blacklist",
+                    "engine_name": "TACHYON",
+                    "engine_version": "2025-12-30.01",
+                    "engine_update": "20251230",
+                    "category": "undetected",
+                    "result": null
+                },
+                "Malwarebytes": {
+                    "method": "blacklist",
+                    "engine_name": "Malwarebytes",
+                    "engine_version": "3.1.0.185",
+                    "engine_update": "20251230",
+                    "category": "malicious",
+                    "result": "Generic.Malware.Gen.DDS"
+                },
+                "Panda": {
+                    "method": "blacklist",
+                    "engine_name": "Panda",
+                    "engine_version": "4.6.4.2",
+                    "engine_update": "20251229",
+                    "category": "malicious",
+                    "result": "Trj/Genetic.gen"
+                },
+                "Zoner": {
+                    "method": "blacklist",
+                    "engine_name": "Zoner",
+                    "engine_version": "2.2.2.0",
+                    "engine_update": "20251230",
+                    "category": "undetected",
+                    "result": null
+                },
+                "TrendMicro-HouseCall": {
+                    "method": "blacklist",
+                    "engine_name": "TrendMicro-HouseCall",
+                    "engine_version": "24.550.0.1002",
+                    "engine_update": "20260103",
+                    "category": "malicious",
+                    "result": "Ransom.Win32.GANDCRAB.SMIU"
+                },
+                "Rising": {
+                    "method": "blacklist",
+                    "engine_name": "Rising",
+                    "engine_version": "25.0.0.28",
+                    "engine_update": "20251230",
+                    "category": "malicious",
+                    "result": "Ransom.GandCrab!1.B8D6 (CLASSIC)"
+                },
+                "Yandex": {
+                    "method": "blacklist",
+                    "engine_name": "Yandex",
+                    "engine_version": "5.5.2.24",
+                    "engine_update": "20251230",
+                    "category": "malicious",
+                    "result": "Trojan.GenAsa!PQWJX9MqkkE"
+                },
+                "TrellixENS": {
+                    "method": "blacklist",
+                    "engine_name": "TrellixENS",
+                    "engine_version": "6.0.6.653",
+                    "engine_update": "20251229",
+                    "category": "malicious",
+                    "result": "GenericRXDY-EJ!41F632E9186A"
+                },
+                "huorong": {
+                    "method": "blacklist",
+                    "engine_name": "huorong",
+                    "engine_version": "92a51d3:92a51d3:04d939a:04d939a",
+                    "engine_update": "20251229",
+                    "category": "malicious",
+                    "result": "Ransom/GandCrab.ax"
+                },
+                "MaxSecure": {
+                    "method": "blacklist",
+                    "engine_name": "MaxSecure",
+                    "engine_version": "1.0.0.1",
+                    "engine_update": "20251229",
+                    "category": "malicious",
+                    "result": "Trojan.Malware.11964206.susgen"
+                },
+                "Fortinet": {
+                    "method": "blacklist",
+                    "engine_name": "Fortinet",
+                    "engine_version": "7.0.30.0",
+                    "engine_update": "20251230",
+                    "category": "malicious",
+                    "result": "W32/GandCrab.A!tr.ransom"
+                },
+                "DeepInstinct": {
+                    "method": "blacklist",
+                    "engine_name": "DeepInstinct",
+                    "engine_version": "5.0.0.8",
+                    "engine_update": "20251226",
+                    "category": "malicious",
+                    "result": "MALICIOUS"
+                },
+                "alibabacloud": {
+                    "method": "blacklist",
+                    "engine_name": "alibabacloud",
+                    "engine_version": "2.2.0",
+                    "engine_update": "20250321",
+                    "category": "malicious",
+                    "result": "RansomWare:Win/Gandcrab"
+                },
+                "Trustlook": {
+                    "method": "blacklist",
+                    "engine_name": "Trustlook",
+                    "engine_version": "1.0",
+                    "engine_update": "20251230",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "SymantecMobileInsight": {
+                    "method": "blacklist",
+                    "engine_name": "SymantecMobileInsight",
+                    "engine_version": "2.0",
+                    "engine_update": "20250124",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "BitDefenderFalx": {
+                    "method": "blacklist",
+                    "engine_name": "BitDefenderFalx",
+                    "engine_version": "2.0.936",
+                    "engine_update": "20251216",
+                    "category": "type-unsupported",
+                    "result": null
+                },
+                "Avast-Mobile": {
+                    "method": "blacklist",
+                    "engine_name": "Avast-Mobile",
+                    "engine_version": "251229-00",
+                    "engine_update": "20251229",
+                    "category": "type-unsupported",
+                    "result": null
+                }
+            },
+            "pe_info": {
+                "timestamp": 1517162394,
+                "imphash": "2b4bc2af4d7edfd1476bd09d0ea9def7",
+                "machine_type": 332,
+                "entry_point": 17595,
+                "resource_details": [
+                    {
+                        "lang": "ENGLISH US",
+                        "chi2": 4031.47,
+                        "filetype": "XML",
+                        "entropy": 4.911615371704102,
+                        "sha256": "4bb79dcea0a901f7d9eac5aa05728ae92acb42e0cb22e5dd14134f4421a3d8df",
+                        "type": "RT_MANIFEST"
+                    }
+                ],
+                "resource_langs": {
+                    "ENGLISH US": 1
+                },
+                "resource_types": {
+                    "RT_MANIFEST": 1
+                },
+                "sections": [
+                    {
+                        "name": ".text",
+                        "chi2": 162976.88,
+                        "virtual_address": 4096,
+                        "flags": "rx",
+                        "raw_size": 29184,
+                        "entropy": 6.49,
+                        "virtual_size": 29131,
+                        "md5": "980427ccfdb464d151599e5d07c95d24"
+                    },
+                    {
+                        "name": ".rdata",
+                        "chi2": 725501.75,
+                        "virtual_address": 36864,
+                        "flags": "r",
+                        "raw_size": 34304,
+                        "entropy": 6.12,
+                        "virtual_size": 33908,
+                        "md5": "6e4e7fdf1117f8d36d82ed360620b918"
+                    },
+                    {
+                        "name": ".data",
+                        "chi2": 243700.12,
+                        "virtual_address": 73728,
+                        "flags": "rw",
+                        "raw_size": 3072,
+                        "entropy": 3.15,
+                        "virtual_size": 2860,
+                        "md5": "4021b6eb85071b1185b01ef7396bda7e"
+                    },
+                    {
+                        "name": ".CRT",
+                        "chi2": 129030.0,
+                        "virtual_address": 77824,
+                        "flags": "r",
+                        "raw_size": 512,
+                        "entropy": 0.06,
+                        "virtual_size": 4,
+                        "md5": "bce74b3d43cb4650fad863eafb1f704a"
+                    },
+                    {
+                        "name": ".rsrc",
+                        "chi2": 9297.0,
+                        "virtual_address": 81920,
+                        "flags": "r",
+                        "raw_size": 512,
+                        "entropy": 4.71,
+                        "virtual_size": 480,
+                        "md5": "f1b801d7cee918c8de20c6e09bf27838"
+                    },
+                    {
+                        "name": ".reloc",
+                        "chi2": 10426.81,
+                        "virtual_address": 86016,
+                        "flags": "r",
+                        "raw_size": 2560,
+                        "entropy": 6.7,
+                        "virtual_size": 2504,
+                        "md5": "ab327c3610ce4f7ce99dfec2d19dc121"
+                    }
+                ],
+                "compiler_product_versions": [
+                    "[ C ] VS2013 build 21005 count=2",
+                    "[---] Unmarked objects (old) count=1",
+                    "[IMP] VS2008 SP1 build 30729 count=19",
+                    "[---] Unmarked objects count=130",
+                    "[RES] VS2013 build 21005 count=1",
+                    "[LNK] VS2013 build 21005 count=1",
+                    "id: 0xdf, version: 20806 count=4",
+                    "id: 0xe0, version: 20806 count=2",
+                    "id: 0xe5, version: 21005 count=17"
+                ],
+                "rich_pe_header_hash": "e9ac9c688987b2299867b32a29065f9a",
+                "import_list": [
+                    {
+                        "library_name": "KERNEL32.dll",
+                        "imported_functions": [
+                            "CloseHandle",
+                            "CreateFileMappingW",
+                            "CreateFileW",
+                            "CreateMutexW",
+                            "CreatePipe",
+                            "CreateProcessW",
+                            "CreateThread",
+                            "CreateToolhelp32Snapshot",
+                            "DeleteCriticalSection",
+                            "EnterCriticalSection",
+                            "ExitProcess",
+                            "ExitThread",
+                            "ExpandEnvironmentStringsW",
+                            "FindClose",
+                            "FindFirstFileW",
+                            "FindNextFileW",
+                            "GetComputerNameW",
+                            "GetDiskFreeSpaceW",
+                            "GetDriveTypeW",
+                            "GetEnvironmentVariableW",
+                            "GetFileAttributesW",
+                            "GetFileSize",
+                            "GetLastError",
+                            "GetModuleFileNameW",
+                            "GetModuleHandleA",
+                            "GetModuleHandleW",
+                            "GetNativeSystemInfo",
+                            "GetProcAddress",
+                            "GetProcessHeap",
+                            "GetSystemDirectoryW",
+                            "GetTempPathW",
+                            "GetTickCount",
+                            "GetVolumeInformationW",
+                            "GetWindowsDirectoryW",
+                            "HeapAlloc",
+                            "HeapFree",
+                            "InitializeCriticalSection",
+                            "IsProcessorFeaturePresent",
+                            "LeaveCriticalSection",
+                            "LoadLibraryA",
+                            "lstrcatA",
+                            "lstrcatW",
+                            "lstrcmpiA",
+                            "lstrcmpiW",
+                            "lstrcmpW",
+                            "lstrcpyA",
+                            "lstrcpyW",
+                            "lstrlenA",
+                            "lstrlenW",
+                            "MapViewOfFile",
+                            "MoveFileW",
+                            "MultiByteToWideChar",
+                            "OpenProcess",
+                            "Process32FirstW",
+                            "Process32NextW",
+                            "ReadFile",
+                            "SetFileAttributesW",
+                            "SetFilePointer",
+                            "SetHandleInformation",
+                            "Sleep",
+                            "TerminateProcess",
+                            "TerminateThread",
+                            "UnmapViewOfFile",
+                            "VerifyVersionInfoW",
+                            "VerSetConditionMask",
+                            "VirtualAlloc",
+                            "VirtualFree",
+                            "WaitForMultipleObjects",
+                            "WaitForSingleObject",
+                            "WriteFile"
+                        ]
+                    },
+                    {
+                        "library_name": "USER32.dll",
+                        "imported_functions": [
+                            "BeginPaint",
+                            "CreateWindowExW",
+                            "DefWindowProcW",
+                            "DestroyWindow",
+                            "DispatchMessageW",
+                            "EndPaint",
+                            "GetForegroundWindow",
+                            "GetMessageW",
+                            "LoadCursorW",
+                            "LoadIconW",
+                            "RegisterClassExW",
+                            "SendMessageW",
+                            "SetWindowLongW",
+                            "ShowWindow",
+                            "TranslateMessage",
+                            "UpdateWindow",
+                            "wsprintfW"
+                        ]
+                    },
+                    {
+                        "library_name": "GDI32.dll",
+                        "imported_functions": [
+                            "TextOutW"
+                        ]
+                    },
+                    {
+                        "library_name": "ADVAPI32.dll",
+                        "imported_functions": [
+                            "AllocateAndInitializeSid",
+                            "CryptAcquireContextW",
+                            "CryptDestroyKey",
+                            "CryptEncrypt",
+                            "CryptExportKey",
+                            "CryptGenKey",
+                            "CryptGetKeyParam",
+                            "CryptImportKey",
+                            "CryptReleaseContext",
+                            "FreeSid",
+                            "GetUserNameW",
+                            "RegCloseKey",
+                            "RegCreateKeyExW",
+                            "RegOpenKeyExW",
+                            "RegQueryValueExW",
+                            "RegSetValueExW"
+                        ]
+                    },
+                    {
+                        "library_name": "SHELL32.dll",
+                        "imported_functions": [
+                            "ShellExecuteExW",
+                            "ShellExecuteW",
+                            "SHGetSpecialFolderPathW"
+                        ]
+                    },
+                    {
+                        "library_name": "CRYPT32.dll",
+                        "imported_functions": [
+                            "CryptBinaryToStringA",
+                            "CryptStringToBinaryA"
+                        ]
+                    },
+                    {
+                        "library_name": "WININET.dll",
+                        "imported_functions": [
+                            "HttpOpenRequestW",
+                            "HttpSendRequestW",
+                            "InternetCloseHandle",
+                            "InternetConnectW",
+                            "InternetOpenW",
+                            "InternetReadFile"
+                        ]
+                    }
+                ]
+            },
+            "size": 71168,
+            "type_description": "Win32 EXE"
+        }
+    }
+}
