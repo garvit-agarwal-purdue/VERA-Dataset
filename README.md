@@ -208,7 +208,7 @@ For every sample, the full Zenodo release provides the raw binary, the complete 
 2. Clone the repository.
 
    ```bash
-   git clone <YOUR_GITHUB_REPO_URL>.git
+   git clone https://github.com/garvit-agarwal-purdue/VERA-Dataset.git
    cd "VERA Dataset"
    ```
 
