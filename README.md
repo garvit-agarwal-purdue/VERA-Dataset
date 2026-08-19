@@ -238,7 +238,6 @@ These samples are live. Treat them accordingly.
 - **No network.** Disable networking, or route through a controlled, monitored analysis network. Some samples attempt to reach command-and-control infrastructure or spread laterally.
 - **Snapshots.** Take a clean VM snapshot before execution and revert after every run.
 - **No shared storage.** Keep samples off shared drives, cloud sync folders, and backup targets.
-- **Archive password.** If the binaries are distributed inside password-protected archives, the archive password is `<CONFIRM_PASSWORD>`. The malware research community commonly uses `infected` for this purpose. Confirm the value used in your release before publishing.
 - **Legal duty.** You are responsible for complying with all applicable laws, your institution's policies, and the terms under which the source repositories distribute these samples.
 
 ---
