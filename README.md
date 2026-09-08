@@ -261,13 +261,16 @@ If you use VERA in your work, please cite both the paper and the dataset.
 **Paper:**
 
 ```bibtex
-@inproceedings{agarwal2026vera,
-  title     = {VERA: A Dual-Validated, Behaviorally-Verified Repository of 15,000+ Raw Windows Ransomware Binaries},
-  author    = {Agarwal, Garvit and Vasanth, Nithish and Cho, Seunghyun and Alomayri, Yousef Mohammed Y. and Pumphrey, Noah D. and Li, Feng and Xie, Yucheng and Zou, Xukai},
-  booktitle = {IEEE International Conference on Computer Communications and Networks (ICCCN)},
-  year      = {<YEAR>},
-  pages     = {<PAGES>},
-  publisher = {IEEE}
+@INPROCEEDINGS{11662597,
+  author={Agarwal, Garvit and Vasanth, Nithish and Cho, Seunghyun and Alomayri, Yousef Mohammed Y. and Pumphrey, Noah D. and Li, Feng and Xie, Yucheng and Zou, Xukai},
+  booktitle={2026 35th International Conference on Computer Communications and Networks (ICCCN)}, 
+  title={VERA: A Dual-Validated, Behaviorally-Verified Repository of 15,000+ Raw Windows Ransomware Binaries}, 
+  year={2026},
+  volume={},
+  number={},
+  pages={1-9},
+  keywords={Labeling;Ransomware;Modeling;Malware;Signal detection;Printing;Tools;Windows;Machine learning;Pipelines;Ransomware;Dataset;Machine Learning Security;Dynamic Analysis;Reproducibility},
+  doi={10.1109/ICCCN69946.2026.11662597}
 }
 ```
 
@@ -277,7 +280,7 @@ If you use VERA in your work, please cite both the paper and the dataset.
 @dataset{agarwal2026vera_dataset,
   title     = {VERA: Validated Execution-based Ransomware Analysis Dataset},
   author    = {Agarwal, Garvit and Vasanth, Nithish and Cho, Seunghyun and Alomayri, Yousef Mohammed Y. and Pumphrey, Noah D. and Li, Feng and Xie, Yucheng and Zou, Xukai},
-  year      = {<YEAR>},
+  year      = {2026},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.17904705},
   url       = {https://doi.org/10.5281/zenodo.17904705}
