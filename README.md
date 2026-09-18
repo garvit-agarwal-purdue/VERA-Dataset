@@ -1,6 +1,6 @@
 # VERA: Validated Execution-based Ransomware Analysis
 
-**A dual-validated, behaviorally-verified repository of 15,000+ raw Windows ransomware binaries.**
+**A dual-validated, behaviorally-verified Dataset of 15,000+ raw Windows ransomware binaries.**
 
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.17904705-blue)](https://doi.org/10.5281/zenodo.17904705)
 [![License](https://img.shields.io/badge/License-SEE%20BELOW-lightgrey)](#license)
