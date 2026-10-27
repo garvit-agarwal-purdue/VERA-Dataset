@@ -5,6 +5,7 @@
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.17904705-blue)](https://doi.org/10.5281/zenodo.17904705)
 [![License](https://img.shields.io/badge/License-MIT%20%2B%20CC%20BY%204.0-blue)](#license)
 [![Paper](https://img.shields.io/badge/Paper-IEEE%20ICCCN-orange)](#citation)
+[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-EMBER2024%20features-yellow)](https://huggingface.co/datasets/agarw347/VERA-Dataset)
 
 ---
 
@@ -209,7 +210,7 @@ For every sample, the full Zenodo release provides the raw binary, the complete 
 
 ### EMBER2024-compatible features
 
-`EMBER_Features/` contains a script that generates EMBER2024-compatible features (thrember, EMBER feature version 3, 2,568-dimensional vectors) for the VERA binaries, so VERA samples can be combined with EMBER2024 data or tested against EMBER2024-trained models. It reads the binaries statically and writes `raw_features.jsonl`, `X_vera.dat`, `index.csv`, `failures.csv` and `run_info.json` to a directory you choose. The generated outputs are not stored in git. See [`EMBER_Features/README.md`](EMBER_Features/README.md) for setup and usage.
+`EMBER_Features/` contains a script that generates EMBER2024-compatible features (thrember, EMBER feature version 3, 2,568-dimensional vectors) for the VERA binaries, so VERA samples can be combined with EMBER2024 data or tested against EMBER2024-trained models. It reads the binaries statically and writes `raw_features.jsonl`, `X_vera.dat`, `index.csv`, `failures.csv` and `run_info.json` to a directory you choose. Precomputed features for all 38,285 binaries are published on Hugging Face at [agarw347/VERA-Dataset](https://huggingface.co/datasets/agarw347/VERA-Dataset), loadable with `load_dataset("agarw347/VERA-Dataset", split="train")`; they are not stored in git. See [`EMBER_Features/README.md`](EMBER_Features/README.md) for setup and usage.
 
 ---
 
@@ -269,7 +270,7 @@ To run the full pipeline, download the complete binaries and CAPE reports from t
 **2026-10-27**
 
 - Added a `Label_Source` column to `Final_Family_Labels.csv`, so consensus labels (`consensus`) can be told apart from Stage II XGBoost propagations (`model_predicted`) without joining files.
-- Added [`EMBER_Features/`](EMBER_Features/README.md), which generates EMBER2024-compatible features (feature version 3, 2,568-dimensional vectors) for the VERA binaries.
+- Added [`EMBER_Features/`](EMBER_Features/README.md), which generates EMBER2024-compatible features (feature version 3, 2,568-dimensional vectors) for the VERA binaries. Precomputed features for all 38,285 binaries are on [Hugging Face](https://huggingface.co/datasets/agarw347/VERA-Dataset).
 - Added licenses (MIT for code, CC BY 4.0 for data and labels) and a `CITATION.cff` file.
 - Fixed the Getting Started snippet to use the actual column names, and removed Jupyter checkpoint files.
 
