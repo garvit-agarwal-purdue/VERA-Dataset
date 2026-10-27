@@ -6,6 +6,8 @@ or EMBER2024-trained models (e.g. its LightGBM benchmarks) can be tested directl
 
 Pinned: [EMBER2024](https://github.com/FutureComputing4AI/EMBER2024) commit `0ef753e81d98bf209f71b03cd331dfc190b5b54d`.
 
+Precomputed outputs for the full dataset (38,285 binaries) are on Hugging Face: [agarw347/VERA-Dataset](https://huggingface.co/datasets/agarw347/VERA-Dataset). Run this tool only if you want to regenerate them.
+
 ## Setup
 Keep the venv on a local Linux filesystem (venvs can break on FUSE/NTFS mounts). Needs Python >= 3.10.
 ```bash
