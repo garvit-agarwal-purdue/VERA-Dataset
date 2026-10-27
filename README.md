@@ -3,7 +3,7 @@
 **A dual-validated, behaviorally-verified Dataset of 15,000+ raw Windows ransomware binaries.**
 
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.17904705-blue)](https://doi.org/10.5281/zenodo.17904705)
-[![License](https://img.shields.io/badge/License-SEE%20BELOW-lightgrey)](#license)
+[![License](https://img.shields.io/badge/License-MIT%20%2B%20CC%20BY%204.0-blue)](#license)
 [![Paper](https://img.shields.io/badge/Paper-IEEE%20ICCCN-orange)](#citation)
 
 ---
@@ -29,6 +29,7 @@
 - [Getting Started](#getting-started)
 - [Responsible Handling](#responsible-handling)
 - [Reproducing the Paper](#reproducing-the-paper)
+- [Changelog](#changelog)
 - [Citation](#citation)
 - [License](#license)
 - [Ethical Use and Disclaimer](#ethical-use-and-disclaimer)
@@ -82,7 +83,7 @@ Please cite the Zenodo record and the paper when you use the data (see [Citation
 ## Repository Structure
 
 ```text
-VERA Dataset/
+VERA-Dataset/
 ├── Analysis/
 │   └── VirusTotal Reports/          # Aggregated VirusTotal detection reports and analysis
 │
@@ -97,10 +98,16 @@ VERA Dataset/
 │   ├── RansomwareVerification.ipynb          # Dynamic behavioral validation logic
 │   └── feature_dataset_true.csv              # Pre-extracted feature set
 │
-└── Labels/
-    ├── vera_labels.csv              # Behavioral status per sample (Active / Latent)
-    ├── Family_Consensus_Labels.csv # Stage I consensus family labels
-    └── Final_Family_Labels.csv     # Final unified family label per sample
+├── EMBER_Features/                  # Tool to generate EMBER2024-compatible feature vectors
+│
+├── Labels/
+│   ├── vera_labels.csv              # Behavioral status per sample (Active / Latent)
+│   ├── Family_Consensus_Labels.csv # Stage I consensus family labels
+│   └── Final_Family_Labels.csv     # Final unified family label per sample
+│
+├── LICENSE                          # MIT license (code)
+├── LICENSE-DATA.md                  # CC BY 4.0 (data and labels) and third-party terms
+└── CITATION.cff                     # Machine-readable citation metadata
 ```
 
 ---
@@ -184,7 +191,7 @@ The top 20 families account for 10,291 samples (66.62%), with the remaining 33.3
 | ----------------------------- | --------------------------------------------------------------------------- |
 | `vera_labels.csv`             | Behavioral status per sample (Active or Latent), keyed by SHA256 hash.      |
 | `Family_Consensus_Labels.csv` | Stage I family labels, limited to Consensus Set samples.                    |
-| `Final_Family_Labels.csv`     | Final unified family label per sample after Stage II propagation.           |
+| `Final_Family_Labels.csv`     | Final unified family label per sample after Stage II propagation. Includes a `Label_Source` column: `consensus` is the Stage I tool consensus; `model_predicted` is a Stage II XGBoost propagation (Contested Set). |
 
 ### Code
 
@@ -200,6 +207,10 @@ The top 20 families account for 10,291 samples (66.62%), with the remaining 33.3
 
 For every sample, the full Zenodo release provides the raw binary, the complete CAPE Sandbox JSON report, and a pre-processed feature set covering API call traces, file system operations, registry modifications, network activity, and process behavior. All feature extraction is deterministic and derived only from released artifacts, so results can be regenerated without proprietary tools or manual annotation.
 
+### EMBER2024-compatible features
+
+`EMBER_Features/` contains a script that generates EMBER2024-compatible features (thrember, EMBER feature version 3, 2,568-dimensional vectors) for the VERA binaries, so VERA samples can be combined with EMBER2024 data or tested against EMBER2024-trained models. It reads the binaries statically and writes `raw_features.jsonl`, `X_vera.dat`, `index.csv`, `failures.csv` and `run_info.json` to a directory you choose. The generated outputs are not stored in git. See [`EMBER_Features/README.md`](EMBER_Features/README.md) for setup and usage.
+
 ---
 
 ## Getting Started
@@ -209,7 +220,7 @@ For every sample, the full Zenodo release provides the raw binary, the complete 
 
    ```bash
    git clone https://github.com/garvit-agarwal-purdue/VERA-Dataset.git
-   cd "VERA Dataset"
+   cd VERA-Dataset
    ```
 
 3. Explore the labels and features without touching any binary.
@@ -220,13 +231,12 @@ For every sample, the full Zenodo release provides the raw binary, the complete 
    status = pd.read_csv("Labels/vera_labels.csv")
    families = pd.read_csv("Labels/Final_Family_Labels.csv")
 
-   print(status["status"].value_counts())      # adjust column name to match the file
-   print(families["family"].value_counts().head(20))
+   print(status["Classification"].value_counts())
+   print(families["Final_Family"].value_counts().head(20))
+   print(families["Label_Source"].value_counts())
    ```
 
 4. To work with binaries, move them into an isolated analysis VM **before** extracting or executing anything.
-
-> The column names in the snippet above are illustrative. Open each CSV header first to confirm the exact field names.
 
 ---
 
@@ -251,6 +261,17 @@ The notebooks under `Code/` reproduce the core results:
 - **Distinctiveness benchmark:** `RWvsMW For Dataset paper.ipynb` reproduces the binary classification of VERA-Active against the BODMAS general-malware dataset, where standard classifiers reach near-perfect separation. As noted in the paper, this benchmark is a label-purity sanity check rather than a deployment claim.
 
 To run the full pipeline, download the complete binaries and CAPE reports from the Zenodo record and point the notebook paths at your local copy.
+
+---
+
+## Changelog
+
+**2026-10-27**
+
+- Added a `Label_Source` column to `Final_Family_Labels.csv`, so consensus labels (`consensus`) can be told apart from Stage II XGBoost propagations (`model_predicted`) without joining files.
+- Added [`EMBER_Features/`](EMBER_Features/README.md), which generates EMBER2024-compatible features (feature version 3, 2,568-dimensional vectors) for the VERA binaries.
+- Added licenses (MIT for code, CC BY 4.0 for data and labels) and a `CITATION.cff` file.
+- Fixed the Getting Started snippet to use the actual column names, and removed Jupyter checkpoint files.
 
 ---
 
@@ -291,13 +312,11 @@ If you use VERA in your work, please cite both the paper and the dataset.
 
 ## License
 
-The code and the data may carry different licenses. Please confirm and state them explicitly before publishing, for example:
+The code and the data are licensed separately.
 
-- **Code:** `<CODE_LICENSE, e.g. MIT>`
-- **Data and labels:** `<DATA_LICENSE, e.g. CC BY 4.0 or a research-only license>`
-- **Binaries:** subject to the terms of the originating repositories (VX Underground, VirusShare, MalwareBazaar, Malshare) and intended for defensive research use only.
-
-Replace these placeholders with your final choices and add the corresponding `LICENSE` file to the repository.
+- **Code:** MIT. See [`LICENSE`](LICENSE).
+- **Data and labels:** labels, metadata, derived features and documentation are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). See [`LICENSE-DATA.md`](LICENSE-DATA.md).
+- **Binaries and VirusTotal reports:** third-party content that the authors do not relicense. It remains subject to the terms of the originating repositories (VX Underground, VirusShare, MalwareBazaar, Malshare) and of VirusTotal, and the binaries are intended for defensive research use only.
 
 ---
 
